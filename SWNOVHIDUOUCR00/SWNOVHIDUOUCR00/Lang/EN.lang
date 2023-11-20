@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlLanguage Key="EN" Font="CAREL_TERM_STD" FontSize="12">
+  <Sections>
+    <Section Name="DayOfWeek_0_6" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Sunday" Value="Sunday" />
+        <Item Key="Monday" Value="Monday" />
+        <Item Key="Tuesday" Value="Tuesday" />
+        <Item Key="Wednesday" Value="Wednesday" />
+        <Item Key="Thursday" Value="Thursday" />
+        <Item Key="Friday" Value="Friday" />
+        <Item Key="Saturday" Value="Saturday" />
+      </Items>
+    </Section>
+    <Section Name="QUICK_MENU_0_2" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="OnOff" Value="Selected Loop OnOff" />
+        <Item Key="Set" Value="Selcted Loop Set" />
+        <Item Key="Info" Value="Selected Loop Info" />
+      </Items>
+    </Section>
+    <Section Name="Serial_Channel_Client" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="FBUS1" Value=" FBUS1 serial channel " />
+        <Item Key="FBUS2" Value=" FBUS2 serial channel " />
+      </Items>
+    </Section>
+    <Section Name="Serial_Channel_Server" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="BMS1" Value=" BMS1 serial channel " />
+        <Item Key="BMS2" Value=" BMS2 serial channel " />
+        <Item Key="Serial0" Value=" Serial0 serial channel " />
+      </Items>
+    </Section>
+    <Section Name="Serial_ParityStopBits" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NONE_1" Value="NONE-1" />
+        <Item Key="NONE_2" Value="NONE-2" />
+        <Item Key="EVEN_1" Value="EVEN-1" />
+        <Item Key="EVEN_2" Value="EVEN-2" />
+        <Item Key="ODD_1" Value="ODD-1" />
+        <Item Key="ODD_2" Value="ODD-2" />
+      </Items>
+    </Section>
+    <Section Name="Serial_ParityStopBits_0_5" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NONE_1" Value="NONE-1" />
+        <Item Key="NONE_2" Value="NONE-2" />
+        <Item Key="EVEN_1" Value="EVEN-1" />
+        <Item Key="EVEN_2" Value="EVEN-2" />
+        <Item Key="ODD_1" Value="ODD-1" />
+        <Item Key="ODD_2" Value="ODD-2" />
+      </Items>
+    </Section>
+    <Section Name="Serial_Speed" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Baud_1200" Value="Baud rate 1200" />
+        <Item Key="Baud_2400" Value="Baud rate 2400" />
+        <Item Key="Baud_4800" Value="Baud rate 4800" />
+        <Item Key="Baud_9600" Value="Baud rate 9600" />
+        <Item Key="Baud_19200" Value="Baud rate 19200" />
+        <Item Key="Baud_38400" Value="Baud rate 38400" />
+        <Item Key="Baud_57600" Value="Baud rate 57600" />
+        <Item Key="Baud_115200" Value="Baud rate 115200" />
+        <Item Key="Baud_375000" Value="Baud rate 375000" />
+      </Items>
+    </Section>
+    <Section Name="Serial_Speed_0_8" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Baud_1200" Value="Baud rate 1200" />
+        <Item Key="Baud_2400" Value="Baud rate 2400" />
+        <Item Key="Baud_4800" Value="Baud rate 4800" />
+        <Item Key="Baud_9600" Value="Baud rate 9600" />
+        <Item Key="Baud_19200" Value="Baud rate 19200" />
+        <Item Key="Baud_38400" Value="Baud rate 38400" />
+        <Item Key="Baud_57600" Value="Baud rate 57600" />
+        <Item Key="Baud_115200" Value="Baud rate 115200" />
+        <Item Key="Baud_375000" Value="Baud rate 375000" />
+      </Items>
+    </Section>
+    <Section Name="SIGNAL_TYPE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="BMS" Value="Request by BMS" />
+        <Item Key="PID" Value="Request by PID" />
+      </Items>
+    </Section>
+    <Section Name="SPV_OFFLINE_MNG" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="None" Value="No visualization" />
+        <Item Key="Warning" Value="Warning, visualization only" />
+        <Item Key="Alarm" Value="Alarm, switch off the unit" />
+      </Items>
+    </Section>
+    <Section Name="UNIT_STATUS" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Wait" Value="Wait" />
+        <Item Key="UnitON" Value="Unit ON" />
+        <Item Key="OffByAlarm" Value="Off By Alarm" />
+        <Item Key="OffByNetwork" Value="Off By Network" />
+        <Item Key="OffByBMS" Value="Off By BMS" />
+        <Item Key="OffByScheduler" Value="Off By Scheduler" />
+        <Item Key="OffByDI" Value="Off By Digital Input" />
+        <Item Key="OffByKeyboard" Value="Off By Keyboard" />
+        <Item Key="Manual" Value="Unit manual mode active" />
+        <Item Key="ChangeOver" Value="ChangeOver" />
+        <Item Key="SwitchON" Value="Switch ON" />
+        <Item Key="ShutDown" Value="Shut Down" />
+        <Item Key="PreConditioning" Value="Pre-Conditioning" />
+        <Item Key="Dehumidification" Value="Dehumidification" />
+        <Item Key="Antifreeze" Value="Antifreeze" />
+        <Item Key="Defrost" Value="Defrost" />
+        <Item Key="AirPressure_Flow" Value="Air Pressure/Flow" />
+        <Item Key="AirQuality" Value="Air Quality" />
+        <Item Key="Cooling" Value="Cooling" />
+        <Item Key="Heating" Value="Heating" />
+        <Item Key="FreeCooling" Value="FreeCooling" />
+        <Item Key="FreeHeating" Value="FreeHeating" />
+        <Item Key="LowTemperatureControl" Value="Low Temperature Control" />
+        <Item Key="HighTemperatureControl" Value="High Temperature Control" />
+        <Item Key="TestIO" Value="Test I/O" />
+        <Item Key="DHW" Value="Domestic Hot Water" />
+        <Item Key="InactivityStart" Value="Inactivity Start" />
+        <Item Key="HighSaturationHumidity" Value="High Saturation Humidity" />
+        <Item Key="Purging" Value="Purging" />
+      </Items>
+    </Section>
+    <Section Name="UOM_ZONE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NONE" Value="No Zone" />
+        <Item Key="SI" Value="International System Zone [°C/bar]" />
+        <Item Key="Imperial" Value="Imperial Zone [°F/psi]" />
+      </Items>
+    </Section>
+    <Section Name="SevenSegments" Category="Other" EmbedTranslation="true">
+      <Items>
+        <Item Key="SevenSegments_L0M0DF1_MR0" Value="----" />
+        <Item Key="SevenSegments_L0M0DF1_MR1" Value="  On" />
+        <Item Key="SevenSegments_L0M0DF1_MR10" Value="Star" />
+        <Item Key="SevenSegments_L0M0DF1_MR11" Value="Stop" />
+        <Item Key="SevenSegments_L0M0DF1_MR15" Value=" Dfr" />
+        <Item Key="SevenSegments_L0M0DF1_MR18" Value="Cool" />
+        <Item Key="SevenSegments_L0M0DF1_MR19" Value="Heat" />
+        <Item Key="SevenSegments_L0M0DF1_MR2" Value=" OFF" />
+        <Item Key="SevenSegments_L0M0DF1_MR4" Value=" OFF" />
+        <Item Key="SevenSegments_L0M0DF1_MR6" Value=" OFF" />
+        <Item Key="SevenSegments_L0M0DF1_MR7" Value=" OFF" />
+        <Item Key="SevenSegments_L0M0DF1_MR8" Value=" Man" />
+        <Item Key="SevenSegments_L0M0DF1_MR9" Value="ChGo" />
+      </Items>
+    </Section>
+    <Section Name="pGD1" Category="Other" EmbedTranslation="true">
+      <Items>
+        <Item Key="pGD1_L10M16DF179_MR0" Value="DD/MM/YY" />
+        <Item Key="pGD1_L10M16DF179_MR1" Value="MM/DD/YY" />
+        <Item Key="pGD1_L10M16DF179_MR2" Value="YY/MM/DD" />
+        <Item Key="pGD1_L10M16DF191_FT" Value="0" />
+        <Item Key="pGD1_L10M16DF194_FT" Value="0" />
+        <Item Key="pGD1_L10M16DF231_FT" Value="0" />
+        <Item Key="pGD1_L10M16DF233_FT" Value="0" />
+        <Item Key="pGD1_L10M16DF234_FT" Value="0" />
+        <Item Key="pGD1_L10M16DF237_FT" Value="0" />
+        <Item Key="pGD1_L10M16DF92" Value="Day:" />
+        <Item Key="pGD1_L10M16DF92_MR0" Value="   Sunday" />
+        <Item Key="pGD1_L10M16DF92_MR1" Value="   Monday" />
+        <Item Key="pGD1_L10M16DF92_MR2" Value="  Tuesday" />
+        <Item Key="pGD1_L10M16DF92_MR3" Value="Wednesday" />
+        <Item Key="pGD1_L10M16DF92_MR4" Value=" Thursday" />
+        <Item Key="pGD1_L10M16DF92_MR5" Value="   Friday" />
+        <Item Key="pGD1_L10M16DF92_MR6" Value=" Saturday" />
+        <Item Key="pGD1_L10M16TF192" Value=":" />
+        <Item Key="pGD1_L10M16TF235" Value="/" />
+        <Item Key="pGD1_L10M16TF236" Value="/" />
+        <Item Key="pGD1_L10M16TF238" Value=":" />
+        <Item Key="pGD1_L10M16TF80" Value="Date/Time change" />
+        <Item Key="pGD1_L10M16TF81" Value="Format:" />
+        <Item Key="pGD1_L10M16TF82" Value="Date:" />
+        <Item Key="pGD1_L10M16TF83" Value="Hour:" />
+        <Item Key="pGD1_L10M16TF84" Value="Day:" />
+        <Item Key="pGD1_L10M31TF167" Value="Time zone" />
+        <Item Key="pGD1_L19M25DF198_MR0" Value="                  NONE" />
+        <Item Key="pGD1_L19M25DF198_MR1" Value="  INTERNATIONAL SYSTEM" />
+        <Item Key="pGD1_L19M25DF198_MR2" Value="              IMPERIAL" />
+        <Item Key="pGD1_L1M15TF62" Value="Language" />
+        <Item Key="pGD1_L1M15TF63" Value="Language:" />
+        <Item Key="pGD1_L1M15TF64" Value="UP/DOWN to change" />
+        <Item Key="pGD1_L1M15TF65" Value="ENTER to confirm" />
+        <Item Key="pGD1_L20M26DF205_MR0" Value="  1200" />
+        <Item Key="pGD1_L20M26DF205_MR1" Value="  2400" />
+        <Item Key="pGD1_L20M26DF205_MR2" Value="  4800" />
+        <Item Key="pGD1_L20M26DF205_MR3" Value="  9600" />
+        <Item Key="pGD1_L20M26DF205_MR4" Value=" 19200" />
+        <Item Key="pGD1_L20M26DF205_MR5" Value=" 38400" />
+        <Item Key="pGD1_L20M26DF205_MR6" Value=" 57600" />
+        <Item Key="pGD1_L20M26DF205_MR7" Value="115200" />
+        <Item Key="pGD1_L20M26DF205_MR8" Value="375000" />
+        <Item Key="pGD1_L20M26DF206_MR0" Value="NONE-1" />
+        <Item Key="pGD1_L20M26DF206_MR1" Value="NONE-2" />
+        <Item Key="pGD1_L20M26DF206_MR2" Value="EVEN-1" />
+        <Item Key="pGD1_L20M26DF206_MR3" Value="EVEN-2" />
+        <Item Key="pGD1_L20M26DF206_MR4" Value=" ODD-1" />
+        <Item Key="pGD1_L20M26DF206_MR5" Value=" ODD-2" />
+        <Item Key="pGD1_L20M26DF294_MRF" Value=" NO" />
+        <Item Key="pGD1_L20M26DF294_MRT" Value="YES" />
+        <Item Key="pGD1_L20M30DF201_MR0" Value="  1200" />
+        <Item Key="pGD1_L20M30DF201_MR1" Value="  2400" />
+        <Item Key="pGD1_L20M30DF201_MR2" Value="  4800" />
+        <Item Key="pGD1_L20M30DF201_MR3" Value="  9600" />
+        <Item Key="pGD1_L20M30DF201_MR4" Value=" 19200" />
+        <Item Key="pGD1_L20M30DF201_MR5" Value=" 38400" />
+        <Item Key="pGD1_L20M30DF201_MR6" Value=" 57600" />
+        <Item Key="pGD1_L20M30DF201_MR7" Value="115200" />
+        <Item Key="pGD1_L20M30DF201_MR8" Value="375000" />
+        <Item Key="pGD1_L20M30DF202_MR0" Value="NONE-1" />
+        <Item Key="pGD1_L20M30DF202_MR1" Value="NONE-2" />
+        <Item Key="pGD1_L20M30DF202_MR2" Value="EVEN-1" />
+        <Item Key="pGD1_L20M30DF202_MR3" Value="EVEN-2" />
+        <Item Key="pGD1_L20M30DF202_MR4" Value=" ODD-1" />
+        <Item Key="pGD1_L20M30DF202_MR5" Value=" ODD-2" />
+        <Item Key="pGD1_L20M30DF292_MRF" Value=" NO" />
+        <Item Key="pGD1_L20M30DF292_MRT" Value="YES" />
+        <Item Key="pGD1_L20M30DF927_MR0" Value="       BMS2" />
+        <Item Key="pGD1_L20M30DF927_MR1" Value="       BMS1" />
+        <Item Key="pGD1_L20M30DF927_MR2" Value="DisplayPort" />
+        <Item Key="pGD1_L20M33DF215_MR0" Value="  1200" />
+        <Item Key="pGD1_L20M33DF215_MR1" Value="  2400" />
+        <Item Key="pGD1_L20M33DF215_MR2" Value="  4800" />
+        <Item Key="pGD1_L20M33DF215_MR3" Value="  9600" />
+        <Item Key="pGD1_L20M33DF215_MR4" Value=" 19200" />
+        <Item Key="pGD1_L20M33DF215_MR5" Value=" 38400" />
+        <Item Key="pGD1_L20M33DF215_MR6" Value=" 57600" />
+        <Item Key="pGD1_L20M33DF215_MR7" Value="115200" />
+        <Item Key="pGD1_L20M33DF215_MR8" Value="375000" />
+        <Item Key="pGD1_L20M33DF216_MR0" Value="NONE-1" />
+        <Item Key="pGD1_L20M33DF216_MR1" Value="NONE-2" />
+        <Item Key="pGD1_L20M33DF216_MR2" Value="EVEN-1" />
+        <Item Key="pGD1_L20M33DF216_MR3" Value="EVEN-2" />
+        <Item Key="pGD1_L20M33DF216_MR4" Value=" ODD-1" />
+        <Item Key="pGD1_L20M33DF216_MR5" Value=" ODD-2" />
+        <Item Key="pGD1_L20M33DF296_MRF" Value=" NO" />
+        <Item Key="pGD1_L20M33DF296_MRT" Value="YES" />
+        <Item Key="pGD1_L20M34DF222_MR0" Value="  1200" />
+        <Item Key="pGD1_L20M34DF222_MR1" Value="  2400" />
+        <Item Key="pGD1_L20M34DF222_MR2" Value="  4800" />
+        <Item Key="pGD1_L20M34DF222_MR3" Value="  9600" />
+        <Item Key="pGD1_L20M34DF222_MR4" Value=" 19200" />
+        <Item Key="pGD1_L20M34DF222_MR5" Value=" 38400" />
+        <Item Key="pGD1_L20M34DF222_MR6" Value=" 57600" />
+        <Item Key="pGD1_L20M34DF222_MR7" Value="115200" />
+        <Item Key="pGD1_L20M34DF222_MR8" Value="375000" />
+        <Item Key="pGD1_L20M34DF223_MR0" Value="NONE-1" />
+        <Item Key="pGD1_L20M34DF223_MR1" Value="NONE-2" />
+        <Item Key="pGD1_L20M34DF223_MR2" Value="EVEN-1" />
+        <Item Key="pGD1_L20M34DF223_MR3" Value="EVEN-2" />
+        <Item Key="pGD1_L20M34DF223_MR4" Value=" ODD-1" />
+        <Item Key="pGD1_L20M34DF223_MR5" Value=" ODD-2" />
+        <Item Key="pGD1_L20M34DF298_MRF" Value=" NO" />
+        <Item Key="pGD1_L20M34DF298_MRT" Value="YES" />
+        <Item Key="pGD1_L22M28DF252_MRF" Value=" NO" />
+        <Item Key="pGD1_L22M28DF252_MRT" Value="YES" />
+        <Item Key="pGD1_L22M28DF253_MRF" Value=" NO" />
+        <Item Key="pGD1_L22M28DF253_MRT" Value="YES" />
+        <Item Key="pGD1_L22M28DF319_MRF" Value=" NO" />
+        <Item Key="pGD1_L22M28DF319_MRT" Value="YES" />
+        <Item Key="pGD1_L22M35DF257_MRF" Value=" NO" />
+        <Item Key="pGD1_L22M35DF257_MRT" Value="YES" />
+        <Item Key="pGD1_L24M32DF178_MR0" Value="USER" />
+        <Item Key="pGD1_L24M32DF178_MR1" Value="SERVICE" />
+        <Item Key="pGD1_L24M32DF178_MR2" Value="MANUFACTURER" />
+        <Item Key="pGD1_L24M32DF178_MR3" Value="SYSTEM" />
+        <Item Key="pGD1_L24M32TAF176" Value="You are       logged as" />
+        <Item Key="pGD1_L24M32TAF177" Value="Press ENTER   to logout" />
+        <Item Key="pGD1_L24M32TF174" Value="Logout" />
+        <Item Key="pGD1_L26M6DF101_MR10" Value=" LARGE" />
+        <Item Key="pGD1_L26M6DF101_MR11" Value="MEDIUM" />
+        <Item Key="pGD1_L26M6DF101_MR12" Value=" SMALL" />
+        <Item Key="pGD1_L26M6DF101_MR13" Value="XLARGE" />
+        <Item Key="pGD1_L26M6DF390_MR12" Value="  pCO5+HS" />
+        <Item Key="pGD1_L26M6DF390_MR13" Value="       --" />
+        <Item Key="pGD1_L28M140DF915_MR0" Value="SIAM ANB33FBEMT " />
+        <Item Key="pGD1_L28M140DF915_MR1" Value="SIAM ANB42FBEMT " />
+        <Item Key="pGD1_L28M140DF915_MR10" Value="SIAM SNB130FGBMT2 " />
+        <Item Key="pGD1_L28M140DF915_MR100" Value="TOSHIBA DA420A3FJH-10CU " />
+        <Item Key="pGD1_L28M140DF915_MR101" Value="SIAM SPB172F-MT " />
+        <Item Key="pGD1_L28M140DF915_MR102" Value="SIAM APB52FA1MT " />
+        <Item Key="pGD1_L28M140DF915_MR103" Value="SIAM ANB66FBZMT-24 " />
+        <Item Key="pGD1_L28M140DF915_MR104" Value="SIAM DNB36FAEMT " />
+        <Item Key="pGD1_L28M140DF915_MR105" Value="SIAM DNB36FAGMT " />
+        <Item Key="pGD1_L28M140DF915_MR106" Value="SIAM DNB36FAGMT " />
+        <Item Key="pGD1_L28M140DF915_MR107" Value="SIAM DNB22FAHMT " />
+        <Item Key="pGD1_L28M140DF915_MR108" Value="SIAM DNB22FAHMT " />
+        <Item Key="pGD1_L28M140DF915_MR109" Value="SIAM ANB66FE1MTS " />
+        <Item Key="pGD1_L28M140DF915_MR11" Value="SIAM SNB172FEKMT2 " />
+        <Item Key="pGD1_L28M140DF915_MR110" Value="TOSHIBA DA220A2FJH-10BU " />
+        <Item Key="pGD1_L28M140DF915_MR111" Value="TOSHIBA DA130A1FJH-10AU " />
+        <Item Key="pGD1_L28M140DF915_MR112" Value="TOSHIBA DA330A3FJH-10CU " />
+        <Item Key="pGD1_L28M140DF915_MR113" Value="TOSHIBA NY30N1FH-10FU " />
+        <Item Key="pGD1_L28M140DF915_MR114" Value="TOSHIBA NY45N1FH-10FU " />
+        <Item Key="pGD1_L28M140DF915_MR115" Value="TOSHIBA NY67L1FH-10FU " />
+        <Item Key="pGD1_L28M140DF915_MR116" Value="SIAM ANB33FE1MTS " />
+        <Item Key="pGD1_L28M140DF915_MR117" Value="SIAM ANB66FD1MTS " />
+        <Item Key="pGD1_L28M140DF915_MR118" Value="SIAM AGK66FDBMTS " />
+        <Item Key="pGD1_L28M140DF915_MR119" Value="SIAM AGK33FDAMTS " />
+        <Item Key="pGD1_L28M140DF915_MR12" Value="SIAM TNB220FLHMT2 " />
+        <Item Key="pGD1_L28M140DF915_MR120" Value="SIAM AGK87FDCMTS " />
+        <Item Key="pGD1_L28M140DF915_MR121" Value="SIAM SVB110FNYMT " />
+        <Item Key="pGD1_L28M140DF915_MR122" Value="SIAM ADB42FCAMTS " />
+        <Item Key="pGD1_L28M140DF915_MR123" Value="SIAM ANB42FE1MTS " />
+        <Item Key="pGD1_L28M140DF915_MR124" Value="SIAM AGB66FD1MTS " />
+        <Item Key="pGD1_L28M140DF915_MR125" Value="AVIC C-8RZ420L4BAL " />
+        <Item Key="pGD1_L28M140DF915_MR126" Value="AVIC C-8RZ420L4BAL " />
+        <Item Key="pGD1_L28M140DF915_MR127" Value="TOSHIBA DA91A1FJH-10AU " />
+        <Item Key="pGD1_L28M140DF915_MR128" Value="TOSHIBA DA130A1FJH-10AU " />
+        <Item Key="pGD1_L28M140DF915_MR129" Value="TOSHIBA DA220A2FJH-10BU " />
+        <Item Key="pGD1_L28M140DF915_MR13" Value="LG GPT425DBA " />
+        <Item Key="pGD1_L28M140DF915_MR130" Value="TOSHIBA DA330A3FJH-10CU " />
+        <Item Key="pGD1_L28M140DF915_MR131" Value="TOSHIBA DA420A3FJH-10CU " />
+        <Item Key="pGD1_L28M140DF915_MR132" Value="SIAM ANB87FVLMT-60 " />
+        <Item Key="pGD1_L28M140DF915_MR133" Value="MELCO SVB140FCAMC " />
+        <Item Key="pGD1_L28M140DF915_MR134" Value="AVIC C9RZ700H1ABF " />
+        <Item Key="pGD1_L28M140DF915_MR135" Value="SIAM ADB33FE1MTS " />
+        <Item Key="pGD1_L28M140DF915_MR136" Value="MELCO HNB78FDYEHC " />
+        <Item Key="pGD1_L28M140DF915_MR137" Value="SIAM ANB66FD1MTS " />
+        <Item Key="pGD1_L28M140DF915_MR138" Value="AVIC C1RZ089H3BBF " />
+        <Item Key="pGD1_L28M140DF915_MR139" Value="AVIC C7RZ233H1E " />
+        <Item Key="pGD1_L28M140DF915_MR14" Value="TOSHIBA DA550A3F-11M " />
+        <Item Key="pGD1_L28M140DF915_MR140" Value="PANASONIC H550D5VZAAC2 " />
+        <Item Key="pGD1_L28M140DF915_MR141" Value="HIGHLY WHP09100AUKPA8LT6 " />
+        <Item Key="pGD1_L28M140DF915_MR142" Value="SIAM DPW42FBDMTS " />
+        <Item Key="pGD1_L28M140DF915_MR143" Value="SIAM DPW36FBCMTS " />
+        <Item Key="pGD1_L28M140DF915_MR144" Value="SIAM DPW28FBBMTS " />
+        <Item Key="pGD1_L28M140DF915_MR145" Value="SIAM DPW22FBAMTS " />
+        <Item Key="pGD1_L28M140DF915_MR146" Value="SIAM AVB66FLAMT " />
+        <Item Key="pGD1_L28M140DF915_MR147" Value="AVIC C8RZ420H3BBF " />
+        <Item Key="pGD1_L28M140DF915_MR148" Value="SIAM AVB52FLAMT " />
+        <Item Key="pGD1_L28M140DF915_MR149" Value="PANASONIC 5JD420XAA22 " />
+        <Item Key="pGD1_L28M140DF915_MR15" Value="TOSHIBA DA422A3F-27M " />
+        <Item Key="pGD1_L28M140DF915_MR150" Value="AVIC C7RZ233H3CBF " />
+        <Item Key="pGD1_L28M140DF915_MR151" Value="AVIC C1RZ089H3BBF " />
+        <Item Key="pGD1_L28M140DF915_MR152" Value="SIAM DVB28FV5MT " />
+        <Item Key="pGD1_L28M140DF915_MR153" Value="SIAM AGK87FDCMTS " />
+        <Item Key="pGD1_L28M140DF915_MR154" Value="SIAM AGK78FDCMTS " />
+        <Item Key="pGD1_L28M140DF915_MR155" Value="SIAM AGK78FDCMTS " />
+        <Item Key="pGD1_L28M140DF915_MR156" Value="PANASONIC 5RD160ZAA21 " />
+        <Item Key="pGD1_L28M140DF915_MR157" Value="PANASONIC 9VD330XAB21 " />
+        <Item Key="pGD1_L28M140DF915_MR158" Value="HIGHLY ATH356SDPC9FQ " />
+        <Item Key="pGD1_L28M140DF915_MR159" Value="SIAM DVB36FCPMT " />
+        <Item Key="pGD1_L28M140DF915_MR16" Value="TOSHIBA DA270A2F-20L " />
+        <Item Key="pGD1_L28M140DF915_MR160" Value="SIAM AGK66FDBMTS " />
+        <Item Key="pGD1_L28M140DF915_MR161" Value="SIAM AGK33FDAMTS " />
+        <Item Key="pGD1_L28M140DF915_MR162" Value="PANASONIC H650D5VZAAC2 " />
+        <Item Key="pGD1_L28M140DF915_MR163" Value="MELCO TBB306FPGMC " />
+        <Item Key="pGD1_L28M140DF915_MR164" Value="SIAM SNB172FEKMT-PS2 " />
+        <Item Key="pGD1_L28M140DF915_MR165" Value="AVIC C7RZ320H1BAF " />
+        <Item Key="pGD1_L28M140DF915_MR166" Value="TOSHIBA LY100L1FH-10FU " />
+        <Item Key="pGD1_L28M140DF915_MR167" Value="TOSHIBA CRD220A2FJH-10BU " />
+        <Item Key="pGD1_L28M140DF915_MR168" Value="TOSHIBA CRD130A1FJH-10A " />
+        <Item Key="pGD1_L28M140DF915_MR169" Value="TOSHIBA CRD91A1FJH-10A " />
+        <Item Key="pGD1_L28M140DF915_MR17" Value="SIAM ANB66FU2MT " />
+        <Item Key="pGD1_L28M140DF915_MR170" Value="GMCC ATF400D64UMT " />
+        <Item Key="pGD1_L28M140DF915_MR171" Value="AVIC C-6RZ158H1CBF " />
+        <Item Key="pGD1_L28M140DF915_MR172" Value="SIAM SVB172FCKMT " />
+        <Item Key="pGD1_L28M140DF915_MR173" Value="SIAM SVB130FBBMT " />
+        <Item Key="pGD1_L28M140DF915_MR174" Value="AVIC C-6RZ210H3AGF " />
+        <Item Key="pGD1_L28M140DF915_MR175" Value="SIAM SVB220FBGMT " />
+        <Item Key="pGD1_L28M140DF915_MR176" Value="SIAM SVB220FZAMT " />
+        <Item Key="pGD1_L28M140DF915_MR177" Value="AVIC C6RZ132H3ABF " />
+        <Item Key="pGD1_L28M140DF915_MR178" Value="AVIC C8RZ420H3ABF " />
+        <Item Key="pGD1_L28M140DF915_MR179" Value="GMCC ATQ580D66UNT " />
+        <Item Key="pGD1_L28M140DF915_MR18" Value="SANYO DALIAN-C-SDP205H02B " />
+        <Item Key="pGD1_L28M140DF915_MR180" Value="AVIC C7RZ320H3CAF " />
+        <Item Key="pGD1_L28M140DF915_MR19" Value="TOSHIBA DA220A2F-23L " />
+        <Item Key="pGD1_L28M140DF915_MR2" Value="SIAM ANB52FKFMT " />
+        <Item Key="pGD1_L28M140DF915_MR20" Value="HITACHI E405DHD-36D2G " />
+        <Item Key="pGD1_L28M140DF915_MR21" Value="TOSHIBA DA330A2F-20M " />
+        <Item Key="pGD1_L28M140DF915_MR22" Value="SIAM ANB66FBZMT " />
+        <Item Key="pGD1_L28M140DF915_MR23" Value="TOSHIBA DA790A4F-11UC " />
+        <Item Key="pGD1_L28M140DF915_MR24" Value="SAMSUNG UX5T250FNBJX " />
+        <Item Key="pGD1_L28M140DF915_MR25" Value="TOSHIBA DA91A1FJH-10A2 " />
+        <Item Key="pGD1_L28M140DF915_MR26" Value="TOSHIBA DA130A1FJH-10A2 " />
+        <Item Key="pGD1_L28M140DF915_MR27" Value="TOSHIBA DA220A2FJH-10B2 " />
+        <Item Key="pGD1_L28M140DF915_MR28" Value="TOSHIBA DA330A3FJH-10C1 " />
+        <Item Key="pGD1_L28M140DF915_MR29" Value="TOSHIBA DA420A3FJH-10C1 " />
+        <Item Key="pGD1_L28M140DF915_MR3" Value="SAMSUNG UG5T520FUBJX " />
+        <Item Key="pGD1_L28M140DF915_MR30" Value="TOSHIBA DA150A1F-21F " />
+        <Item Key="pGD1_L28M140DF915_MR31" Value="TOSHIBA DA111A1F-20F " />
+        <Item Key="pGD1_L28M140DF915_MR32" Value="SIAM ANB78FVAMT " />
+        <Item Key="pGD1_L28M140DF915_MR33" Value="TOSHIBA DA75F0F-11UA " />
+        <Item Key="pGD1_L28M140DF915_MR34" Value="MITSUBISHI SBB172F " />
+        <Item Key="pGD1_L28M140DF915_MR35" Value="HITACHI E705DHD-72D2YG " />
+        <Item Key="pGD1_L28M140DF915_MR36" Value="SIAM TNB306FPNMT " />
+        <Item Key="pGD1_L28M140DF915_MR37" Value="SIAM TNB306FPGMT " />
+        <Item Key="pGD1_L28M140DF915_MR38" Value="PANASONIC 5KD240XCA21 " />
+        <Item Key="pGD1_L28M140DF915_MR39" Value="SANYO-DALIAN C-SDP330H02B " />
+        <Item Key="pGD1_L28M140DF915_MR4" Value="SIAM AEE33FPAMT " />
+        <Item Key="pGD1_L28M140DF915_MR40" Value="HITACHI E405DHD-38D2G " />
+        <Item Key="pGD1_L28M140DF915_MR41" Value="SAMSUNG UX5T250FNBJX " />
+        <Item Key="pGD1_L28M140DF915_MR42" Value="TOSHIBA DY45N1F-10F3 " />
+        <Item Key="pGD1_L28M140DF915_MR43" Value="SAMSUNG UX8TH5140FJU " />
+        <Item Key="pGD1_L28M140DF915_MR44" Value="SAMSUNG UG8T300FUBJU " />
+        <Item Key="pGD1_L28M140DF915_MR45" Value="TOSHIBA DS130A1FJ-24F " />
+        <Item Key="pGD1_L28M140DF915_MR46" Value="SIAM SNB110FGYMT " />
+        <Item Key="pGD1_L28M140DF915_MR47" Value="LG APA026DAA " />
+        <Item Key="pGD1_L28M140DF915_MR48" Value="LG ABA051DAA " />
+        <Item Key="pGD1_L28M140DF915_MR49" Value="SIAM ADB66F1-MTS " />
+        <Item Key="pGD1_L28M140DF915_MR5" Value="SIAM AEB60FEQMT " />
+        <Item Key="pGD1_L28M140DF915_MR50" Value="SIAM ADB78F1-MTS " />
+        <Item Key="pGD1_L28M140DF915_MR51" Value="MITSUBISHI LNB53FCAMC " />
+        <Item Key="pGD1_L28M140DF915_MR52" Value="SIAM ADB33F1-MTS " />
+        <Item Key="pGD1_L28M140DF915_MR53" Value="SAMSUNG UG5T520FUBJX " />
+        <Item Key="pGD1_L28M140DF915_MR54" Value="SIAM ANB66FVAMTS " />
+        <Item Key="pGD1_L28M140DF915_MR55" Value="SIAM ANBANB87FVLMT " />
+        <Item Key="pGD1_L28M140DF915_MR56" Value="LG GKT141MAD " />
+        <Item Key="pGD1_L28M140DF915_MR57" Value="LG GPT442MBB " />
+        <Item Key="pGD1_L28M140DF915_MR58" Value="PANASONIC 5JD420XAA22 " />
+        <Item Key="pGD1_L28M140DF915_MR59" Value="MITSUBISHI LNB42FSCMC " />
+        <Item Key="pGD1_L28M140DF915_MR6" Value="HITACHI E655DHD-65D2YG " />
+        <Item Key="pGD1_L28M140DF915_MR60" Value="SIAM ANB52FVEMT " />
+        <Item Key="pGD1_L28M140DF915_MR61" Value="LG GJT240MBA " />
+        <Item Key="pGD1_L28M140DF915_MR62" Value="HIGHLY WHP02930ASPMA6J " />
+        <Item Key="pGD1_L28M140DF915_MR63" Value="SIAM APB52FAAMT " />
+        <Item Key="pGD1_L28M140DF915_MR64" Value="TOSHIBA DA422A3F-26M " />
+        <Item Key="pGD1_L28M140DF915_MR65" Value="TOSHIBA DA640A3F-20MD " />
+        <Item Key="pGD1_L28M140DF915_MR66" Value="SIAM APB33FAAMT " />
+        <Item Key="pGD1_L28M140DF915_MR67" Value="SIAM ANB33FEYMT " />
+        <Item Key="pGD1_L28M140DF915_MR68" Value="SIAM SNB130FQYMT " />
+        <Item Key="pGD1_L28M140DF915_MR69" Value="GMCC DSM180D19UDZ " />
+        <Item Key="pGD1_L28M140DF915_MR7" Value="SIAM SNB130FGBMT2 " />
+        <Item Key="pGD1_L28M140DF915_MR70" Value="MITSUBISHI LNB53FCFMC " />
+        <Item Key="pGD1_L28M140DF915_MR71" Value="SIAM ANB33FBSMT " />
+        <Item Key="pGD1_L28M140DF915_MR72" Value="SIAM SNB172FQGMT " />
+        <Item Key="pGD1_L28M140DF915_MR73" Value="HITACHI E856DHD-80D2YG " />
+        <Item Key="pGD1_L28M140DF915_MR74" Value="MITSUBISHI MBB42F-1PH " />
+        <Item Key="pGD1_L28M140DF915_MR75" Value="MITSUBISHI MBB42F-3PH " />
+        <Item Key="pGD1_L28M140DF915_MR76" Value="SIAM SNB172FQGMT " />
+        <Item Key="pGD1_L28M140DF915_MR77" Value="MITSUBISHI SNB140FUYMC " />
+        <Item Key="pGD1_L28M140DF915_MR78" Value="AVIC C-8RZ420H1BAF " />
+        <Item Key="pGD1_L28M140DF915_MR79" Value="SIAM TNB220FSNMT " />
+        <Item Key="pGD1_L28M140DF915_MR8" Value="SIAM SNB172FEKMT2 " />
+        <Item Key="pGD1_L28M140DF915_MR80" Value="SAMSUNG UG4T150FUAJQ " />
+        <Item Key="pGD1_L28M140DF915_MR81" Value="SIAM DNB28FAAMT " />
+        <Item Key="pGD1_L28M140DF915_MR82" Value="TOSHIBA DA130A1F-25F3 " />
+        <Item Key="pGD1_L28M140DF915_MR83" Value="TOSHIBA DY30N1F-10F3 " />
+        <Item Key="pGD1_L28M140DF915_MR84" Value="TOSHIBA DY67L1F-10FU " />
+        <Item Key="pGD1_L28M140DF915_MR85" Value="TOSHIBA RY100L1F-10FU " />
+        <Item Key="pGD1_L28M140DF915_MR86" Value="SIAM ANB42FEYMT " />
+        <Item Key="pGD1_L28M140DF915_MR87" Value="SIAM ANB42FEYMT " />
+        <Item Key="pGD1_L28M140DF915_MR88" Value="SIAM ANB52FO1MT " />
+        <Item Key="pGD1_L28M140DF915_MR89" Value="SIAM ANB52FO1MT " />
+        <Item Key="pGD1_L28M140DF915_MR9" Value="SIAM TNB220FLHMT2 " />
+        <Item Key="pGD1_L28M140DF915_MR90" Value="SIAM APB52FA1MT " />
+        <Item Key="pGD1_L28M140DF915_MR91" Value="SIAM ANB66FVCMT " />
+        <Item Key="pGD1_L28M140DF915_MR92" Value="SIAM ANB66FVCMT " />
+        <Item Key="pGD1_L28M140DF915_MR93" Value="SIAM ANB78FVCMT " />
+        <Item Key="pGD1_L28M140DF915_MR94" Value="SIAM ANB78FVCMT " />
+        <Item Key="pGD1_L28M140DF915_MR95" Value="SIAM DNB28FAGMT " />
+        <Item Key="pGD1_L28M140DF915_MR96" Value="SIAM DNB28FAGMT " />
+        <Item Key="pGD1_L28M140DF915_MR97" Value="PANASONIC 5VD330ZAA21 " />
+        <Item Key="pGD1_L28M140DF915_MR98" Value="PANASONIC 5VD420ZAA21 " />
+        <Item Key="pGD1_L28M140DF915_MR99" Value="TOSHIBA DA91A1FJH-10AU " />
+        <Item Key="pGD1_L28M140DF918_MRF" Value=" " />
+        <Item Key="pGD1_L28M140DF918_MRT" Value="  &lt;&lt;UNMATCHED PSD&gt;&gt;" />
+        <Item Key="pGD1_L28M140DF919_MR0" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR1" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR10" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR100" Value="230V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR101" Value="230V (1PH)-R290" />
+        <Item Key="pGD1_L28M140DF919_MR102" Value="230V R290" />
+        <Item Key="pGD1_L28M140DF919_MR103" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR104" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR105" Value="230V (1PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR106" Value="230V (3PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR107" Value="230V (1PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR108" Value="230V (3PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR109" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR11" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR110" Value="230V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR111" Value="230V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR112" Value="230V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR113" Value="230V R744" />
+        <Item Key="pGD1_L28M140DF919_MR114" Value="230V R744" />
+        <Item Key="pGD1_L28M140DF919_MR115" Value="230V R744" />
+        <Item Key="pGD1_L28M140DF919_MR116" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR117" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR118" Value="400V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR119" Value="400V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR12" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR120" Value="400V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR121" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR122" Value="400V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR123" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR124" Value="230V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR125" Value="230V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR126" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR127" Value="230V R449A" />
+        <Item Key="pGD1_L28M140DF919_MR128" Value="230V R449A" />
+        <Item Key="pGD1_L28M140DF919_MR129" Value="230V R449A" />
+        <Item Key="pGD1_L28M140DF919_MR13" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR130" Value="230V R449A" />
+        <Item Key="pGD1_L28M140DF919_MR131" Value="230V R449A" />
+        <Item Key="pGD1_L28M140DF919_MR132" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR133" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR134" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR135" Value="400V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR136" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR137" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR138" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR139" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR14" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR140" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR141" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR142" Value="400V R290" />
+        <Item Key="pGD1_L28M140DF919_MR143" Value="400V R290" />
+        <Item Key="pGD1_L28M140DF919_MR144" Value="400V R290" />
+        <Item Key="pGD1_L28M140DF919_MR145" Value="400V R290" />
+        <Item Key="pGD1_L28M140DF919_MR146" Value="400V R32" />
+        <Item Key="pGD1_L28M140DF919_MR147" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR148" Value="400V R32" />
+        <Item Key="pGD1_L28M140DF919_MR149" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR15" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR150" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR151" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR152" Value="400V R32" />
+        <Item Key="pGD1_L28M140DF919_MR153" Value="400V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR154" Value="400V R04A" />
+        <Item Key="pGD1_L28M140DF919_MR155" Value="400V R448A" />
+        <Item Key="pGD1_L28M140DF919_MR156" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR157" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR158" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR159" Value="400V R32" />
+        <Item Key="pGD1_L28M140DF919_MR16" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR160" Value="400V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR161" Value="400V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR162" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR163" Value="230V R134A" />
+        <Item Key="pGD1_L28M140DF919_MR164" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR165" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR166" Value="400V R744" />
+        <Item Key="pGD1_L28M140DF919_MR167" Value="230V R290" />
+        <Item Key="pGD1_L28M140DF919_MR168" Value="230V R290" />
+        <Item Key="pGD1_L28M140DF919_MR169" Value="230V R290" />
+        <Item Key="pGD1_L28M140DF919_MR17" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR170" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR171" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR172" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR173" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR174" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR175" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR176" Value="400V R32" />
+        <Item Key="pGD1_L28M140DF919_MR177" Value="230V R32" />
+        <Item Key="pGD1_L28M140DF919_MR178" Value="400V R32" />
+        <Item Key="pGD1_L28M140DF919_MR179" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR18" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR180" Value="400V R32" />
+        <Item Key="pGD1_L28M140DF919_MR19" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR2" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR20" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR21" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR22" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR23" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR24" Value="400V R134a" />
+        <Item Key="pGD1_L28M140DF919_MR25" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR26" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR27" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR28" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR29" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR3" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR30" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR31" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR32" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR33" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR34" Value="230V R134a" />
+        <Item Key="pGD1_L28M140DF919_MR35" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR36" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR37" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR38" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR39" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR4" Value="400V R407C" />
+        <Item Key="pGD1_L28M140DF919_MR40" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR41" Value="230V R134a" />
+        <Item Key="pGD1_L28M140DF919_MR42" Value="230V R744" />
+        <Item Key="pGD1_L28M140DF919_MR43" Value="230V R134a" />
+        <Item Key="pGD1_L28M140DF919_MR44" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR45" Value="230V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR46" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR47" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR48" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR49" Value="400V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR5" Value="400V R407C" />
+        <Item Key="pGD1_L28M140DF919_MR50" Value="400V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR51" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR52" Value="400V R404A" />
+        <Item Key="pGD1_L28M140DF919_MR53" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR54" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR55" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR56" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR57" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR58" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR59" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR6" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR60" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR61" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR62" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR63" Value="400V R290" />
+        <Item Key="pGD1_L28M140DF919_MR64" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR65" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR66" Value="400V R290" />
+        <Item Key="pGD1_L28M140DF919_MR67" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR68" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR69" Value="230V R290" />
+        <Item Key="pGD1_L28M140DF919_MR7" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR70" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR71" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR72" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR73" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR74" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR75" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR76" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR77" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR78" Value="230V R410A-GDP" />
+        <Item Key="pGD1_L28M140DF919_MR79" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR8" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR80" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR81" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR82" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR83" Value="230V R744" />
+        <Item Key="pGD1_L28M140DF919_MR84" Value="230V R744" />
+        <Item Key="pGD1_L28M140DF919_MR85" Value="400V R744" />
+        <Item Key="pGD1_L28M140DF919_MR86" Value="230V (1PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR87" Value="230V (3PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR88" Value="230V (1PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR89" Value="230V (3PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR9" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR90" Value="400V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR91" Value="230V (1PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR92" Value="230V (3PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR93" Value="230V (1PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR94" Value="230V (3PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR95" Value="230V (1PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR96" Value="230V (3PH)-R410A" />
+        <Item Key="pGD1_L28M140DF919_MR97" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR98" Value="230V R410A" />
+        <Item Key="pGD1_L28M140DF919_MR99" Value="230V R448A" />
+        <Item Key="pGD1_L28M140TF913" Value="Power+ model" />
+        <Item Key="pGD1_L28M140TF914" Value="Compressor model:" />
+        <Item Key="pGD1_L28M140TF916" Value="Write default:" />
+        <Item Key="pGD1_L2M2DF843_MR0" Value="Wait" />
+        <Item Key="pGD1_L2M2DF843_MR1" Value="Unit ON" />
+        <Item Key="pGD1_L2M2DF843_MR10" Value="Switch ON" />
+        <Item Key="pGD1_L2M2DF843_MR11" Value="Shut Down" />
+        <Item Key="pGD1_L2M2DF843_MR12" Value="Pre-Conditioning" />
+        <Item Key="pGD1_L2M2DF843_MR13" Value="Dehumidification" />
+        <Item Key="pGD1_L2M2DF843_MR14" Value="Antifreeze" />
+        <Item Key="pGD1_L2M2DF843_MR15" Value="Defrost" />
+        <Item Key="pGD1_L2M2DF843_MR16" Value="Air Press/Flow" />
+        <Item Key="pGD1_L2M2DF843_MR17" Value="Air Quality" />
+        <Item Key="pGD1_L2M2DF843_MR18" Value="Cooling" />
+        <Item Key="pGD1_L2M2DF843_MR19" Value="Heating" />
+        <Item Key="pGD1_L2M2DF843_MR2" Value="Off By Alarm" />
+        <Item Key="pGD1_L2M2DF843_MR20" Value="FreeCooling" />
+        <Item Key="pGD1_L2M2DF843_MR21" Value="FreeHeating" />
+        <Item Key="pGD1_L2M2DF843_MR22" Value="Low Temp Control" />
+        <Item Key="pGD1_L2M2DF843_MR23" Value="High Temp Control" />
+        <Item Key="pGD1_L2M2DF843_MR24" Value="Test I/O" />
+        <Item Key="pGD1_L2M2DF843_MR25" Value="DHW" />
+        <Item Key="pGD1_L2M2DF843_MR26" Value="Inactivity Start" />
+        <Item Key="pGD1_L2M2DF843_MR27" Value="High Sat Hum" />
+        <Item Key="pGD1_L2M2DF843_MR28" Value="Purging" />
+        <Item Key="pGD1_L2M2DF843_MR3" Value="Off By Network" />
+        <Item Key="pGD1_L2M2DF843_MR4" Value="Off By BMS" />
+        <Item Key="pGD1_L2M2DF843_MR5" Value="Off By Scheduler" />
+        <Item Key="pGD1_L2M2DF843_MR6" Value="Off By DI" />
+        <Item Key="pGD1_L2M2DF843_MR7" Value="Off By Keyboard" />
+        <Item Key="pGD1_L2M2DF843_MR8" Value="Manual mode" />
+        <Item Key="pGD1_L2M2DF843_MR9" Value="ChangeOver" />
+        <Item Key="pGD1_L2M2DF877_MR0" Value="   --" />
+        <Item Key="pGD1_L2M2DF877_MR1" Value="CLOSE" />
+        <Item Key="pGD1_L2M2DF877_MR10" Value=" WAIT" />
+        <Item Key="pGD1_L2M2DF877_MR11" Value="   ON" />
+        <Item Key="pGD1_L2M2DF877_MR12" Value="   ON" />
+        <Item Key="pGD1_L2M2DF877_MR13" Value="  POS" />
+        <Item Key="pGD1_L2M2DF877_MR14" Value=" INIT" />
+        <Item Key="pGD1_L2M2DF877_MR15" Value="   ON" />
+        <Item Key="pGD1_L2M2DF877_MR16" Value="  POS" />
+        <Item Key="pGD1_L2M2DF877_MR17" Value="  OFF" />
+        <Item Key="pGD1_L2M2DF877_MR18" Value=" " />
+        <Item Key="pGD1_L2M2DF877_MR19" Value=" " />
+        <Item Key="pGD1_L2M2DF877_MR2" Value="CLOSE" />
+        <Item Key="pGD1_L2M2DF877_MR20" Value=" " />
+        <Item Key="pGD1_L2M2DF877_MR21" Value=" " />
+        <Item Key="pGD1_L2M2DF877_MR22" Value=" LoSH" />
+        <Item Key="pGD1_L2M2DF877_MR23" Value="  LOP" />
+        <Item Key="pGD1_L2M2DF877_MR24" Value="  MOP" />
+        <Item Key="pGD1_L2M2DF877_MR25" Value=" HiTc" />
+        <Item Key="pGD1_L2M2DF877_MR26" Value="  MAN" />
+        <Item Key="pGD1_L2M2DF877_MR3" Value="  OFF" />
+        <Item Key="pGD1_L2M2DF877_MR4" Value="  POS" />
+        <Item Key="pGD1_L2M2DF877_MR5" Value="  POS" />
+        <Item Key="pGD1_L2M2DF877_MR6" Value=" WAIT" />
+        <Item Key="pGD1_L2M2DF877_MR7" Value="   ON" />
+        <Item Key="pGD1_L2M2DF877_MR8" Value="   ON" />
+        <Item Key="pGD1_L2M2DF877_MR9" Value="   ON" />
+        <Item Key="pGD1_L2M2DF882_MRF" Value="cmp_off_down" />
+        <Item Key="pGD1_L2M2DF933_MR0" Value=" " />
+        <Item Key="pGD1_L2M2DF933_MR1" Value="" />
+        <Item Key="pGD1_L2M2DF933_MR2" Value="" />
+        <Item Key="pGD1_L2M2TF851" Value="%" />
+        <Item Key="pGD1_L36M140DF885_MR0" Value=" " />
+        <Item Key="pGD1_L36M140DF885_MR1" Value="CLOSE" />
+        <Item Key="pGD1_L36M140DF885_MR10" Value=" " />
+        <Item Key="pGD1_L36M140DF885_MR11" Value="   ON" />
+        <Item Key="pGD1_L36M140DF885_MR12" Value="   ON" />
+        <Item Key="pGD1_L36M140DF885_MR13" Value="  POS" />
+        <Item Key="pGD1_L36M140DF885_MR14" Value=" INIT" />
+        <Item Key="pGD1_L36M140DF885_MR15" Value=" " />
+        <Item Key="pGD1_L36M140DF885_MR16" Value="  POS" />
+        <Item Key="pGD1_L36M140DF885_MR17" Value=" " />
+        <Item Key="pGD1_L36M140DF885_MR18" Value=" " />
+        <Item Key="pGD1_L36M140DF885_MR19" Value=" " />
+        <Item Key="pGD1_L36M140DF885_MR2" Value="CLOSE" />
+        <Item Key="pGD1_L36M140DF885_MR20" Value=" " />
+        <Item Key="pGD1_L36M140DF885_MR21" Value=" " />
+        <Item Key="pGD1_L36M140DF885_MR22" Value=" LoSH" />
+        <Item Key="pGD1_L36M140DF885_MR23" Value="  LOP" />
+        <Item Key="pGD1_L36M140DF885_MR24" Value="  MOP" />
+        <Item Key="pGD1_L36M140DF885_MR25" Value=" HiTc" />
+        <Item Key="pGD1_L36M140DF885_MR3" Value="  OFF" />
+        <Item Key="pGD1_L36M140DF885_MR4" Value="  POS" />
+        <Item Key="pGD1_L36M140DF885_MR5" Value="  POS" />
+        <Item Key="pGD1_L36M140DF885_MR6" Value=" WAIT" />
+        <Item Key="pGD1_L36M140DF885_MR7" Value="   ON" />
+        <Item Key="pGD1_L36M140DF885_MR8" Value="   ON" />
+        <Item Key="pGD1_L36M140DF885_MR9" Value="   ON" />
+        <Item Key="pGD1_L3M3TF23" Value="Unit On/Off" />
+        <Item Key="pGD1_L4M141DF939_MR0" Value="EXT.SIGNAL" />
+        <Item Key="pGD1_L4M141DF939_MR1" Value="       BMS" />
+        <Item Key="pGD1_L4M141DF939_MR2" Value="       PID" />
+        <Item Key="pGD1_L4M141DF939_MR3" Value=" MIN.SPEED" />
+        <Item Key="pGD1_L4M141DF939_MR4" Value=" MID.SPEED" />
+        <Item Key="pGD1_L4M141DF939_MR5" Value=" MAX.SPEED" />
+        <Item Key="pGD1_L4M141TF939" Value="Set" />
+        <Item Key="pGD1_L4M141TF940" Value="Speed reference: " />
+        <Item Key="pGD1_L4M4DF934_MR0" Value=" FIX.SPEED" />
+        <Item Key="pGD1_L4M4DF934_MR1" Value="EXT.SIGNAL" />
+        <Item Key="pGD1_L4M4DF934_MR2" Value="       BMS" />
+        <Item Key="pGD1_L4M4DF934_MR3" Value="       PID" />
+        <Item Key="pGD1_L4M4DF934_MR4" Value=" MIN.SPEED" />
+        <Item Key="pGD1_L4M4DF934_MR5" Value=" MID.SPEED" />
+        <Item Key="pGD1_L4M4DF934_MR6" Value=" MAX.SPEED" />
+        <Item Key="pGD1_L4M4TF935" Value="Set" />
+        <Item Key="pGD1_L4M4TF936" Value="Cooling capacity" />
+        <Item Key="pGD1_L4M4TF937" Value="reference:" />
+        <Item Key="pGD1_L4M96TF721" Value="Set" />
+        <Item Key="pGD1_L4M96TF726" Value="PID" />
+        <Item Key="pGD1_L4M96TF727" Value="Setp.cooling:" />
+        <Item Key="pGD1_L4M96TF728" Value="Setp.heating:" />
+        <Item Key="pGD1_L4M96TF729" Value="Kp:" />
+        <Item Key="pGD1_L4M96TF730" Value="Ti:" />
+        <Item Key="pGD1_L4M96TF732" Value="Td:" />
+        <Item Key="pGD1_L4M97TF723" Value="Set" />
+        <Item Key="pGD1_L4M97TF942" Value="BMS speed reference:" />
+        <Item Key="pGD1_L5M139TF898" Value="Enve" />
+        <Item Key="pGD1_L5M144TF950" Value="For other info" />
+        <Item Key="pGD1_L5M144TF951" Value="you need to be logged" />
+        <Item Key="pGD1_L5M145DF959_MRF" Value="Cooling" />
+        <Item Key="pGD1_L5M145DF959_MRT" Value="Heating" />
+        <Item Key="pGD1_L5M145DF965_MR0" Value="               Off" />
+        <Item Key="pGD1_L5M145DF965_MR1" Value="   Synchronization" />
+        <Item Key="pGD1_L5M145DF965_MR10" Value="     Post-Dripping" />
+        <Item Key="pGD1_L5M145DF965_MR101" Value="     Waiting sync." />
+        <Item Key="pGD1_L5M145DF965_MR102" Value="     Waiting sync." />
+        <Item Key="pGD1_L5M145DF965_MR103" Value="     Waiting sync." />
+        <Item Key="pGD1_L5M145DF965_MR105" Value="     Waiting sync." />
+        <Item Key="pGD1_L5M145DF965_MR109" Value="     Waiting sync." />
+        <Item Key="pGD1_L5M145DF965_MR11" Value="       Smart start" />
+        <Item Key="pGD1_L5M145DF965_MR2" Value="      Comp.chgovr." />
+        <Item Key="pGD1_L5M145DF965_MR3" Value="BeforeChgovr.delay" />
+        <Item Key="pGD1_L5M145DF965_MR4" Value="      Chgovr.delay" />
+        <Item Key="pGD1_L5M145DF965_MR5" Value="      Comp.Defrost" />
+        <Item Key="pGD1_L5M145DF965_MR6" Value=" Dripping(Comp.On)" />
+        <Item Key="pGD1_L5M145DF965_MR7" Value="      Comp.chgovr." />
+        <Item Key="pGD1_L5M145DF965_MR8" Value=" AfterChgovr.delay" />
+        <Item Key="pGD1_L5M145DF965_MR9" Value="Dripping(Comp.Off)" />
+        <Item Key="pGD1_L5M145DF965_MR99" Value="     Circuit alarm" />
+        <Item Key="pGD1_L5M145TF969" Value="Pwr.Run:" />
+        <Item Key="pGD1_L5M145TF970" Value="Info - Defrost" />
+        <Item Key="pGD1_L5M145TF971" Value="Src fan:" />
+        <Item Key="pGD1_L5M145TF972" Value="EEV:" />
+        <Item Key="pGD1_L5M145TF973" Value="4WayVlv:" />
+        <Item Key="pGD1_L5M145TF974" Value="Status (1-11):" />
+        <Item Key="pGD1_L5M145TF975" Value="step" />
+        <Item Key="pGD1_L5M145TF976" Value="" />
+        <Item Key="pGD1_L5M145TF977" Value="" />
+        <Item Key="pGD1_L5M86DF640_MR0" Value="Off" />
+        <Item Key="pGD1_L5M86DF640_MR1" Value="Off" />
+        <Item Key="pGD1_L5M86DF640_MR2" Value="On" />
+        <Item Key="pGD1_L5M86DF640_MR3" Value="On" />
+        <Item Key="pGD1_L5M86DF640_MR4" Value="Man" />
+        <Item Key="pGD1_L5M86DF640_MR5" Value="Defr" />
+        <Item Key="pGD1_L5M86DF640_MR6" Value="Alrm" />
+        <Item Key="pGD1_L5M86DF922_FT" Value="(    )" />
+        <Item Key="pGD1_L5M86DF923_FT" Value="(    )" />
+        <Item Key="pGD1_L5M86TF630" Value="Info - Compressors" />
+        <Item Key="pGD1_L5M86TF631" Value="Req:" />
+        <Item Key="pGD1_L5M86TF632" Value="%" />
+        <Item Key="pGD1_L5M86TF637" Value="" />
+        <Item Key="pGD1_L5M86TF638" Value="" />
+        <Item Key="pGD1_L5M87DF655_MR0" Value=" " />
+        <Item Key="pGD1_L5M87DF655_MR1" Value="CLOSE" />
+        <Item Key="pGD1_L5M87DF655_MR10" Value=" " />
+        <Item Key="pGD1_L5M87DF655_MR11" Value="   ON" />
+        <Item Key="pGD1_L5M87DF655_MR12" Value="   ON" />
+        <Item Key="pGD1_L5M87DF655_MR13" Value="  POS" />
+        <Item Key="pGD1_L5M87DF655_MR14" Value=" INIT" />
+        <Item Key="pGD1_L5M87DF655_MR15" Value=" " />
+        <Item Key="pGD1_L5M87DF655_MR16" Value="  POS" />
+        <Item Key="pGD1_L5M87DF655_MR17" Value=" " />
+        <Item Key="pGD1_L5M87DF655_MR18" Value=" " />
+        <Item Key="pGD1_L5M87DF655_MR19" Value=" " />
+        <Item Key="pGD1_L5M87DF655_MR2" Value="CLOSE" />
+        <Item Key="pGD1_L5M87DF655_MR20" Value=" " />
+        <Item Key="pGD1_L5M87DF655_MR21" Value=" " />
+        <Item Key="pGD1_L5M87DF655_MR22" Value=" LoSH" />
+        <Item Key="pGD1_L5M87DF655_MR23" Value="  LOP" />
+        <Item Key="pGD1_L5M87DF655_MR24" Value="  MOP" />
+        <Item Key="pGD1_L5M87DF655_MR25" Value=" HiTc" />
+        <Item Key="pGD1_L5M87DF655_MR3" Value="  OFF" />
+        <Item Key="pGD1_L5M87DF655_MR4" Value="  POS" />
+        <Item Key="pGD1_L5M87DF655_MR5" Value="  POS" />
+        <Item Key="pGD1_L5M87DF655_MR6" Value=" WAIT" />
+        <Item Key="pGD1_L5M87DF655_MR7" Value="   ON" />
+        <Item Key="pGD1_L5M87DF655_MR8" Value="   ON" />
+        <Item Key="pGD1_L5M87DF655_MR9" Value="   ON" />
+        <Item Key="pGD1_L5M87TF646" Value="Info - EEV" />
+        <Item Key="pGD1_L5M87TF648" Value="stp" />
+        <Item Key="pGD1_L5M87TF649" Value="%" />
+        <Item Key="pGD1_L5M87TF650" Value="Disch.SH:" />
+        <Item Key="pGD1_L5M87TF651" Value="Disch.T.:" />
+        <Item Key="pGD1_L5M87TF652" Value="Suction SH:" />
+        <Item Key="pGD1_L5M87TF653" Value="Set:" />
+        <Item Key="pGD1_L5M88DF929_MRF" Value="Cond. temp.:" />
+        <Item Key="pGD1_L5M88DF929_MRT" Value="Evap. temp.:" />
+        <Item Key="pGD1_L5M88TF656" Value="Info - Source" />
+        <Item Key="pGD1_L5M88TF657" Value="Setpoint:" />
+        <Item Key="pGD1_L5M88TF658" Value="Source:" />
+        <Item Key="pGD1_L5M90DF893_MRF" Value="Direct(cool)" />
+        <Item Key="pGD1_L5M90DF893_MRT" Value="Reverse(heat)" />
+        <Item Key="pGD1_L5M90TF669" Value="Info - PID control" />
+        <Item Key="pGD1_L5M90TF670" Value="Logic:" />
+        <Item Key="pGD1_L5M90TF671" Value="Act.setpoint:" />
+        <Item Key="pGD1_L5M90TF672" Value="Act.reference:" />
+        <Item Key="pGD1_L5M90TF894" Value="Req:" />
+        <Item Key="pGD1_L5M90TF895" Value="Req:" />
+        <Item Key="pGD1_L5M91TF673" Value="press ENTER for other" />
+        <Item Key="pGD1_L5M91TF674" Value="information" />
+        <Item Key="pGD1_L6M37TF321" Value="Access rights" />
+        <Item Key="pGD1_L6M37TF322" Value="Press ESC to go back" />
+        <Item Key="pGD1_L6M37TF324" Value="Insert Service" />
+        <Item Key="pGD1_L6M37TF325" Value="password to modify" />
+        <Item Key="pGD1_L6M37TF326" Value="Service parameters" />
+        <Item Key="pGD1_L6M38TF328" Value="Access rights" />
+        <Item Key="pGD1_L6M38TF329" Value="Press ESC to go back" />
+        <Item Key="pGD1_L6M38TF331" Value="Insert Manufacturer" />
+        <Item Key="pGD1_L6M38TF332" Value="password to modify" />
+        <Item Key="pGD1_L6M38TF333" Value="Manufactur.parameters" />
+        <Item Key="pGD1_L8M11TF21" Value="Login" />
+        <Item Key="pGD1_L8M11TF22" Value="Password:" />
+        <Item Key="pGD1_L8M11TF52" Value="Wrong Password!" />
+        <Item Key="pGD1_L8M11TF906" Value="Profile:" />
+        <Item Key="pGD1_L8M147TF983" Value="Login" />
+        <Item Key="pGD1_L8M147TF988" Value="No profiles available" />
+      </Items>
+    </Section>
+    <Section Name="pGD2" Category="UI" EmbedTranslation="false">
+      <Items>
+        <Item Key="Test" Value="Test" />
+      </Items>
+    </Section>
+  </Sections>
+</XmlLanguage>

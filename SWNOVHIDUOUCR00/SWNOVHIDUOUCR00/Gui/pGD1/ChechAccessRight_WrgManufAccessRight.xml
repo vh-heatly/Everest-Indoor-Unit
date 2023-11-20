@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData p1:type="MaskData" ID="38" Name="WrgManufAccessRight" Version="3.0" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <MaskElements>
+    <ShapeField ID="327" Name="ShapeField327" Row="0" Column="0" Domain="Shape" Presentation="Shape" Selectable="FALSE" Width="22" Height="1" Fill="true" Element="Rectangle" />
+    <TextField ID="328" Name="TextField328" Row="0" Column="1" TextValue="Access rights" />
+    <TextField ID="329" Name="TextField329" Row="7" Column="0" TextValue="Press ESC to back" />
+    <ShapeField ID="330" Name="ShapeField330" Row="7" Column="0" Domain="Shape" Presentation="Shape" Selectable="FALSE" Width="22" Height="1" Fill="true" Element="Rectangle" />
+    <TextField ID="331" Name="TextField331" Row="2" Column="0" TextValue="Insert Manufacturer" />
+    <TextField ID="332" Name="TextField332" Row="3" Column="0" TextValue="password to modify" />
+    <TextField ID="333" Name="TextField333" Row="4" Column="0" TextValue="Service parameters" />
+  </MaskElements>
+</BaseMaskData>

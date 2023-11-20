@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SToneProject name="SWNOVHIDUOUCR00" guid="40c19f63-cf0d-4c86-a783-38d8aa3a1a0c" type="Standard" version="1.1" projectVersion="0.8.0" Z3VpZC1jcmM="3309266687" author="Carel Industries S.p.A" vendor="Carel Industries S.p.A">
+  <Files>
+    <Folder path="Common">
+      <File path="${Common}\SevenSegmentsFB.st" buildaction="Compile" />
+      <File path="${Common}\TerminalConfigFB.st" buildaction="Compile" />
+      <File path="${Common}\UIManager.st" buildaction="Compile" />
+    </Folder>
+    <Folder path="Gui">
+      <Folder path="Actions" />
+      <Folder path="CustomMasks" />
+    </Folder>
+    <Folder path="Images">
+      <File path="Alarm_End_24x8_Black.bmp" buildaction="Image" />
+      <File path="Alarm_Start_24x8_Black.bmp" buildaction="Image" />
+      <File path="BlackHorizontalSemicircle.bmp" buildaction="Image" />
+      <File path="cmp_off_down.bmp" buildaction="Image" />
+      <File path="cmp_on_down.bmp" buildaction="Image" />
+      <File path="Comp_Detail.bmp" buildaction="Image" />
+      <File path="Comp_OFF.bmp" buildaction="Image" />
+      <File path="Comp_ON.bmp" buildaction="Image" />
+      <File path="Compr_black.bmp" buildaction="Image" />
+      <File path="Compr.bmp" buildaction="Image" />
+      <File path="Cond_Detail.bmp" buildaction="Image" />
+      <File path="Config_black.bmp" buildaction="Image" />
+      <File path="Config.bmp" buildaction="Image" />
+      <File path="Data_Time_black.bmp" buildaction="Image" />
+      <File path="Data_Time.bmp" buildaction="Image" />
+      <File path="Defrost_24x24.bmp" buildaction="Image" />
+      <File path="Digit_0.bmp" buildaction="Image" />
+      <File path="Digit_1.bmp" buildaction="Image" />
+      <File path="Digit_2.bmp" buildaction="Image" />
+      <File path="Digit_3.bmp" buildaction="Image" />
+      <File path="Digit_4.bmp" buildaction="Image" />
+      <File path="Digit_5.bmp" buildaction="Image" />
+      <File path="Digit_6.bmp" buildaction="Image" />
+      <File path="Digit_7.bmp" buildaction="Image" />
+      <File path="Digit_8.bmp" buildaction="Image" />
+      <File path="Digit_9.bmp" buildaction="Image" />
+      <File path="Disabled.bmp" buildaction="Image" />
+      <File path="DischP.bmp" buildaction="Image" />
+      <File path="DOOR.bmp" buildaction="Image" />
+      <File path="EEV_Icon_dsh.bmp" buildaction="Image" />
+      <File path="EEV_Icon_dst.bmp" buildaction="Image" />
+      <File path="EEV_Icon.bmp" buildaction="Image" />
+      <File path="empty.bmp" buildaction="Image" />
+      <File path="Enabled.bmp" buildaction="Image" />
+      <File path="Env_0.bmp" buildaction="Image" />
+      <File path="Env_1.bmp" buildaction="Image" />
+      <File path="Env_1a.bmp" buildaction="Image" />
+      <File path="Env_1c.bmp" buildaction="Image" />
+      <File path="Env_2.bmp" buildaction="Image" />
+      <File path="Env_3.bmp" buildaction="Image" />
+      <File path="Env_4.bmp" buildaction="Image" />
+      <File path="Env_5.bmp" buildaction="Image" />
+      <File path="Env_6.bmp" buildaction="Image" />
+      <File path="Env_7.bmp" buildaction="Image" />
+      <File path="Env_8.bmp" buildaction="Image" />
+      <File path="Env_9.bmp" buildaction="Image" />
+      <File path="Env_Dis.bmp" buildaction="Image" />
+      <File path="EXV_2_black.bmp" buildaction="Image" />
+      <File path="EXV_2.bmp" buildaction="Image" />
+      <File path="ExV_Detail.bmp" buildaction="Image" />
+      <File path="Fan_black.bmp" buildaction="Image" />
+      <File path="Fan.bmp" buildaction="Image" />
+      <File path="History_black.bmp" buildaction="Image" />
+      <File path="History.bmp" buildaction="Image" />
+      <File path="HystoryAlarm_Img.jpg" buildaction="Image" />
+      <File path="I_O_black.bmp" buildaction="Image" />
+      <File path="I_O.bmp" buildaction="Image" />
+      <File path="Info_16x36_C.bmp" buildaction="Image" />
+      <File path="Info_16x36.bmp" buildaction="Image" />
+      <File path="Initializiation_black.bmp" buildaction="Image" />
+      <File path="Initializiation.bmp" buildaction="Image" />
+      <File path="Key_36x16.bmp" buildaction="Image" />
+      <File path="Language_2_black.bmp" buildaction="Image" />
+      <File path="Language_2.bmp" buildaction="Image" />
+      <File path="logo_carel_132x64.bmp" buildaction="Image" />
+      <File path="Logout_black.bmp" buildaction="Image" />
+      <File path="LogOut.bmp" buildaction="Image" />
+      <File path="Maint_black.bmp" buildaction="Image" />
+      <File path="Maint.bmp" buildaction="Image" />
+      <File path="Manuf_black.bmp" buildaction="Image" />
+      <File path="Manuf.bmp" buildaction="Image" />
+      <File path="NoAlarms_93x110.png" buildaction="Image" />
+      <File path="OffSwitch.bmp" buildaction="Image" />
+      <File path="OnOff_16x36_C.bmp" buildaction="Image" />
+      <File path="OnOff_16x36.bmp" buildaction="Image" />
+      <File path="OnSwitch.bmp" buildaction="Image" />
+      <File path="perc.bmp" buildaction="Image" />
+      <File path="PwdChange_black.bmp" buildaction="Image" />
+      <File path="PwdChange.bmp" buildaction="Image" />
+      <File path="Pwrplus_black.bmp" buildaction="Image" />
+      <File path="Pwrplus.bmp" buildaction="Image" />
+      <File path="RegSubType0.bmp" buildaction="Image" />
+      <File path="RegSubType1.bmp" buildaction="Image" />
+      <File path="RegSubType2.bmp" buildaction="Image" />
+      <File path="RegSubType3.bmp" buildaction="Image" />
+      <File path="Rps.bmp" buildaction="Image" />
+      <File path="SerialPort_black.bmp" buildaction="Image" />
+      <File path="SerialPort.bmp" buildaction="Image" />
+      <File path="Set_16x36_C.bmp" buildaction="Image" />
+      <File path="Set_16x36.bmp" buildaction="Image" />
+      <File path="StartImg.bmp" buildaction="Image" />
+      <File path="Status.bmp" buildaction="Image" />
+      <File path="StopImg.bmp" buildaction="Image" />
+      <File path="SuctP.bmp" buildaction="Image" />
+      <File path="three_point.png" buildaction="Image" />
+      <File path="UoM_12x16.bmp" buildaction="Image" />
+      <File path="UoM_black_12x16.bmp" buildaction="Image" />
+      <File path="UpDown2.bmp" buildaction="Image" />
+      <File path="zone_dis.bmp" buildaction="Image" />
+      <File path="zone0.bmp" buildaction="Image" />
+      <File path="zone1.bmp" buildaction="Image" />
+      <File path="zone2.bmp" buildaction="Image" />
+      <File path="zone3.bmp" buildaction="Image" />
+      <File path="zone4.bmp" buildaction="Image" />
+      <File path="zone5.bmp" buildaction="Image" />
+      <File path="zone6.bmp" buildaction="Image" />
+      <File path="zone7.bmp" buildaction="Image" />
+      <File path="zone8.bmp" buildaction="Image" />
+      <File path="zone9.bmp" buildaction="Image" />
+    </Folder>
+    <Folder path="Lang">
+      <File path="EN.lang" buildaction="Language" />
+      <File path="IT.lang" buildaction="Language" />
+    </Folder>
+    <Folder path="Libs">
+      <File path="Alarm_Mng_v.1.1.7.stlib" buildaction="Compile" libnodeid="94e30f76-c9a1-474c-9f07-923c10bf31c2" />
+      <File path="CntDwnSafT_v.1.4.3.stlib" buildaction="Compile" libnodeid="be6ff42a-d5dd-49ea-a17a-bb48fbe10dd7" />
+      <File path="Counters_v.1.0.1.stlib" buildaction="Compile" libnodeid="02e9498a-02df-4826-b535-19d25454a3fa" />
+      <File path="ExpFilt_v.1.0.2.stlib" buildaction="Compile" libnodeid="7507d007-3531-4175-a1a4-685f81faf36f" />
+      <File path="IOMng_Basic_v.2.1.1.C.stlib" buildaction="Compile" libnodeid="f6b740f5-e55c-4756-92b9-07d4a8001688" />
+      <File path="Logics_v.1.0.0.stlib" buildaction="Compile" libnodeid="b239c18b-9209-4e30-8d6d-a9245a04a8db" />
+      <File path="PID_ADV_v.3.0.0.stlib" buildaction="Compile" libnodeid="88df16c7-bc12-4710-ae91-90b24d18aa7e" />
+      <File path="PID_Incr_v.1.1.1.stlib" buildaction="Compile" libnodeid="0d28d89e-71a6-4e58-ae68-ff03c48306b9" />
+      <File path="SignalGeneration_v.1.0.0.stlib" buildaction="Compile" libnodeid="9f560764-180f-4bb1-9204-38b7f3fbd41f" />
+      <File path="SystemMenu_v.1.0.1.stlib" buildaction="Compile" libnodeid="1e8154b3-e375-4cbe-9cde-30854e5be2b3" />
+      <File path="TerminalDetector_v.1.0.5.stlib" buildaction="Compile" libnodeid="f3c34ffb-e2c7-4d46-af41-39c67ba7b654" />
+      <File path="Thermodynamic_v.1.0.0.stlib" buildaction="Compile" libnodeid="d1c6afe7-8874-43e6-a0ee-1300d198c5f7" />
+    </Folder>
+    <Folder path="Properties">
+      <File path="Resources.st" buildaction="Compile" />
+      <File path="Variables.st" buildaction="Compile" />
+    </Folder>
+    <Folder path="Sources">
+      <Folder path="Definitions">
+        <File path="UserDefinedDataType.st.st" buildaction="Compile" />
+        <File path="VAR_GLOBAL_CONSTANT.st" buildaction="Compile" />
+        <File path="VAR_GLOBAL_PERSISTENT.st" buildaction="Compile" />
+        <File path="VAR_GLOBAL_RETAIN.st" buildaction="Compile" />
+        <File path="VAR_GLOBAL.st" buildaction="Compile" />
+      </Folder>
+      <Folder path="Functions">
+        <Folder path="Compressor" />
+        <Folder path="Date" />
+        <Folder path="EEV" />
+        <Folder path="GeneralMng">
+          <File path="FindTimezoneIndex.st" buildaction="Compile" />
+          <File path="SoftwareSafeUpload.st" buildaction="Compile" />
+          <File path="SplitPrjGUID.st" buildaction="Compile" />
+        </Folder>
+        <Folder path="ParameterListWidget">
+          <File path="GetMultistateDesc.st" buildaction="Compile" />
+          <File path="MultiStateMng.st" buildaction="Compile" />
+          <File path="ScrollableTextMng.st" buildaction="Compile" />
+          <File path="UoM_ToString.st" buildaction="Compile" />
+        </Folder>
+        <Folder path="SelectorWidget">
+          <File path="InitProfiles.st" buildaction="Compile" />
+        </Folder>
+        <Folder path="SerialSettings">
+          <File path="getClientPort.st" buildaction="Compile" />
+          <File path="getServerPort.st" buildaction="Compile" />
+          <File path="SetupSerialSettings.st" buildaction="Compile" />
+        </Folder>
+        <Folder path="Utils">
+          <File path="DigitConv.st" buildaction="Compile" />
+          <File path="GetPasseParToutPwd.st" buildaction="Compile" />
+          <File path="SplitString.st" buildaction="Compile" />
+          <File path="TruncRealString.st" buildaction="Compile" />
+          <File path="uValueToInt.st" buildaction="Compile" />
+          <File path="uValueToString.st" buildaction="Compile" />
+        </Folder>
+      </Folder>
+      <Folder path="Programs">
+        <File path="010_GENERAL_MNG.st" buildaction="Compile" />
+        <File path="020_InputMng.st" buildaction="Compile" />
+        <File path="030_AlarmsMng.st" buildaction="Compile" />
+        <File path="031_StoreAlarms.st" buildaction="Compile" />
+        <File path="040_OnOffUnit.st" buildaction="Compile" />
+        <File path="050_RegulationMode.st" buildaction="Compile" />
+        <File path="060_DHWRegulation.st" buildaction="Compile" />
+        <File path="070_HeatingRegulation.st" buildaction="Compile" />
+        <File path="071_ImmersionHeater.st" buildaction="Compile" />
+        <File path="080_CoolingRegulation.st" buildaction="Compile" />
+        <File path="090_OutdoorUnitMng.st" buildaction="Compile" />
+        <File path="100_PumpMng.st" buildaction="Compile" />
+        <File path="110_HoursCounterMng.st" buildaction="Compile" />
+        <File path="120_OutputMng.st" buildaction="Compile" />
+        <File path="950_GENERAL_MNG_END.st" buildaction="Compile" />
+        <File path="999_ExceptionManager.st" buildaction="Compile" />
+      </Folder>
+      <Folder path="Widgets" />
+    </Folder>
+    <File path="ClientProtocols.stmp" buildaction="Generate" />
+    <File path="IO_Config.st" buildaction="Compile" />
+    <File path="Parameters.stparam" buildaction="Generate" />
+    <File path="pGD2.stgui" buildaction="Generate" />
+    <File path="ServerProtocols.stsp" buildaction="Generate" />
+  </Files>
+  <BuildOptions>
+    <Configuration name="Debug" debug="true" preprocessordefinitions="DEBUG ALARM_VALUES" inheritmethodvisibility="true" target="STM32_full_uPC3" />
+    <Configuration name="Release" preprocessordefinitions="RELEASE" inheritmethodvisibility="true" target="STM32_full_uPC3" />
+    <Configuration name="SWNOVHIDUOUCR00" debug="true" preprocessordefinitions="DEBUG ALARM_VALUES PGD USE_AYNC CRLIFDEF_LIGHT_ROT CRLIFDEF_CIRC_DESTABIL IO_MNG_CORE0" inheritmethodvisibility="true" target="STM32_full_uPC3" />
+  </BuildOptions>
+</SToneProject>

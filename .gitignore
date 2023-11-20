@@ -1,0 +1,21 @@
+# This file defines what files and directories are excluded from the repo. For more info on the syntax, check https://git-scm.com/docs/gitignore.
+# Exclude STone outputs
+Generated/
+Output/
+# Exclude local settings of STone (so every user can have it's own)
+SolutionUserSettings.xml
+# Exclude log files produced by STone automatic tests and automatically placed inside project folder.
+# If there is the need to store a particular log in the repo, it can be moved to a different folder.
+AutomaticTest/
+# Exclude c.web log file
+atserver_std.log
+# Exclude lock file
+*.lock
+# Exclude files produced by Spark*
+.user
+# Exclude cloud packet (workspace exported from Spark + c.web distribute)
+#CloudPacket/
+# Exclude files produced by VSCode
+.vscode/
+# Exclude temporary files
+~$*

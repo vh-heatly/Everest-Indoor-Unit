@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData
+  p1:type="MaskData"
+  ID="0"
+  Name="MskMain"
+  Version="3.0" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <MaskElements>
+    <DataField
+      ID="0"
+      Name="DataField0"
+      Row="0"
+      Column="0"
+      Domain="REAL"
+      Presentation="VariableWithUoM"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="4"
+      ShowUoM="true"
+      ZeroSuppression="true"
+      FormatString="-RR.R"
+      VariableName="Info_PWRP.RotorSpeed.Rps"
+      Min="-9999.9"
+      Max="9999.9"
+      UoM="rps" />
+    <DataField
+      ID="1"
+      Name="DataField1"
+      Row="1"
+      Column="0"
+      Domain="USINT"
+      Presentation="IAR"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="2"
+      ZeroSuppression="true"
+      FormatString="II"
+      VariableName="UnitStatus"
+      Min="0"
+      Max="28">
+      <IntStates>
+        <State
+          ID="0"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR0" />
+        <State
+          ID="2"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR2" />
+        <State
+          ID="4"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR4" />
+        <State
+          ID="6"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR6" />
+        <State
+          ID="7"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR7" />
+        <State
+          ID="8"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR8" />
+        <State
+          ID="1"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR1" />
+        <State
+          ID="9"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR9" />
+        <State
+          ID="10"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR10" />
+        <State
+          ID="11"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR11" />
+        <State
+          ID="15"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR15" />
+        <State
+          ID="18"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR18" />
+        <State
+          ID="19"
+          Type="Text"
+          TranslationKey="SevenSegments_L0M0DF1_MR19" />
+      </IntStates>
+    </DataField>
+  </MaskElements>
+</BaseMaskData>

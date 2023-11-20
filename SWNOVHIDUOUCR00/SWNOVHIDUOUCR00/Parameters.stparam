@@ -1,0 +1,2014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ParametersConfiguration>
+  <Parameters>
+    <Parameter
+      Description="(Reserve to APPs) Every time it's value change the PLC change it's RTC"
+      Name="APPsCfgRTC.SetRTC"
+      Attributes="DateTrigger System Cloneable" />
+    <Parameter
+      Description="(Reserve to APPs) New &quot;Date and Time&quot; used to update the RTC"
+      Name="APPsCfgRTC.DateTime"
+      Attributes="DateSet System Cloneable" />
+    <Parameter
+      Description="(Reserve to APPs) New &quot;Time Zone&quot; used to update the RTC"
+      Name="APPsCfgRTC.TimeZone"
+      Attributes="DateTimeZone System Cloneable" />
+    <Parameter
+      InitValue="4"
+      Name="FB2_Baud"
+      Persistence="Persistent"
+      Acronym="Y15"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="TRUE"
+      Name="FB2_ChangeSet"
+      Acronym="Y17"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="FB2_Conf"
+      Persistence="Persistent"
+      Acronym="Y16"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="LogAlrmRes"
+      Acronym="Y09"
+      Attributes="LogAlarmReset" />
+    <Parameter
+      InitValue="0"
+      Name="UnitStatus"
+      ReadOnly="true"
+      Acronym="I00"
+      Attributes="None" />
+    <Parameter
+      Name="UnitOn"
+      ReadOnly="true"
+      Acronym="W43"
+      Attributes="None" />
+    <Parameter
+      InitValue="FALSE"
+      Name="En_Buzzer"
+      Persistence="Persistent"
+      Acronym="Y98"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ResAlrmByBMS"
+      Acronym="q01"
+      Attributes="AlarmMasterReset" />
+    <Parameter
+      Description="Unit remote On/Off - logic"
+      Name="Din_Cfg.Fct.RemOnOff.Logic"
+      Persistence="Persistent"
+      Acronym="L14-L"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Description="Unit remote On/Off - channel"
+      MinValue="0"
+      MaxValue="32"
+      Name="Din_Cfg.Fct.RemOnOff.Ch"
+      Persistence="Persistent"
+      Acronym="L14-C"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Description="Global alarm - logic"
+      Name="Dout_Cfg.Fct.GlbAl.Logic"
+      Persistence="Persistent"
+      Acronym="L44-L"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Description="Global alarm - channel"
+      MinValue="0"
+      MaxValue="29"
+      Name="Dout_Cfg.Fct.GlbAl.Ch"
+      Persistence="Persistent"
+      Acronym="L44-C"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Description="Error in the number of retain memory writings"
+      Name="Alarms.Table.Al_RetainMemNo.Info.Active"
+      Acronym="A01"
+      Attributes="None" />
+    <Parameter
+      Name="Alarms.Table.Al_RetainMemNo.Info.Code"
+      Attributes="System" />
+    <Parameter
+      Description="Unit remote On/Off"
+      Name="Din_Data.Fct.RemOnOff"
+      ReadOnly="true"
+      Acronym="L14"
+      Attributes="None" />
+    <Parameter
+      Name="UnitPwrRun"
+      ReadOnly="true"
+      Acronym="I01"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="SPV_OfflineMng"
+      Persistence="Persistent"
+      Acronym="Y06"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="20"
+      Name="SPV_OfflineTimeout"
+      Persistence="Persistent"
+      Acronym="Y04"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="FALSE"
+      Name="KeybOnOff"
+      Persistence="Retain"
+      Acronym="q00"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="300"
+      Name="ErasureWindowSize"
+      Persistence="Persistent"
+      Attributes="System Configurable Cloneable" />
+    <Parameter
+      InitValue="3"
+      Name="ErasureWindowsNumber"
+      Persistence="Persistent"
+      Attributes="System Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="MaxErasure"
+      Persistence="Persistent"
+      Acronym="X16"
+      Attributes="System Configurable Cloneable" />
+    <Parameter
+      InitValue="2"
+      Name="LanguageID"
+      Persistence="Persistent"
+      Acronym="Y07"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="1"
+      Name="UoMZoneHMI"
+      Persistence="Persistent"
+      Acronym="Y08"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="BmsOnOff"
+      Acronym="q02"
+      Attributes="None" />
+    <Parameter
+      Name="RestoreDefault"
+      Acronym="Y99"
+      Attributes="None" />
+    <Parameter
+      Name="UnitPwrReq"
+      ReadOnly="true"
+      Acronym="I02"
+      Attributes="None" />
+    <Parameter
+      InitValue="TRUE"
+      Name="SPV_ChangeSet"
+      Acronym="Y05"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="SPV_Port"
+      Persistence="Persistent"
+      Acronym="Y00"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="1"
+      Name="SPV_Addr"
+      Persistence="Persistent"
+      Acronym="Y01"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="7"
+      Name="SPV_Baud"
+      Persistence="Persistent"
+      Acronym="Y02"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="1"
+      Name="SPV_Conf"
+      Persistence="Persistent"
+      Acronym="Y03"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="0"
+      Name="MBM_Line_Port"
+      Persistence="Persistent"
+      Acronym="Y14"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Description="Global alarm"
+      Name="Dout_Data.Fct.GlbAl"
+      ReadOnly="true"
+      Acronym="Dout_GlbAl"
+      Attributes="None" />
+    <Parameter
+      Name="Unit_CoolHeat"
+      ReadOnly="true"
+      Acronym="I19"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="KeybUnitReq"
+      Persistence="Persistent"
+      Acronym="q13"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="BmsUnitReq"
+      Acronym="q03"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="DayIn"
+      Acronym="Y44"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="MonthIn"
+      Acronym="Y45"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="YearIn"
+      Acronym="Y46"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="MinuteIn"
+      Acronym="Y48"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="HourIn"
+      Acronym="Y47"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="TimezoneIdx"
+      Acronym="Y50"
+      Attributes="Cloneable" />
+    <Parameter
+      Name="SwVersion"
+      ReadOnly="true"
+      Acronym="I30"
+      Attributes="None" />
+    <Parameter
+      Description="Unit remote On/Off - board"
+      Name="Din_Cfg.Fct.RemOnOff.Board"
+      Persistence="Persistent"
+      Acronym="L14-B"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Description="Unit remote On/Off - enabled"
+      Name="Din_Cfg.Fct.RemOnOff.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Acronym="L14-E"
+      Attributes="None" />
+    <Parameter
+      Description="Unit remote On/Off - error"
+      Name="Din_Info.Fct.RemOnOff.Error"
+      ReadOnly="true"
+      Acronym="L14-err"
+      Attributes="None" />
+    <Parameter
+      Description="Unit remote On/Off - configured"
+      Name="Din_Info.Fct.RemOnOff.Configured"
+      ReadOnly="true"
+      Acronym="L14-cfg"
+      Attributes="None" />
+    <Parameter
+      Description="Global alarm - board"
+      Name="Dout_Cfg.Fct.GlbAl.Board"
+      Persistence="Persistent"
+      Acronym="L44-B"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Description="Global alarm - enabled"
+      Name="Dout_Cfg.Fct.GlbAl.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Acronym="L44-E"
+      Attributes="None" />
+    <Parameter
+      Description="Global alarm - configured"
+      Name="Dout_Info.Fct.GlbAl.Configured"
+      ReadOnly="true"
+      Acronym="L44-cfg"
+      Attributes="None" />
+    <Parameter
+      Description="Global alarm - error"
+      Name="Dout_Info.Fct.GlbAl.Error"
+      ReadOnly="true"
+      Acronym="L44-err"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="CurrLocTime.Hour"
+      ReadOnly="true"
+      Acronym="W52"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="CurrLocTime.Day"
+      ReadOnly="true"
+      Acronym="W49"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="CurrLocTime.Minute"
+      ReadOnly="true"
+      Acronym="W53"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="CurrLocTime.Month"
+      ReadOnly="true"
+      Acronym="W50"
+      Attributes="None" />
+    <Parameter
+      InitValue="2021"
+      Name="CurrLocTime.Year"
+      ReadOnly="true"
+      Acronym="W51"
+      Attributes="None" />
+    <Parameter
+      Name="Access_Sys"
+      Attributes="None" />
+    <Parameter
+      Name="Access_Service"
+      Attributes="None" />
+    <Parameter
+      Name="Dout_Cfg.Fct.GlbAl.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.GlbAl.GroupID"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.GlbAl.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.GlbAl.tOff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.GlbAl.tOn"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Info.Fct.GlbAl.Trigger"
+      Attributes="None" />
+    <Parameter
+      InitValue="40"
+      Name="DhwPumpSetP"
+      Attributes="Cloneable" />
+    <Parameter
+      InitValue="7"
+      Name="DhwPumpPGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="10"
+      Name="DhwPumpMin"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="DhwPumpMax"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="100"
+      Name="DhwPumpIGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="10"
+      Name="DhwPumpDGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="DHWProc"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="DhwFlowSwitchOnDel"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="5"
+      Name="ExtHotWatrDiff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="65"
+      Name="ExtHotWatrStopTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="En_ExtHotWatr"
+      Attributes="None" />
+    <Parameter
+      Name="Ain_Data.Fct.DHWBottomTemp"
+      ReadOnly="true"
+      Acronym="DHWBottomTemp"
+      Attributes="None" />
+    <Parameter
+      Name="Ain_Data.Fct.DHWMiddleTemp"
+      ReadOnly="true"
+      Acronym="DHWMiddleTemp"
+      Attributes="None" />
+    <Parameter
+      Name="Ain_Data.Fct.DHWSupplyTemp"
+      ReadOnly="true"
+      Acronym="DHWSupplyTemp"
+      Attributes="None" />
+    <Parameter
+      Name="Ain_Data.Fct.DHWTopTemp"
+      ReadOnly="true"
+      Acronym="DHWTopTemp"
+      Attributes="None" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWBottomTemp.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWBottomTemp.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWBottomTemp.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWBottomTemp.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="Ain_Cfg.Fct.DHWBottomTemp.Filter"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWBottomTemp.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWMiddleTemp.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWMiddleTemp.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWMiddleTemp.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWMiddleTemp.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="Ain_Cfg.Fct.DHWMiddleTemp.Filter"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWMiddleTemp.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWSupplyTemp.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWSupplyTemp.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWSupplyTemp.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWSupplyTemp.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="Ain_Cfg.Fct.DHWSupplyTemp.Filter"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWSupplyTemp.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWTopTemp.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWTopTemp.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWTopTemp.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWTopTemp.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="Ain_Cfg.Fct.DHWTopTemp.Filter"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.DHWTopTemp.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Aout_Data.Fct.CircPump1"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Aout_Data.Fct.CircPump2"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Aout_Cfg.Fct.CircPump1.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Aout_Cfg.Fct.CircPump1.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Aout_Cfg.Fct.CircPump1.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Aout_Cfg.Fct.CircPump2.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Aout_Cfg.Fct.CircPump2.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Aout_Cfg.Fct.CircPump2.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Aout_Cfg.Fct.CircPump2.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Din_Data.Fct.FlowSw"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Din_Cfg.Fct.FlowSw.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Din_Cfg.Fct.FlowSw.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Din_Cfg.Fct.FlowSw.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Din_Cfg.Fct.FlowSw.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Description="Bottom temperature probe alarm"
+      Name="Alarms.Table.Al_DHWBottomTemp.Info.Active"
+      Acronym="A02"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_DHWBottomTemp.Info.Code"
+      Attributes="System" />
+    <Parameter
+      Description="Middle temperature probe alarm"
+      Name="Alarms.Table.Al_DHWMiddleTemp.Info.Active"
+      Acronym="A03"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_DHWMiddleTemp.Info.Code"
+      Attributes="System" />
+    <Parameter
+      Description="Top temperature probe alarm"
+      Name="Alarms.Table.Al_DHWTopTemp.Info.Active"
+      Acronym="A04"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_DHWTopTemp.Info.Code"
+      Attributes="System" />
+    <Parameter
+      Description="Supply temperature probe alarm"
+      Name="Alarms.Table.Al_DHWSupplyTemp.Info.Active"
+      Acronym="A05"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_DHWSupplyTemp.Info.Code"
+      Attributes="System" />
+    <Parameter
+      InitValue="30"
+      Name="DhwRefMiddle"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="10"
+      Name="DhwRefBottom"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="40"
+      Name="DhwRefTop"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="SignalTyp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ShuntVlv_Req"
+      Attributes="None" />
+    <Parameter
+      Name="ShuntVlv_On"
+      Attributes="None" />
+    <Parameter
+      InitValue="10"
+      Name="ShuntPGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ShuntManMode"
+      Attributes="None" />
+    <Parameter
+      InitValue="100"
+      Name="ShuntIGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="7"
+      Name="ShuntDGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="SG_Status"
+      Attributes="None" />
+    <Parameter
+      Name="SG_Offset"
+      Attributes="None" />
+    <Parameter
+      Name="SetP_ExtAdj"
+      Attributes="None" />
+    <Parameter
+      InitValue="50"
+      Name="PumpspdHeatAuto"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="PumpSpdDhwFix"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="100"
+      Name="PumpSpdDefrost"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="PumpSpdCoolAuto"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="OutDoorTempFilter"
+      Attributes="None" />
+    <Parameter
+      Name="OU_SuctTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_OutsideTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_SuctP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Req"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Online"
+      Attributes="None" />
+    <Parameter
+      Name="OU_EnvZone"
+      Attributes="None" />
+    <Parameter
+      Name="OU_DscgTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_DscgP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_CompTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_CompOn"
+      Attributes="None" />
+    <Parameter
+      Name="OU_CompHeat"
+      Attributes="None" />
+    <Parameter
+      Name="OpState"
+      Attributes="None" />
+    <Parameter
+      InitValue="2"
+      Name="OpModeSwitchDelay"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="OpModeAllowImm"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="OpModeAllowHeat"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="OpModeAllowCool"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="NoOutdoorUnit"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="2"
+      Name="ImmModeTempHyst"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="2"
+      Name="ImmModeTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="3"
+      Name="ImmHeatStage"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ImmHeatReq"
+      Attributes="None" />
+    <Parameter
+      Name="ImmHeatOnly"
+      Attributes="None" />
+    <Parameter
+      Name="HeatReq"
+      Attributes="None" />
+    <Parameter
+      Name="HeatRegPGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="100"
+      Name="HeatRegIGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="10"
+      Name="HeatRegDGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="2"
+      Name="HeatModeTempHyst"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="10"
+      Name="HeatModeTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="HeatReg_Temp"
+      Attributes="None" />
+    <Parameter
+      Name="HeatingNoOU"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="GblAlarm"
+      Attributes="None" />
+    <Parameter
+      InitValue="FALSE"
+      Name="FrcEEVDuringDfr"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Flow_Present"
+      Attributes="None" />
+    <Parameter
+      InitValue="75"
+      Name="FixOnThrsh"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="25"
+      Name="FixOffThrsh"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="TRUE"
+      Name="En_SPV_OnOff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="En_SelMode"
+      Attributes="None" />
+    <Parameter
+      Name="En_OU"
+      Attributes="None" />
+    <Parameter
+      Name="En_DhwPumpManMode"
+      Attributes="None" />
+    <Parameter
+      Name="En_AutoMode"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ECT"
+      Attributes="None" />
+    <Parameter
+      InitValue="40"
+      Name="DHWStartTemp"
+      Attributes="None" />
+    <Parameter
+      InitValue="40"
+      Name="DHWStopTemp"
+      Attributes="None" />
+    <Parameter
+      InitValue="55"
+      Name="DHWStrtProc"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="DhwPumpManReq"
+      Attributes="None" />
+    <Parameter
+      InitValue="55"
+      Name="DhwNormStopTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="49"
+      Name="DhwNormStartTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="1"
+      Name="DhwMode"
+      Attributes="None" />
+    <Parameter
+      InitValue="49"
+      Name="DhwEcoStopTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="42"
+      Name="DhwEcoStartTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="55"
+      Name="DhwComfStartTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="62"
+      Name="DhwComfStopTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="DhwCircPump1Spd"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="CoolReq"
+      Attributes="None" />
+    <Parameter
+      InitValue="2"
+      Name="CoolModeTempHyst"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="20"
+      Name="CoolModeTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Data.Fct.ClimSupplyTemp"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Ain_Data.Fct.OutDoorTemp"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Ain_Data.Fct.SysPress"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Ain_Cfg.Fct.OutDoorTemp.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.OutDoorTemp.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.OutDoorTemp.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.OutDoorTemp.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="Ain_Cfg.Fct.OutDoorTemp.Filter"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.OutDoorTemp.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.SysPress.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.SysPress.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.SysPress.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.SysPress.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="Ain_Cfg.Fct.SysPress.Filter"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.SysPress.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.ClimSupplyTemp.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.ClimSupplyTemp.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.ClimSupplyTemp.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.ClimSupplyTemp.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="Ain_Cfg.Fct.ClimSupplyTemp.Filter"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Cfg.Fct.ClimSupplyTemp.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Offset.Fct.ClimSupplyTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Offset.Fct.DHWBottomTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Offset.Fct.DHWMiddleTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Offset.Fct.DHWSupplyTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Offset.Fct.DHWTopTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Offset.Fct.OutDoorTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Offset.Fct.SysPress"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Din_Cfg.Fct.SG1.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Din_Cfg.Fct.SG1.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Din_Cfg.Fct.SG1.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Din_Cfg.Fct.SG2.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Din_Cfg.Fct.SG2.Enable"
+      Persistence="Persistent"
+      ReadOnly="true"
+      Attributes="None" />
+    <Parameter
+      Name="Din_Cfg.Fct.SG2.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Din_Data.Fct.SG1"
+      Attributes="None" />
+    <Parameter
+      Name="Din_Data.Fct.SG2"
+      Attributes="None" />
+    <Parameter
+      Name="PID_HeatReq"
+      Attributes="None" />
+    <Parameter
+      InitValue="FALSE"
+      Name="ManMode_Heat"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="FALSE"
+      Name="ManMode_Cool"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Alarms.Table.Al_ClimSupplyTemp.Info.Active"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_ClimSupplyTemp.Info.Code"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_OUOffline.Info.Active"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_OUOffline.Info.Code"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_OutDoorTemp.Info.Active"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_OutDoorTemp.Info.Code"
+      Attributes="System" />
+    <Parameter
+      Name="Alarms.Table.Al_SysPress.Info.Active"
+      Attributes="System" />
+    <Parameter
+      Name="OU_CurrSpd"
+      Attributes="None" />
+    <Parameter
+      Name="OU_CurrSH"
+      Attributes="None" />
+    <Parameter
+      Name="OU_SHSetP"
+      Attributes="None" />
+    <Parameter
+      Name="DhwCircPumpReq"
+      Attributes="None" />
+    <Parameter
+      Name="PID_DHWReq"
+      Attributes="None" />
+    <Parameter
+      InitValue="300"
+      Name="DhwTimerStop"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="DhwTimerIncComp"
+      Attributes="None" />
+    <Parameter
+      InitValue="45"
+      Name="DhwSetPointStrtNor"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="45"
+      Name="DhwSetPointStrtEco"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="DhwSetPointStrtCom"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="40"
+      Name="DhwSetPointStpNor"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="40"
+      Name="DhwSetPointStpEco"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="40"
+      Name="DhwSetPointStpCom"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="DHWReq"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="DHWRegPGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="100"
+      Name="DHWRegIGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="10"
+      Name="DHWRegDGain"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="DHWReg_SetP"
+      Attributes="None" />
+    <Parameter
+      Name="DHWNeed"
+      Attributes="None" />
+    <Parameter
+      InitValue="20"
+      Name="DHWCurve_SetP[0]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="21"
+      Name="DHWCurve_SetP[1]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="22"
+      Name="DHWCurve_SetP[2]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="23"
+      Name="DHWCurve_SetP[3]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="24"
+      Name="DHWCurve_SetP[4]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="25"
+      Name="DHWCurve_SetP[5]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="26"
+      Name="DHWCurve_SetP[6]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="27"
+      Name="DHWCurve_SetP[7]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="28"
+      Name="DHWCurve_SetP[8]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="29"
+      Name="DHWCurve_SetP[9]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="30"
+      Name="DHWCurve_SetP[10]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="31"
+      Name="DHWCurve_SetP[11]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="32"
+      Name="DHWCurve_SetP[12]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="33"
+      Name="DHWCurve_SetP[13]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="34"
+      Name="DHWCurve_SetP[14]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="35"
+      Name="DHWCurve_SetP[15]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="36"
+      Name="DHWCurve_SetP[16]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="37"
+      Name="DHWCurve_SetP[17]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="38"
+      Name="DHWCurve_SetP[18]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="20"
+      Name="DHWCurve_OutDoorTemp[0]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="18"
+      Name="DHWCurve_OutDoorTemp[1]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="16"
+      Name="DHWCurve_OutDoorTemp[2]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="14"
+      Name="DHWCurve_OutDoorTemp[3]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="12"
+      Name="DHWCurve_OutDoorTemp[4]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="10"
+      Name="DHWCurve_OutDoorTemp[5]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="8"
+      Name="DHWCurve_OutDoorTemp[6]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="6"
+      Name="DHWCurve_OutDoorTemp[7]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="4"
+      Name="DHWCurve_OutDoorTemp[8]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="2"
+      Name="DHWCurve_OutDoorTemp[9]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="0"
+      Name="DHWCurve_OutDoorTemp[10]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-2"
+      Name="DHWCurve_OutDoorTemp[11]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-4"
+      Name="DHWCurve_OutDoorTemp[12]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-6"
+      Name="DHWCurve_OutDoorTemp[13]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-8"
+      Name="DHWCurve_OutDoorTemp[14]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-10"
+      Name="DHWCurve_OutDoorTemp[15]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-12"
+      Name="DHWCurve_OutDoorTemp[16]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-14"
+      Name="DHWCurve_OutDoorTemp[17]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-16"
+      Name="DHWCurve_OutDoorTemp[18]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-18"
+      Name="DHWCurve_OutDoorTemp[19]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="DhwBT3StrtNor"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="DhwBT3StrtEco"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="55"
+      Name="DhwBT3StrtCom"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="40"
+      Name="DhwBT3StopNor"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="40"
+      Name="DhwBT3StopEco"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="40"
+      Name="DhwBT3StopCom"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="DHWBoost"
+      Attributes="None" />
+    <Parameter
+      Name="DHW_CompOn"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.UnitStatus"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SwVersion"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SuctTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SuctP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.OutDoorTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.OnOff"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.MinRPS"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.MaxRPS"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.FrcDefrostOn"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.FrcDefrostOff"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EnvZone"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_PosPerc"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_CompHeat"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.ECT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.DscgTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.DscgP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.DefrostStatus"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CurrSpd_RPS"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CurrSHSetP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CurrSH"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CompTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CompReq"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CompOn"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="Sel_HeatCurve_SetP"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="RevVlv_On"
+      Attributes="None" />
+    <Parameter
+      Name="PumpReq_FlowPresent"
+      Attributes="None" />
+    <Parameter
+      InitValue="10"
+      Name="PrbAlrm_DT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="0"
+      Name="OutDoorTempSel"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="FALSE"
+      Name="ManMode"
+      Attributes="None" />
+    <Parameter
+      Name="ECT_Heat_Offset"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ECT_DHW_Offset"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ECT_Cool_Offset"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="0"
+      Name="CompSpdMan"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="ImmHeatManMode"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="PumpSpdGP1Man"
+      Attributes="None" />
+    <Parameter
+      InitValue="60"
+      Name="ImmHeatStepDelay"
+      Attributes="None" />
+    <Parameter
+      Name="Conn_OutDoorTemp"
+      Attributes="None" />
+    <Parameter
+      InitValue="4"
+      Name="TempSG2"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="2"
+      Name="TempSG1"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="1"
+      Name="SystemCfg"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ShuntVlv_Off"
+      Attributes="None" />
+    <Parameter
+      Name="ImmHeatBlock"
+      Attributes="None" />
+    <Parameter
+      Name="EBHP"
+      Attributes="None" />
+    <Parameter
+      InitValue="-60"
+      Name="EBHPCompStrt"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="1000"
+      Name="EBHPMax"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-1000"
+      Name="EBHPMin"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="50"
+      Name="EBHPStepOut"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="700"
+      Name="EBtepImm"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="100"
+      Name="EBHPStopComp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-700"
+      Name="EBShunt"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="HeatingBlock"
+      Attributes="None" />
+    <Parameter
+      InitValue="-0.1"
+      Name="DHWCurve_K[0]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-0.2"
+      Name="DHWCurve_K[1]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-0.3"
+      Name="DHWCurve_K[2]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-0.4"
+      Name="DHWCurve_K[3]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-0.5"
+      Name="DHWCurve_K[4]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-0.6"
+      Name="DHWCurve_K[5]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-0.7"
+      Name="DHWCurve_K[6]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-0.8"
+      Name="DHWCurve_K[7]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-0.9"
+      Name="DHWCurve_K[8]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-1"
+      Name="DHWCurve_K[9]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-1.1"
+      Name="DHWCurve_K[10]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-1.2"
+      Name="DHWCurve_K[11]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-1.3"
+      Name="DHWCurve_K[12]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-1.4"
+      Name="DHWCurve_K[13]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="-1.5"
+      Name="DHWCurve_K[14]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="23"
+      Name="DHWCurve_M[0]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="25"
+      Name="DHWCurve_M[1]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="27"
+      Name="DHWCurve_M[2]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="29"
+      Name="DHWCurve_M[3]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="31"
+      Name="DHWCurve_M[4]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="33"
+      Name="DHWCurve_M[5]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="35"
+      Name="DHWCurve_M[6]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="37"
+      Name="DHWCurve_M[7]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="39"
+      Name="DHWCurve_M[8]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="41"
+      Name="DHWCurve_M[9]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="43"
+      Name="DHWCurve_M[10]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="45"
+      Name="DHWCurve_M[11]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="47"
+      Name="DHWCurve_M[12]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="49"
+      Name="DHWCurve_M[13]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="51"
+      Name="DHWCurve_M[14]"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="CoolingBlock"
+      Attributes="None" />
+    <Parameter
+      Name="CircPmp_Req"
+      Attributes="None" />
+    <Parameter
+      InitValue="72"
+      Name="OutDoorTemp_FiltHrs"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="180"
+      Name="ShuntVlvBlock_PulseTime"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="180"
+      Name="ShuntVlvBlock_PulseIntervall"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="180"
+      Name="ShuntVlvBlock_Time"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="FALSE"
+      Name="ShuntVlvBlock"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.Enable"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.GroupID"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.tOff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep1.tOn"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.Enable"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.GroupID"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.tOff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ImmheatStep2.tOn"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.Enable"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.GroupID"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.tOff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.RevVlv.tOn"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.Enable"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.GroupID"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.tOff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvDout.tOn"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.Enable"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.GroupID"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.tOff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShuntVlvOffDout.tOn"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.AlrmDT"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.Board"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.Ch"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.Enable"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.GroupID"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.Logic"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.ModeType"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.tOff"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Dout_Cfg.Fct.ShutOffVlv.tOn"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="5"
+      Name="ShuntVlvTimeFactor"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="ShuntVlvPFactor"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="SupplyTempCalc"
+      Attributes="None" />
+  </Parameters>
+</ParametersConfiguration>

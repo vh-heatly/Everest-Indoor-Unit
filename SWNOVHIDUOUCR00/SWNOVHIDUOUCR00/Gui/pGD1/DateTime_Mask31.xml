@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData
+  p1:type="MaskData"
+  ID="31"
+  Name="TimeZoneMsk"
+  Version="3.1"
+  ShowDummy="false" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <MaskElements>
+    <ShapeField
+      ID="166"
+      Name="ShapeField166"
+      Row="0"
+      Column="0"
+      Domain="Shape"
+      Presentation="Shape"
+      Selectable="FALSE"
+      Width="22"
+      Height="1"
+      Fill="true"
+      Element="Rectangle" />
+    <TextField
+      ID="167"
+      Name="TextField167"
+      TranslationKey="pGD1_L10M31TF167"
+      Row="0"
+      Column="1" />
+    <TextWidget
+      ID="308"
+      Name="TimezoneWidget308"
+      Row="2"
+      Column="0"
+      Selectable="TRUE"
+      ClassName="TimezoneWidget">
+      <Members />
+    </TextWidget>
+  </MaskElements>
+</BaseMaskData>

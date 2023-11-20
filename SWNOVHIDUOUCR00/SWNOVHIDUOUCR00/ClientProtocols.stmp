@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MasterProtocolConfigurator
+  version="1.1">
+  <GlobalSettings />
+  <Templates>
+    <ModbusTemplate
+      Name="OutdoorUnit"
+      Protocol="Modbus"
+      Guid="e65ab6af-3190-42fd-918a-0ce7a279840f">
+      <Variables>
+        <ModbusVariable
+          DataType="REAL"
+          Name="CompReq"
+          Index="0"
+          Hysteresis="0"
+          RWMode="NoReadWritePoll"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="FrcDefrostOn"
+          Index="1"
+          Hysteresis="0"
+          RWMode="NoReadWritePoll"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OnOff"
+          Index="0"
+          Hysteresis="0"
+          RWMode="NoReadWritePoll"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="UnitStatus"
+          Index="0"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="AlrmStatus"
+          Index="0"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="AlrmReset"
+          Index="2"
+          Hysteresis="0"
+          RWMode="NoReadWritePoll"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="EEV_CompHeat"
+          Index="3"
+          Hysteresis="0"
+          RWMode="NoReadWritePoll"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="FrcDefrostOff"
+          Index="4"
+          Hysteresis="0"
+          RWMode="NoReadWritePoll"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="DefrostStatus"
+          Index="4"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="DscgP"
+          Index="1"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="SuctP"
+          Index="2"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="DscgTemp"
+          Index="3"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="SuctTemp"
+          Index="4"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OutDoorTemp"
+          Index="5"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="CompOn"
+          Index="2"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="SwVersion"
+          Index="7"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="EnvZone"
+          Index="6"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="CurrSpd_RPS"
+          Index="313"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="CurrSH"
+          Index="64"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="EEV_PosPerc"
+          Index="68"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="CurrSHSetP"
+          Index="153"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="CompTemp"
+          Index="51"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="MaxRPS"
+          Index="319"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="MinRPS"
+          Index="317"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="ECT"
+          Index="249"
+          Hysteresis="0"
+          RWMode="NoReadWriteChangeWriteOnline"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="CondInTemp"
+          Index="54"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="CondOutTemp"
+          Index="55"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="WaterFlow"
+          Index="53"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="CapTemp"
+          Index="50"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+      </Variables>
+      <Settings />
+    </ModbusTemplate>
+  </Templates>
+  <Configurations>
+    <Configuration
+      Name="MBM_Line"
+      ConfigurationTask="__CONFIGURATION__"
+      ResourceTask="__RESOURCE__"
+      Guid="ac76a321af564dd0891cc5a18930aca4">
+      <MasterSettings
+        COMPort="FBUS1"
+        Zone="0" />
+      <Devices>
+        <Device
+          Path="OU_Unit"
+          Template="e65ab6af-3190-42fd-918a-0ce7a279840f">
+          <Settings />
+        </Device>
+      </Devices>
+    </Configuration>
+  </Configurations>
+  <Devices />
+</MasterProtocolConfigurator>

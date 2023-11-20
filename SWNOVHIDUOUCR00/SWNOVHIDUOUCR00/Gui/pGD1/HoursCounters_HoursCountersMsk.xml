@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData
+  p1:type="MaskData"
+  ID="146"
+  Name="HoursCountersMsk"
+  Version="3.1"
+  StartingField="978" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <MaskElements>
+    <GraphicWidget
+      ID="978"
+      Name="HrsCountersWidget"
+      Row="0"
+      Column="0"
+      Selectable="FALSE"
+      ClassName="ParametersListWidget">
+      <Members>
+        <Member
+          Name="TitleList1"
+          Value="Hours counters" />
+        <Member
+          Name="TitleList2"
+          Value="" />
+        <Member
+          Name="TitleList3"
+          Value="" />
+        <Member
+          Name="TitleList4"
+          Value="" />
+        <Member
+          Name="TitleList5"
+          Value="" />
+        <Member
+          Name="TitleList6"
+          Value="" />
+        <Member
+          Name="PrevLoopSubMenu"
+          Value="pGD1_LoopList#HoursCounters" />
+        <Member
+          Name="PrevLoopList"
+          Value="pGD1_LoopList#Menu" />
+        <Member
+          Name="Tag1"
+          Value="HOURS COUNTERS" />
+        <Member
+          Name="Tag2"
+          Value="" />
+        <Member
+          Name="Tag3"
+          Value="" />
+        <Member
+          Name="Tag4"
+          Value="" />
+        <Member
+          Name="Tag5"
+          Value="" />
+        <Member
+          Name="Tag6"
+          Value="" />
+        <Member
+          Name="TitleSubMenu"
+          Value="" />
+      </Members>
+    </GraphicWidget>
+  </MaskElements>
+</BaseMaskData>

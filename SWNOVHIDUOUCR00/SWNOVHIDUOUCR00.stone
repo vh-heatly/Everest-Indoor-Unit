@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SToneSolution name="SWNOVHIDUOUCR00" version="1.0">
+  <Projects active="SWNOVHIDUOUCR00">
+    <Project file="SWNOVHIDUOUCR00\SWNOVHIDUOUCR00.stprj" />
+  </Projects>
+  <Configurations active="SWNOVHIDUOUCR00">
+    <Configuration name="Debug" batchbuild="False">
+      <Project name="SWNOVHIDUOUCR00" build="true" configuration="Debug" />
+    </Configuration>
+    <Configuration name="Release" batchbuild="False">
+      <Project name="SWNOVHIDUOUCR00" build="true" configuration="Release" />
+    </Configuration>
+    <Configuration name="SWNOVHIDUOUCR00" batchbuild="False">
+      <Project name="SWNOVHIDUOUCR00" build="true" configuration="SWNOVHIDUOUCR00" />
+    </Configuration>
+    <Configuration name="SWHQ00COM00CN00_EmbBLDC" batchbuild="False">
+      <Project name="SWNOVHIDUOUCR00" build="true" configuration="SWNOVHIDUOUCR00" />
+    </Configuration>
+  </Configurations>
+</SToneSolution>

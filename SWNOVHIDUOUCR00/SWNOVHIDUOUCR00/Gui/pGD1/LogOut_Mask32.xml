@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData
+  p1:type="MaskData"
+  ID="32"
+  Name="LogOutMsk"
+  Version="3.1"
+  ShowDummy="false" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <Actions>
+    <Action
+      KeyName="KEY_ENTER"
+      FileName="LogOutMskENTER.st"
+      FunctionName="LogOutMskENTER"
+      Call="LogOutMskENTER(keyPressed, keyCounter);"
+      Type="Single" />
+  </Actions>
+  <MaskElements>
+    <ShapeField
+      ID="173"
+      Name="ShapeField173"
+      Row="0"
+      Column="0"
+      Domain="Shape"
+      Presentation="Shape"
+      Selectable="FALSE"
+      Width="22"
+      Height="1"
+      Fill="true"
+      Element="Rectangle" />
+    <TextField
+      ID="174"
+      Name="TextField174"
+      TranslationKey="pGD1_L24M32TF174"
+      Row="0"
+      Column="1" />
+    <ImageField
+      ID="175"
+      Name="ImageField175"
+      Row="1"
+      Column="0"
+      Domain="Image"
+      Presentation="image"
+      Selectable="FALSE"
+      Nickname="DOOR"
+      X="0"
+      Y="8" />
+    <TextAreaField
+      ID="176"
+      Name="TextAreaField176"
+      TranslationKey="pGD1_L24M32TAF176"
+      Row="1"
+      Column="8"
+      Width="14"
+      Height="2" />
+    <TextAreaField
+      ID="177"
+      Name="TextAreaField177"
+      TranslationKey="pGD1_L24M32TAF177"
+      Row="5"
+      Column="8"
+      Width="14"
+      Height="2" />
+    <DataField
+      ID="178"
+      Name="DataField178"
+      TranslationKey="pGD1_L24M32DF178"
+      Row="3"
+      Column="8"
+      Domain="USINT"
+      Presentation="IAR"
+      Selectable="FALSE"
+      IntegerPartDigitsCount="1"
+      ZeroSuppression="true"
+      FormatString="i"
+      VariableName="LoginPwdType"
+      Min="0"
+      Max="3">
+      <IntStates>
+        <State
+          ID="0"
+          Type="Text"
+          TranslationKey="pGD1_L24M32DF178_MR0" />
+        <State
+          ID="1"
+          Type="Text"
+          TranslationKey="pGD1_L24M32DF178_MR1" />
+        <State
+          ID="2"
+          Type="Text"
+          TranslationKey="pGD1_L24M32DF178_MR2" />
+        <State
+          ID="3"
+          Type="Text"
+          TranslationKey="pGD1_L24M32DF178_MR3" />
+      </IntStates>
+    </DataField>
+  </MaskElements>
+</BaseMaskData>

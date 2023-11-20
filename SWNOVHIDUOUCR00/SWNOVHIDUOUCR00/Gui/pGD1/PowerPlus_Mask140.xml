@@ -1,0 +1,1580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData
+  p1:type="MaskData"
+  ID="140"
+  Name="PowerPlusModel"
+  Version="3.1" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <Actions>
+    <Action
+      KeyName="KEY_ESC"
+      FileName="ReturnToSubMenuCompressors.st"
+      FunctionName="ReturnToSubMenuCompressors"
+      Call="ReturnToSubMenuCompressors(keyPressed, keyCounter);"
+      Type="Single" />
+  </Actions>
+  <MaskElements>
+    <ShapeField
+      ID="928"
+      Name="ShapeField912"
+      Row="0"
+      Column="0"
+      Domain="Shape"
+      Presentation="Shape"
+      Selectable="FALSE"
+      Width="22"
+      Height="1"
+      Fill="true"
+      Element="Rectangle" />
+    <TextField
+      ID="913"
+      Name="TextField913"
+      TranslationKey="pGD1_L28M140TF913"
+      Row="0"
+      Column="0" />
+    <TextField
+      ID="914"
+      Name="TextField914"
+      TranslationKey="pGD1_L28M140TF914"
+      Row="2"
+      Column="0" />
+    <DataField
+      ID="915"
+      Name="DataField915"
+      TranslationKey="pGD1_L28M140DF915"
+      Row="3"
+      Column="0"
+      Domain="USINT"
+      Presentation="IAR"
+      Selectable="TRUE"
+      UsesTempVarContent="false"
+      IntegerPartDigitsCount="3"
+      ZeroSuppression="true"
+      FormatString="III"
+      VariableName="PWRP_CompModel"
+      Min="0"
+      Max="180">
+      <IntStates>
+        <State
+          ID="0"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR0" />
+        <State
+          ID="1"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR1" />
+        <State
+          ID="2"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR2" />
+        <State
+          ID="3"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR3" />
+        <State
+          ID="4"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR4" />
+        <State
+          ID="5"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR5" />
+        <State
+          ID="6"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR6" />
+        <State
+          ID="7"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR7" />
+        <State
+          ID="8"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR8" />
+        <State
+          ID="9"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR9" />
+        <State
+          ID="10"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR10" />
+        <State
+          ID="11"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR11" />
+        <State
+          ID="12"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR12" />
+        <State
+          ID="13"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR13" />
+        <State
+          ID="14"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR14" />
+        <State
+          ID="15"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR15" />
+        <State
+          ID="16"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR16" />
+        <State
+          ID="17"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR17" />
+        <State
+          ID="18"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR18" />
+        <State
+          ID="19"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR19" />
+        <State
+          ID="20"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR20" />
+        <State
+          ID="21"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR21" />
+        <State
+          ID="22"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR22" />
+        <State
+          ID="23"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR23" />
+        <State
+          ID="24"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR24" />
+        <State
+          ID="25"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR25" />
+        <State
+          ID="26"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR26" />
+        <State
+          ID="27"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR27" />
+        <State
+          ID="28"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR28" />
+        <State
+          ID="29"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR29" />
+        <State
+          ID="30"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR30" />
+        <State
+          ID="31"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR31" />
+        <State
+          ID="32"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR32" />
+        <State
+          ID="33"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR33" />
+        <State
+          ID="34"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR34" />
+        <State
+          ID="35"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR35" />
+        <State
+          ID="36"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR36" />
+        <State
+          ID="37"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR37" />
+        <State
+          ID="38"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR38" />
+        <State
+          ID="39"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR39" />
+        <State
+          ID="40"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR40" />
+        <State
+          ID="41"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR41" />
+        <State
+          ID="42"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR42" />
+        <State
+          ID="43"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR43" />
+        <State
+          ID="44"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR44" />
+        <State
+          ID="45"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR45" />
+        <State
+          ID="46"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR46" />
+        <State
+          ID="47"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR47" />
+        <State
+          ID="48"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR48" />
+        <State
+          ID="49"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR49" />
+        <State
+          ID="50"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR50" />
+        <State
+          ID="51"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR51" />
+        <State
+          ID="52"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR52" />
+        <State
+          ID="53"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR53" />
+        <State
+          ID="54"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR54" />
+        <State
+          ID="55"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR55" />
+        <State
+          ID="56"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR56" />
+        <State
+          ID="57"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR57" />
+        <State
+          ID="58"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR58" />
+        <State
+          ID="59"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR59" />
+        <State
+          ID="60"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR60" />
+        <State
+          ID="61"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR61" />
+        <State
+          ID="62"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR62" />
+        <State
+          ID="63"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR63" />
+        <State
+          ID="64"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR64" />
+        <State
+          ID="65"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR65" />
+        <State
+          ID="66"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR66" />
+        <State
+          ID="67"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR67" />
+        <State
+          ID="68"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR68" />
+        <State
+          ID="69"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR69" />
+        <State
+          ID="70"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR70" />
+        <State
+          ID="71"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR71" />
+        <State
+          ID="72"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR72" />
+        <State
+          ID="73"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR73" />
+        <State
+          ID="74"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR74" />
+        <State
+          ID="75"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR75" />
+        <State
+          ID="76"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR76" />
+        <State
+          ID="77"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR77" />
+        <State
+          ID="78"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR78" />
+        <State
+          ID="79"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR79" />
+        <State
+          ID="80"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR80" />
+        <State
+          ID="81"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR81" />
+        <State
+          ID="82"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR82" />
+        <State
+          ID="83"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR83" />
+        <State
+          ID="84"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR84" />
+        <State
+          ID="85"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR85" />
+        <State
+          ID="86"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR86" />
+        <State
+          ID="87"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR87" />
+        <State
+          ID="88"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR88" />
+        <State
+          ID="89"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR89" />
+        <State
+          ID="90"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR90" />
+        <State
+          ID="91"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR91" />
+        <State
+          ID="92"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR92" />
+        <State
+          ID="93"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR93" />
+        <State
+          ID="94"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR94" />
+        <State
+          ID="95"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR95" />
+        <State
+          ID="96"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR96" />
+        <State
+          ID="97"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR97" />
+        <State
+          ID="98"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR98" />
+        <State
+          ID="99"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR99" />
+        <State
+          ID="100"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR100" />
+        <State
+          ID="101"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR101" />
+        <State
+          ID="102"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR102" />
+        <State
+          ID="103"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR103" />
+        <State
+          ID="104"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR104" />
+        <State
+          ID="105"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR105" />
+        <State
+          ID="106"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR106" />
+        <State
+          ID="107"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR107" />
+        <State
+          ID="108"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR108" />
+        <State
+          ID="109"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR109" />
+        <State
+          ID="110"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR110" />
+        <State
+          ID="111"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR111" />
+        <State
+          ID="112"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR112" />
+        <State
+          ID="113"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR113" />
+        <State
+          ID="114"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR114" />
+        <State
+          ID="115"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR115" />
+        <State
+          ID="116"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR116" />
+        <State
+          ID="117"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR117" />
+        <State
+          ID="118"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR118" />
+        <State
+          ID="119"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR119" />
+        <State
+          ID="120"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR120" />
+        <State
+          ID="121"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR121" />
+        <State
+          ID="122"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR122" />
+        <State
+          ID="123"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR123" />
+        <State
+          ID="124"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR124" />
+        <State
+          ID="125"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR125" />
+        <State
+          ID="126"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR126" />
+        <State
+          ID="127"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR127" />
+        <State
+          ID="128"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR128" />
+        <State
+          ID="129"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR129" />
+        <State
+          ID="130"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR130" />
+        <State
+          ID="131"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR131" />
+        <State
+          ID="132"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR132" />
+        <State
+          ID="133"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR133" />
+        <State
+          ID="134"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR134" />
+        <State
+          ID="135"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR135" />
+        <State
+          ID="136"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR136" />
+        <State
+          ID="137"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR137" />
+        <State
+          ID="138"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR138" />
+        <State
+          ID="139"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR139" />
+        <State
+          ID="140"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR140" />
+        <State
+          ID="141"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR141" />
+        <State
+          ID="142"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR142" />
+        <State
+          ID="143"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR143" />
+        <State
+          ID="144"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR144" />
+        <State
+          ID="145"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR145" />
+        <State
+          ID="146"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR146" />
+        <State
+          ID="147"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR147" />
+        <State
+          ID="148"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR148" />
+        <State
+          ID="149"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR149" />
+        <State
+          ID="150"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR150" />
+        <State
+          ID="151"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR151" />
+        <State
+          ID="152"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR152" />
+        <State
+          ID="153"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR153" />
+        <State
+          ID="154"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR154" />
+        <State
+          ID="155"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR155" />
+        <State
+          ID="156"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR156" />
+        <State
+          ID="157"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR157" />
+        <State
+          ID="158"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR158" />
+        <State
+          ID="159"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR159" />
+        <State
+          ID="160"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR160" />
+        <State
+          ID="161"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR161" />
+        <State
+          ID="162"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR162" />
+        <State
+          ID="163"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR163" />
+        <State
+          ID="164"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR164" />
+        <State
+          ID="165"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR165" />
+        <State
+          ID="166"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR166" />
+        <State
+          ID="167"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR167" />
+        <State
+          ID="168"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR168" />
+        <State
+          ID="169"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR169" />
+        <State
+          ID="170"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR170" />
+        <State
+          ID="171"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR171" />
+        <State
+          ID="172"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR172" />
+        <State
+          ID="173"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR173" />
+        <State
+          ID="174"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR174" />
+        <State
+          ID="175"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR175" />
+        <State
+          ID="176"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR176" />
+        <State
+          ID="177"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR177" />
+        <State
+          ID="178"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR178" />
+        <State
+          ID="179"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR179" />
+        <State
+          ID="180"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF915_MR180" />
+      </IntStates>
+    </DataField>
+    <TextField
+      ID="916"
+      Name="TextField916"
+      TranslationKey="pGD1_L28M140TF916"
+      Row="7"
+      Column="0" />
+    <DataField
+      ID="917"
+      Name="DataField917"
+      TranslationKey="pGD1_L28M140DF917"
+      Row="7"
+      Column="20"
+      Domain="BOOL"
+      Presentation="BAR"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="5"
+      ZeroSuppression="true"
+      FormatString="B"
+      VariableName="PWRP_PSDDefWriting">
+      <BoolStates>
+        <State
+          ID="true"
+          Type="Image"
+          Attribute="Enabled" />
+        <State
+          ID="false"
+          Type="Image"
+          Attribute="Disabled" />
+      </BoolStates>
+    </DataField>
+    <DataField
+      ID="918"
+      Name="DataField918"
+      TranslationKey="pGD1_L28M140DF918"
+      Row="6"
+      Column="0"
+      Domain="BOOL"
+      Presentation="BAR"
+      Selectable="FALSE"
+      IntegerPartDigitsCount="5"
+      ZeroSuppression="true"
+      FormatString="b"
+      VariableName="Info_PWRP.CnfgNeedsPSD.Al_CfgUnmatchPSD">
+      <BoolStates>
+        <State
+          ID="true"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF918_MRT" />
+        <State
+          ID="false"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF918_MRF" />
+      </BoolStates>
+    </DataField>
+    <DataField
+      ID="919"
+      Name="DataField919"
+      TranslationKey="pGD1_L28M140DF919"
+      Row="4"
+      Column="0"
+      Domain="USINT"
+      Presentation="IAR"
+      Selectable="FALSE"
+      IntegerPartDigitsCount="3"
+      ZeroSuppression="true"
+      FormatString="iii"
+      VariableName="PWRP_CompModel"
+      Min="0"
+      Max="180">
+      <IntStates>
+        <State
+          ID="0"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR0" />
+        <State
+          ID="1"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR1" />
+        <State
+          ID="2"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR2" />
+        <State
+          ID="3"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR3" />
+        <State
+          ID="4"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR4" />
+        <State
+          ID="5"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR5" />
+        <State
+          ID="6"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR6" />
+        <State
+          ID="7"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR7" />
+        <State
+          ID="8"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR8" />
+        <State
+          ID="9"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR9" />
+        <State
+          ID="10"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR10" />
+        <State
+          ID="11"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR11" />
+        <State
+          ID="12"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR12" />
+        <State
+          ID="13"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR13" />
+        <State
+          ID="14"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR14" />
+        <State
+          ID="15"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR15" />
+        <State
+          ID="16"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR16" />
+        <State
+          ID="17"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR17" />
+        <State
+          ID="18"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR18" />
+        <State
+          ID="19"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR19" />
+        <State
+          ID="20"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR20" />
+        <State
+          ID="21"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR21" />
+        <State
+          ID="22"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR22" />
+        <State
+          ID="23"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR23" />
+        <State
+          ID="24"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR24" />
+        <State
+          ID="25"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR25" />
+        <State
+          ID="26"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR26" />
+        <State
+          ID="27"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR27" />
+        <State
+          ID="28"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR28" />
+        <State
+          ID="29"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR29" />
+        <State
+          ID="30"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR30" />
+        <State
+          ID="31"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR31" />
+        <State
+          ID="32"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR32" />
+        <State
+          ID="33"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR33" />
+        <State
+          ID="34"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR34" />
+        <State
+          ID="35"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR35" />
+        <State
+          ID="36"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR36" />
+        <State
+          ID="37"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR37" />
+        <State
+          ID="38"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR38" />
+        <State
+          ID="39"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR39" />
+        <State
+          ID="40"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR40" />
+        <State
+          ID="41"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR41" />
+        <State
+          ID="42"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR42" />
+        <State
+          ID="43"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR43" />
+        <State
+          ID="44"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR44" />
+        <State
+          ID="45"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR45" />
+        <State
+          ID="46"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR46" />
+        <State
+          ID="47"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR47" />
+        <State
+          ID="48"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR48" />
+        <State
+          ID="49"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR49" />
+        <State
+          ID="50"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR50" />
+        <State
+          ID="51"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR51" />
+        <State
+          ID="52"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR52" />
+        <State
+          ID="53"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR53" />
+        <State
+          ID="54"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR54" />
+        <State
+          ID="55"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR55" />
+        <State
+          ID="56"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR56" />
+        <State
+          ID="57"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR57" />
+        <State
+          ID="58"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR58" />
+        <State
+          ID="59"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR59" />
+        <State
+          ID="60"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR60" />
+        <State
+          ID="61"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR61" />
+        <State
+          ID="62"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR62" />
+        <State
+          ID="63"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR63" />
+        <State
+          ID="64"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR64" />
+        <State
+          ID="65"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR65" />
+        <State
+          ID="66"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR66" />
+        <State
+          ID="67"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR67" />
+        <State
+          ID="68"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR68" />
+        <State
+          ID="69"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR69" />
+        <State
+          ID="70"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR70" />
+        <State
+          ID="71"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR71" />
+        <State
+          ID="72"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR72" />
+        <State
+          ID="73"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR73" />
+        <State
+          ID="74"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR74" />
+        <State
+          ID="75"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR75" />
+        <State
+          ID="76"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR76" />
+        <State
+          ID="77"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR77" />
+        <State
+          ID="78"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR78" />
+        <State
+          ID="79"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR79" />
+        <State
+          ID="80"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR80" />
+        <State
+          ID="81"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR81" />
+        <State
+          ID="82"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR82" />
+        <State
+          ID="83"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR83" />
+        <State
+          ID="84"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR84" />
+        <State
+          ID="85"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR85" />
+        <State
+          ID="86"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR86" />
+        <State
+          ID="87"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR87" />
+        <State
+          ID="88"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR88" />
+        <State
+          ID="89"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR89" />
+        <State
+          ID="90"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR90" />
+        <State
+          ID="91"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR91" />
+        <State
+          ID="92"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR92" />
+        <State
+          ID="93"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR93" />
+        <State
+          ID="94"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR94" />
+        <State
+          ID="95"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR95" />
+        <State
+          ID="96"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR96" />
+        <State
+          ID="97"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR97" />
+        <State
+          ID="98"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR98" />
+        <State
+          ID="99"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR99" />
+        <State
+          ID="100"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR100" />
+        <State
+          ID="101"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR101" />
+        <State
+          ID="102"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR102" />
+        <State
+          ID="103"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR103" />
+        <State
+          ID="104"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR104" />
+        <State
+          ID="105"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR105" />
+        <State
+          ID="106"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR106" />
+        <State
+          ID="107"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR107" />
+        <State
+          ID="108"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR108" />
+        <State
+          ID="109"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR109" />
+        <State
+          ID="110"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR110" />
+        <State
+          ID="111"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR111" />
+        <State
+          ID="112"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR112" />
+        <State
+          ID="113"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR113" />
+        <State
+          ID="114"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR114" />
+        <State
+          ID="115"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR115" />
+        <State
+          ID="116"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR116" />
+        <State
+          ID="117"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR117" />
+        <State
+          ID="118"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR118" />
+        <State
+          ID="119"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR119" />
+        <State
+          ID="120"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR120" />
+        <State
+          ID="121"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR121" />
+        <State
+          ID="122"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR122" />
+        <State
+          ID="123"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR123" />
+        <State
+          ID="124"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR124" />
+        <State
+          ID="125"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR125" />
+        <State
+          ID="126"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR126" />
+        <State
+          ID="127"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR127" />
+        <State
+          ID="128"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR128" />
+        <State
+          ID="129"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR129" />
+        <State
+          ID="130"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR130" />
+        <State
+          ID="131"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR131" />
+        <State
+          ID="132"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR132" />
+        <State
+          ID="133"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR133" />
+        <State
+          ID="134"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR134" />
+        <State
+          ID="135"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR135" />
+        <State
+          ID="136"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR136" />
+        <State
+          ID="137"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR137" />
+        <State
+          ID="138"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR138" />
+        <State
+          ID="139"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR139" />
+        <State
+          ID="140"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR140" />
+        <State
+          ID="141"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR141" />
+        <State
+          ID="142"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR142" />
+        <State
+          ID="143"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR143" />
+        <State
+          ID="144"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR144" />
+        <State
+          ID="145"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR145" />
+        <State
+          ID="146"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR146" />
+        <State
+          ID="147"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR147" />
+        <State
+          ID="148"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR148" />
+        <State
+          ID="149"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR149" />
+        <State
+          ID="150"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR150" />
+        <State
+          ID="151"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR151" />
+        <State
+          ID="152"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR152" />
+        <State
+          ID="153"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR153" />
+        <State
+          ID="154"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR154" />
+        <State
+          ID="155"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR155" />
+        <State
+          ID="156"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR156" />
+        <State
+          ID="157"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR157" />
+        <State
+          ID="158"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR158" />
+        <State
+          ID="159"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR159" />
+        <State
+          ID="160"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR160" />
+        <State
+          ID="161"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR161" />
+        <State
+          ID="162"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR162" />
+        <State
+          ID="163"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR163" />
+        <State
+          ID="164"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR164" />
+        <State
+          ID="165"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR165" />
+        <State
+          ID="166"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR166" />
+        <State
+          ID="167"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR167" />
+        <State
+          ID="168"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR168" />
+        <State
+          ID="169"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR169" />
+        <State
+          ID="170"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR170" />
+        <State
+          ID="171"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR171" />
+        <State
+          ID="172"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR172" />
+        <State
+          ID="173"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR173" />
+        <State
+          ID="174"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR174" />
+        <State
+          ID="175"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR175" />
+        <State
+          ID="176"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR176" />
+        <State
+          ID="177"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR177" />
+        <State
+          ID="178"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR178" />
+        <State
+          ID="179"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR179" />
+        <State
+          ID="180"
+          Type="Text"
+          TranslationKey="pGD1_L28M140DF919_MR180" />
+      </IntStates>
+    </DataField>
+  </MaskElements>
+</BaseMaskData>

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData
+  p1:type="MaskData"
+  ID="127"
+  Name="Mask127"
+  Version="3.0" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <MaskElements>
+    <ShapeField
+      ID="814"
+      Name="ShapeField814"
+      Row="0"
+      Column="0"
+      Domain="Shape"
+      Presentation="Shape"
+      Selectable="FALSE"
+      Width="22"
+      Height="1"
+      Fill="true"
+      Element="Rectangle" />
+    <TextField
+      ID="815"
+      Name="TextField815"
+      Row="0"
+      Column="1" />
+    <TextField
+      ID="816"
+      Name="TextField816"
+      Row="6"
+      Column="0" />
+    <ImageField
+      ID="817"
+      Name="ImageField817"
+      Row="1"
+      Column="9"
+      Domain="Image"
+      Presentation="image"
+      Selectable="FALSE"
+      Nickname="Key_36x16"
+      X="54"
+      Y="8" />
+    <ShapeField
+      ID="818"
+      Name="ShapeField818"
+      Row="7"
+      Column="0"
+      Domain="Shape"
+      Presentation="Shape"
+      Selectable="FALSE"
+      Width="22"
+      Height="1"
+      Fill="true"
+      Element="Rectangle" />
+    <TextField
+      ID="819"
+      Name="TextField819"
+      Row="7"
+      Column="1" />
+    <DataField
+      ID="820"
+      Name="DataField820"
+      Row="6"
+      Column="18"
+      Domain="UINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="1"
+      ZeroSuppression="true"
+      FormatString="I"
+      VariableName="TmpPwd_Dig1"
+      Min="0"
+      Max="9">
+      <Actions>
+        <Action
+          KeyName="KEY_ESC"
+          FileName="GoToMainLoop.st"
+          FunctionName="GoToMainLoop"
+          Call="GoToMainLoop(keyPressed, keyCounter);"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <DataField
+      ID="821"
+      Name="DataField821"
+      Row="6"
+      Column="19"
+      Domain="UINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="1"
+      ZeroSuppression="true"
+      FormatString="I"
+      VariableName="TmpPwd_Dig2"
+      Min="0"
+      Max="9">
+      <Actions>
+        <Action
+          KeyName="KEY_ESC"
+          FileName="GoToPreviousDigit.st"
+          FunctionName="GoToPreviousDigit"
+          Call="GoToPreviousDigit(keyPressed, keyCounter);"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <DataField
+      ID="822"
+      Name="DataField822"
+      Row="6"
+      Column="20"
+      Domain="UINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="1"
+      ZeroSuppression="true"
+      FormatString="I"
+      VariableName="TmpPwd_Dig3"
+      Min="0"
+      Max="9">
+      <Actions>
+        <Action
+          KeyName="KEY_ESC"
+          FileName="GoToPreviousDigit.st"
+          FunctionName="GoToPreviousDigit"
+          Call="GoToPreviousDigit(keyPressed, keyCounter);"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <DataField
+      ID="823"
+      Name="DataField823"
+      Row="6"
+      Column="21"
+      Domain="UINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="1"
+      ZeroSuppression="true"
+      FormatString="I"
+      VariableName="TmpPwd_Dig4"
+      Min="0"
+      Max="9">
+      <Actions>
+        <Action
+          KeyName="KEY_ENTER"
+          FileName="CheckPassword.st"
+          FunctionName="CheckPassword"
+          Call="CheckPassword(keyPressed, keyCounter, gui.tmpVarContent.UINT);"
+          Type="Single" />
+        <Action
+          KeyName="KEY_ESC"
+          FileName="GoToPreviousDigit.st"
+          FunctionName="GoToPreviousDigit"
+          Call="GoToPreviousDigit(keyPressed, keyCounter);"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <TextField
+      ID="824"
+      Name="TextField824"
+      Row="4"
+      Column="0" />
+    <GraphicWidget
+      ID="825"
+      Name="SelectProfile825"
+      Row="5"
+      Column="4"
+      Selectable="FALSE"
+      ClassName="SelectProfile">
+      <Members />
+    </GraphicWidget>
+  </MaskElements>
+</BaseMaskData>

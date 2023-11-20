@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData
+  p1:type="MaskData"
+  ID="16"
+  Name="DateTimeChgMsk"
+  Version="3.1"
+  ShowDummy="false" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <MaskElements>
+    <ShapeField
+      ID="79"
+      Name="ShapeField79"
+      Row="0"
+      Column="0"
+      Domain="Shape"
+      Presentation="Shape"
+      Selectable="FALSE"
+      Width="22"
+      Height="1"
+      Fill="true"
+      Element="Rectangle" />
+    <TextField
+      ID="80"
+      Name="TextField80"
+      TranslationKey="pGD1_L10M16TF80"
+      Row="0"
+      Column="1" />
+    <TextField
+      ID="81"
+      Name="TextField81"
+      TranslationKey="pGD1_L10M16TF81"
+      Row="2"
+      Column="0" />
+    <TextField
+      ID="82"
+      Name="TextField82"
+      TranslationKey="pGD1_L10M16TF82"
+      Row="4"
+      Column="0" />
+    <TextField
+      ID="83"
+      Name="TextField83"
+      TranslationKey="pGD1_L10M16TF83"
+      Row="5"
+      Column="0" />
+    <TextField
+      ID="84"
+      Name="TextField84"
+      TranslationKey="pGD1_L10M16TF84"
+      Row="6"
+      Column="0" />
+    <DataField
+      ID="92"
+      Name="DataField92"
+      TranslationKey="pGD1_L10M16DF92"
+      Row="6"
+      Column="13"
+      Domain="USINT"
+      Presentation="IAR"
+      Selectable="False"
+      IntegerPartDigitsCount="1"
+      ZeroSuppression="true"
+      FormatString="i"
+      VariableName="Day_Week"
+      Min="0"
+      Max="6">
+      <IntStates>
+        <State
+          ID="3"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF92_MR3" />
+        <State
+          ID="1"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF92_MR1" />
+        <State
+          ID="0"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF92_MR0" />
+        <State
+          ID="2"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF92_MR2" />
+        <State
+          ID="4"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF92_MR4" />
+        <State
+          ID="5"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF92_MR5" />
+        <State
+          ID="6"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF92_MR6" />
+      </IntStates>
+    </DataField>
+    <DataField
+      ID="179"
+      Name="DataField179"
+      TranslationKey="pGD1_L10M16DF179"
+      Row="2"
+      Column="14"
+      Domain="USINT"
+      Presentation="IAR"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="1"
+      ZeroSuppression="true"
+      FormatString="I"
+      VariableName="DateFrmt"
+      Min="0"
+      Max="2">
+      <Actions>
+        <Action
+          KeyName="KEY_ENTER"
+          FileName="ChangeDateFormatENTER.st"
+          FunctionName="ChangeDateFormatENTER"
+          Call="ChangeDateFormatENTER(keyPressed, keyCounter, gui.tmpVarContent.USINT);"
+          Type="Single" />
+      </Actions>
+      <IntStates>
+        <State
+          ID="0"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF179_MR0" />
+        <State
+          ID="1"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF179_MR1" />
+        <State
+          ID="2"
+          Type="Text"
+          TranslationKey="pGD1_L10M16DF179_MR2" />
+      </IntStates>
+    </DataField>
+    <TextField
+      ID="192"
+      Name="TextField192"
+      TranslationKey="pGD1_L10M16TF192"
+      Row="5"
+      Column="16" />
+    <DataField
+      ID="231"
+      Name="DataField231"
+      TranslationKey="pGD1_L10M16DF231"
+      Row="4"
+      Column="17"
+      Domain="USINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      FieldTextColumn="17"
+      IntegerPartDigitsCount="10"
+      FormatString="III"
+      VariableName="DateP2"
+      Min="DateP2Lmin"
+      Max="DateP2Lmax">
+      <Actions>
+        <Action
+          KeyName="KEY_ENTER"
+          FunctionName="GoToNextField"
+          Call="GoToNextField();"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <DataField
+      ID="233"
+      Name="DataField233"
+      TranslationKey="pGD1_L10M16DF233"
+      Row="4"
+      Column="14"
+      Domain="USINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      FieldTextColumn="14"
+      IntegerPartDigitsCount="2"
+      FormatString="III"
+      VariableName="DateP1"
+      Min="DateP1Lmin"
+      Max="DateP1Lmax">
+      <Actions>
+        <Action
+          KeyName="KEY_ENTER"
+          FunctionName="GoToNextField"
+          Call="GoToNextField();"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <DataField
+      ID="234"
+      Name="DataField234"
+      TranslationKey="pGD1_L10M16DF234"
+      Row="4"
+      Column="20"
+      Domain="USINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      FieldTextColumn="20"
+      IntegerPartDigitsCount="10"
+      FormatString="III"
+      VariableName="DateP3"
+      Min="DateP3Lmin"
+      Max="DateP3Lmax">
+      <Actions>
+        <Action
+          KeyName="KEY_ENTER"
+          FunctionName="GoToNextField"
+          Call="GoToNextField();"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <TextField
+      ID="235"
+      Name="TextField235"
+      TranslationKey="pGD1_L10M16TF235"
+      Row="4"
+      Column="16" />
+    <TextField
+      ID="236"
+      Name="TextField236"
+      TranslationKey="pGD1_L10M16TF236"
+      Row="4"
+      Column="19" />
+    <TextField
+      ID="238"
+      Name="TextField238"
+      TranslationKey="pGD1_L10M16TF238"
+      Row="5"
+      Column="19" />
+    <DataField
+      ID="979"
+      Name="DataField979"
+      TranslationKey="pGD1_L10M16DF979"
+      Row="5"
+      Column="14"
+      Domain="USINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="2"
+      FormatString="II"
+      VariableName="HourIn"
+      Min="0"
+      Max="23"
+      UoM="h">
+      <Actions>
+        <Action
+          KeyName="KEY_ENTER"
+          FileName="SetDateENTER.st"
+          FunctionName="SetDateENTER"
+          Call="SetDateENTER(keyPressed, keyCounter);"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <DataField
+      ID="980"
+      Name="DataField980"
+      TranslationKey="pGD1_L10M16DF980"
+      Row="5"
+      Column="17"
+      Domain="USINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="2"
+      FormatString="II"
+      VariableName="MinuteIn"
+      Min="0"
+      Max="59"
+      UoM="min">
+      <Actions>
+        <Action
+          KeyName="KEY_ENTER"
+          FileName="SetDateENTER.st"
+          FunctionName="SetDateENTER"
+          Call="SetDateENTER(keyPressed, keyCounter);"
+          Type="Single" />
+      </Actions>
+    </DataField>
+    <DataField
+      ID="981"
+      Name="DataField981"
+      TranslationKey="pGD1_L10M16DF981"
+      Row="5"
+      Column="20"
+      Domain="USINT"
+      Presentation="variable"
+      Selectable="TRUE"
+      IntegerPartDigitsCount="2"
+      FormatString="II"
+      VariableName="SecondIn"
+      Min="0"
+      Max="59"
+      UoM="s">
+      <Actions>
+        <Action
+          KeyName="KEY_ENTER"
+          FileName="SetDateENTER.st"
+          FunctionName="SetDateENTER"
+          Call="SetDateENTER(keyPressed, keyCounter);"
+          Type="Single" />
+      </Actions>
+    </DataField>
+  </MaskElements>
+</BaseMaskData>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaseMaskData
+  p1:type="MaskData"
+  ID="130"
+  Name="PowerPlusMsk"
+  Version="3.1"
+  ShowDummy="false"
+  StartingField="835" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <MaskElements>
+    <GraphicWidget
+      ID="835"
+      Name="PWRPListWidget"
+      Row="0"
+      Column="0"
+      Selectable="FALSE"
+      ClassName="ParametersListWidget">
+      <Members>
+        <Member
+          Name="TitleList1"
+          Value="Power+ Basic" />
+        <Member
+          Name="TitleList2"
+          Value="Power+ Advanced" />
+        <Member
+          Name="TitleList3"
+          Value="" />
+        <Member
+          Name="TitleList4"
+          Value="" />
+        <Member
+          Name="TitleList5"
+          Value="" />
+        <Member
+          Name="TitleList6"
+          Value="" />
+        <Member
+          Name="PrevLoopSubMenu"
+          Value="pGD1_LoopList#PowerPlus" />
+        <Member
+          Name="PrevLoopList"
+          Value="pGD1_LoopList#SubMenuCompressors" />
+        <Member
+          Name="Tag1"
+          Value="PWRPB" />
+        <Member
+          Name="Tag2"
+          Value="PWRPA" />
+        <Member
+          Name="Tag3"
+          Value="" />
+        <Member
+          Name="Tag4"
+          Value="" />
+        <Member
+          Name="Tag5"
+          Value="" />
+        <Member
+          Name="Tag6"
+          Value="" />
+        <Member
+          Name="TitleSubMenu"
+          Value="" />
+      </Members>
+    </GraphicWidget>
+  </MaskElements>
+</BaseMaskData>

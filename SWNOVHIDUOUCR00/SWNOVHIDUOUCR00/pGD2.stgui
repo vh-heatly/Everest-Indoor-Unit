@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GuiData
+  ID="0"
+  Name="pGD2"
+  Version="2.2"
+  DefaultZone="NO"
+  TranslationsMode="GenerateForCurrentLanguage"
+  DefaultDateFormat="DDMMYYYY"
+  TerminalName="pGD1">
+  <Loops>
+    <Loop
+      ID="0"
+      Name="Loop0">
+      <Masks>
+        <FileName>Loop0_Mask0.xml</FileName>
+      </Masks>
+    </Loop>
+  </Loops>
+</GuiData>
