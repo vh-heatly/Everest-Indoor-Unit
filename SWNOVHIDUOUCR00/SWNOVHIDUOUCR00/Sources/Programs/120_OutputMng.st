@@ -157,9 +157,9 @@ VAR_GLOBAL PERSISTENT
 
     Aout_Cfg        : AoutCfgUnion := (Fct := (
         (**Circulation pump 1*)
-        CircPump1      := (Ch := 3,  ModeType := MODE_TYPE_AOUT#LIB_IO_OUT_0_10V),  
+        CircPump1      := (Ch := 2,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM_2_KHZ),  
         (**Circulation pump 2*)
-        CircPump2      := (Ch := 1,  ModeType := MODE_TYPE_AOUT#LIB_IO_OUT_0_10V),
+        CircPump2      := (Ch := 1,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM_2_KHZ),
         (**Shunt valve analog*)
         ShuntVlvAout   := (Ch := 0,  ModeType := MODE_TYPE_AOUT#LIB_IO_OUT_0_10V)
     ));

@@ -323,7 +323,7 @@ VAR_GLOBAL
 	{ATTRIBUTE UOM PERCENT}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	PumpSpdGP1Man : REAL := 0;
+	PumpSpdGP1Man : REAL := 100;
 	{LOCATION Pwrp_AbnDCBusTime}
 	(**Circuit 1 Power+ DC bus high ripple total time*)
 	{ATTRIBUTE UOM MINUTE}

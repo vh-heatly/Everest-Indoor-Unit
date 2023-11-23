@@ -19,13 +19,14 @@ PROGRAM OnOffUnit
     );
     
     (*UNIT ON/OFF COMMAND*)
-    UnitOn :=   KeybOnOff
-                AND NOT Al_SrsUnit
-                AND (BmsOnOff OR NOT En_SPV_OnOff)
-                AND (Din_Data.Fct.RemOnOff OR NOT Din_Info.fct.RemOnOff.configured);
+    UnitOn := TRUE;
+//                AND NOT Al_SrsUnit
+//                AND (BmsOnOff OR NOT En_SPV_OnOff)
+//                AND (Din_Data.Fct.RemOnOff OR NOT Din_Info.fct.RemOnOff.configured);
 
     UnitOff := NOT UnitOn;
     IF UnitOff THEN
+        UnitOn := TRUE;
         /*EEV_Circ1_Man_En := FALSE;
         Comp1_Circ1_ManModeEn := FALSE;
         Src_En_Man := FALSE;*/

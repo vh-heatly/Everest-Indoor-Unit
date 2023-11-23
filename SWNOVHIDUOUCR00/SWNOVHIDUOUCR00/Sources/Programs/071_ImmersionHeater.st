@@ -33,7 +33,7 @@ PROGRAM ImmersionRegulation
     
     {REGION DETERMINE NEED/ALLOW}
     
-    IF(En_AutoMode AND UnitOn)THEN            
+    IF((En_AutoMode AND UnitOn) AND NOT ImmHeatOnly) THEN            
         //Immersion heater - outdoor temperature timer
         TON_ImmHeat( 
             IN := OutDoorTempFilter < ImmModeTemp - ImmModeTempHyst
@@ -51,6 +51,8 @@ PROGRAM ImmersionRegulation
                 R := OutDoorTempFilter > ImmModeTemp OR SG_HeatBlock OR UnitOff
                 );
         OpModeAllowImm := SR_AutoMode_Immheat.Q1;
+    ELSIF (ImmHeatOnly) THEN
+            OpModeAllowImm := TRUE;
     ELSE
         OpModeAllowImm := FALSE;
     END_IF;

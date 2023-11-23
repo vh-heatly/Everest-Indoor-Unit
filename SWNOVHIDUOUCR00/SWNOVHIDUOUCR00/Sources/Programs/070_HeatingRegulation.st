@@ -64,7 +64,7 @@ PROGRAM HeatingRegulation
                 );
             SR_AutoMode_Heating(
                     s1 := TON_Heating.Q AND UnitON,
-                    R := Ain_Data.Fct.OutDoorTemp > HeatModeTemp OR SG_HeatBlock OR UnitOff
+                    R := OutDoorTempFilter > HeatModeTemp OR SG_HeatBlock OR UnitOff
                     );
             OpModeAllowHeat := SR_AutoMode_Heating.Q1;
 
