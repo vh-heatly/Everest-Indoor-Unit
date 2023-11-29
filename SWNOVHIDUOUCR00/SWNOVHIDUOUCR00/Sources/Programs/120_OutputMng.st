@@ -159,7 +159,7 @@ VAR_GLOBAL PERSISTENT
         (**Circulation pump 1*)
         CircPump1      := (Ch := 1,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM100HZ0_10_SR),  
         (**Circulation pump 2*)
-        CircPump2      := (Ch := 3,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM100HZ0_10_SR),
+        CircPump2      := (Ch := 4,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM_SYNC_MAIN_FREQ),
         (**Shunt valve analog*)
         ShuntVlvAout   := (Ch := 0,  ModeType := MODE_TYPE_AOUT#LIB_IO_OUT_0_10V)
     ));
@@ -191,7 +191,7 @@ PROGRAM OutputMng
     {ENDREGION}
 	
 	{REGION Analog Output value}
-	Aout_Data.Fct.CircPump1 := CircPmp_Req;
+    Aout_Data.Fct.CircPump1 := Circ1Act_Req;
     Aout_Data.Fct.CircPump2 := DhwCircPumpReq;
     Aout_Data.Fct.ShuntVlvAout := ShuntVlv_Req;
 	{ENDREGION}

@@ -2010,5 +2010,11 @@
     <Parameter
       Name="SupplyTempCalc"
       Attributes="None" />
+    <Parameter
+      Name="Circ2Act_Req"
+      Attributes="None" />
+    <Parameter
+      Name="Circ1Act_Req"
+      Attributes="None" />
   </Parameters>
 </ParametersConfiguration>

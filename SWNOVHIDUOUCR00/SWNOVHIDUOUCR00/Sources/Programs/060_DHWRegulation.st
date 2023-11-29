@@ -5,6 +5,11 @@ USING Libs.PID_Incr;
 USING Libs.Timer;
 USING Libs.ExpFilt;
 
+VAR_GLOBAL
+    (**Actual PWM request DHW Pump*)
+    Circ2Act_Req : REAL;
+END_VAR
+
 PROGRAM DHWRegulation
     VAR
         (**Allow DHW*)
@@ -187,13 +192,16 @@ PROGRAM DHWRegulation
     
 
     
-    IF UnitOff THEN
-        //Unit off
-        DhwCircPumpReq := 0.0;
+    IF UnitOff OR NOT TON_CircPump1.Q THEN // OLD: OR (DHWTempRegPID.Req_PID_Incr = 0)
+        //Unit off or PID reg 0 then pump shall be set to off
+        DhwCircPumpReq :=95;
     ELSE
         //Pump regulation
-        DhwCircPumpReq := DHWTempRegPID.Req_PID_Incr; 
+//        DhwCircPumpReq := DHWTempRegPID.Req_PID_Incr;
+        DhwCircPumpReq := Scaler(DHWTempRegPID.Req_PID_Incr, 0, 100, 85, 10); //1-100 input is reversed and pump PWM input is scaled to fit the correct PWM curve.
     END_IF;
+    
+    Circ2Act_Req := DHWTempRegPID.Req_PID_Incr;
     
     {ENDREGION}
     

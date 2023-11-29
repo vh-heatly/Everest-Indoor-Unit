@@ -323,7 +323,7 @@ VAR_GLOBAL
 	{ATTRIBUTE UOM PERCENT}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	PumpSpdGP1Man : REAL := 100;
+	PumpSpdGP1Man : REAL := 0;
 	{LOCATION Pwrp_AbnDCBusTime}
 	(**Circuit 1 Power+ DC bus high ripple total time*)
 	{ATTRIBUTE UOM MINUTE}
@@ -558,13 +558,13 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM PERCENT}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwPumpMax : USINT := 50;
+	DhwPumpMax : USINT := 100;
 	{LOCATION DhwPumpMin}
 	(**Circulation pump PID min request*)
 	{ATTRIBUTE UOM PERCENT}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwPumpMin : USINT := 10;
+	DhwPumpMin : USINT := 0;
 	{LOCATION DhwPumpPGain}
 	(**Circulation pump PID - proportional gain*)
 	{METADATA MIN_VAL 1}
