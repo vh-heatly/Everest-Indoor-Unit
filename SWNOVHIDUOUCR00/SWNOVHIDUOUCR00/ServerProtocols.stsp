@@ -866,6 +866,372 @@
           Index="111"
           Kind="HoldingRegister"
           Size="2" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_CompHeat"
+          Index="10"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_CompOn"
+          Index="12"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_CompTemp"
+          UoM="CELSIUS"
+          Index="113"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_DscgP"
+          UoM="BAR"
+          Index="115"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="USINT"
+          Name="OpState"
+          Index="83"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_DscgTemp"
+          UoM="CELSIUS"
+          Index="117"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_EnvZone"
+          Index="109"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Online"
+          Index="14"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_OutsideTemp"
+          Index="119"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Req"
+          UoM="RPS"
+          Index="121"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_SuctP"
+          UoM="BAR"
+          Index="126"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_SuctTemp"
+          UoM="CELSIUS"
+          Index="128"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.AlrmReset"
+          Index="15"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.AlrmStatus"
+          Index="16"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.CapTemp"
+          Index="130"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.CompOn"
+          Index="17"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.CompReq"
+          Index="132"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.CompTemp"
+          Index="134"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.CondInTemp"
+          Index="136"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.CondOutTemp"
+          Index="138"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.CurrSH"
+          Index="140"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.CurrSHSetP"
+          Index="144"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.CurrSpd_RPS"
+          Index="146"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.DefrostStatus"
+          Index="18"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.DscgP"
+          Index="149"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.DscgTemp"
+          Index="151"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.ECT"
+          Index="153"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.EEV_CompHeat"
+          Index="19"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.EEV_PosPerc"
+          Index="155"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.EnvZone"
+          Index="157"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.FrcDefrostOff"
+          Index="20"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.FrcDefrostOn"
+          Index="21"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT(0..1000)"
+          Name="OU_Unit.Info.CommandDelay"
+          Index="158"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.Info.CommandsCount"
+          Index="159"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT(200..5000)"
+          Name="OU_Unit.Info.DetectionTimeOut"
+          Index="160"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="DeviceError"
+          Name="OU_Unit.Info.DeviceError"
+          Index="161"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.Info.Enabled"
+          Index="24"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.Info.ErrorsCount"
+          Index="162"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.Info.forceMultipleCoilWrite"
+          Index="25"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.Info.forceMultipleRegisterWrite"
+          Index="26"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="USINT(1..247)"
+          Name="OU_Unit.Info.Ident"
+          Index="163"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.Info.isOnline"
+          Index="28"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="INT"
+          Name="OU_Unit.Info.LastErrorInfo.ErrorCode"
+          Index="164"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BYTE"
+          Name="OU_Unit.Info.LastErrorInfo.FunctionCode"
+          Index="165"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.Info.LastErrorInfo.RegistersCount"
+          Index="166"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.Info.LastErrorInfo.StartingRegister"
+          Index="167"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="STRING"
+          Name="OU_Unit.Info.NetworkAddress"
+          Index="193"
+          Kind="HoldingRegister"
+          Size="40" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.Info.PollsCount"
+          Index="233"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.Info.ReadChangesCount"
+          Index="234"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT(200..3000)"
+          Name="OU_Unit.Info.TimeOut"
+          Index="235"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="System.Globalization.ZONE"
+          Name="OU_Unit.Info.Zone"
+          Index="236"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.MaxRPS"
+          Index="238"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.MinRPS"
+          Index="240"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="OU_Unit.OnOff"
+          Index="29"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.OutDoorTemp"
+          Index="242"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.SuctP"
+          Index="244"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.SuctTemp"
+          Index="246"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.SwVersion"
+          Index="248"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OU_Unit.UnitStatus"
+          Index="249"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="OU_Unit.WaterFlow"
+          Index="250"
+          Kind="HoldingRegister"
+          Size="2" />
       </Variables>
       <IOTConfiguration />
     </Configuration>

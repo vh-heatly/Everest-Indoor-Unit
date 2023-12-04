@@ -137,7 +137,8 @@ PROGRAM HeatingRegulation
         IF(ShuntManMode)THEN
             ShuntVlv_Off := ShuntManClose AND NOT(ShuntManOpen);
             ShuntVlv_On := ShuntManOpen AND NOT(ShuntManClose);
-        ELSIF(((Ain_Data.Fct.DHWMiddleTemp+2) > Ain_Data.Fct.ClimSupplyTemp) AND OpModeAllowImm) OR ShuntManMode > 0 OR ImmHeatOnly AND NOT(ShuntVlvBlock) THEN
+        ELSIF OpModeAllowHeat AND (((Ain_Data.Fct.DHWMiddleTemp+2) > Ain_Data.Fct.ClimSupplyTemp) AND OpModeAllowImm) 
+            OR (OpModeAllowHeat AND ImmHeatOnly) AND NOT(ShuntVlvBlock) THEN
             
             //Invert factor calculation if supply temp is higher than setpoint
             ShuntVlvFactor_PT := SEL((SupplyTempCalc - Ain_Data.Fct.ClimSupplyTemp) < 0,
