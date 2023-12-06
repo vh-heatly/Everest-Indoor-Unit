@@ -90,7 +90,7 @@ PROGRAM HeatingRegulation
         SetP_Offset := SetP_ExtAdj + SG_Offset;
         
         //Calculate current supply temperature setpoint
-        SupplyTempCalc := LIMIT(0, ((HeatCurve_K[Sel_HeatCurve_SetP]*OutDoorTempFilter) + HeatCurve_M[Sel_HeatCurve_SetP]) + SetP_Offset, 80);
+        SupplyTempCalc := LIMIT(0, ((HeatCurve_K[Sel_HeatCurve_SetP]*OutDoorTemp) + HeatCurve_M[Sel_HeatCurve_SetP]) + SetP_Offset, 80);
     
 
     {ENDREGION}                 

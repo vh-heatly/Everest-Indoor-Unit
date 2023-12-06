@@ -297,6 +297,13 @@ VAR_GLOBAL
 	{LOCATION OU_Unit}
 	(**Outdoor unit device*)
 	OU_Unit : OutdoorUnit;
+	{LOCATION OutDoorTemp}
+	(**OutDoorTemp from selected source*)
+	{ATTRIBUTE UOM CELSIUS}
+	OutDoorTemp : REAL;
+	{LOCATION OutDoorTemp5Min}
+	{ATTRIBUTE UOM CELSIUS}
+	OutDoorTemp5Min : REAL;
 	{LOCATION OutDoorTempFilter}
 	(**Filtered outside temperature*)
 	OutDoorTempFilter : REAL;
@@ -458,6 +465,8 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION CoolModeTempHyst}
 	(**Cooling mode block hysteresis*)
 	{ATTRIBUTE UOM CELSIUS}
+	{METADATA MIN_VAL 1}
+	{METADATA MAX_VAL 10}
 	CoolModeTempHyst : REAL := 2;
 	{LOCATION DhwBT3StopCom}
 	{ATTRIBUTE UOM CELSIUS}
@@ -834,7 +843,7 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM HOUR}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 336}
-	OutDoorTemp_FiltHrs : INT := 72;
+	OutDoorTemp_FiltHrs : INT := 48;
 	{LOCATION OutDoorTempSel}
 	(**Outside temperature probe selection*)
 	{METADATA MIN_VAL 0}

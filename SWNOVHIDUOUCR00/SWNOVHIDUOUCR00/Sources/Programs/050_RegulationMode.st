@@ -5,6 +5,7 @@ USING Libs.PID_Incr;
 USING Libs.Timer;
 
 
+
 PROGRAM RegulationMode 
     VAR
         (**Intended stage unit wants to transition to*)
@@ -35,6 +36,7 @@ PROGRAM RegulationMode
         Dis_AutoMode            : BOOL;
         (**FirstCycle*)
         FirstCycle              : BOOL := 1;
+
         
     END_VAR
     
@@ -51,23 +53,28 @@ PROGRAM RegulationMode
     {ENDREGION}
     
     {REGION OUTDOOR TEMPERATURE FILTER CALCULATION}
-        
-        //Update temperature value every X seconds or at first available cycle
+    
+        //Pass filtered request to outdoor unit
+
+       
+        IF(OutDoorTempSel = OutSideTemp#OUTSIDETEMP)THEN
+            OutDoorTemp                     :=  Ain_Data.Fct.OutDoorTemp;
+        ELSIF(OutDoorTempSel = OutSideTemp#OUTDOORUNIT)THEN
+            OutDoorTemp                     :=  OU_OutsideTemp;
+        ELSIF(OutDoorTempSel = OutSideTemp#CONNECTIVITYCARD)THEN
+            OutDoorTemp                     :=  Conn_OutDoorTemp;
+        END_IF;    
+        //Update temperature value every hour or at first available cycle
         TON_OutDoorTemp(
-            IN := OutDoorTempSel <= 1 AND NOT(TON_OutDoorTemp.Q),
-            PT := 1
+            IN := OutDoorTempSel <= 2 AND NOT(TON_OutDoorTemp.Q),
+            PT := 3600
         );
-        
+ 
+    
         //Selection of outdoor temperature value
         IF(TON_OutDoorTemp.Q OR FirstCycle)THEN
-            IF(OutDoorTempSel = OutSideTemp#OUTSIDETEMP)THEN
-                OutDoorTempFilter_PreCalc[i] := Ain_Data.Fct.OutDoorTemp;
-            ELSIF(OutDoorTempSel = OutSideTemp#OUTDOORUNIT)THEN
-                OutDoorTempFilter_PreCalc[i] := OU_OutsideTemp;
-            ELSIF(OutDoorTempSel = OutSideTemp#CONNECTIVITYCARD)THEN
-                OutDoorTempFilter_PreCalc[i] := Conn_OutDoorTemp;
-            END_IF;
-            
+            OutDoorTempFilter_PreCalc[i]    :=  OutDoorTemp;
+                        
             i := i+1;
             
             //Indicate if temperatures has been sampled for 5 minutes
@@ -92,7 +99,7 @@ PROGRAM RegulationMode
                 END_FOR;
                     OutDoorTempFilter := OutDoorTempFilter / TO_REAL(i);
             END_IF;
-            
+                
             IF(FirstCycle)THEN
                 FirstCycle := FALSE;
             END_IF;

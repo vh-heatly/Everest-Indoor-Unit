@@ -1,24 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XmlLanguage Key="IT" Priority="1" Font="CAREL_TERM_STD" FontSize="12">
   <Sections>
-    <Section Name="DayOfWeek_0_6" Category="Enums" EmbedTranslation="false">
-      <Items>
-        <Item Key="Sunday" Value="Sunday" />
-        <Item Key="Monday" Value="Monday" />
-        <Item Key="Tuesday" Value="Tuesday" />
-        <Item Key="Wednesday" Value="Wednesday" />
-        <Item Key="Thursday" Value="Thursday" />
-        <Item Key="Friday" Value="Friday" />
-        <Item Key="Saturday" Value="Saturday" />
-      </Items>
-    </Section>
-    <Section Name="QUICK_MENU_0_2" Category="Enums" EmbedTranslation="false">
-      <Items>
-        <Item Key="OnOff" Value="Selected Loop OnOff" />
-        <Item Key="Set" Value="Selcted Loop Set" />
-        <Item Key="Info" Value="Selected Loop Info" />
-      </Items>
-    </Section>
     <Section Name="Serial_Channel_Client" Category="Enums" EmbedTranslation="false">
       <Items>
         <Item Key="FBUS1" Value=" FBUS1 serial channel " />
@@ -42,30 +24,7 @@
         <Item Key="ODD_2" Value="ODD-2" />
       </Items>
     </Section>
-    <Section Name="Serial_ParityStopBits_0_5" Category="Enums" EmbedTranslation="false">
-      <Items>
-        <Item Key="NONE_1" Value="NONE-1" />
-        <Item Key="NONE_2" Value="NONE-2" />
-        <Item Key="EVEN_1" Value="EVEN-1" />
-        <Item Key="EVEN_2" Value="EVEN-2" />
-        <Item Key="ODD_1" Value="ODD-1" />
-        <Item Key="ODD_2" Value="ODD-2" />
-      </Items>
-    </Section>
     <Section Name="Serial_Speed" Category="Enums" EmbedTranslation="false">
-      <Items>
-        <Item Key="Baud_1200" Value="Baud rate 1200" />
-        <Item Key="Baud_2400" Value="Baud rate 2400" />
-        <Item Key="Baud_4800" Value="Baud rate 4800" />
-        <Item Key="Baud_9600" Value="Baud rate 9600" />
-        <Item Key="Baud_19200" Value="Baud rate 19200" />
-        <Item Key="Baud_38400" Value="Baud rate 38400" />
-        <Item Key="Baud_57600" Value="Baud rate 57600" />
-        <Item Key="Baud_115200" Value="Baud rate 115200" />
-        <Item Key="Baud_375000" Value="Baud rate 375000" />
-      </Items>
-    </Section>
-    <Section Name="Serial_Speed_0_8" Category="Enums" EmbedTranslation="false">
       <Items>
         <Item Key="Baud_1200" Value="Baud rate 1200" />
         <Item Key="Baud_2400" Value="Baud rate 2400" />
@@ -873,6 +832,1005 @@
     <Section Name="pGD2" Category="UI" EmbedTranslation="false">
       <Items>
         <Item Key="Test" Value="Test" />
+      </Items>
+    </Section>
+    <Section Name="BOARD_TYPE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="PCO" Value="Current PCO" />
+      </Items>
+    </Section>
+    <Section Name="COMP_STATUS" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Off" Value="Compressor status - off" />
+        <Item Key="OffTiming" Value="Compressor status - off timing" />
+        <Item Key="OnTiming" Value="Compressor status - on timing" />
+        <Item Key="Running" Value="Compressor status - on running" />
+        <Item Key="ManualMode" Value="Compressor status - manual mode" />
+        <Item Key="Defrost" Value="Compressor status - defrost" />
+        <Item Key="Alarm" Value="Compressor status - alarm" />
+      </Items>
+    </Section>
+    <Section Name="COMP_TYPE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="BLDC_Only" Value="BLDC Only" />
+        <Item Key="BLDC_Tandem" Value="Tandem - One BLDC and one on/off" />
+        <Item Key="BLDC_Trio" Value="Trio - One BLDC and two on/off" />
+      </Items>
+    </Section>
+    <Section Name="DateFormat" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="DDMMYYYY" Value="DDMMYYYY" />
+        <Item Key="MMDDYYYY" Value="MMDDYYYY" />
+        <Item Key="YYYYMMDD" Value="YYYYMMDD" />
+      </Items>
+    </Section>
+    <Section Name="DATETIME_FIELD" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="MILLISECOND" Value="MILLISECOND" />
+        <Item Key="SECOND" Value="SECOND" />
+        <Item Key="MINUTE" Value="MINUTE" />
+        <Item Key="HOUR" Value="HOUR" />
+        <Item Key="DAY" Value="DAY" />
+        <Item Key="MONTH" Value="MONTH" />
+        <Item Key="YEAR" Value="YEAR" />
+      </Items>
+    </Section>
+    <Section Name="System_Timer_DayOfWeek" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Sunday" Value="Sunday" />
+        <Item Key="Monday" Value="Monday" />
+        <Item Key="Tuesday" Value="Tuesday" />
+        <Item Key="Wednesday" Value="Wednesday" />
+        <Item Key="Thursday" Value="Thursday" />
+        <Item Key="Friday" Value="Friday" />
+        <Item Key="Saturday" Value="Saturday" />
+      </Items>
+    </Section>
+    <Section Name="DEFROST_STARTSTOP_TYP" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="ByDIN" Value="Defrost by DIN" />
+        <Item Key="ByEvapCondTemp" Value="Defrost by Evaporate condensation temperature" />
+        <Item Key="ByBms" Value="Defrost by BMS" />
+      </Items>
+    </Section>
+    <Section Name="DeviceError" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NoError" Value=" Device answered as expected " />
+        <Item Key="Offline" Value=" Device did not answer (offline) " />
+        <Item Key="InvalidPacket" Value=" Device answered with an invalid packet " />
+        <Item Key="ErrorCodeReceived" Value=" Device answered with an error code " />
+        <Item Key="NotYetQueried" Value=" Device has yet to be queried " />
+        <Item Key="BadPDU" Value=" Device answered with too short PDU " />
+        <Item Key="BadCRC" Value=" Device answered with a wrong CRC " />
+        <Item Key="IllegalData" Value=" Device answered with an invalid data " />
+        <Item Key="UnsupportedFunction" Value=" Device answered with an unsupported function code " />
+        <Item Key="UnexpectedFunction" Value=" Device answered with a different function code from that expected " />
+        <Item Key="UnexpectedData" Value=" Device answered with different number of data from that expected " />
+        <Item Key="ReceivedDataOutOfRange" Value=" Device answered with out of range data " />
+      </Items>
+    </Section>
+    <Section Name="DEVROT_ENUM" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="OFF" Value="OFF" />
+        <Item Key="ON_STAGE1" Value="ON_STAGE1" />
+        <Item Key="STAGE2" Value="STAGE2" />
+        <Item Key="STAGE3" Value="STAGE3" />
+        <Item Key="STAGE4" Value="STAGE4" />
+        <Item Key="PMPDWN_PWRON" Value="PMPDWN_PWRON" />
+        <Item Key="PMPDWN_PWROFF" Value="PMPDWN_PWROFF" />
+      </Items>
+    </Section>
+    <Section Name="DHWMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="ECONOMY" Value="Economy mode" />
+        <Item Key="NORMAL" Value="Normal mode" />
+        <Item Key="COMFORT" Value="Comfort mode" />
+      </Items>
+    </Section>
+    <Section Name="EEV_ALARM_CODE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="None" Value="----" />
+        <Item Key="MOP" Value="EEV error : MOP" />
+        <Item Key="LOP" Value="EEV error : LOP" />
+        <Item Key="LowSuct" Value="EEV error : LowSuct" />
+        <Item Key="LowSH" Value="EEV error : Low super heat" />
+        <Item Key="HiCondTemp" Value="EEV error : High condention temperature" />
+        <Item Key="HighSH" Value="EEV error : High super heat" />
+      </Items>
+    </Section>
+    <Section Name="EEV_SSHSetP_Status" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NORMAL_OPERATION" Value="&quot;Standard&quot; Superheat setpoint not affected" />
+        <Item Key="LOW_DSH" Value=" Low discharge superheat " />
+        <Item Key="HIGH_DLT" Value=" High discharge temperature " />
+        <Item Key="COMP_HEAT" Value=" Compressor heating active " />
+        <Item Key="MOP_SHPREV" Value=" MOP - Superheat prevention" />
+      </Items>
+    </Section>
+    <Section Name="EQUALIZATION" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="GROUPED" Value="Grouped" />
+        <Item Key="EQUALIZED" Value="Equalized" />
+        <Item Key="GRP_START_EQ_SHUTDWN" Value="Grouped at start and equalised at shutdown" />
+      </Items>
+    </Section>
+    <Section Name="EVD_TYPE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Disabled" Value="EVD Disabled" />
+        <Item Key="Embedded" Value="EVD Embedded" />
+        <Item Key="External" Value="EVD EVO" />
+      </Items>
+    </Section>
+    <Section Name="Libs_CntDwnSafT_v1_4_3_State_CntDwnSafT" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="WAIT_REQ_ON" Value="Wait request to switch on compressor" />
+        <Item Key="COMPR_ON" Value="Compressor is on, and will start" />
+        <Item Key="SAFETY_COMPR_OFF" Value="Compressor is off, and it will start compressor safety countdown" />
+      </Items>
+    </Section>
+    <Section Name="Libs_IOMng_Basic_v2_1_1_C_ERROR" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NoError" Value=" No error " />
+        <Item Key="BrokenProbe" Value=" Probe out of range / Probe broken" />
+        <Item Key="ChannelOutOfRange" Value=" Channel out of premissible range" />
+        <Item Key="ChannelNotCompatibleSubGroup" Value=" Channel not compatible with specified Group Type" />
+        <Item Key="ChannelNotCompatible" Value=" Channel not compatible with specified type" />
+        <Item Key="ChannelAlreadyUsed" Value=" Channel already used by another function" />
+        <Item Key="Reserved0" Value="Reserved0" />
+        <Item Key="Reserved1" Value="Reserved1" />
+        <Item Key="Reserved2" Value="Reserved2" />
+        <Item Key="Reserved3" Value="Reserved3" />
+        <Item Key="Reserved4" Value="Reserved4" />
+        <Item Key="ChipIOConfigComm" Value=" Error during chip IO configuration (from chip IO)" />
+        <Item Key="ProbeNotInUse" Value=" Probe not in use (from chip IO)" />
+        <Item Key="ProbeNotConnected" Value=" Probe not connected (from chip IO)" />
+        <Item Key="ShortCircuit" Value=" Probe short circuited (from chip IO)" />
+        <Item Key="Overflow" Value=" Probe overflow (from chip IO)" />
+        <Item Key="Underflow" Value=" Probe underflow (from chip IO)" />
+        <Item Key="InvalidParam" Value=" Invalid param, range, direction and type may be out of range (from chip IO)" />
+        <Item Key="ChannelNotFree" Value=" Channel busy, happens with the second channel of PT100 (from chip IO)" />
+        <Item Key="InvalidChannel" Value=" Channel not valid (from chip IO)" />
+        <Item Key="InternalTableError" Value=" Missing scaling values for probes (from chip IO)" />
+        <Item Key="InvalidProbeType" Value=" Invalid probe type (from chip IO)" />
+        <Item Key="InternalStructureFull" Value=" Internal structure full (from chip IO)" />
+      </Items>
+    </Section>
+    <Section Name="Libs_IOMng_Basic_v2_1_1_C_MODE_SEL_AIN" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="LIB_IO_AOUT" Value=" Selection mode for analog ouput (U channel) " />
+        <Item Key="LIB_IO_DIN" Value=" Selection mode for digital input (U channel) " />
+        <Item Key="LIB_IO_DIN_COUNT" Value=" Selection mode for analog DIN counter (U channel) " />
+        <Item Key="LIB_IO_DIN_FREQ" Value=" Selection mode for analog DIN freq (U channel) " />
+        <Item Key="LIB_IO_PIN_NOT_CONFIGURED" Value=" Selection mode not configured (U channel) " />
+      </Items>
+    </Section>
+    <Section Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_AIN" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="LIB_IO_PROBE_NTC" Value=" Selection type NTC for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_PT1000" Value=" Selection type PT1000 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_0_1V" Value=" Selection type 0..1 V for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_0_10V" Value=" Selection type 0..10 V for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_4_20MA" Value=" Selection type 4..20 mA for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_ONOFF" Value=" Selection type ON OFF for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_0_5V" Value=" Selection type 0..5V for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_NTC_0_150" Value=" Selection type NTC 0..150 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_CUSTOM_n50T90" Value=" Selection type PROBE CUSTOM n50T90 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_CUSTOM_10T170" Value=" Selection type PROBE CUSTOM 10T170 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_CUSTOM_1" Value=" Selection type PROBE CUSTOM 1 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_CUSTOM_SENSATA" Value=" Selection type CUSTOM SENSATA for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_CUSTOM_2" Value=" Selection type PROBE CUSTOM 2 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_CUSTOM_3" Value=" Selection type PROBE CUSTOM 3 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_OHM_05" Value=" Selection type 0..5 OHM for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_OHM_10" Value=" Selection type 0..10 OHM  for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_80MINUS" Value=" Selection type 80 MINUS for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_OHM" Value=" Selection type OHM for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_PT500" Value=" Selection type PT500 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_PT100" Value=" Selection type PT100 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_DIFF" Value=" Selection type DIFF for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_0_5V_ASS" Value=" Selection type 0..5V ASS for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_DIG_OPTO" Value=" Selection type DIG OPTO for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_U_CNT" Value=" Selection type U COUNTER for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_U_FREQ" Value=" Selection type U FREQ for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_0_20MA" Value=" Selection type 0..20 mA for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_05_45V" Value=" Selection type 0.5..4.5 V for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_HLVP" Value=" Selection type HLVP for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_PTC_CAREL" Value=" Selection type PTC CAREL for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_SFL60" Value=" Selection type SFL60 for AIN (U channel) " />
+        <Item Key="LIB_IO_PROBE_NO_CONN" Value=" Selection type PROBE NO CONNECTION for AIN (U channel) " />
+      </Items>
+    </Section>
+    <Section Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_AOUT" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="LIB_IO_OUT_0_10V" Value=" Selection type 0..10 V for AOUT (Y channel) " />
+        <Item Key="LIB_IO_PWM_SYNC_MAIN_FREQ" Value=" Selection type PWM synchronous with main frequency for AOUT (Y channel) " />
+        <Item Key="LIB_IO_PHASE_CUTTING" Value=" Selection type phase cutting for AOUT (Y channel) " />
+        <Item Key="LIB_IO_PWM100HZ0_10_SR" Value=" Selection type PWM 100 HZ 0..10 SR for AOUT (Y channel) " />
+        <Item Key="LIB_IO_OUT_0_10V_SRC" Value=" Selection type 0..10 V for AOUT (Y channel) " />
+        <Item Key="LIB_IO_PWM_2_KHZ" Value=" Selection type PWM 2KHZ for AOUT (Y channel) " />
+        <Item Key="LIB_IO_PWM_VFC" Value=" Selection type PWM_VFC for AOUT (Y channel) " />
+      </Items>
+    </Section>
+    <Section Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_DIN" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="LIB_IO_DIN" Value=" Selection mode for digital input (U channel) " />
+        <Item Key="LIB_IO_DIN_COUNT" Value=" Selection mode for analog DIN counter (U channel) " />
+        <Item Key="LIB_IO_DIN_FREQ" Value=" Selection mode for analog DIN freq (U channel) " />
+      </Items>
+    </Section>
+    <Section Name="Libs_IOMng_Basic_v2_1_1_C_MODE_TYPE_DOUT" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="LIB_IO_STANDARD_RELE" Value=" Selection type normal mode for NO" />
+        <Item Key="LIB_IO_DELAYED_RELE" Value=" Selection type delayed mode for NO" />
+        <Item Key="LIB_IO_CYCLIC_RELE" Value=" Selection type cycled mode for NO" />
+      </Items>
+    </Section>
+    <Section Name="Libs_PID_Incr_v1_1_1_ENUM_COOL_HEAT" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Cool" Value="FALSE: cooling" />
+        <Item Key="Heat" Value="TRUE: heating" />
+      </Items>
+    </Section>
+    <Section Name="Libs_PID_Incr_v1_1_1_ENUM_REV_MODE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Direct" Value="FALSE: direct" />
+        <Item Key="Reverse" Value="TRUE: reverse" />
+      </Items>
+    </Section>
+    <Section Name="Libs_SignalGeneration_v1_0_0_ENUM_SIGN_GEN_MODE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="OFF" Value="Generator off" />
+        <Item Key="SINUS" Value="Sine curve" />
+        <Item Key="SAWTOOTH_RISE" Value="sawtooth increasing" />
+        <Item Key="TRIANGULAR" Value="triangular" />
+        <Item Key="CONST" Value="Constant signal" />
+      </Items>
+    </Section>
+    <Section Name="Libs_TerminalDetector_v1_0_5_DisplayStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="SEARCH_SEV_SEGMENTS" Value="SEARCH_SEV_SEGMENTS" />
+        <Item Key="SEARCH_PLAN" Value="SEARCH_PLAN" />
+        <Item Key="SEV_SEGMENTS" Value="SEV_SEGMENTS" />
+        <Item Key="PLAN" Value="PLAN" />
+      </Items>
+    </Section>
+    <Section Name="LOGIN_PASSWORD" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="User" Value="User" />
+        <Item Key="Service" Value="Service" />
+        <Item Key="Manufacturer" Value="Manufacturer" />
+        <Item Key="System" Value="System" />
+      </Items>
+    </Section>
+    <Section Name="ModbusClient_DataTypes_DecodeAnswerError" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NoError" Value="NoError" />
+        <Item Key="BadPDU" Value="BadPDU" />
+        <Item Key="CRCError" Value="CRCError" />
+        <Item Key="WrongID" Value="WrongID" />
+        <Item Key="Exception" Value="Exception" />
+        <Item Key="InvalidPacket" Value=" Packet with correct ID and CRC but with wrong function code or data " />
+      </Items>
+    </Section>
+    <Section Name="ModbusClient_MoveToNextDeviceResult" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Returned" Value="Returned" />
+        <Item Key="Exited" Value="Exited" />
+      </Items>
+    </Section>
+    <Section Name="ModbusServer_CommissioningBlockType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="SubBlockUnused" Value="SubBlockUnused" />
+        <Item Key="SubBlockParam" Value="SubBlockParam" />
+        <Item Key="SubBlockProfiling" Value="SubBlockProfiling" />
+        <Item Key="SubBlockNfcGeometry" Value="SubBlockNfcGeometry" />
+        <Item Key="SubBlockDesc" Value="SubBlockDesc" />
+        <Item Key="SubBlockBinCfg" Value="SubBlockBinCfg" />
+        <Item Key="SubBlockTxtCfg" Value="SubBlockTxtCfg" />
+        <Item Key="SubBlockStcGeometry" Value="SubBlockStcGeometry" />
+        <Item Key="SubBlockProfileGeometry" Value="SubBlockProfileGeometry" />
+        <Item Key="SubBlockDescrGeometry" Value="SubBlockDescrGeometry" />
+        <Item Key="SubBlockBinCfgGeometry" Value="SubBlockBinCfgGeometry" />
+        <Item Key="SubBlockTxtCfgGeometry" Value="SubBlockTxtCfgGeometry" />
+      </Items>
+    </Section>
+    <Section Name="ModbusServer_ModbusKind" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="CoilStatus" Value="CoilStatus" />
+        <Item Key="InputStatus" Value="InputStatus" />
+        <Item Key="HoldingRegister" Value="HoldingRegister" />
+        <Item Key="InputRegister" Value="InputRegister" />
+      </Items>
+    </Section>
+    <Section Name="MULTISTATE_KEY" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NONE" Value="NONE" />
+        <Item Key="listKEY_PROBE_ERROR" Value="listKEY_PROBE_ERROR" />
+        <Item Key="listKEY_MODE_TYPE_AIN" Value="listKEY_MODE_TYPE_AIN" />
+        <Item Key="listKEY_MODE_TYPE_AOUT" Value="listKEY_MODE_TYPE_AOUT" />
+        <Item Key="listKEY_DIN_LOGIC" Value="listKEY_DIN_LOGIC" />
+        <Item Key="listKEY_DOUT_LOGIC" Value="listKEY_DOUT_LOGIC" />
+        <Item Key="listKEY_DIGITAL_STATUS" Value="listKEY_DIGITAL_STATUS" />
+        <Item Key="listKEY_DIN_CH" Value="listKEY_DIN_CH" />
+        <Item Key="listKEY_DOUT_CH" Value="listKEY_DOUT_CH" />
+        <Item Key="listKEY_AIN_CH" Value="listKEY_AIN_CH" />
+        <Item Key="listKEY_AOUT_CH" Value="listKEY_AOUT_CH" />
+        <Item Key="listKEY_EEV_REGMODE" Value="listKEY_EEV_REGMODE" />
+        <Item Key="listKEY_COMP_TYP" Value="listKEY_COMP_TYP" />
+        <Item Key="listKEY_PWRP_SPEED_STATUS" Value="listKEY_PWRP_SPEED_STATUS" />
+        <Item Key="listKEY_PWRP_STATUS" Value="listKEY_PWRP_STATUS" />
+        <Item Key="listKEY_UNIT_STATUS" Value="listKEY_UNIT_STATUS" />
+        <Item Key="listKEY_EEV_STATUS" Value="listKEY_EEV_STATUS" />
+        <Item Key="listKEY_BLDC_COMP_MODEL" Value="listKEY_BLDC_COMP_MODEL" />
+        <Item Key="listKEY_ALARM_RESET" Value="listKEY_ALARM_RESET" />
+        <Item Key="listKEY_DFR_START_STOP_TYP" Value="listKEY_DFR_START_STOP_TYP" />
+        <Item Key="listKEY_COOL_HEAT" Value="listKEY_COOL_HEAT" />
+        <Item Key="listKEY_TYP_EVD" Value="listKEY_TYP_EVD" />
+        <Item Key="listKEY_OFF_ON" Value="listKEY_OFF_ON" />
+        <Item Key="listKEY_ALARM" Value="listKEY_ALARM" />
+        <Item Key="listKEY_ENVELOPE_ZONE" Value="listKEY_ENVELOPE_ZONE" />
+        <Item Key="listKEY_DSCG_HT" Value="listKEY_DSCG_HT" />
+        <Item Key="listKEY_ALARM_CODE_PWRP" Value="listKEY_ALARM_CODE_PWRP" />
+        <Item Key="listKEY_ALARM_CODE_EEV" Value="listKEY_ALARM_CODE_EEV" />
+        <Item Key="listKEY_SIGNAL_TYPE" Value="listKEY_SIGNAL_TYPE" />
+        <Item Key="listKEY_SERVER_PORTS" Value="listKEY_SERVER_PORTS" />
+        <Item Key="listKEY_CLIENT_PORTS" Value="listKEY_CLIENT_PORTS" />
+        <Item Key="listKEY_SERIAL_SPEED" Value="listKEY_SERIAL_SPEED" />
+        <Item Key="listKEY_SERIAL_CFG" Value="listKEY_SERIAL_CFG" />
+        <Item Key="listKEY_SPV_OFFLINE_MNG" Value="listKEY_SPV_OFFLINE_MNG" />
+        <Item Key="listKEY_LANGUAGES" Value="listKEY_LANGUAGES" />
+        <Item Key="listKEY_UOM" Value="listKEY_UOM" />
+        <Item Key="listKEY_DATE_FORMAT" Value="listKEY_DATE_FORMAT" />
+        <Item Key="listKEY_TIME_ZONE" Value="listKEY_TIME_ZONE" />
+        <Item Key="listKEY_EN_DIS" Value="listKEY_EN_DIS" />
+        <Item Key="listKEY_AUTO_MANUAL" Value="listKEY_AUTO_MANUAL" />
+        <Item Key="listKEY_CRANCKCASEHEATER_MODE" Value="listKEY_CRANCKCASEHEATER_MODE" />
+        <Item Key="listKEY_ALARM_CODE_PSDHEEZ" Value="listKEY_ALARM_CODE_PSDHEEZ" />
+      </Items>
+    </Section>
+    <Section Name="OpStage_Status" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="DECISION_PHASE" Value="Unit in decision phase" />
+        <Item Key="HEATING" Value="Unit in heating mode" />
+        <Item Key="COOLING" Value="Unit in cooling mode" />
+        <Item Key="DHW" Value="Unit in DHW mode" />
+      </Items>
+    </Section>
+    <Section Name="OutSideTemp" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="OUTSIDETEMP" Value="Outside temperature probe" />
+        <Item Key="OUTDOORUNIT" Value="Ooutdoor unit temperature" />
+        <Item Key="CONNECTIVITYCARD" Value="Connectivity card" />
+      </Items>
+    </Section>
+    <Section Name="pGD2_FieldList" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="TextField0" Value="TextField0" />
+      </Items>
+    </Section>
+    <Section Name="pGD2_LoopList" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Loop0" Value="Loop0" />
+      </Items>
+    </Section>
+    <Section Name="pGD2_MaskList" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Mask0" Value="Mask0" />
+      </Items>
+    </Section>
+    <Section Name="Protocols_LineType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Serial" Value=" it is a serial line " />
+        <Item Key="TCP_IP" Value=" it is a TCP line " />
+        <Item Key="UDP" Value=" it is a UDP line " />
+      </Items>
+    </Section>
+    <Section Name="Protocols_ModbusAction" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="ReadCoilStatus" Value="ReadCoilStatus" />
+        <Item Key="ReadInputStatus" Value="ReadInputStatus" />
+        <Item Key="ReadHoldingRegister" Value="ReadHoldingRegister" />
+        <Item Key="ReadInputRegister" Value="ReadInputRegister" />
+        <Item Key="WriteCoilStatus" Value="WriteCoilStatus" />
+        <Item Key="WriteHoldingRegister" Value="WriteHoldingRegister" />
+      </Items>
+    </Section>
+    <Section Name="ProtocolsCommon_ProtocolKind" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Server" Value="Server" />
+        <Item Key="Client" Value="Client" />
+      </Items>
+    </Section>
+    <Section Name="QUICK_MENU" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="OnOff" Value="Selected Loop OnOff" />
+        <Item Key="Set" Value="Selcted Loop Set" />
+        <Item Key="Info" Value="Selected Loop Info" />
+      </Items>
+    </Section>
+    <Section Name="ROT_TYPE" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NONE" Value="----" />
+        <Item Key="FIFO" Value="First In - First Out" />
+        <Item Key="LIFO" Value="Last In - First Out" />
+        <Item Key="TIMED" Value="device on/off request is based on device operating hours" />
+        <Item Key="CUSTOM" Value="device on/off request is based on custom parameters" />
+        <Item Key="CUSTOM2" Value="device on/off request is based on custom parameters without circuit equalization" />
+      </Items>
+    </Section>
+    <Section Name="SGStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="BLOCKING_MODE" Value="SG blocking mode" />
+        <Item Key="NORMAL_MODE" Value="SG normal mode" />
+        <Item Key="LOW_PRICE_MODE" Value="SG low price mode" />
+        <Item Key="OVERCAPACITY_MODE" Value="SG overcapacity mode" />
+      </Items>
+    </Section>
+    <Section Name="SPEED_STATUS" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Normal" Value="Normal regulation" />
+        <Item Key="Temp" Value="Temperature derating" />
+        <Item Key="Bus" Value="DC Bus derating" />
+        <Item Key="Torque" Value="Torque derating" />
+      </Items>
+    </Section>
+    <Section Name="STAGE_CFG_ENUM" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="ONOFF" Value="1 stage = 100%" />
+        <Item Key="TWO_STAGES" Value="2 stages = 50% - 100%" />
+        <Item Key="THREE_STAGES_50" Value="3 stages = 50% - 75% - 100%" />
+        <Item Key="FOUR_STAGES" Value="4 stages = 25% - 50% - 75% - 100%" />
+        <Item Key="THREE_STAGES_33" Value="3 stages = 33% - 66% - 100%" />
+        <Item Key="BLDC" Value="BLDC" />
+        <Item Key="INVERTER" Value="1 stage = modulating" />
+      </Items>
+    </Section>
+    <Section Name="State_HMI" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Wait" Value="Wait" />
+        <Item Key="DisplayLogoMask" Value="Display Logo Mask" />
+        <Item Key="DisplayLanguageMask" Value="Display Language Mask" />
+        <Item Key="DisplayMainMask" Value="Display Main Mask" />
+      </Items>
+    </Section>
+    <Section Name="System_Alarm_AlarmEdgeType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Rise" Value="Rise" />
+        <Item Key="Fall" Value="Fall" />
+      </Items>
+    </Section>
+    <Section Name="System_Alarm_AlarmResetType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Auto" Value="Auto" />
+        <Item Key="AutoUntilCounter" Value="AutoUntilCounter" />
+        <Item Key="Manual" Value="Manual" />
+      </Items>
+    </Section>
+    <Section Name="System_Alarm_AlarmStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Start" Value="Start" />
+        <Item Key="Stop" Value="Stop" />
+        <Item Key="Reset" Value="Reset" />
+      </Items>
+    </Section>
+    <Section Name="System_DataType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="BOOL" Value="BOOL" />
+        <Item Key="BYTE" Value="BYTE" />
+        <Item Key="WORD" Value="WORD" />
+        <Item Key="DWORD" Value="DWORD" />
+        <Item Key="LWORD" Value="LWORD" />
+        <Item Key="SINT" Value="SINT" />
+        <Item Key="INT" Value="INT" />
+        <Item Key="DINT" Value="DINT" />
+        <Item Key="LINT" Value="LINT" />
+        <Item Key="USINT" Value="USINT" />
+        <Item Key="UINT" Value="UINT" />
+        <Item Key="UDINT" Value="UDINT" />
+        <Item Key="ULINT" Value="ULINT" />
+        <Item Key="REAL" Value="REAL" />
+        <Item Key="LREAL" Value="LREAL" />
+        <Item Key="STRING" Value="STRING" />
+        <Item Key="WSTRING" Value="WSTRING" />
+        <Item Key="CHAR" Value="CHAR" />
+        <Item Key="WCHAR" Value="WCHAR" />
+        <Item Key="TIME" Value="TIME" />
+        <Item Key="LTIME" Value="LTIME" />
+        <Item Key="DATE" Value="DATE" />
+        <Item Key="LDATE" Value="LDATE" />
+        <Item Key="DT" Value="DT" />
+        <Item Key="LDT" Value="LDT" />
+        <Item Key="TOD" Value="TOD" />
+        <Item Key="LTOD" Value="LTOD" />
+      </Items>
+    </Section>
+    <Section Name="System_FileSystem_Enums_ExportFileType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Configurations" Value=" Export embedded configurations " />
+        <Item Key="Descriptions" Value=" Export embedded descriptions " />
+        <Item Key="Profiles" Value=" Export embedded profiles " />
+      </Items>
+    </Section>
+    <Section Name="System_FileSystem_Enums_ExportType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="JSON" Value=" Export in JSON format " />
+        <Item Key="CSV" Value=" Export in CSV format " />
+      </Items>
+    </Section>
+    <Section Name="System_FileSystem_Enums_FS_OpenMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="APPEND" Value=" Open file in binary mode to write in append mode " />
+        <Item Key="CREATE" Value=" Create and open a file in binary mode to write " />
+        <Item Key="READ" Value=" Open file in binary mode to read " />
+        <Item Key="RW" Value=" Open file in binary mode to read/write " />
+        <Item Key="CREATE_RW" Value=" Create and open a file in binary mode to read/write " />
+        <Item Key="OPEN_APPEND" Value=" Open file to write in append mode " />
+        <Item Key="OPEN_CREAT" Value=" Create and open a file to write " />
+        <Item Key="OPEN_READ" Value=" Open file to read " />
+        <Item Key="OPEN_RW" Value=" Open file in read/write mode " />
+        <Item Key="OPEN_CREATE_RW" Value=" Create and open a file to read/write " />
+      </Items>
+    </Section>
+    <Section Name="System_FileSystem_Enums_FS_Seek" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Set" Value=" Seek from beginning of file. " />
+        <Item Key="Cur" Value=" Seek from current position. " />
+        <Item Key="End" Value=" Seek from end of file. " />
+      </Items>
+    </Section>
+    <Section Name="System_FileSystem_Enums_FS_Volume" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="PRIVATE_VOLUME" Value=" Private volume index " />
+        <Item Key="PUBLIC_VOLUME" Value=" Public volume index " />
+      </Items>
+    </Section>
+    <Section Name="System_FileSystem_Enums_PartitionType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="PublicPartition" Value=" Public partition of the controller " />
+        <Item Key="PenDrive" Value=" Pen drive partition " />
+        <Item Key="SdCard" Value=" SD card partition " />
+      </Items>
+    </Section>
+    <Section Name="System_Globalization_UOM" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NONE" Value="NONE" />
+        <Item Key="YEAR" Value="y" />
+        <Item Key="WEEK" Value="wk" />
+        <Item Key="DAY" Value="d" />
+        <Item Key="HOUR" Value="h" />
+        <Item Key="MINUTE" Value="min" />
+        <Item Key="MONTH" Value="mo" />
+        <Item Key="SECOND" Value="s" />
+        <Item Key="HUNDREDTHS_SECOND" Value="s/100" />
+        <Item Key="MILLISECOND" Value="ms" />
+        <Item Key="MICROSECOND" Value="us" />
+        <Item Key="MICROMETER" Value="um" />
+        <Item Key="MILLIMETER" Value="mm" />
+        <Item Key="CENTIMETER" Value="cm" />
+        <Item Key="METER" Value="m" />
+        <Item Key="KILOMETER" Value="Km" />
+        <Item Key="INCH" Value="in" />
+        <Item Key="FOOT" Value="ft" />
+        <Item Key="MILE" Value="mi" />
+        <Item Key="YARD" Value="yd" />
+        <Item Key="MILLIGRAM" Value="mg" />
+        <Item Key="GRAM" Value="g" />
+        <Item Key="KILOGRAM" Value="Kg" />
+        <Item Key="OUNCE" Value="oz" />
+        <Item Key="POUND" Value="lb" />
+        <Item Key="TON" Value="t" />
+        <Item Key="TON_REFRIGERATION" Value="rt" />
+        <Item Key="POUND_MASS" Value="lb" />
+        <Item Key="POUND_FORCE" Value="lb" />
+        <Item Key="SQUARE_METER" Value="m2" />
+        <Item Key="SQUARE_KILOMETER" Value="Km2" />
+        <Item Key="SQUARE_FOOT" Value="ft2" />
+        <Item Key="SQUARE_INCH" Value="in2" />
+        <Item Key="SQUARE_MILE" Value="mi2" />
+        <Item Key="SQUARE_YARD" Value="yd2" />
+        <Item Key="HECTARE" Value="ha" />
+        <Item Key="ACRE" Value="acr" />
+        <Item Key="MILLILITER" Value="ml" />
+        <Item Key="CENTILITER" Value="cl" />
+        <Item Key="LITER" Value="l" />
+        <Item Key="CUBIC_METER" Value="m3" />
+        <Item Key="CUBIC_FOOT" Value="ft3" />
+        <Item Key="CUBIC_INCH" Value="in3" />
+        <Item Key="IMPERIAL_GALLON" Value="Impgal" />
+        <Item Key="US_GALLON" Value="USgal" />
+        <Item Key="CELSIUS" Value="°C" />
+        <Item Key="TENTHS_CELSIUS" Value="°C/10" />
+        <Item Key="FAHRENHEIT" Value="°F" />
+        <Item Key="KELVIN" Value="K" />
+        <Item Key="DELTAKELVIN" Value="K" />
+        <Item Key="DELTAFAHRENHEIT" Value="°F" />
+        <Item Key="CELSIUS_PER_HOUR" Value="°C/h" />
+        <Item Key="CELSIUS_PER_MINUTE" Value="°C/min" />
+        <Item Key="FAHRENHEIT_PER_HOUR" Value="°F/h" />
+        <Item Key="FAHRENHEIT_PER_MINUTE" Value="°F/min" />
+        <Item Key="ATMOSPHERE" Value="atm" />
+        <Item Key="BAR" Value="bar" />
+        <Item Key="TENTHS_BAR" Value="bar/10" />
+        <Item Key="MILLIBAR" Value="mbar" />
+        <Item Key="PSI" Value="psi" />
+        <Item Key="PASCAL" Value="Pa" />
+        <Item Key="HECTOPASCAL" Value="hPa" />
+        <Item Key="KILOPASCAL" Value="KPa" />
+        <Item Key="WATER_CENTIMETER" Value="cmH2O" />
+        <Item Key="WATER_INCH" Value="inH2O" />
+        <Item Key="MERCURY_MILLIMETER" Value="mmHg" />
+        <Item Key="MERCURY_CENTIMETER" Value="cmHg" />
+        <Item Key="MERCURY_INCH" Value="inHg" />
+        <Item Key="PRESSURE_PASCAL" Value="Pa" />
+        <Item Key="PRESSURE_WATER_INCH" Value="inH2O" />
+        <Item Key="PERCENT" Value="%" />
+        <Item Key="TENTHS_PERCENT" Value="%/10" />
+        <Item Key="MILLIOHM" Value="mOhm" />
+        <Item Key="OHM" Value="Ohm" />
+        <Item Key="KILOOHM" Value="KOhm" />
+        <Item Key="MEGAOHM" Value="MOhm" />
+        <Item Key="MILLIVOLT" Value="mV" />
+        <Item Key="VOLT" Value="V" />
+        <Item Key="MEGAVOLT" Value="MV" />
+        <Item Key="MILLIAMPERE" Value="mA" />
+        <Item Key="AMPERE" Value="A" />
+        <Item Key="VOLT_AMPERE" Value="VA" />
+        <Item Key="KILOVOLT_AMPERE" Value="KVA" />
+        <Item Key="MEGAVOLT_AMPERE" Value="MVA" />
+        <Item Key="MICROSIEMENS" Value="uS" />
+        <Item Key="MILLISIEMENS" Value="mS" />
+        <Item Key="SIEMENS" Value="S" />
+        <Item Key="VOLT_AMPERE_REACTIVE" Value="VA" />
+        <Item Key="KILOVOLT_AMPERE_REACTIVE" Value="KVA" />
+        <Item Key="MEGAVOLT_AMPERE_REACTIVE" Value="MVA" />
+        <Item Key="NEWTON" Value="N" />
+        <Item Key="NEWTON_METER" Value="Nm" />
+        <Item Key="POUND_FOOT" Value="lbft" />
+        <Item Key="POUND_PER_SQUARE_INCH" Value="lb/in2" />
+        <Item Key="POUND_FORCE_PER_SQUARE_INCH" Value="lb/in2" />
+        <Item Key="MILLIWATT" Value="mW" />
+        <Item Key="WATT" Value="W" />
+        <Item Key="KILOWATT" Value="KW" />
+        <Item Key="MEGAWATT" Value="MW" />
+        <Item Key="WATT_HOUR" Value="Wh" />
+        <Item Key="KILOWATT_HOUR" Value="KWh" />
+        <Item Key="MEGAWATT_HOUR" Value="MWh" />
+        <Item Key="WATT_PER_SQUARE_METER" Value="W/m2" />
+        <Item Key="WATT_PER_SQUARE_FOOT" Value="W/ft2" />
+        <Item Key="HORSEPOWER" Value="HP" />
+        <Item Key="THERMAL_POWER_BTU" Value="btu" />
+        <Item Key="THERMAL_POWER_BTU_PER_HOUR" Value="btu/h" />
+        <Item Key="REFRIGERATION_POWER_KILOWATT" Value="KW" />
+        <Item Key="THERMAL_POWER_WATT" Value="W" />
+        <Item Key="ELECTRICAL_POWER_WATT" Value="W" />
+        <Item Key="JOULE" Value="J" />
+        <Item Key="KILOJOULE" Value="KJ" />
+        <Item Key="MEGAJOULE" Value="MJ" />
+        <Item Key="JOULE_PER_KELVIN" Value="J/K" />
+        <Item Key="KILOJOULE_PER_KELVIN" Value="KJ/K" />
+        <Item Key="MEGAJOULE_PER_KELVIN" Value="MJ/K" />
+        <Item Key="JOULE_PER_KILOGRAM_KELVIN" Value="J/KgK" />
+        <Item Key="JOULE_SECOND" Value="Js" />
+        <Item Key="JOULE_PER_SECOND" Value="J/s" />
+        <Item Key="JOULE_PER_GRAM" Value="J/g" />
+        <Item Key="JOULE_PER_KILOGRAM" Value="J/Kg" />
+        <Item Key="KILOJOULE_PER_KILOGRAM" Value="KJ/Kg" />
+        <Item Key="MEGAJOULE_PER_KILOGRAM" Value="MJ/Kg" />
+        <Item Key="BTU" Value="btu" />
+        <Item Key="KILOBTU" Value="Kbtu" />
+        <Item Key="MEGABTU" Value="Mbtu" />
+        <Item Key="KILOBTU_PER_HOUR" Value="Kbtu/h" />
+        <Item Key="BTU_PER_POUND" Value="btu/lb" />
+        <Item Key="BTU_PER_HOUR" Value="btu/h" />
+        <Item Key="CALORIE" Value="Cal" />
+        <Item Key="KILOCALORIE_PER_KILOGRAM" Value="KCal/Kg" />
+        <Item Key="LUMEN" Value="lm" />
+        <Item Key="LUX" Value="lx" />
+        <Item Key="FOOT_CANDLE" Value="fc" />
+        <Item Key="CANDELA" Value="cd" />
+        <Item Key="CANDELA_PER_SQUARE_METER" Value="cd/m2" />
+        <Item Key="GRAM_KELVIN" Value="gK" />
+        <Item Key="KILOGRAM_KELVIN" Value="KgK" />
+        <Item Key="ENTALPHY_KILOJOULE" Value="KJ" />
+        <Item Key="ENTALPHY_BTU" Value="btu" />
+        <Item Key="DRY_AIR_KILOGRAM" Value="DAKg" />
+        <Item Key="DRY_AIR_POUND" Value="DAlb" />
+        <Item Key="KILOJOULE_PER_DRY_AIR_KILOGRAM" Value="KJ/DAKg" />
+        <Item Key="MEGAJOULE_PER_DRY_AIR_KILOGRAM" Value="MJ/DAKg" />
+        <Item Key="ENTALPHY_KILOJOULE_PER_KILOGRAM" Value="KJ/Kg" />
+        <Item Key="ENTALPHY_BTU_PER_POUND" Value="btu/lb" />
+        <Item Key="JOULE_PER_DRY_AIR_KILOGRAM" Value="J/DAKg" />
+        <Item Key="BTU_PER_DRY_AIR_POUND" Value="btu/DAlb" />
+        <Item Key="METER_PER_SECOND" Value="m/s" />
+        <Item Key="METER_PER_MINUTE" Value="m/min" />
+        <Item Key="KILOMETER_PER_HOUR" Value="Kmh" />
+        <Item Key="FOOT_PER_SECOND" Value="ft/s" />
+        <Item Key="FOOT_PER_MINUTE" Value="ft/min" />
+        <Item Key="MILE_PER_HOUR" Value="mph" />
+        <Item Key="RPS" Value="rps" />
+        <Item Key="RPM" Value="rpm" />
+        <Item Key="HERTZ" Value="Hz" />
+        <Item Key="KILOHERTZ" Value="KHz" />
+        <Item Key="MEGAHERTZ" Value="MHz" />
+        <Item Key="CUBIC_METER_PER_SECOND" Value="m3/s" />
+        <Item Key="CUBIC_METER_PER_MINUTE" Value="m3/min" />
+        <Item Key="CUBIC_METER_PER_HOUR" Value="m3/h" />
+        <Item Key="CUBIC_FOOT_PER_HOUR" Value="ft3/h" />
+        <Item Key="CUBIC_FOOT_PER_MINUTE" Value="ft3/min" />
+        <Item Key="CUBIC_FOOT_PER_SECOND" Value="ft3/s" />
+        <Item Key="IMPERIAL_GALLON_PER_SECOND" Value="gal_uk/s" />
+        <Item Key="IMPERIAL_GALLON_PER_MINUTE" Value="gal_uk/min" />
+        <Item Key="US_GALLON_PER_SECOND" Value="gal_us/s" />
+        <Item Key="US_GALLON_PER_MINUTE" Value="gal_us/min" />
+        <Item Key="US_GALLON_PER_HOUR" Value="gal_us/h" />
+        <Item Key="LITER_PER_SECOND" Value="l/s" />
+        <Item Key="LITER_PER_MINUTE" Value="l/min" />
+        <Item Key="LITER_PER_HOUR" Value="l/h" />
+        <Item Key="TON_HOUR" Value="th" />
+        <Item Key="TON_PER_HOUR" Value="t/h" />
+        <Item Key="GRAM_PER_SECOND" Value="g/s" />
+        <Item Key="GRAM_PER_MINUTE" Value="g/min" />
+        <Item Key="GRAM_PER_HOUR" Value="g/h" />
+        <Item Key="KILOGRAM_PER_SECOND" Value="Kg/s" />
+        <Item Key="KILOGRAM_PER_MINUTE" Value="Kg/min" />
+        <Item Key="KILOGRAM_PER_HOUR" Value="Kg/h" />
+        <Item Key="POUND_PER_MINUTE" Value="lb/min" />
+        <Item Key="POUND_PER_HOUR" Value="lb/h" />
+        <Item Key="GRAM_PER_KILOGRAM" Value="g/Kg" />
+        <Item Key="TENTHS_GRAM_PER_KILOGRAM" Value="g/Kg/10" />
+        <Item Key="KILOGRAM_PER_CUBIC_METER" Value="Kg/m3" />
+        <Item Key="AIR_FLOW_CUBIC_METER" Value="m3" />
+        <Item Key="AIR_FLOW_CUBIC_FOOT" Value="ft3" />
+        <Item Key="AIR_FLOW_CUBIC_METER_PER_HOUR" Value="m3/h" />
+        <Item Key="AIR_FLOW_CUBIC_FOOT_PER_MINUTE" Value="ft3/min" />
+        <Item Key="WATER_KILOGRAM_PER_DRY_AIR_KILOGRAM" Value="KgH2O/DAKg" />
+        <Item Key="TENTHS_WATER_KILOGRAM_PER_DRY_AIR_KILOGRAM" Value="KgH2O/DAKg/10" />
+        <Item Key="PERCENT_rH" Value="%rH" />
+        <Item Key="TENTHS_PERCENT_rH" Value="%rH/10" />
+        <Item Key="WATER_KILOGRAM" Value="KgH2O" />
+        <Item Key="WATER_GRAM" Value="gH2O" />
+        <Item Key="WATER_GRAM_PER_DRY_AIR_KILOGRAM" Value="gH2O/DAKg" />
+        <Item Key="TENTHS_WATER_GRAM_PER_DRY_AIR_KILOGRAM" Value="gH2O/DAKg/10" />
+        <Item Key="DELTACELSIUS" Value="°C" />
+        <Item Key="HENRY" Value="H" />
+        <Item Key="MILLIHENRY" Value="mH" />
+        <Item Key="PPM" Value="ppm" />
+        <Item Key="PPB" Value="ppb" />
+        <Item Key="HERTZ_PER_SECOND" Value="Hz/s" />
+        <Item Key="CYCLE_PER_SECOND" Value="cps" />
+        <Item Key="STEPS" Value="steps" />
+      </Items>
+    </Section>
+    <Section Name="System_IO_AnalogInputEventMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Below" Value=" Event will be raised when threshold is crossed from below " />
+        <Item Key="Above" Value=" Event will be raised when threshold is crossed from above " />
+      </Items>
+    </Section>
+    <Section Name="System_IO_ChipIoErrorInfo" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="CfgErrors" Value=" Configuration errors " />
+        <Item Key="CrcErrors" Value=" Crc errors " />
+        <Item Key="NanErrors" Value=" Not a number errors " />
+        <Item Key="ExceptionErrors" Value=" Exception errors " />
+        <Item Key="ConsecutiveErrors" Value=" Consecutive errors " />
+      </Items>
+    </Section>
+    <Section Name="System_LogLevel" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Trace_Level" Value=" Log level TRACE " />
+        <Item Key="Debug_Level" Value=" Log level DEBUG " />
+        <Item Key="Info_Level" Value=" Log level INFO " />
+        <Item Key="Warn_Level" Value=" Log level WARN " />
+        <Item Key="Error_Level" Value=" Log level ERROR " />
+        <Item Key="Fatal_Level" Value=" Log level FATAL " />
+      </Items>
+    </Section>
+    <Section Name="System_Logs_LogKind" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="None" Value="None" />
+        <Item Key="Change" Value="Change" />
+        <Item Key="Dynamic" Value="Dynamic" />
+        <Item Key="Expression" Value="Expression" />
+        <Item Key="Periodic" Value="Periodic" />
+        <Item Key="Threshold" Value="Threshold" />
+      </Items>
+    </Section>
+    <Section Name="System_Logs_LogStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Ok" Value="Ok" />
+        <Item Key="InvalidMemory" Value="InvalidMemory" />
+        <Item Key="OutOfMemory" Value="OutOfMemory" />
+        <Item Key="Loading" Value="Loading" />
+        <Item Key="NotInitialized" Value="NotInitialized" />
+        <Item Key="InvalidLogId" Value="InvalidLogId" />
+        <Item Key="InvalidSampleId" Value="InvalidSampleId" />
+        <Item Key="PendingRequest" Value="PendingRequest" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_Shared_Shared_Channel" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="PLAN" Value=" Sharing on pLan " />
+        <Item Key="UDP" Value=" Sharing on UDP " />
+      </Items>
+    </Section>
+    <Section Name="System_Net_Shared_Shared_Mode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Manager" Value=" Mode manager " />
+        <Item Key="NonManager" Value=" Mode non manager " />
+        <Item Key="Automatic" Value=" Mode automatic " />
+      </Items>
+    </Section>
+    <Section Name="System_Net_TcpIp_Service" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Ftp" Value=" FTP " />
+        <Item Key="WebServer" Value=" Web Server (HTTP) " />
+        <Item Key="FtpS" Value=" FTP Secured " />
+        <Item Key="WebServerS" Value=" Web Server Secured (HTTPS) " />
+      </Items>
+    </Section>
+    <Section Name="System_Net_TcpIp_TcpIp_Mode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Server" Value=" TCP IP server mode " />
+        <Item Key="Client" Value=" TCP IP client mode " />
+        <Item Key="Test" Value=" TCP IP test mode " />
+      </Items>
+    </Section>
+    <Section Name="System_Net_TcpIp_TcpIp_Protocol" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="TCP" Value=" TCP IP tcp protocol " />
+        <Item Key="UDP" Value=" TCP IP udp protocol " />
+        <Item Key="UDP_BROADCAST" Value=" TCP IP udp broadcast protocol " />
+      </Items>
+    </Section>
+    <Section Name="System_Net_TcpIp_TcpIpEventFlag" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="None" Value="None" />
+        <Item Key="PingDns" Value="PingDns" />
+        <Item Key="ConnectionClosed" Value="ConnectionClosed" />
+        <Item Key="ConnectionAccepted" Value="ConnectionAccepted" />
+      </Items>
+    </Section>
+    <Section Name="System_PowerManagement_GatewayWifiStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="GwDisable" Value=" Gateway wifi disabled " />
+        <Item Key="GwEnable" Value=" Gateway wifi enabled " />
+      </Items>
+    </Section>
+    <Section Name="System_PowerManagement_PowerSupplyState" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="UNKNOWN_PS" Value=" Unknown power supply mode during init " />
+        <Item Key="AC_PS" Value=" AC power supply " />
+        <Item Key="DC_PS" Value=" DC power supply " />
+        <Item Key="AC_FAIL_PS" Value=" Failure state of AC power supply " />
+        <Item Key="DC_FAIL_PS" Value=" Failure state of DC power supply " />
+      </Items>
+    </Section>
+    <Section Name="System_RemoteIO_BlePowerStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="BleOff" Value=" Bluetooth module power off " />
+        <Item Key="BleOn" Value=" Bluetooth module power on " />
+      </Items>
+    </Section>
+    <Section Name="System_ResetMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Warm" Value=" Warm Start " />
+        <Item Key="Cold" Value=" Cold Start " />
+      </Items>
+    </Section>
+    <Section Name="System_RetainBackupMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="DISABLED_MODE" Value=" Retain backup disabled mode " />
+        <Item Key="BLOCKING_MODE" Value=" Retain backup blocking mode " />
+        <Item Key="ASYNCHRONUOS_MODE" Value=" Retain backup asynchronuos mode " />
+      </Items>
+    </Section>
+    <Section Name="System_Serial_Algorithm" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="CRC" Value=" CRC algorithm " />
+        <Item Key="CHK" Value=" Checksum algorithm " />
+      </Items>
+    </Section>
+    <Section Name="System_Serial_HardwareMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="RS485" Value=" RS485 serial line " />
+        <Item Key="Ser232" Value=" 232 serial line " />
+      </Items>
+    </Section>
+    <Section Name="System_Serial_Serial_Channel" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Serial0" Value=" Serial0 serial channel " />
+        <Item Key="BMS1" Value=" BMS1 serial channel " />
+        <Item Key="FBUS1" Value=" FBUS1 serial channel " />
+        <Item Key="BMS2" Value=" BMS2 serial channel " />
+        <Item Key="FBUS2" Value=" FBUS2 serial channel " />
+      </Items>
+    </Section>
+    <Section Name="System_Serial_Serial_Mode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="IDEOnly" Value=" Only IDE connection is accepted on the selected COM " />
+        <Item Key="ModbusShared" Value=" Both IDE and custom communication are accepted on the selected COM " />
+        <Item Key="IDEDisabled" Value=" IDE communication is not accepted on the selected COM " />
+      </Items>
+    </Section>
+    <Section Name="System_Serial_Serial_Parity" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="None" Value=" No parity " />
+        <Item Key="Odd" Value=" Odd parity " />
+        <Item Key="Even" Value=" Even parity " />
+      </Items>
+    </Section>
+    <Section Name="System_SignalDynamicEventMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="SHORTER_MODE" Value=" Signal event shorter mode " />
+        <Item Key="LONGER_MODE" Value=" Signal event longer mode " />
+        <Item Key="OVERRIDE_MODE" Value=" Signal event ovveride mode " />
+      </Items>
+    </Section>
+    <Section Name="System_StartMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Cold" Value=" Cold Start " />
+        <Item Key="Warm" Value=" Warm Start " />
+        <Item Key="Download" Value=" Download start " />
+      </Items>
+    </Section>
+    <Section Name="System_UI_BuiltInInfo" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NONE" Value="NONE" />
+        <Item Key="SOFTWARE_TYPE" Value="SOFTWARE_TYPE" />
+        <Item Key="SOFTWARE_RELEASE" Value="SOFTWARE_RELEASE" />
+      </Items>
+    </Section>
+    <Section Name="System_UI_BuzzerStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Disabled" Value="Disabled" />
+        <Item Key="Enabled" Value="Enabled" />
+        <Item Key="Pulsed" Value="Pulsed" />
+        <Item Key="SingleShot" Value="SingleShot" />
+      </Items>
+    </Section>
+    <Section Name="System_UI_FunctionKeyPosition" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NOT_PRESENT" Value="NOT_PRESENT" />
+        <Item Key="FIRST" Value="FIRST" />
+        <Item Key="SECOND" Value="SECOND" />
+      </Items>
+    </Section>
+    <Section Name="System_UI_LedStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="SWITCH_OFF" Value=" Switch off led status " />
+        <Item Key="SWITCH_ON" Value=" Switch on led status " />
+        <Item Key="BLINKING" Value=" Standard blinking led status (500ms on and 500ms off) " />
+        <Item Key="HALF_LIGHT" Value=" Half light led status " />
+        <Item Key="FAST_BLINKING" Value=" Fast blinking led status (250ms on and 250ms off) " />
+        <Item Key="BLINKING_1_TIME" Value=" Blinking 1 time led status (1s on and 3s off) " />
+        <Item Key="BLINKING_2_TIME" Value=" Blinking 2 time led status (2 blinking with 1s on and 1s off and a pause with 3s off between each sequence) " />
+        <Item Key="BLINKING_3_TIME" Value=" Blinking 3 time led status (3 blinking with 1s on and 1s off and a pause with 3s off between each sequence) " />
+        <Item Key="BLINKING_4_TIME" Value=" Blinking 4 time led status (4 blinking with 1s on and 1s off and a pause with 3s off between each sequence) " />
+        <Item Key="BLINKING_5_TIME" Value=" Blinking 5 time led status (5 blinking with 1s on and 1s off and a pause with 3s off between each sequence) " />
+        <Item Key="BLINKING_6_TIME" Value=" Blinking 6 time led status (6 blinking with 1s on and 1s off and a pause with 3s off between each sequence) " />
+        <Item Key="BLINKING_7_TIME" Value=" Blinking 7 time led status (7 blinking with 1s on and 1s off and a pause with 3s off between each sequence) " />
+        <Item Key="BLINKING_8_TIME" Value=" Blinking 8 time led status (8 blinking with 1s on and 1s off and a pause with 3s off between each sequence) " />
+        <Item Key="BLINKING_9_TIME" Value=" Blinking 9 time led status (9 blinking with 1s on and 1s off and a pause with 3s off between each sequence) " />
+      </Items>
+    </Section>
+    <Section Name="System_UI_TextAlignment" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Left" Value="Left" />
+        <Item Key="Center" Value="Center" />
+        <Item Key="Right" Value="Right" />
+      </Items>
+    </Section>
+    <Section Name="System_USB_UsbDeviceMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="CdcMode" Value=" Communication Device Class (CDC) mode: the USB port becomes a virtual serial port. " />
+        <Item Key="MtpMode" Value=" Media Transfer Protocol (MTP) mode: allows to transfer files to and from a Personal Computer. " />
+        <Item Key="NoneMode" Value=" USB device disabled " />
+      </Items>
+    </Section>
+    <Section Name="System_USB_UsbHostMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NoneMode" Value=" USB host disabled " />
+        <Item Key="MsdMode" Value=" Mass Storage Device (MSD) mode: allows to transfer files to and from a USB pen drive. " />
       </Items>
     </Section>
   </Sections>
