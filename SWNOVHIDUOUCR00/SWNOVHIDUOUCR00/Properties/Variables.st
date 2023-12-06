@@ -115,7 +115,7 @@ VAR_GLOBAL
 	{LOCATION DHWProc}
 	(**DHW fill in percent*)
 	{ATTRIBUTE UOM PERCENT}
-	DHWProc : USINT;
+	DHWProc : REAL;
 	{LOCATION DhwPumpManReq}
 	(**DHW pump manual request*)
 	{ATTRIBUTE UOM PERCENT}
@@ -418,6 +418,9 @@ VAR_GLOBAL
 	{LOCATION TimezoneIdx}
 	(**Timezone index*)
 	TimezoneIdx : UINT(1..136) := 50;
+	{LOCATION uID1}
+	(**Configuration of uID*)
+	uID1 : System.IO.uChannel;
 	{LOCATION Unit_CoolHeat}
 	(**Unit cooling/heating mode*)
 	Unit_CoolHeat : BOOL;
@@ -442,6 +445,9 @@ VAR_GLOBAL
 	{LOCATION UnitStatus}
 	(**Unit status*)
 	UnitStatus : UNIT_STATUS;
+	{LOCATION WaterFlowD1}
+	(**WaterFlow freq*)
+	WaterFlowD1 : REAL;
 	{LOCATION Wrg_Circ1}
 	(**Warning - Circ.1 light alarm*)
 	Wrg_Circ1 : BOOL;
@@ -584,19 +590,31 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwRefBottom : USINT := 10;
+	DhwRefBottom : REAL;
+	{LOCATION DhwRefBottomN}
+	(**Reference value for fully loaded DHW in Normal mode*)
+	{ATTRIBUTE UOM CELSIUS}
+	DhwRefBottomN : REAL := 48;
 	{LOCATION DhwRefMiddle}
 	(**DHW reference middle*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwRefMiddle : USINT := 30;
+	DhwRefMiddle : REAL;
+	{LOCATION DhwRefMiddleN}
+	(**Reference value for fully loaded DHW in Normal mode*)
+	{ATTRIBUTE UOM CELSIUS}
+	DhwRefMiddleN : REAL := 52;
 	{LOCATION DhwRefTop}
 	(**DHW reference top*)
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwRefTop : USINT := 40;
+	DhwRefTop : REAL;
+	{LOCATION DhwRefTopN}
+	(**Reference value for fully loaded DHW in Normal mode*)
+	{ATTRIBUTE UOM CELSIUS}
+	DhwRefTopN : REAL := 55;
 	{LOCATION DHWRegDGain}
 	(**DHW PID - Derivative time*)
 	{METADATA MIN_VAL 0}

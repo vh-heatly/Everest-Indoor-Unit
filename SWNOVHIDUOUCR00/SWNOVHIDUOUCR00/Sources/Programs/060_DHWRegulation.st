@@ -15,11 +15,11 @@ PROGRAM DHWRegulation
         (**Allow DHW*)
         AllowDHW          : BOOL;
         (**DHW top fill procent*)
-        DHWTopProc        : USINT;
+        DHWTopProc        : REAL;
         (**DHW middle fill procent*)
-        DHWMiddleProc     : USINT;
+        DHWMiddleProc     : REAL;
         (**DHW bottom fill procent*)
-        DHWBottomProc     : USINT;
+        DHWBottomProc     : REAL;
         (**Set/Reset DHW need*)
         SR_DHWNeed        : SR;        
         (**Circulation pump 1 timer*)
@@ -68,11 +68,11 @@ PROGRAM DHWRegulation
     END_IF;
     {ENDREGION}
     
-    {REGION DHWProc calculation} //TBD
-    /*  DHWTopProc := (((TO_USINT(Ain_Data.Fct.DHWTopTemp) - DhwRefTop) / TO_USINT(DhwPumpSetP) - DhwRefTop))*100;
-        DHWMiddleProc := ((TO_USINT(Ain_Data.Fct.DHWMiddleTemp) - DhwRefMiddle) / TO_USINT(DhwPumpSetP) - DhwRefMiddle);
-        DHWBottomProc := ((TO_USINT(Ain_Data.Fct.DHWBottomTemp) - DhwRefBottom) / TO_USINT(DhwPumpSetP) - DhwRefBottom);
-        DHWProc := (DHWTopProc + DHWMiddleProc + DHWBottomProc) / 3; */
+    {REGION DHWProc calculation}
+      DHWTopProc := Limit(0,((Ain_Data.Fct.DHWTopTemp - DhwRefTop) / (DhwRefTopN - DhwRefTop))*100,200);
+        DHWMiddleProc := Limit(0,((Ain_Data.Fct.DHWMiddleTemp - DhwRefMiddle) / (DhwRefMiddleN - DhwRefMiddle))*100,200);
+        DHWBottomProc := Limit(0,((Ain_Data.Fct.DHWBottomTemp - DhwRefBottom) / (DhwRefBottomN - DhwRefBottom))*100,200);
+        DHWProc := ((DHWTopProc + DHWMiddleProc + DHWBottomProc) / 3); 
     {ENDREGION}
     
     {REGION ENABLE CHARGE}
@@ -95,9 +95,12 @@ PROGRAM DHWRegulation
     );
     DHWNeed := SR_DHWNeed.Q1;
     
+    //Calculation of waterflow
+    
+    
     //Circulation pump enable from flow
     TON_CircPump1(
-        IN := Din_Data.Fct.FlowSw AND Uniton, 
+        IN := WaterFlowD1 > 16 AND Uniton, 
         PT := TO_UINT(DhwFlowSwitchOnDel)
     );
     

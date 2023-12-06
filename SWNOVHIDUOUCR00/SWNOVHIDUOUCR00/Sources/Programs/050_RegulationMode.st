@@ -4,10 +4,27 @@ USING Libs.Math;
 USING Libs.PID_Incr;
 USING Libs.Timer;
 
+VAR_GLOBAL
+   
+END_VAR
 
 
 PROGRAM RegulationMode 
     VAR
+        (**Iteration value*)
+        i                       : INT;
+        (**Iteration value*)
+        j                       : INT;
+        (**Iteration value*)
+        k                       : INT;
+        (**Outside temperature sample timer*)
+        TON_OutDoorTemp         : TON_S;
+        (**First full FilterHrs temperature samples taken*)
+        OutDoorTempAvgReady     : BOOL;
+        
+        OutDoorTempFilterTmp    : REAL;
+        (**Outside temperature Sensor sample timer*)
+        TON_OutDoorTempSnsr     : TON_S;
         (**Intended stage unit wants to transition to*)
         GoToState               : USINT;
         (**DHW transition timer*)
@@ -18,14 +35,6 @@ PROGRAM RegulationMode
         DHWFrcSwitchDone        : BOOL;
         (**Disable regular state transition during DHW switch*)
         Dis_OpStateSwitch       : BOOL;
-        (**Iteration value*)
-        i                       : INT;
-        (**Iteration value*)
-        j                       : INT;
-        (**Outside temperature sample timer*)
-        TON_OutDoorTemp         : TON_S;
-        (**First 10 temperature samples taken*)
-        OutDoorTempAvgReady     : BOOL;
         (**SG status byte*)
         SG_Status_Byte          : BYTE;
         (**Energybalance offset*)
@@ -36,7 +45,14 @@ PROGRAM RegulationMode
         Dis_AutoMode            : BOOL;
         (**FirstCycle*)
         FirstCycle              : BOOL := 1;
-
+        (**Outdoor sensor average collected*)
+        OutDoorTempSnsrAvgReady : BOOL;
+        
+        OutDoorTempSnsr_FiltSec : INT := 300;
+        (**Outdoor temporary starage af collected values*)
+        OutDoorTempSnsrFilter_PreCalc : ARRAY [0..300] OF REAL;
+        
+        
         
     END_VAR
     
@@ -54,19 +70,64 @@ PROGRAM RegulationMode
     
     {REGION OUTDOOR TEMPERATURE FILTER CALCULATION}
     
-        //Pass filtered request to outdoor unit
+    
 
        
-        IF(OutDoorTempSel = OutSideTemp#OUTSIDETEMP)THEN
-            OutDoorTemp                     :=  Ain_Data.Fct.OutDoorTemp;
-        ELSIF(OutDoorTempSel = OutSideTemp#OUTDOORUNIT)THEN
-            OutDoorTemp                     :=  OU_OutsideTemp;
-        ELSIF(OutDoorTempSel = OutSideTemp#CONNECTIVITYCARD)THEN
-            OutDoorTemp                     :=  Conn_OutDoorTemp;
+    
+        
+        //Update temperature value every 5 minute or at first available cycle Not for Online sensor value
+        TON_OutDoorTempSnsr(
+            IN := OutDoorTempSel <=1 AND NOT(TON_OutDoorTempSnsr.Q),
+            PT := 10
+        );
+ 
+    
+        //Selection of outdoor temperature value
+        IF(TON_OutDoorTempSnsr.Q OR FirstCycle)THEN
+            IF(OutDoorTempSel = OutSideTemp#OUTSIDETEMP)THEN
+                OutDoorTempSnsrFilter_PreCalc[k]                   :=  Ain_Data.Fct.OutDoorTemp;
+            ELSIF(OutDoorTempSel = OutSideTemp#OUTDOORUNIT)THEN
+                OutDoorTempSnsrFilter_PreCalc[k]                   :=  OU_OutsideTemp;
+            END_IF;    
+                        
+            k := k+1;
+            
+            //Indicate if temperatures has been sampled for OutDoorTemp_FiltHrs
+            IF(k >= (OutDoorTempSnsr_FiltSec/10)) THEN
+                IF(NOT(OutDoorTempSnsrAvgReady))THEN
+                    OutDoorTempSnsrAvgReady := TRUE;
+                END_IF;
+                k := 0;
+            END_IF;    
+            
+            //Calculate temperature average
+            IF(OutDoorTempSnsrAvgReady)THEN
+                OutDoorTempFilter := 0;
+                FOR j := 0 TO (OutDoorTempSnsr_FiltSec/10) DO
+                    OutDoorTempFilterTmp := OutDoorTempFilterTmp + OutDoorTempSnsrFilter_PreCalc[j];
+                END_FOR;
+                    OutDoorTemp := OutDoorTempFilterTmp / TO_REAL((OutDoorTempSnsr_FiltSec/10));
+                    OutDoorTempFilterTmp := 0;
+            ELSE
+                //Calculate only sampled temperatures if not all required samples are collected
+                FOR j := 0 TO (k-1) DO
+                    OutDoorTempFilterTmp := OutDoorTempFilterTmp + OutDoorTempSnsrFilter_PreCalc[j];
+                END_FOR;
+                    OutDoorTemp := OutDoorTempFilterTmp / TO_REAL(j);
+                    OutDoorTempFilterTmp := 0;
+            END_IF;
+        
+            ELSIF(OutDoorTempSel = OutSideTemp#CONNECTIVITYCARD)THEN
+                OutDoorTemp                     :=  Conn_OutDoorTemp;    
+            
         END_IF;    
+    
+    
+    
+    
         //Update temperature value every hour or at first available cycle
         TON_OutDoorTemp(
-            IN := OutDoorTempSel <= 2 AND NOT(TON_OutDoorTemp.Q),
+            IN := NOT(TON_OutDoorTemp.Q),
             PT := 3600
         );
  
@@ -77,7 +138,7 @@ PROGRAM RegulationMode
                         
             i := i+1;
             
-            //Indicate if temperatures has been sampled for 5 minutes
+            //Indicate if temperatures has been sampled for OutDoorTemp_FiltHrs
             IF(i >= OutDoorTemp_FiltHrs) THEN
                 IF(NOT(OutDoorTempAvgReady))THEN
                     OutDoorTempAvgReady := TRUE;
@@ -89,21 +150,23 @@ PROGRAM RegulationMode
             IF(OutDoorTempAvgReady)THEN
                 OutDoorTempFilter := 0;
                 FOR j := 0 TO OutDoorTemp_FiltHrs DO
-                    OutDoorTempFilter := OutDoorTempFilter + OutDoorTempFilter_PreCalc[j];
+                    OutDoorTempFilterTmp := OutDoorTempFilterTmp + OutDoorTempFilter_PreCalc[j];
                 END_FOR;
-                    OutDoorTempFilter := OutDoorTempFilter / TO_REAL(OutDoorTemp_FiltHrs);
+                    OutDoorTempFilter := OutDoorTempFilterTmp / TO_REAL(OutDoorTemp_FiltHrs);
+                    OutDoorTempFilterTmp := 0;
             ELSE
                 //Calculate only sampled temperatures if not all required samples are collected
-                FOR j := 0 TO OutDoorTemp_FiltHrs DO
-                    OutDoorTempFilter := OutDoorTempFilter + OutDoorTempFilter_PreCalc[j];
+                FOR j := 0 TO (i-1) DO
+                    OutDoorTempFilterTmp := OutDoorTempFilterTmp + OutDoorTempFilter_PreCalc[j];
                 END_FOR;
-                    OutDoorTempFilter := OutDoorTempFilter / TO_REAL(i);
-            END_IF;
-                
-            IF(FirstCycle)THEN
-                FirstCycle := FALSE;
+                    OutDoorTempFilter := OutDoorTempFilterTmp / TO_REAL(j);
+                    OutDoorTempFilterTmp := 0;
             END_IF;
             
+        END_IF;
+    
+        IF(FirstCycle)THEN
+            FirstCycle := FALSE;
         END_IF;
     
     {ENDREGION}

@@ -428,7 +428,7 @@
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
-          DataType="USINT"
+          DataType="REAL"
           Name="DHWProc"
           UoM="PERCENT"
           Index="1"
@@ -472,7 +472,7 @@
           UoM="CELSIUS"
           Index="9"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="USINT"
           Name="DHWStrtProc"
@@ -486,21 +486,21 @@
           UoM="CELSIUS"
           Index="14"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="ExtHotWatrStopTemp"
           UoM="CELSIUS"
           Index="25"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="ExtHotWatrDiff"
           UoM="CELSIUS"
           Index="27"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="BOOL"
           Name="En_ExtHotWatr"
@@ -513,70 +513,70 @@
           UoM="CELSIUS"
           Index="29"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Data.Fct.DHWMiddleTemp"
           UoM="CELSIUS"
           Index="31"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Data.Fct.DHWBottomTemp"
           UoM="CELSIUS"
           Index="33"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Data.Fct.DHWSupplyTemp"
           UoM="CELSIUS"
           Index="35"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Offset.Fct.DHWBottomTemp"
           UoM="DELTACELSIUS"
           Index="47"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Offset.Fct.DHWMiddleTemp"
           UoM="DELTACELSIUS"
           Index="49"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Offset.Fct.DHWSupplyTemp"
           UoM="DELTACELSIUS"
           Index="51"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Offset.Fct.DHWTopTemp"
           UoM="DELTACELSIUS"
           Index="53"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Aout_Data.Fct.CircPump2"
           UoM="PERCENT"
           Index="55"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Aout_Data.Fct.CircPump1"
           UoM="PERCENT"
           Index="57"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="USINT"
           Name="Aout_Cfg.Fct.CircPump1.Board"
@@ -596,21 +596,21 @@
           Kind="CoilStatus"
           Size="1" />
         <ModbusVariable
-          DataType="USINT"
+          DataType="REAL"
           Name="DhwRefTop"
           UoM="CELSIUS"
           Index="59"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
-          DataType="USINT"
+          DataType="REAL"
           Name="DhwRefMiddle"
           UoM="CELSIUS"
           Index="61"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
-          DataType="USINT"
+          DataType="REAL"
           Name="DhwRefBottom"
           UoM="CELSIUS"
           Index="63"
@@ -627,7 +627,7 @@
           Name="ShuntVlv_Req"
           Index="64"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="BOOL"
           Name="ShuntVlv_On"
@@ -639,35 +639,35 @@
           Name="ShuntPGain"
           Index="66"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Data.Fct.SysPress"
           UoM="BAR"
           Index="68"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Data.Fct.OutDoorTemp"
           UoM="CELSIUS"
           Index="70"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Ain_Data.Fct.ClimSupplyTemp"
           UoM="CELSIUS"
           Index="72"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_CurrSH"
           UoM="KELVIN"
           Index="76"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_CurrSpd"
@@ -681,14 +681,14 @@
           UoM="KELVIN"
           Index="74"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="DhwCircPumpReq"
           UoM="PERCENT"
           Index="78"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="UINT"
           Name="ImmHeatStepDelay"
@@ -708,34 +708,34 @@
           UoM="PERCENT"
           Index="39"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="CompSpdMan"
           Index="41"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="Conn_OutDoorTemp"
           UoM="CELSIUS"
           Index="43"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="TempSG1"
           UoM="CELSIUS"
           Index="45"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="TempSG2"
           UoM="CELSIUS"
           Index="80"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="USINT"
           Name="SystemCfg"
@@ -771,49 +771,49 @@
           Name="EBtepImm"
           Index="84"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="EBHPStepOut"
           Index="88"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="EBHPStopComp"
           Index="90"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="EBShunt"
           Index="86"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="EBHPMin"
           Index="92"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="EBHPMax"
           Index="94"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="EBHPCompStrt"
           Index="96"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="EBHP"
           Index="98"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="INT"
           Name="OutDoorTemp_FiltHrs"
@@ -853,7 +853,7 @@
           Name="ShuntVlvPFactor"
           Index="104"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="UINT"
           Name="ShuntVlvTimeFactor"
@@ -865,7 +865,7 @@
           Name="SupplyTempCalc"
           Index="111"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="BOOL"
           Name="OU_CompHeat"
@@ -884,14 +884,14 @@
           UoM="CELSIUS"
           Index="113"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_DscgP"
           UoM="BAR"
           Index="115"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="USINT"
           Name="OpState"
@@ -904,7 +904,7 @@
           UoM="CELSIUS"
           Index="117"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="UINT"
           Name="OU_EnvZone"
@@ -922,28 +922,28 @@
           Name="OU_OutsideTemp"
           Index="119"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Req"
           UoM="RPS"
           Index="121"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_SuctP"
           UoM="BAR"
           Index="126"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_SuctTemp"
           UoM="CELSIUS"
           Index="128"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="BOOL"
           Name="OU_Unit.AlrmReset"
@@ -961,7 +961,7 @@
           Name="OU_Unit.CapTemp"
           Index="130"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="BOOL"
           Name="OU_Unit.CompOn"
@@ -973,43 +973,43 @@
           Name="OU_Unit.CompReq"
           Index="132"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.CompTemp"
           Index="134"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.CondInTemp"
           Index="136"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.CondOutTemp"
           Index="138"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.CurrSH"
           Index="140"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.CurrSHSetP"
           Index="144"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.CurrSpd_RPS"
           Index="146"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="BOOL"
           Name="OU_Unit.DefrostStatus"
@@ -1021,19 +1021,19 @@
           Name="OU_Unit.DscgP"
           Index="149"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.DscgTemp"
           Index="151"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.ECT"
           Index="153"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="BOOL"
           Name="OU_Unit.EEV_CompHeat"
@@ -1045,7 +1045,7 @@
           Name="OU_Unit.EEV_PosPerc"
           Index="155"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="UINT"
           Name="OU_Unit.EnvZone"
@@ -1183,13 +1183,13 @@
           Name="OU_Unit.MaxRPS"
           Index="238"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.MinRPS"
           Index="240"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="BOOL"
           Name="OU_Unit.OnOff"
@@ -1201,19 +1201,19 @@
           Name="OU_Unit.OutDoorTemp"
           Index="242"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.SuctP"
           Index="244"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="REAL"
           Name="OU_Unit.SuctTemp"
           Index="246"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
         <ModbusVariable
           DataType="UINT"
           Name="OU_Unit.SwVersion"
@@ -1231,7 +1231,7 @@
           Name="OU_Unit.WaterFlow"
           Index="250"
           Kind="HoldingRegister"
-          Size="2" />
+          Size="1" />
       </Variables>
       <IOTConfiguration />
     </Configuration>

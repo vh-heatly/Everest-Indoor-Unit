@@ -300,4 +300,7 @@ PROGRAM InputMng
         uConfig
     );
     
+    HandleSpecialID(1, LIB_IO_PROBE_U_FREQ, 9, uID1);
+    WaterFlowD1 := TO_REAL(uID1.ui);
+    
 END_PROGRAM
