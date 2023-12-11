@@ -25,7 +25,7 @@ PROGRAM PumpMng
             ELSIF(OpState = OpStage_Status#COOLING)THEN
                 CircPmp_Req := PumpSpdCoolAuto;
             ELSE
-                CircPmp_Req := 50.0;
+                CircPmp_Req := 00.0;
         END_IF;
     ELSE
         CircPmp_Req := 0;

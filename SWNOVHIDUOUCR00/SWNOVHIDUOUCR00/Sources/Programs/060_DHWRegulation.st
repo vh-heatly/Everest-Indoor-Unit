@@ -69,10 +69,15 @@ PROGRAM DHWRegulation
     {ENDREGION}
     
     {REGION DHWProc calculation}
-      DHWTopProc := Limit(0,((Ain_Data.Fct.DHWTopTemp - DhwRefTop) / (DhwRefTopN - DhwRefTop))*100,200);
+        DHWTopProc := Limit(0,((Ain_Data.Fct.DHWTopTemp - DhwRefTop) / (DhwRefTopN - DhwRefTop))*100,200);
         DHWMiddleProc := Limit(0,((Ain_Data.Fct.DHWMiddleTemp - DhwRefMiddle) / (DhwRefMiddleN - DhwRefMiddle))*100,200);
         DHWBottomProc := Limit(0,((Ain_Data.Fct.DHWBottomTemp - DhwRefBottom) / (DhwRefBottomN - DhwRefBottom))*100,200);
-        DHWProc := ((DHWTopProc + DHWMiddleProc + DHWBottomProc) / 3); 
+        
+        IF DHWTopProc = 0 THEN
+            DHWProc := 0.0;
+        ELSE
+            DHWProc := ((DHWTopProc + DHWMiddleProc + DHWBottomProc) / 3); 
+        END_IF;
     {ENDREGION}
     
     {REGION ENABLE CHARGE}
@@ -100,7 +105,7 @@ PROGRAM DHWRegulation
     
     //Circulation pump enable from flow
     TON_CircPump1(
-        IN := WaterFlowD1 > 16 AND Uniton, 
+        IN := WaterFlowD1 > 1.5 AND Uniton, 
         PT := TO_UINT(DhwFlowSwitchOnDel)
     );
     
@@ -204,7 +209,7 @@ PROGRAM DHWRegulation
         DhwCircPumpReq := Scaler(DHWTempRegPID.Req_PID_Incr, 0, 100, 85, 10); //1-100 input is reversed and pump PWM input is scaled to fit the correct PWM curve.
     END_IF;
     
-    Circ2Act_Req := DHWTempRegPID.Req_PID_Incr;
+    Circ2Act_Req := DhwCircPumpReq;
     
     {ENDREGION}
     

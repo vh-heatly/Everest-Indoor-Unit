@@ -9,8 +9,8 @@ PROGRAM HeatingRegulation
     VAR
         (**SR mode selector*)
         SR_AutoMode_Heating  : SR;
-        (**TON heating delay*)
-        TON_Heating          : TON_s;
+//        (**TON heating delay*)
+//        TON_Heating          : TON_s;
         (**Heating PID regulator*)
         PID_HeatReg          : PID_Incr;
         (**Setpoint total offset*)
@@ -57,13 +57,14 @@ PROGRAM HeatingRegulation
         IF(En_AutoMode AND UnitOn)THEN
             //Determine need of heating/immersion heater in auto mode
             //Heating mode
-            TON_Heating(
-                IN := OutDoorTempFilter < HeatModeTemp - HeatModeTempHyst
-                    AND NOT(SG_HeatBlock) AND UnitON AND NOT(HeatingBlock),
-                PT := OpModeSwitchDelay*60
-                );
+//            TON_Heating(
+//                IN := OutDoorTempFilter < HeatModeTemp - HeatModeTempHyst
+//                    AND NOT(SG_HeatBlock) AND UnitON AND NOT(HeatingBlock),
+//                PT := OpModeSwitchDelay*60
+//                );
             SR_AutoMode_Heating(
-                    s1 := TON_Heating.Q AND UnitON,
+                    s1 := OutDoorTempFilter < HeatModeTemp - HeatModeTempHyst
+                    AND NOT(SG_HeatBlock) AND UnitON AND NOT(HeatingBlock),
                     R := OutDoorTempFilter > HeatModeTemp OR SG_HeatBlock OR UnitOff
                     );
             OpModeAllowHeat := SR_AutoMode_Heating.Q1;

@@ -2,7 +2,6 @@
 <SToneSolution name="SWNOVHIDUOUCR00" version="1.0">
   <Projects active="SWNOVHIDUOUCR00">
     <Project file="SWNOVHIDUOUCR00\SWNOVHIDUOUCR00.stprj" />
-    <Project file="[f6b740f5-e55c-4756-92b9-07d4a8001688]\IOMng_Basic.stprj" />
   </Projects>
   <Configurations active="SWNOVHIDUOUCR00">
     <Configuration name="Debug" batchbuild="False">

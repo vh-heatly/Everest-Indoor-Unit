@@ -192,7 +192,7 @@ PROGRAM OutputMng
 	
 	{REGION Analog Output value}
     Aout_Data.Fct.CircPump1 := Circ1Act_Req;
-    Aout_Data.Fct.CircPump2 := DhwCircPumpReq;
+    Aout_Data.Fct.CircPump2 := Circ2Act_Req;
     Aout_Data.Fct.ShuntVlvAout := ShuntVlv_Req;
 	{ENDREGION}
 	

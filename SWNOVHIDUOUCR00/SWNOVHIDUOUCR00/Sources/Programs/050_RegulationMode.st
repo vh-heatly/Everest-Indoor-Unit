@@ -48,7 +48,7 @@ PROGRAM RegulationMode
         (**Outdoor sensor average collected*)
         OutDoorTempSnsrAvgReady : BOOL;
         
-        OutDoorTempSnsr_FiltSec : INT := 300;
+        OutDoorTempSnsr_FiltSec : INT := 100;
         (**Outdoor temporary starage af collected values*)
         OutDoorTempSnsrFilter_PreCalc : ARRAY [0..300] OF REAL;
         
@@ -92,7 +92,7 @@ PROGRAM RegulationMode
                         
             k := k+1;
             
-            //Indicate if temperatures has been sampled for OutDoorTemp_FiltHrs
+            //Indicate if temperatures has been sampled
             IF(k >= (OutDoorTempSnsr_FiltSec/10)) THEN
                 IF(NOT(OutDoorTempSnsrAvgReady))THEN
                     OutDoorTempSnsrAvgReady := TRUE;
@@ -102,7 +102,7 @@ PROGRAM RegulationMode
             
             //Calculate temperature average
             IF(OutDoorTempSnsrAvgReady)THEN
-                OutDoorTempFilter := 0;
+                OutDoorTempFilterTmp := 0;
                 FOR j := 0 TO (OutDoorTempSnsr_FiltSec/10) DO
                     OutDoorTempFilterTmp := OutDoorTempFilterTmp + OutDoorTempSnsrFilter_PreCalc[j];
                 END_FOR;
@@ -148,7 +148,7 @@ PROGRAM RegulationMode
             
             //Calculate temperature average
             IF(OutDoorTempAvgReady)THEN
-                OutDoorTempFilter := 0;
+                OutDoorTempFilterTmp := 0;
                 FOR j := 0 TO OutDoorTemp_FiltHrs DO
                     OutDoorTempFilterTmp := OutDoorTempFilterTmp + OutDoorTempFilter_PreCalc[j];
                 END_FOR;

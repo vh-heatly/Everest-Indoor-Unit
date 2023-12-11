@@ -15,42 +15,46 @@ PROGRAM ImmersionRegulation
         (**Immersion heater setp in/out performed*)
         ImmheatStepDone      : BOOL := TRUE;
         (**TON imm.heater delay*)
-        TON_Immheat          : TON_s;
+        TOF_ImmheatEB        : TON_s;
+        (** EB counter step out immersion heater*)
+        SR_EB_StepOut        : SR;
         (**SR mode selector*)
         SR_AutoMode_Immheat  : SR;
         (**Heating blocked from smart grid*)
         SG_HeatBlock         : BOOL;
-        (**Allow immersion heater*)
-        ImmersionHeatAllow   : BOOL;
+//        (**Allow immersion heater*)
+//        ImmersionHeatAllow   : BOOL;
     END_VAR
     
     SG_HeatBlock := SG_Status = SGStatus#BLOCKING_MODE
                         OR NOT(SystemCfg_AllowHeat);   
     
-    ImmersionHeatAllow := SG_Status = SGStatus#OVERCAPACITY_MODE
-                        OR OU_EnvZone > 1
-                        OR ImmHeatOnly;
+//    ImmersionHeatAllow := SG_Status = SGStatus#OVERCAPACITY_MODE
+//                        OR OU_EnvZone > 1
+//                        OR ImmHeatOnly;
     
     {REGION DETERMINE NEED/ALLOW}
     
-    IF((En_AutoMode AND UnitOn) AND NOT ImmHeatOnly) THEN            
-        //Immersion heater - outdoor temperature timer
-        TON_ImmHeat( 
-            IN := OutDoorTempFilter < ImmModeTemp - ImmModeTempHyst
-                AND NOT(SG_HeatBlock) AND UnitON AND ImmHeatStage > 0
-                AND OpModeAllowHeat,
-             PT := OpModeSwitchDelay*60
+    IF(((En_AutoMode AND UnitOn) AND NOT ImmHeatOnly)AND SystemCfg_AllowImm)AND ImmHeatStage > 0 THEN            
+        //Immersion heater - EB counter 
+        //When the immersion heater has been active due to EB and EB have deactivated the immersion heater there is a high probability
+        //that the immersion heater will be needed again in a short while. Because of this the system shall focus on using the outdoor unit for heating and not switching to DHW. 
+        TOF_ImmHeatEB( 
+            IN := (EBHP > (EBHPCompStrt + EBtepImm)) AND OpModeAllowHeat,
+            PT := DHWCompBlockTime*3600
+            );
+        SR_EB_StepOut(
+                s1 := (EBHP > (EBHPCompStrt + EBtepImm)) AND OpModeAllowHeat,
+                R :=  TOF_ImmHeatEB.Q
             );
         //Allow immersion heater
         SR_AutoMode_Immheat( 
-                s1 := (TON_Immheat.Q AND 
-                        (SG_Status = SGStatus#OVERCAPACITY_MODE 
-                        OR EBHP < EBHPCompStrt - EBtepImm))
-                        OR NoOutdoorUnit OR NOT(OpModeAllowHeat)
-                        AND UnitON AND NOT(ImmHeatBlock),
-                R := OutDoorTempFilter > ImmModeTemp OR SG_HeatBlock OR UnitOff
+                s1 :=   (EBHP < (EBHPCompStrt + EBtepImm))                                           // EB triggers immersion heater
+                        
+                        OR (OU_EnvZone > 1),
+                R := SR_EB_StepOut.Q1 AND OU_EnvZone = 1 OR UnitOff
                 );
-        OpModeAllowImm := SR_AutoMode_Immheat.Q1;
+        OpModeAllowImm := SR_AutoMode_Immheat.Q1 OR SG_Status = SGStatus#OVERCAPACITY_MODE OR NoOutdoorUnit;
     ELSIF (ImmHeatOnly) THEN
             OpModeAllowImm := TRUE;
     ELSE
@@ -72,11 +76,11 @@ PROGRAM ImmersionRegulation
         //Manual mode
         IF(ImmHeatManMode > 0)THEN
             ActImmStep := ImmHeatManMode;
-        ELSIF(ImmHeatOnly AND ImmersionHeatAllow)THEN
+        ELSIF(ImmHeatOnly OR OpModeAllowImm)THEN
                 
             //Allow in/out step with a set time intervall
             TON_ImmHeatStep(
-                IN := OpModeAllowImm AND ImmHeatOnly AND NOT(ImmheatStepDone),
+                IN := OpModeAllowImm AND NOT(ImmheatStepDone),
                 PT := ImmHeatStepDelay
             );
             
@@ -94,30 +98,30 @@ PROGRAM ImmersionRegulation
                 ImmheatStepDone := TRUE;
                 ActImmStep := ActImmStep - 1;
             END_IF;
-        ELSIF(OpModeAllowImm)THEN
-            //Allow in/out step with a set time intervall
-            TON_ImmHeatStep(
-                IN := NOT(ImmheatStepDone),
-                PT := ImmHeatStepDelay
-            );
+//        ELSIF(OpModeAllowImm)THEN
+//            //Allow in/out step with a set time intervall
+//            TON_ImmHeatStep(
+//                IN := NOT(ImmheatStepDone),
+//                PT := ImmHeatStepDelay
+//            );
             
-            //Reset to allow timer to start over
-            IF(ImmheatStepDone)THEN
-                ImmheatStepDone := FALSE;
-            END_IF;
+//            //Reset to allow timer to start over
+//            IF(ImmheatStepDone)THEN
+//                ImmheatStepDone := FALSE;
+//            END_IF;
             
-            //Step in when energybalance is low
-            IF(EBHP <= EBHPCompStrt - EBtepImm AND TON_ImmHeatStep.Q AND ActImmStep < TO_UINT(ImmHeatStage))THEN
-                ImmheatStepDone := TRUE;
-                ActImmStep := ActImmStep + 1;
-            //Step out when energybalance is high
-            ELSIF(EBHP >= EBHPCompStrt + EBHPStepOut AND TON_ImmHeatStep.Q AND ActImmStep >= 1)THEN
-                ImmheatStepDone := TRUE;
-                ActImmStep := ActImmStep - 1;
-            END_IF;
-        ELSE            
-            //Turn off immersion heaters
-            ActImmStep := 0;
+//            //Step in when energybalance is low
+//            IF(EBHP <= EBHPCompStrt - EBtepImm AND TON_ImmHeatStep.Q AND ActImmStep < TO_UINT(ImmHeatStage))THEN
+//                ImmheatStepDone := TRUE;
+//                ActImmStep := ActImmStep + 1;
+//            //Step out when energybalance is high
+//            ELSIF(EBHP >= EBHPCompStrt + EBHPStepOut AND TON_ImmHeatStep.Q AND ActImmStep >= 1)THEN
+//                ImmheatStepDone := TRUE;
+//                ActImmStep := ActImmStep - 1;
+//            END_IF;
+//        ELSE            
+//            //Turn off immersion heaters
+//            ActImmStep := 0;
         END_IF;
     {ENDREGION}
     

@@ -133,13 +133,13 @@ VAR_GLOBAL
 	(**DHW mode needed*)
 	DHWReq : BOOL;
 	{LOCATION DHWStartTemp}
-	(**DHW stop temperature*)
-	{ATTRIBUTE UOM CELSIUS}
-	DHWStartTemp : REAL := 40;
-	{LOCATION DHWStopTemp}
 	(**DHW start temperature*)
 	{ATTRIBUTE UOM CELSIUS}
-	DHWStopTemp : REAL := 40;
+	DHWStartTemp : REAL;
+	{LOCATION DHWStopTemp}
+	(**DHW stop temperature*)
+	{ATTRIBUTE UOM CELSIUS}
+	DHWStopTemp : REAL;
 	{LOCATION DhwTimerIncComp}
 	(**DHW charging period*)
 	{ATTRIBUTE UOM SECOND}
@@ -201,9 +201,6 @@ VAR_GLOBAL
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 3}
 	ImmHeatManMode : UINT := 0;
-	{LOCATION ImmHeatOnly}
-	(**Immersion heater only active*)
-	ImmHeatOnly : BOOL;
 	{LOCATION ImmHeatReq}
 	(**Immersion heater needed*)
 	ImmHeatReq : BOOL;
@@ -237,6 +234,15 @@ VAR_GLOBAL
 	{LOCATION NrProfile}
 	(**Profile loaded in the target*)
 	NrProfile : USINT;
+	{LOCATION OpModeAllowCool}
+	(**Allow cooling mode*)
+	OpModeAllowCool : BOOL;
+	{LOCATION OpModeAllowHeat}
+	(**Allow heating mode*)
+	OpModeAllowHeat : BOOL;
+	{LOCATION OpModeAllowImm}
+	(**Allow immersion heater*)
+	OpModeAllowImm : BOOL;
 	{LOCATION OpState}
 	(**Current state of operation*)
 	OpState : USINT;
@@ -418,9 +424,9 @@ VAR_GLOBAL
 	{LOCATION TimezoneIdx}
 	(**Timezone index*)
 	TimezoneIdx : UINT(1..136) := 50;
-	{LOCATION uID1}
+	{LOCATION uID2}
 	(**Configuration of uID*)
-	uID1 : System.IO.uChannel;
+	uID2 : System.IO.uChannel;
 	{LOCATION Unit_CoolHeat}
 	(**Unit cooling/heating mode*)
 	Unit_CoolHeat : BOOL;
@@ -520,6 +526,12 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
 	DhwComfStopTemp : REAL := 62;
+	{LOCATION DHWCompBlockTime}
+	(**Off delay time for blocking DHW mode for compressor*)
+	{ATTRIBUTE UOM HOUR}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 48}
+	DHWCompBlockTime : UINT;
 	{LOCATION DHWCurve_K}
 	(**DHW curve K values*)
 	DHWCurve_K : ARRAY[0..14] OF REAL := [-0.1,-0.2,-0.3,-0.4,-0.5,-0.6,-0.7,-0.8,-0.9,-1,-1.1,-1.2,-1.3,-1.4,-1.5];
@@ -562,12 +574,12 @@ VAR_GLOBAL PERSISTENT
 	(**Circulation pump PID - Derivative time*)
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 1000}
-	DhwPumpDGain : INT := 10;
+	DhwPumpDGain : INT := 2;
 	{LOCATION DhwPumpIGain}
 	(**Circulation pump PID - Integral time*)
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 1000}
-	DhwPumpIGain : INT := 100;
+	DhwPumpIGain : INT := 20;
 	{LOCATION DhwPumpMax}
 	(**Circulation pump PID max request*)
 	{ATTRIBUTE UOM PERCENT}
@@ -584,7 +596,7 @@ VAR_GLOBAL PERSISTENT
 	(**Circulation pump PID - proportional gain*)
 	{METADATA MIN_VAL 1}
 	{METADATA MAX_VAL 255}
-	DhwPumpPGain : USINT := 7;
+	DhwPumpPGain : USINT := 2;
 	{LOCATION DhwRefBottom}
 	(**DHW reference bottom*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -701,7 +713,7 @@ VAR_GLOBAL PERSISTENT
 	(**Shunt valve energy balance level*)
 	EBShunt : REAL := -700;
 	{LOCATION EBtepImm}
-	EBtepImm : REAL := 700;
+	EBtepImm : REAL := -700;
 	{LOCATION ECT_Cool_Offset}
 	(**ECT value for outdoor unit while cooling*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -802,6 +814,9 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION HeatRegPGain}
 	(**Heating PID - proportional gain*)
 	HeatRegPGain : REAL := 5;
+	{LOCATION ImmHeatOnly}
+	(**Immersion heater only active*)
+	ImmHeatOnly : BOOL;
 	{LOCATION ImmHeatStage}
 	(**Allowed immersion heater steps*)
 	{METADATA MIN_VAL 0}
@@ -839,15 +854,6 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION NoOutdoorUnit}
 	(**No outdoor unit present*)
 	NoOutdoorUnit : BOOL := FALSE;
-	{LOCATION OpModeAllowCool}
-	(**Allow cooling mode*)
-	OpModeAllowCool : BOOL;
-	{LOCATION OpModeAllowHeat}
-	(**Allow heating mode*)
-	OpModeAllowHeat : BOOL;
-	{LOCATION OpModeAllowImm}
-	(**Allow immersion heater*)
-	OpModeAllowImm : BOOL;
 	{LOCATION OpModeSwitchDelay}
 	(**Delay between allowing/blocking operation modes*)
 	{ATTRIBUTE UOM MINUTE}
