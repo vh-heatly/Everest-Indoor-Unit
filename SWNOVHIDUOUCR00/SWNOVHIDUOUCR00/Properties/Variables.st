@@ -104,6 +104,9 @@ VAR_GLOBAL
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	DhwCircPumpReq : REAL;
+	{LOCATION DHWCompBlock}
+	(**DHWBlockComp blocks compressor due to EB calculation, probably there is a need for more heat in the near future*)
+	DHWCompBlock : BOOL;
 	{LOCATION DhwMode}
 	(**DHW operation mode*)
 	{METADATA MIN_VAL 0}
@@ -193,6 +196,9 @@ VAR_GLOBAL
 	(**New hour value*)
 	{ATTRIBUTE UOM HOUR}
 	HourIn : USINT(0..23) := 0;
+	{LOCATION ImmersionHeatAllow}
+	(**Immersion heater is allowed to step in*)
+	ImmersionHeatAllow : BOOL;
 	{LOCATION ImmHeatBlock}
 	(**Block immersion heater*)
 	ImmHeatBlock : BOOL;
@@ -234,6 +240,11 @@ VAR_GLOBAL
 	{LOCATION NrProfile}
 	(**Profile loaded in the target*)
 	NrProfile : USINT;
+	{LOCATION Offset_EBHP}
+	(**The offset for the heat curve*)
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 4}
+	Offset_EBHP : REAL;
 	{LOCATION OpModeAllowCool}
 	(**Allow cooling mode*)
 	OpModeAllowCool : BOOL;
@@ -848,6 +859,12 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION MaxErasure}
 	(**Number of retentive writes to the window size to prevent intensive memory use*)
 	MaxErasure : UDINT := 200;
+	{LOCATION MaxTankTemp}
+	(**Maximum tank temp*)
+	{ATTRIBUTE UOM CELSIUS}
+	{METADATA MIN_VAL 30}
+	{METADATA MAX_VAL 80}
+	MaxTankTemp : REAL := 75;
 	{LOCATION MBM_Line_Port}
 	(**Client - Port*)
 	MBM_Line_Port : Serial_Channel_Client := 0;

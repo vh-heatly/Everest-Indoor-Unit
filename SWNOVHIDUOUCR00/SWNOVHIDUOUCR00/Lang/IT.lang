@@ -1259,9 +1259,9 @@
     </Section>
     <Section Name="SGStatus" Category="Enums" EmbedTranslation="false">
       <Items>
-        <Item Key="BLOCKING_MODE" Value="SG blocking mode" />
         <Item Key="NORMAL_MODE" Value="SG normal mode" />
         <Item Key="LOW_PRICE_MODE" Value="SG low price mode" />
+        <Item Key="BLOCKING_MODE" Value="SG blocking mode" />
         <Item Key="OVERCAPACITY_MODE" Value="SG overcapacity mode" />
       </Items>
     </Section>

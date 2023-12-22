@@ -448,12 +448,12 @@ TYPE
     
     SGStatus:
     (
-        (**SG blocking mode*)
-        BLOCKING_MODE,
         (**SG normal mode*)
         NORMAL_MODE,
         (**SG low price mode*)
         LOW_PRICE_MODE,
+        (**SG blocking mode*)
+        BLOCKING_MODE,
         (**SG overcapacity mode*)
         OVERCAPACITY_MODE
     );

@@ -743,16 +743,13 @@
       Attributes="Configurable Cloneable" />
     <Parameter
       Name="OpModeAllowImm"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
+      Attributes="Cloneable" />
     <Parameter
       Name="OpModeAllowHeat"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
+      Attributes="Cloneable" />
     <Parameter
       Name="OpModeAllowCool"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
+      Attributes="Cloneable" />
     <Parameter
       Name="NoOutdoorUnit"
       Persistence="Persistent"
@@ -777,7 +774,8 @@
       Attributes="None" />
     <Parameter
       Name="ImmHeatOnly"
-      Attributes="None" />
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
     <Parameter
       Name="HeatReq"
       Attributes="None" />
@@ -2015,6 +2013,9 @@
       Attributes="None" />
     <Parameter
       Name="Circ1Act_Req"
+      Attributes="None" />
+    <Parameter
+      Name="WaterFlowD1"
       Attributes="None" />
   </Parameters>
 </ParametersConfiguration>

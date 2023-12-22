@@ -18,6 +18,7 @@ CONFIGURATION __CONFIGURATION__
             PROGRAM StoreAlarmsINstance     WITH MainTask : StoreAlarms;
             PROGRAM OnOffUnitInstance       WITH MainTask : OnOffUnit;
             PROGRAM RegulationModeInstance  WITH MainTask : RegulationMode;
+            PROGRAM ProtectionInstance      WITH MainTask : Protection;
             PROGRAM DHWRegulationInstance   WITH MainTask : DHWRegulation;
             PROGRAM HeatingRegulationInstance   WITH MainTask : HeatingRegulation;
             PROGRAM ImmersionRegulationInstance WITH MainTask : ImmersionRegulation;

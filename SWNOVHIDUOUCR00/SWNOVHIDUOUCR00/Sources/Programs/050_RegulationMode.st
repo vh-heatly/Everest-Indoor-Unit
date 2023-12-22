@@ -37,8 +37,6 @@ PROGRAM RegulationMode
         Dis_OpStateSwitch       : BOOL;
         (**SG status byte*)
         SG_Status_Byte          : BYTE;
-        (**Energybalance offset*)
-        Offset_EBHP             : REAL;
         (**Energy balance timer*)
         TON_Energybalance       : TON_S;
         (**Disable automode*)
@@ -201,7 +199,7 @@ PROGRAM RegulationMode
         DHWFrcSwitchDone  := FALSE;
     
         IF(DHWFrcSwitch)THEN //Select which mode that the application will transition to
-            IF(HeatReq OR CoolReq) THEN     //transition to DHW
+            IF(HeatReq OR CoolReq) THEN     //transition to DHW 
                 GoToState := OpStage_Status#DHW;
             ELSE
                 IF(DHWReq)THEN
@@ -331,14 +329,15 @@ PROGRAM RegulationMode
     ELSIF(OpModeAllowHeat)THEN
         TON_Energybalance(
             IN := NOT(TON_Energybalance.Q),
-            PT := 60
+            PT := 1
         );
-    
-        Offset_EBHP := -0.01 * (SupplyTempCalc - HeatReg_Temp);
-        
         IF(TON_Energybalance.Q)THEN
-            EBHP := LIMIT(EBHPMin, ((EBHP - (SupplyTempCalc - HeatReg_Temp))) + Offset_EBHP, EBHPMax);
+            EBHP := LIMIT(EBHPMin, ((EBHP - (SupplyTempCalc - HeatReg_Temp) / 60)), EBHPMax);
         END_IF;
+        
+        Offset_EBHP := LIMIT(0, -0.01 * EBHP, 4);
+        
+
     ELSIF(NOT(OpModeAllowHeat))THEN
         EBHP := 0;
     END_IF;   

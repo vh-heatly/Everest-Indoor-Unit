@@ -76,9 +76,9 @@ TYPE
         (**Flow switch*)
         FlowSw          : BOOL;
         (**SG input 1*)
-        SG1          : BOOL;
+        SG1          : BOOL := FALSE;
         (**SG input 2*)
-        SG2          : BOOL;
+        SG2          : BOOL := FALSE;
     END_STRUCT;
     {ENDREGION}
     
@@ -300,7 +300,7 @@ PROGRAM InputMng
         uConfig
     );
     
-    HandleSpecialID(2, LIB_IO_PROBE_U_FREQ, 9, uID2);
-    WaterFlowD1 := (TO_REAL(uID2.ui) * 0.01);
+    HandleSpecialID(2, LIB_IO_PROBE_U_FREQ, 5, uID2);
+    WaterFlowD1 := (TO_REAL(uID2.ui) * 0.0106);    // 530 pulses per litre
     
 END_PROGRAM

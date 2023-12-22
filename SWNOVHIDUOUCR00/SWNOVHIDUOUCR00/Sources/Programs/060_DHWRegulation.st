@@ -8,6 +8,10 @@ USING Libs.ExpFilt;
 VAR_GLOBAL
     (**Actual PWM request DHW Pump*)
     Circ2Act_Req : REAL;
+    DhwPumpMin1 : REAL;
+    DhwPumpMax1 : REAL;
+    DHWPumpEstimate : REAL;
+    DHWPumpReg : REAL;
 END_VAR
 
 PROGRAM DHWRegulation
@@ -81,7 +85,8 @@ PROGRAM DHWRegulation
     {ENDREGION}
     
     {REGION ENABLE CHARGE}
-    AllowDHW := NOT(SG_DHWBlock) AND NOT(OpModeAllowImm);  //Allow DHW as long as there is no blocking from smart grid
+    (**Add logic to block DHW here*)
+    AllowDHW := NOT(SG_DHWBlock) AND NOT(OpModeAllowImm) AND NOT (MaxTankTempOk) AND NOT (DHWCompBlock);  //Allow DHW as long as there is no blocking from smart grid -> DHW blocked if immersion heater activated by energy balance
         
     //Determine need of DHW
     SR_DHWNeed(                                                                                          (**DHW START CONDITIONS*)
@@ -178,6 +183,17 @@ PROGRAM DHWRegulation
     
     //Calculate pump regulation setpoint
     DhwPumpSetP := ScalerLimited(Ain_Data.Fct.DHWTopTemp, ActPmpStrtTemp, ActPmpStopTemp, ActPmpStrtSetP, ActPmpStopSetP);
+    IF  Ain_Data.Fct.DHWTopTemp - DhwPumpSetP <= 7.5 THEN
+        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlowD1 * 1.257) - 0.85) -84.5) ,100);                         //low Delta T formula BF2 vs GP2 flow y = 1.257 x - 0.85
+    ELSIF Ain_Data.Fct.DHWTopTemp - DhwPumpSetP > 7.5 AND Ain_Data.Fct.DHWTopTemp - DhwPumpSetP <=15 THEN
+        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlowD1 * 0.8621) - 0.2994)- 84.5) ,100);                      //Medium Delta T formula BF2 vs GP2 flow y = 0.8621 x - 0.2994
+    ELSE        
+        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlowD1 * 0.696) - 0.1418) - 84.5 ),100);                      //High Delta T formula BF2 vs GP2 flow y = 0.696 x - 0.1418
+    END_IF;
+            
+    //DHWPumpEstimate :=0;
+    DhwPumpMin1 := Limit(0, DHWPumpEstimate - 20, 100);   //Calculated pumpflow vs pump pwm 0-100% y= 7.69 x -84.5 
+    DhwPumpMax1 := Limit(0, DHWPumpEstimate + 20, 100);
     
     (*Temperature regulation PID*)
     DHWTempRegPID(
@@ -187,8 +203,8 @@ PROGRAM DHWRegulation
         Kp_PID_Incr           := TO_REAL(DhwPumpPGain),
         Ti_PID_Incr           := TO_UINT(DhwPumpIGain),
         Td_PID_Incr           := TO_UINT(DhwPumpDGain),
-        LowLim_PID_Incr       := TO_REAL(DhwPumpMin),
-        HighLim_PID_Incr      := TO_REAL(DhwPumpMax),
+        LowLim_PID_Incr       := DhwPumpMin1,//TO_REAL(DhwPumpMin),
+        HighLim_PID_Incr      := DhwPumpMax1,//TO_REAL(DhwPumpMax),
         Period_PID_Incr       := 100,
         CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Heat,
         RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
@@ -198,9 +214,9 @@ PROGRAM DHWRegulation
         En_PID_Incr           := TON_CircPump1.Q
     );
     
-
+    DHWPumpReg := DHWTempRegPID.Req_PID_Incr;
     
-    IF UnitOff OR NOT TON_CircPump1.Q THEN // OLD: OR (DHWTempRegPID.Req_PID_Incr = 0)
+    IF UnitOff OR NOT TON_CircPump1.Q OR (DHWTempRegPID.Req_PID_Incr = 0) THEN // OLD: OR (DHWTempRegPID.Req_PID_Incr = 0)
         //Unit off or PID reg 0 then pump shall be set to off
         DhwCircPumpReq :=95;
     ELSE

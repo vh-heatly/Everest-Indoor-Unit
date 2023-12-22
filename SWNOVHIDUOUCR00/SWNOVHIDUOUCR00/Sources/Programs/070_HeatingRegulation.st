@@ -88,7 +88,7 @@ PROGRAM HeatingRegulation
         END_IF;
     
         //Determine total setpoint offset
-        SetP_Offset := SetP_ExtAdj + SG_Offset;
+        SetP_Offset := SetP_ExtAdj + SG_Offset + Offset_EBHP;
         
         //Calculate current supply temperature setpoint
         SupplyTempCalc := LIMIT(0, ((HeatCurve_K[Sel_HeatCurve_SetP]*OutDoorTemp) + HeatCurve_M[Sel_HeatCurve_SetP]) + SetP_Offset, 80);
@@ -138,7 +138,7 @@ PROGRAM HeatingRegulation
         IF(ShuntManMode)THEN
             ShuntVlv_Off := ShuntManClose AND NOT(ShuntManOpen);
             ShuntVlv_On := ShuntManOpen AND NOT(ShuntManClose);
-        ELSIF OpModeAllowHeat AND (((Ain_Data.Fct.DHWMiddleTemp+2) > Ain_Data.Fct.ClimSupplyTemp) AND OpModeAllowImm) 
+        ELSIF OpModeAllowHeat AND (((Ain_Data.Fct.DHWMiddleTemp+2) > Ain_Data.Fct.ClimSupplyTemp) AND ImmersionHeatAllow) 
             OR (OpModeAllowHeat AND ImmHeatOnly) AND NOT(ShuntVlvBlock) THEN
             
             //Invert factor calculation if supply temp is higher than setpoint
@@ -160,20 +160,20 @@ PROGRAM HeatingRegulation
             
             //Shunt closing management
             SR_ShuntClose(
-                        S1 := (SupplyTempCalc < Ain_Data.Fct.ClimSupplyTemp AND TOF_ShuntFactor.Q) AND OpModeAllowImm,
+                        S1 := (SupplyTempCalc < Ain_Data.Fct.ClimSupplyTemp AND TOF_ShuntFactor.Q) AND ImmersionHeatAllow,
                         R := NOT(TOF_ShuntFactor.Q) OR SR_ShuntOpen.Q1
                 );
             ShuntVlv_Off := SR_ShuntClose.Q1;
             
             //Shunt opening management
             SR_ShuntOpen(
-                        S1 := (SupplyTempCalc > Ain_Data.Fct.ClimSupplyTemp AND TOF_ShuntFactor.Q) AND OpModeAllowImm,
+                        S1 := (SupplyTempCalc > Ain_Data.Fct.ClimSupplyTemp AND TOF_ShuntFactor.Q) AND ImmersionHeatAllow,
                         R := NOT(TOF_ShuntFactor.Q) OR SR_ShuntClose.Q1
                 );
             
             ShuntVlv_On := SR_ShuntOpen.Q1;
             
-        ELSIF(ShuntVlvBlock)THEN //Block shunt valve
+        ELSIF(ShuntVlvBlock OR NOT ImmersionHeatAllow OR NOT OpModeAllowHeat)THEN //Block shunt valve
             ShuntVlv_On := FALSE;
             
             //After blocking shunt valve, force closing for X seconds

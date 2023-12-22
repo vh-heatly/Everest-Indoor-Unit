@@ -22,7 +22,7 @@ PROGRAM OutdoorUnitMng
     {REGION ALLOW START/STOP OF OUTDOOR UNIT}
         SR_Energybalance(
             S1 := EBHP <= EBHPCompStrt AND UnitOn,
-            R := EBHP >= EBHPStopComp OR UnitOff
+            R := (EBHP >= EBHPStopComp AND OU_Unit.CondInTemp >= SupplyTempCalc + 2) OR UnitOff
         );
     {ENDREGION}
     
@@ -60,7 +60,7 @@ PROGRAM OutdoorUnitMng
         IF(CompSpdMan > 0)THEN
             OU_OnOff := TRUE;
             OU_Req := MIN(CompSpdMan, OU_Unit.MaxRPS);
-        ELSIF(UnitOff OR NoOutdoorUnit OR (OpState = OpStage_Status#DHW AND NOT(SR_Energybalance.Q1)) OR CompBlock)THEN //Unit off or outdoor unit not required
+        ELSIF(UnitOff OR NoOutdoorUnit OR CompBlock)THEN //Unit off or outdoor unit not required
             OU_Req := 0;
             OU_OnOff := FALSE;
         ELSIF(OpState = OpStage_Status#DHW)THEN //DHW charge request
@@ -82,8 +82,11 @@ PROGRAM OutdoorUnitMng
                 END_IF;
             END_IF;
         ELSIF(OpState = OpStage_Status#HEATING AND SR_Energybalance.Q1)THEN //Heating request
-            OU_Req := ScalerLimited(PID_HeatReq, 0.0, 100.0, 0.0, OU_Unit.MaxRPS);
-            OU_OnOff := PID_HeatReq > 0.0;
+            OU_Req := ScalerLimited(PID_HeatReq, 0.0, 100.0, OU_Unit.MinRPS, OU_Unit.MaxRPS);
+            OU_OnOff := TRUE;
+        ELSE 
+            OU_Req := 0; 
+            OU_OnOff := FALSE;
         END_IF;
         {ENDREGION}
                
