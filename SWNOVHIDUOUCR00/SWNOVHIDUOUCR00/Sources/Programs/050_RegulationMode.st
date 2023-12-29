@@ -5,6 +5,15 @@ USING Libs.PID_Incr;
 USING Libs.Timer;
 
 VAR_GLOBAL
+        GoToState               : USINT;
+        (**DHW transition timer*)
+        TON_DHWTimer            : TON_s;
+        (**DHW switch due to timer*)
+        DHWFrcSwitch            : BOOL;
+        (**DHW switch complete*)
+        DHWFrcSwitchDone        : BOOL;
+        (**Disable regular state transition during DHW switch*)
+        Dis_OpStateSwitch       : BOOL;
    
 END_VAR
 
@@ -26,15 +35,6 @@ PROGRAM RegulationMode
         (**Outside temperature Sensor sample timer*)
         TON_OutDoorTempSnsr     : TON_S;
         (**Intended stage unit wants to transition to*)
-        GoToState               : USINT;
-        (**DHW transition timer*)
-        TON_DHWTimer            : TON_s;
-        (**DHW switch due to timer*)
-        DHWFrcSwitch            : BOOL;
-        (**DHW switch complete*)
-        DHWFrcSwitchDone        : BOOL;
-        (**Disable regular state transition during DHW switch*)
-        Dis_OpStateSwitch       : BOOL;
         (**SG status byte*)
         SG_Status_Byte          : BYTE;
         (**Energy balance timer*)
@@ -193,7 +193,7 @@ PROGRAM RegulationMode
     
         TON_DHWTimer(
             IN := Dis_OpStateSwitch AND DHWFrcSwitchDone,
-            PT := DhwTimerStop
+            PT := 30//DhwTimerStop
         );
         DHWFrcSwitch := TON_DHWTimer.Q;
         DHWFrcSwitchDone  := FALSE;
@@ -238,7 +238,7 @@ PROGRAM RegulationMode
     Dis_AutoMode := ManMode_Cool OR ManMode_Heat;
     
     IF(UnitOn)THEN
-        IF(En_AutoMode AND NOT(Dis_OpStateSwitch) AND NOT(Dis_AutoMode)) OR DHWFrcSwitch THEN                      
+        IF(En_AutoMode  AND NOT(Dis_AutoMode)) OR DHWFrcSwitch THEN           //AND NOT(Dis_OpStateSwitch)           
             CASE OpState OF
                 /*
                 Change operation state depending on outside temperature
@@ -249,12 +249,12 @@ PROGRAM RegulationMode
                 */
                 
                 0: //Decision phase              
-                    IF(OpModeAllowHeat)THEN
+                    IF(DHWNeed)THEN
+                        GoToState := OpStage_Status#DHW;
+                    ELSIF(OpModeAllowHeat) THEN
                         GoToState := OpStage_Status#HEATING;
                     ELSIF(OpModeAllowCool)THEN
                         GoToState := OpStage_Status#COOLING;
-                    ELSIF(DHWNeed) THEN
-                        GoToState := OpStage_Status#DHW;
                     END_IF;
                     
                     //If no transition to another state is required, stop regulation
@@ -270,13 +270,13 @@ PROGRAM RegulationMode
                     CoolReq := FALSE;
                     ImmHeatReq := FALSE;
                     DHWReq := FALSE;
-                    IF(NOT(Dis_OpStateSwitch))THEN
+                   // IF(NOT(Dis_OpStateSwitch))THEN
                         IF(NOT(OpModeAllowHeat)) THEN // Return to decision phase
                             GoToState := OpStage_Status#DECISION_PHASE;
-                        ELSIF(DHWNeed) THEN
+                        ELSIF(DHWNeed AND NOT DHWFrcSwitch) THEN
                             GoToState := OpStage_Status#DHW;
                         END_IF;
-                    END_IF;
+                    //END_IF;
                 
                 2: //Cooling state
                     HeatReq := FALSE;
@@ -297,14 +297,20 @@ PROGRAM RegulationMode
                     DHWReq := TRUE;
                     
                     IF(NOT(DHWNeed))THEN //Insert DHW max timer logic for heat/DHW switch
-                        GoToState := OpStage_Status#DECISION_PHASE;
+                        IF OpModeAllowHeat THEN
+                            GoToState := OpStage_Status#HEATING;
+                        ELSIF OpModeAllowCool THEN
+                            GoToState := OpStage_Status#COOLING;
+                        ELSE
+                            GoToState := OpStage_Status#DECISION_PHASE;
+                        END_IF;
                     END_IF;
             END_CASE;       
         ELSIF(Dis_AutoMode)THEN
             //Manual regulation mode
             HeatReq := ManMode_Heat;
             CoolReq := ManMode_Cool;
-            ImmHeatReq := FALSE;
+            ImmHeatReq := FALSE;      
         ELSE //Unit off or auto mode is disabled
             HeatReq := FALSE;
             CoolReq := FALSE;

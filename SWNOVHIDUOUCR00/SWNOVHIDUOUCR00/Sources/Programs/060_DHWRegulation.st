@@ -12,6 +12,8 @@ VAR_GLOBAL
     DhwPumpMax1 : REAL;
     DHWPumpEstimate : REAL;
     DHWPumpReg : REAL;
+        (**DHW charging period timer*)
+        TON_DHWChrg       : TON_s;
 END_VAR
 
 PROGRAM DHWRegulation
@@ -25,7 +27,7 @@ PROGRAM DHWRegulation
         (**DHW bottom fill procent*)
         DHWBottomProc     : REAL;
         (**Set/Reset DHW need*)
-        SR_DHWNeed        : SR;        
+        SR_DHWNeed        : RS;        
         (**Circulation pump 1 timer*)
         TON_CircPump1     : TON_s;
         (**Charge regulation PID*)
@@ -34,8 +36,6 @@ PROGRAM DHWRegulation
         DHWTempRegPID : PID_Incr;
         (**DHW block from smart grid*)
         SG_DHWBlock         : BOOL;
-        (**DHW charging period timer*)
-        TON_DHWChrg       : TON_s;
         (**Actual Pump start setpoint*)
         ActPmpStrtSetP    : REAL;
         (**Actual Pump stop setpoint*)
@@ -48,6 +48,8 @@ PROGRAM DHWRegulation
         i                 : INT;
         (**Heating regulation output filter*)
         DHWReg_Filt         : ExpFilt;
+        (**Circulation pump 1 low speed timer*)
+        TON_GP1_LowSpd      : TON_s;
     END_VAR
     
     (*All the Programs are skipped while the default valeus are being installed*)
@@ -86,21 +88,21 @@ PROGRAM DHWRegulation
     
     {REGION ENABLE CHARGE}
     (**Add logic to block DHW here*)
-    AllowDHW := NOT(SG_DHWBlock) AND NOT(OpModeAllowImm) AND NOT (MaxTankTempOk) AND NOT (DHWCompBlock);  //Allow DHW as long as there is no blocking from smart grid -> DHW blocked if immersion heater activated by energy balance
+    AllowDHW := NOT(SG_DHWBlock) AND NOT(ImmersionHeatAllow) AND (MaxTankTempOk) AND NOT (DHWCompBlock) AND NOT DHWFrcSwitch;  //Allow DHW as long as there is no blocking from smart grid -> DHW blocked if immersion heater activated by energy balance
         
     //Determine need of DHW
     SR_DHWNeed(                                                                                          (**DHW START CONDITIONS*)
-        S1 := ((Ain_Data.Fct.DHWBottomTemp < DHWStartTemp                                                //Low bottom temp.
+        S := ((Ain_Data.Fct.DHWBottomTemp < DHWStartTemp                                                //Low bottom temp.
                     OR (Ain_Data.Fct.DHWBottomTemp<ExtHotWatrStopTemp-ExtHotWatrDiff AND En_ExtHotWatr)) //Low bottom temp.(Extra hot water)
-                    AND AllowDHW                                                                         //DHW is allowed
-                    AND NOT(DHWNeed OR SG_DHWBlock))                                                     //Only trigger "DHW need" once
-                    OR (TON_CircPump1.Q AND Ain_Data.Fct.DHWTopTemp < 45.0)                              //Pump active and low top temp.
-                    AND UnitOn, 
+                    AND AllowDHW)                                                                        //DHW is allowed
+                                                                         
+                    OR ((TON_CircPump1.Q AND Ain_Data.Fct.DHWTopTemp < 45.0)                              //Pump active and low top temp.
+                    AND UnitOn AND AllowDHW), 
                     //OR DHWProc < DHWStrtProc                                                           (**DHW STOP CONDITIONS*)
-        R  := (Ain_Data.Fct.DHWBottomTemp >= DHWStopTemp AND NOT(En_ExtHotWatr)                          //Bottom temp. reached
+        R1  := (Ain_Data.Fct.DHWBottomTemp >= DHWStopTemp AND NOT(En_ExtHotWatr)                          //Bottom temp. reached
                     OR (Ain_Data.Fct.DHWBottomTemp>=ExtHotWatrStopTemp AND En_ExtHotWatr)                //Bottom temp. reached(Extra hot water)
                     OR NOT(AllowDHW OR SG_DHWBlock)                                                      //DHW blocked
-                    OR UnitOff)
+                    OR UnitOff)                                                          
                     //OR DHWProc >= DHWStrtProc
     );
     DHWNeed := SR_DHWNeed.Q1;
@@ -216,9 +218,20 @@ PROGRAM DHWRegulation
     
     DHWPumpReg := DHWTempRegPID.Req_PID_Incr;
     
-    IF UnitOff OR NOT TON_CircPump1.Q OR (DHWTempRegPID.Req_PID_Incr = 0) THEN // OLD: OR (DHWTempRegPID.Req_PID_Incr = 0)
+    TON_GP1_LowSpd(
+        IN := TON_CircPump1.Q AND NOT(TON_GP1_LowSpd.Q),
+        PT := 1
+        );
+    
+    IF UnitOff OR NOT TON_CircPump1.Q  THEN // OLD: OR (DHWTempRegPID.Req_PID_Incr = 0)
         //Unit off or PID reg 0 then pump shall be set to off
         DhwCircPumpReq :=95;
+    ELSIF (DHWTempRegPID.Req_PID_Incr = 0) AND TON_CircPump1.Q THEN
+        IF TON_GP1_LowSpd.Q THEN
+            DhwCircPumpReq := 85;
+        ELSE
+            DhwCircPumpReq := 95;
+        END_IF;
     ELSE
         //Pump regulation
 //        DhwCircPumpReq := DHWTempRegPID.Req_PID_Incr;

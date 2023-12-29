@@ -510,17 +510,17 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwBT3StrtCom : REAL := 55;
+	DhwBT3StrtCom : REAL := 45;
 	{LOCATION DhwBT3StrtEco}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwBT3StrtEco : REAL := 50;
+	DhwBT3StrtEco : REAL := 45;
 	{LOCATION DhwBT3StrtNor}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwBT3StrtNor : REAL := 50;
+	DhwBT3StrtNor : REAL := 45;
 	{LOCATION DhwCircPump1Spd}
 	(**Circulation pump GT1 speed*)
 	{ATTRIBUTE UOM PERCENT}
@@ -531,12 +531,12 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwComfStartTemp : REAL := 55;
+	DhwComfStartTemp : REAL := 45;
 	{LOCATION DhwComfStopTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwComfStopTemp : REAL := 62;
+	DhwComfStopTemp : REAL := 45;
 	{LOCATION DHWCompBlockTime}
 	(**Off delay time for blocking DHW mode for compressor*)
 	{ATTRIBUTE UOM HOUR}
@@ -559,28 +559,28 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwEcoStartTemp : REAL := 42;
+	DhwEcoStartTemp : REAL := 40;
 	{LOCATION DhwEcoStopTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwEcoStopTemp : REAL := 49;
+	DhwEcoStopTemp : REAL := 40;
 	{LOCATION DhwFlowSwitchOnDel}
 	(**Circulation pump on delay*)
 	{ATTRIBUTE UOM SECOND}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	DhwFlowSwitchOnDel : USINT := 5;
+	DhwFlowSwitchOnDel : USINT := 2;
 	{LOCATION DhwNormStartTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwNormStartTemp : REAL := 49;
+	DhwNormStartTemp : REAL := 45;
 	{LOCATION DhwNormStopTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwNormStopTemp : REAL := 55;
+	DhwNormStopTemp : REAL := 45;
 	{LOCATION DhwPumpDGain}
 	(**Circulation pump PID - Derivative time*)
 	{METADATA MIN_VAL 0}
@@ -916,12 +916,6 @@ VAR_GLOBAL PERSISTENT
 	PumpspdHeatAuto : REAL := 50;
 	{LOCATION Sel_HeatCurve_SetP}
 	Sel_HeatCurve_SetP : ULINT := 5;
-	{LOCATION ShuntDGain}
-	(**Shunt valve d-gain*)
-	ShuntDGain : UINT := 7;
-	{LOCATION ShuntIGain}
-	(**Shunt valve i-gain*)
-	ShuntIGain : UINT := 100;
 	{LOCATION ShuntPGain}
 	(**Shunt valve p-gain*)
 	ShuntPGain : REAL := 10;

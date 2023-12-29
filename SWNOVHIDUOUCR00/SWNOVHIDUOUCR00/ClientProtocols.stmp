@@ -203,7 +203,7 @@
         <ModbusVariable
           DataType="REAL"
           Name="ECT"
-          Index="249"
+          Index="57"
           Hysteresis="0"
           RWMode="NoReadWriteChangeWriteOnline"
           Kind="HoldingRegister"

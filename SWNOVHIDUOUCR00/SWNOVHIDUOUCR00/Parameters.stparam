@@ -659,16 +659,6 @@
       Name="ShuntManMode"
       Attributes="None" />
     <Parameter
-      InitValue="100"
-      Name="ShuntIGain"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="7"
-      Name="ShuntDGain"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
       Name="SG_Status"
       Attributes="None" />
     <Parameter

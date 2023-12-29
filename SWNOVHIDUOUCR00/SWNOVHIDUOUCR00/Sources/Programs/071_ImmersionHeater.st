@@ -54,8 +54,8 @@ PROGRAM ImmersionRegulation
         //When the immersion heater has been active due to EB and EB have deactivated the immersion heater there is a high probability
         //that the immersion heater will be needed again in a short while. Because of this the system shall focus on using the outdoor unit for heating and not switching to DHW. 
         TOF_ImmHeatEB( 
-            IN := EBHP > ((EBtepImm - EBHPCompStrt) + EBHPStepOut) AND ImmersionHeatAllow,                               // Triggered when immersion heater stepsOut activated
-            PT := DHWCompBlockTime*3600
+            IN := EBHP > ((EBtepImm - EBHPCompStrt) + EBHPStepOut) AND ImmersionHeatAllow,             // Triggered when immersion heater stepsOut activated
+            PT := 30//DHWCompBlockTime*3600
             );
         SR_EB_StepOut(
                 s1 := EBHP > ((EBtepImm - EBHPCompStrt) + EBHPStepOut) AND ImmersionHeatAllow AND NOT TOF_ImmHeatEB.Q,   // Triggered when immersion heater stepsOut activated
@@ -64,9 +64,9 @@ PROGRAM ImmersionRegulation
             DHWCompBlock := SR_EB_StepOut.Q1;                                                                            // Block compressor when immersion heater activated from Energy balance               
         //Allow immersion heater
         SR_AutoMode_Immheat( 
-                s1 :=   (EBHP < (EBHPCompStrt + EBtepImm)) AND OpmodeAllowImm // EB triggers immersion heater
+                s1 :=   (EBHP < (EBHPCompStrt + EBtepImm)) AND OpmodeAllowImm                                            // EB triggers immersion heater
                         
-                        OR (OU_EnvZone > 1),                                                         // Out of ennvelope triggers immersion heater
+                        OR (OU_EnvZone > 1),                                                                            // Out of ennvelope triggers immersion heater
                 R := NOT SR_EB_StepOut.Q1 AND OU_EnvZone = 1 OR UnitOff OR NOT OpModeAllowImm
                 );
         ImmersionHeatAllow := SR_AutoMode_Immheat.Q1 OR SG_Status = SGStatus#OVERCAPACITY_MODE OR ImmHeatOnly;    

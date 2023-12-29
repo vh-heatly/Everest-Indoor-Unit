@@ -749,21 +749,9 @@
           Kind="CoilStatus"
           Size="1" />
         <ModbusVariable
-          DataType="UINT"
-          Name="ShuntIGain"
-          Index="60"
-          Kind="HoldingRegister"
-          Size="1" />
-        <ModbusVariable
           DataType="BOOL"
           Name="ShuntManMode"
           Index="82"
-          Kind="HoldingRegister"
-          Size="1" />
-        <ModbusVariable
-          DataType="UINT"
-          Name="ShuntDGain"
-          Index="62"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
