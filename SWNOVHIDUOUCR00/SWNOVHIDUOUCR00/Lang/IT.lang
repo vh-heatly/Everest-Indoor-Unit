@@ -1193,6 +1193,7 @@
         <Item Key="HEATING" Value="Unit in heating mode" />
         <Item Key="COOLING" Value="Unit in cooling mode" />
         <Item Key="DHW" Value="Unit in DHW mode" />
+        <Item Key="DEFROST" Value="Unit in Fefrost mode" />
       </Items>
     </Section>
     <Section Name="OutSideTemp" Category="Enums" EmbedTranslation="false">

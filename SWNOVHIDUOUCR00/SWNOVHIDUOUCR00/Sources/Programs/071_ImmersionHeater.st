@@ -55,7 +55,7 @@ PROGRAM ImmersionRegulation
         //that the immersion heater will be needed again in a short while. Because of this the system shall focus on using the outdoor unit for heating and not switching to DHW. 
         TOF_ImmHeatEB( 
             IN := EBHP > ((EBtepImm - EBHPCompStrt) + EBHPStepOut) AND ImmersionHeatAllow,             // Triggered when immersion heater stepsOut activated
-            PT := 30//DHWCompBlockTime*3600
+            PT := DHWCompBlockTime*3600
             );
         SR_EB_StepOut(
                 s1 := EBHP > ((EBtepImm - EBHPCompStrt) + EBHPStepOut) AND ImmersionHeatAllow AND NOT TOF_ImmHeatEB.Q,   // Triggered when immersion heater stepsOut activated

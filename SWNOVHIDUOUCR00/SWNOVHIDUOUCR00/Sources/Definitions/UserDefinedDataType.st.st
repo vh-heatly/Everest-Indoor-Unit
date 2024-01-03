@@ -443,7 +443,9 @@ TYPE
         (**Unit in cooling mode*)
         COOLING,
         (**Unit in DHW mode*)
-        DHW
+        DHW,
+        (**Unit in Defrost mode*)
+        DEFROST
     );
     
     SGStatus:

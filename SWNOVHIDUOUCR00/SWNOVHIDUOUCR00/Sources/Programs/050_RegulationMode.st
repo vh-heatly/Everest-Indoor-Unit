@@ -169,19 +169,6 @@ PROGRAM RegulationMode
     
     {ENDREGION}
     
-    {REGION ECT CALCULATION}
-    //Select correct ECT depending on which operation mode is active, default to DHW value
-        IF(GoToState = OpStage_Status#DHW)THEN
-            ECT := Ain_Data.Fct.DHWBottomTemp + ECT_DHW_Offset;
-        ELSIF(GoToState = OpStage_Status#HEATING)THEN
-            ECT := OU_Unit.CondInTemp + ECT_Heat_Offset;
-        ELSIF(GoToState = OpStage_Status#COOLING)THEN
-            ECT := OU_Unit.OutDoorTemp + ECT_Cool_Offset;
-        ELSE
-            ECT := Ain_Data.Fct.DHWBottomTemp + ECT_DHW_Offset;
-        END_IF;
-        OU_Unit.ECT := ECT;
-    {ENDREGION}
         
     {REGION DHW TIMING MANAGEMENT}
        
@@ -193,7 +180,7 @@ PROGRAM RegulationMode
     
         TON_DHWTimer(
             IN := Dis_OpStateSwitch AND DHWFrcSwitchDone,
-            PT := 30//DhwTimerStop
+            PT := DhwTimerStop
         );
         DHWFrcSwitch := TON_DHWTimer.Q;
         DHWFrcSwitchDone  := FALSE;
@@ -213,6 +200,26 @@ PROGRAM RegulationMode
         END_IF;
         DHWFrcSwitchDone := (OpState = GoToState);
     {ENDREGION}
+    
+    {REGION ECT CALCULATION}
+    //Select correct ECT depending on which operation mode is active, default to DHW value
+        IF(GoToState = OpStage_Status#DHW)THEN
+            ECT := Ain_Data.Fct.DHWBottomTemp + ECT_DHW_Offset;
+        ELSIF(GoToState = OpStage_Status#HEATING)THEN
+            ECT := OU_Unit.CondInTemp + ECT_Heat_Offset;
+        ELSIF(GoToState = OpStage_Status#COOLING)THEN
+            ECT := OU_Unit.OutDoorTemp + ECT_Cool_Offset;
+        ELSE
+            ECT := Ain_Data.Fct.DHWBottomTemp + ECT_DHW_Offset;
+        END_IF;
+        OU_Unit.ECT := ECT;
+    {ENDREGION}
+    
+    {REGION DEFROST}  
+    IF OU_Unit.DefrostStatus THEN
+        GoToState := OpStage_Status#DEFROST;
+    END_IF;    
+    {ENDREGION}
  
     {REGION STATE TRANSITION CHECK}
     //Only allow transition between active states if compressor temperature above ECT
@@ -221,7 +228,9 @@ PROGRAM RegulationMode
     ELSE
         //Only require compressor temperature when the compressor is running
         IF(OU_CompOn)THEN
-            IF(GoToState <> OpState AND OU_CompTemp < ECT) THEN
+            IF (GoToState = OpStage_Status#DEFROST) THEN
+                OpState := GoToState;
+            ELSIF(GoToState <> OpState AND OU_CompTemp < ECT) THEN
                 OU_CompHeat := TRUE;
             ELSIF(GoToState <> OpState) THEN
                 OpState := GoToState;
@@ -235,17 +244,19 @@ PROGRAM RegulationMode
     
     
     {REGION AUTO MODE}
-    Dis_AutoMode := ManMode_Cool OR ManMode_Heat;
+    Dis_AutoMode := ManMode_Cool OR ManMode_Heat OR ImmHeatOnly;
     
     IF(UnitOn)THEN
         IF(En_AutoMode  AND NOT(Dis_AutoMode)) OR DHWFrcSwitch THEN           //AND NOT(Dis_OpStateSwitch)           
             CASE OpState OF
                 /*
-                Change operation state depending on outside temperature
+                Change operation state depending on system need
                  0: Decision phase
                  1: Heating
                  2: Cooling
                  3: DHW
+                 4: Defrost
+                
                 */
                 
                 0: //Decision phase              
@@ -256,7 +267,6 @@ PROGRAM RegulationMode
                     ELSIF(OpModeAllowCool)THEN
                         GoToState := OpStage_Status#COOLING;
                     END_IF;
-                    
                     //If no transition to another state is required, stop regulation
                     IF(GoToState = OpStage_Status#DECISION_PHASE)THEN
                         HeatReq := FALSE;
@@ -270,13 +280,15 @@ PROGRAM RegulationMode
                     CoolReq := FALSE;
                     ImmHeatReq := FALSE;
                     DHWReq := FALSE;
-                   // IF(NOT(Dis_OpStateSwitch))THEN
-                        IF(NOT(OpModeAllowHeat)) THEN // Return to decision phase
-                            GoToState := OpStage_Status#DECISION_PHASE;
-                        ELSIF(DHWNeed AND NOT DHWFrcSwitch) THEN
-                            GoToState := OpStage_Status#DHW;
-                        END_IF;
-                    //END_IF;
+                  
+                    IF OU_Unit.DefrostStatus THEN 
+                        GoToState := OpStage_Status#DEFROST;
+                    ELSIF(NOT(OpModeAllowHeat)) THEN // Return to decision phase
+                        GoToState := OpStage_Status#DECISION_PHASE;
+                    ELSIF(DHWNeed AND NOT DHWFrcSwitch) THEN
+                        GoToState := OpStage_Status#DHW;
+                    END_IF;
+                    
                 
                 2: //Cooling state
                     HeatReq := FALSE;
@@ -286,17 +298,18 @@ PROGRAM RegulationMode
                 
                     IF(NOT(OpModeAllowCool)) THEN // Return to decision phase
                         GoToState := OpStage_Status#DECISION_PHASE;
-                    ELSIF(DHWNeed) THEN
+                    ELSIF(DHWNeed) THEN  
                         GoToState := OpStage_Status#DHW;
                     END_IF;
-                
                 3: //DHW
                     HeatReq := FALSE;
                     CoolReq := FALSE;
                     ImmHeatReq := FALSE;
                     DHWReq := TRUE;
-                    
-                    IF(NOT(DHWNeed))THEN //Insert DHW max timer logic for heat/DHW switch
+                    IF OU_Unit.DefrostStatus THEN 
+                        GoToState := OpStage_Status#DEFROST;
+                     
+                    ELSIF(NOT(DHWNeed))THEN // IF statements reflects priority of the modes
                         IF OpModeAllowHeat THEN
                             GoToState := OpStage_Status#HEATING;
                         ELSIF OpModeAllowCool THEN
@@ -305,6 +318,16 @@ PROGRAM RegulationMode
                             GoToState := OpStage_Status#DECISION_PHASE;
                         END_IF;
                     END_IF;
+                4: //Defrost
+                    HeatReq := FALSE;
+                    CoolReq := FALSE;
+                    ImmHeatReq := FALSE;
+                    DHWReq := FALSE;
+                    IF NOT OU_Unit.DefrostStatus THEN  // Leave defrost mode
+                        GoToState := OpStage_Status#DECISION_PHASE;
+                    END_IF;
+                    
+                
             END_CASE;       
         ELSIF(Dis_AutoMode)THEN
             //Manual regulation mode

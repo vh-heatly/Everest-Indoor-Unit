@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SToneProject name="IOMng_Basic_v.2.1.1.C [SWNOVHIDUOUCR00]" guid="36ea4d0e-5f78-4dce-a9e4-fb7ef19ae47c" type="Library" version="1.2" projectVersion="2.1.1.C" Z3VpZC1jcmM="3603412555" author="Carel Industries S.p.A" vendor="Carel Industries S.p.A" reflibfathername="SWNOVHIDUOUCR00" libguid="f68cc953-ab3f-468c-8c1e-d14149d89680" libname="IOMng_Basic">
+  <Files>
+    <Folder path="Libs">
+      <File path="AinMng_v.2.0.2.stlib" buildaction="Compile" libnodeid="6b526644-126e-488a-8a40-cb974bb16402" />
+      <File path="GetTime_v.1.0.0.stlib" buildaction="Compile" libnodeid="d9fa9edc-4b2a-4dae-b0d2-810411891583" />
+    </Folder>
+    <Folder path="Images" />
+    <File path="_IOMng_Basic_HW.st" buildaction="Compile" />
+    <File path="_IOMng_Basic.st" buildaction="Compile" />
+    <File path="LibVer.g.st" buildaction="Compile" />
+    <File path="types.st" buildaction="Compile" />
+  </Files>
+  <BuildOptions />
+  <Library Ver="1">
+    <Info Version="2.1.1.C" SourceCRC="0xB3225B6A" ProjectCRC="0xB3225B6A" ID="f68cc953-ab3f-468c-8c1e-d14149d89680" Name="IOMng_Basic" Description="" Author="Carel Industries S.p.A" Vendor="Carel Industries S.p.A">
+      <Dependency ID="f68cc953-ab3f-468c-8c1e-d14149d89680" Name="IOMng_Basic" Version="2.1.1.C">
+        <Dependency ID="8ccb1973-8cd6-4ac6-a0bc-2eeadc6c95cb" Name="AinMng" Version="2.0.2">
+          <Dependency ID="128737d8-0124-4e33-a04e-69ecb0759bb2" Name="GetTime" Version="0.1.8" />
+          <Dependency ID="dca09732-ad82-4c3a-a9e5-0ed725a9970a" Name="Math" Version="0.1.16">
+            <Dependency ID="128737d8-0124-4e33-a04e-69ecb0759bb2" Name="GetTime" Version="0.1.8" />
+          </Dependency>
+        </Dependency>
+        <Dependency ID="128737d8-0124-4e33-a04e-69ecb0759bb2" Name="GetTime" Version="1.0.0" />
+      </Dependency>
+    </Info>
+  </Library>
+  <Security Encoded="oAAAAMSxZFcPjdLAFwKZiypm4WEXL+FlR8cThZKs1A+MI2enS8ugOJ2L4Vn4UyYKCxFTuM2fex2fhHsAzYs2MslsVlvotDdTjTr43z1JkpMI2Zvi4x8z+zMJ2ZQgGZT6TqHEiBsfHP9ucTXGbt5DsrZb5wJvKpvaCPxCZu1yjStnbFjtLNvqaAhOJHvpjS72BFhMGH73aQMqOQJCJUiyq5hQTW8=" />
+</SToneProject>
