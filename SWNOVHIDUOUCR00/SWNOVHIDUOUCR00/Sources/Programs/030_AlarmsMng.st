@@ -31,4 +31,13 @@ PROGRAM AlarmsMng
     Alarms.Table.Al_OUOffline.Info.Trigger := (NOT (OU_Unit.Info.isOnline)) AND NOT(NoOutdoorUnit);
     {ENDREGION}
 	
+    {REGION OUTDOOR UNIT ALARMS}
+    IF NOT NoOutdoorUnit THEN
+    
+        
+        
+    END_IF;
+    
+    {ENDREGION}
+    
 END_PROGRAM

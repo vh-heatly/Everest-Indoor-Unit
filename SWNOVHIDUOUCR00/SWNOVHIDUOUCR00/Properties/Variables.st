@@ -107,11 +107,6 @@ VAR_GLOBAL
 	{LOCATION DHWCompBlock}
 	(**DHWBlockComp blocks compressor due to EB calculation, probably there is a need for more heat in the near future*)
 	DHWCompBlock : BOOL;
-	{LOCATION DhwMode}
-	(**DHW operation mode*)
-	{METADATA MIN_VAL 0}
-	{METADATA MAX_VAL 2}
-	DhwMode : USINT := 1;
 	{LOCATION DHWNeed}
 	(**DHW operation required*)
 	DHWNeed : BOOL;
@@ -174,6 +169,9 @@ VAR_GLOBAL
 	{LOCATION En_SelMode}
 	(**Enable selection of operating mode*)
 	En_SelMode : BOOL;
+	{LOCATION ExtHotWatrEnbl}
+	(**Enable extra hot water*)
+	ExtHotWatrEnbl : BOOL := FALSE;
 	{LOCATION FB2_ChangeSet}
 	(**Client - Apply settings*)
 	FB2_ChangeSet : BOOL := TRUE;
@@ -270,6 +268,14 @@ VAR_GLOBAL
 	(**Compressor temperature*)
 	{ATTRIBUTE UOM CELSIUS}
 	OU_CompTemp : REAL;
+	{LOCATION OU_CondTemp}
+	(**Condensing temperature*)
+	{ATTRIBUTE UOM CELSIUS}
+	OU_CondTemp : REAL;
+	{LOCATION OU_CurrDSH}
+	(**urrent DSH temperature*)
+	{ATTRIBUTE UOM KELVIN}
+	OU_CurrDSH : REAL;
 	{LOCATION OU_CurrSH}
 	(**Outdoor unit - Current suction superheat*)
 	{ATTRIBUTE UOM KELVIN}
@@ -289,6 +295,10 @@ VAR_GLOBAL
 	{LOCATION OU_EnvZone}
 	(**Outdoor unit envelope zone*)
 	OU_EnvZone : UINT;
+	{LOCATION OU_EvapTemp}
+	(**Evaporator temperature*)
+	{ATTRIBUTE UOM CELSIUS}
+	OU_EvapTemp : REAL;
 	{LOCATION OU_Online}
 	(**Outdoor unit online*)
 	OU_Online : BOOL;
@@ -481,6 +491,12 @@ VAR_GLOBAL
 	{LOCATION DEFAULT}
 END_VAR
 VAR_GLOBAL PERSISTENT
+	{LOCATION CompRunTimerMin}
+	(**Compressor min running time when changing mode*)
+	{ATTRIBUTE UOM MINUTE}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 60}
+	CompRunTimerMin : UINT := 5;
 	{LOCATION CoolModeTemp}
 	(**Cooling mode block temperature*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -571,6 +587,11 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
 	DhwFlowSwitchOnDel : USINT := 2;
+	{LOCATION DhwMode}
+	(**DHW operation mode*)
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 2}
+	DhwMode : USINT := 1;
 	{LOCATION DhwNormStartTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
@@ -771,6 +792,12 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 45}
 	{METADATA MAX_VAL 65}
 	ExtHotWatrStopTemp : REAL := 65;
+	{LOCATION ExtHotWatrTime}
+	(**The extra hot water will be enabled for this time*)
+	{ATTRIBUTE UOM MINUTE}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 24}
+	ExtHotWatrTime : UINT := 3;
 	{LOCATION FB2_Baud}
 	(**Client - Baudrate*)
 	FB2_Baud : Serial_Speed(0..8) := 4;
@@ -916,6 +943,9 @@ VAR_GLOBAL PERSISTENT
 	PumpspdHeatAuto : REAL := 50;
 	{LOCATION Sel_HeatCurve_SetP}
 	Sel_HeatCurve_SetP : ULINT := 5;
+	{LOCATION SGActive}
+	(**Enable inputs for smart grid*)
+	SGActive : BOOL;
 	{LOCATION ShuntPGain}
 	(**Shunt valve p-gain*)
 	ShuntPGain : REAL := 10;

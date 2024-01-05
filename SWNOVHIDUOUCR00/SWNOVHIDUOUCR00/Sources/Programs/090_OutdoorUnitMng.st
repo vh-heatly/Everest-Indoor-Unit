@@ -39,9 +39,12 @@ PROGRAM OutdoorUnitMng
         OU_EnvZone := OU_Unit.EnvZone;
         OU_CompTemp := OU_Unit.CompTemp;
         OU_CurrSH := OU_Unit.CurrSH;
+        OU_CurrDSH := OU_Unit.CurrDSH;
         OU_CurrSpd := OU_Unit.CurrSpd_RPS;
         OU_SHSetP := OU_Unit.CurrSHSetP;
         OU_CompOn := OU_Unit.CompOn;
+        OU_CondTemp := OU_Unit.CondTemp;
+        OU_EvapTemp :=  OU_Unit.EvapTemp;
         
         {REGION DHW SWITCH MANAGEMENT}
         

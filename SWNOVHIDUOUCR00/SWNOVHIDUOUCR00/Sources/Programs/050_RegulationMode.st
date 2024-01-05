@@ -8,13 +8,17 @@ VAR_GLOBAL
         GoToState               : USINT;
         (**DHW transition timer*)
         TON_DHWTimer            : TON_s;
+        (**Comp minimum running time in heat or cool mode*)    
+        TON_MinRunTime          : TON_s;
+        MinRunTime              : BOOL;
         (**DHW switch due to timer*)
         DHWFrcSwitch            : BOOL;
         (**DHW switch complete*)
         DHWFrcSwitchDone        : BOOL;
         (**Disable regular state transition during DHW switch*)
         Dis_OpStateSwitch       : BOOL;
-   
+        (**RS latch Comp minimum running time in heat or cool mode*)        
+        RS_ChangeOfMode         : RS;
 END_VAR
 
 
@@ -61,8 +65,8 @@ PROGRAM RegulationMode
     END_IF;
     
     {REGION SMARTGRID INPUT MANAGEMENT}
-        SG_Status_Byte.0 := Din_Data.Fct.SG1;
-        SG_Status_Byte.1 := Din_Data.Fct.SG2;
+        SG_Status_Byte.0 := Din_Data.Fct.SG1 AND SGActive;
+        SG_Status_Byte.1 := Din_Data.Fct.SG2 AND SGActive;
         SG_Status := TO_USINT(SG_Status_Byte);        
     {ENDREGION}
     
@@ -220,9 +224,22 @@ PROGRAM RegulationMode
         GoToState := OpStage_Status#DEFROST;
     END_IF;    
     {ENDREGION}
+    
+    {REGION Minimum running time}
+    TON_MinRunTime(
+        IN := (OpState = OpStage_Status#HEATING) OR (OpState = OpStage_Status#COOLING),
+        PT := CompRunTimerMin * 60
+    );
+    RS_ChangeOfMode(
+        S  := (OpState = OpStage_Status#HEATING) OR (OpState = OpStage_Status#COOLING),
+        R1 := TON_MinRunTime.Q
+    );
+    
+    MinRunTime := RS_ChangeOfMode.S AND RS_ChangeOfMode.Q1;
+    {ENDREGION}
  
     {REGION STATE TRANSITION CHECK}
-    //Only allow transition between active states if compressor temperature above ECT
+    //Only allow transition between active states if compressor temperature above ECT and if mimimum compressor time is reached
     IF(OpState <> 0 AND GoToState = 0) THEN
         OpState := 0;
     ELSE
@@ -232,6 +249,8 @@ PROGRAM RegulationMode
                 OpState := GoToState;
             ELSIF(GoToState <> OpState AND OU_CompTemp < ECT) THEN
                 OU_CompHeat := TRUE;
+            ELSIF(GoToState <> OpState AND MinRunTime) THEN
+                OU_CompHeat := FALSE;
             ELSIF(GoToState <> OpState) THEN
                 OpState := GoToState;
                 OU_CompHeat := FALSE;
@@ -241,6 +260,7 @@ PROGRAM RegulationMode
         END_IF;
     END_IF;
     {ENDREGION}
+    
     
     
     {REGION AUTO MODE}
@@ -280,7 +300,7 @@ PROGRAM RegulationMode
                     CoolReq := FALSE;
                     ImmHeatReq := FALSE;
                     DHWReq := FALSE;
-                  
+                    
                     IF OU_Unit.DefrostStatus THEN 
                         GoToState := OpStage_Status#DEFROST;
                     ELSIF(NOT(OpModeAllowHeat)) THEN // Return to decision phase

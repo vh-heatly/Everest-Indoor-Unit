@@ -409,9 +409,6 @@
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
     <Parameter
-      Name="En_ExtHotWatr"
-      Attributes="None" />
-    <Parameter
       Name="Ain_Data.Fct.DHWBottomTemp"
       ReadOnly="true"
       Acronym="DHWBottomTemp"
@@ -2007,5 +2004,38 @@
     <Parameter
       Name="WaterFlowD1"
       Attributes="None" />
+    <Parameter
+      Name="OU_CurrDSH"
+      Attributes="None" />
+    <Parameter
+      Name="OU_CondTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_EvapTemp"
+      Attributes="None" />
+    <Parameter
+      Name="DHWCompBlockTime"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="DHWCompBlock"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.WaterFlow"
+      Attributes="None" />
+    <Parameter
+      InitValue="5"
+      Name="CompRunTimerMin"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="FALSE"
+      Name="ExtHotWatrEnbl"
+      Attributes="None" />
+    <Parameter
+      InitValue="3"
+      Name="ExtHotWatrTime"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
   </Parameters>
 </ParametersConfiguration>

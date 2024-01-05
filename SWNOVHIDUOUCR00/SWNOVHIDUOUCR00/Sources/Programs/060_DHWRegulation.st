@@ -12,8 +12,14 @@ VAR_GLOBAL
     DhwPumpMax1 : REAL;
     DHWPumpEstimate : REAL;
     DHWPumpReg : REAL;
-        (**DHW charging period timer*)
-        TON_DHWChrg       : TON_s;
+    (**DHW charging period timer*)
+    TON_DHWChrg       : TON_s;
+        (**Extra hotwater timer*)
+        TOF_ExtHotWatr     : TOF_s;  
+        (**Extra hotwater hold logic*)
+        RS_ExtHotWatr       : RS;
+        R_Edge_tmp          : system.timer.R_Edge;
+    
 END_VAR
 
 PROGRAM DHWRegulation
@@ -30,8 +36,8 @@ PROGRAM DHWRegulation
         SR_DHWNeed        : RS;        
         (**Circulation pump 1 timer*)
         TON_CircPump1     : TON_s;
-        (**Charge regulation PID*)
-        DHWChrgRegPID : PID_Incr;
+//        (**Charge regulation PID*)
+//        DHWChrgRegPID : PID_Incr;
         (**Temperature regulation PID*)
         DHWTempRegPID : PID_Incr;
         (**DHW block from smart grid*)
@@ -46,8 +52,8 @@ PROGRAM DHWRegulation
         ActPmpStopTemp    : REAL;
         (**Index variable*)
         i                 : INT;
-        (**Heating regulation output filter*)
-        DHWReg_Filt         : ExpFilt;
+//        (**Heating regulation output filter*)
+//        DHWReg_Filt         : ExpFilt;
         (**Circulation pump 1 low speed timer*)
         TON_GP1_LowSpd      : TON_s;
     END_VAR
@@ -60,12 +66,33 @@ PROGRAM DHWRegulation
     SG_DHWBlock := SG_Status = SGStatus#BLOCKING_MODE
                     OR NOT(SystemCfg_AllowDHW);
     
+    {REGION Extra Hot Water}
+    (*Creates pulse on rising edge of ExtHotwatrEnbl**)
+    R_Edge_tmp(
+        In := ExtHotWatrEnbl,
+        Reset := R_Edge_tmp.Out
+        );
+    (*Off delay to turn of after set time**)
+    TOF_ExtHotWatr(
+        IN := R_Edge_tmp.Out,
+        PT := ExtHotWatrTime * 60
+    );
+    (*RS latch to enable disable extra hotwater**)
+    RS_ExtHotWatr(
+        S  := R_Edge_tmp.Out AND NOT RS_ExtHotWatr.Q1,
+        R1 := NOT TOF_ExtHotWatr.Q OR R_Edge_tmp.Out AND RS_ExtHotWatr.Q1 
+    );
+    (*The extra hotwter enabled from input signal with timer or from SmartGrid [1:1]**)
+    En_ExtHotWatr := RS_ExtHotWatr.Q1 OR SG_Status = SGStatus#OVERCAPACITY_MODE;
+    
+    {ENDREGION}
+    
     {REGION START/STOP TEMPERATURES}
     //Select DHW Start/stop temperatures
     IF(DhwMode = DHWMode#ECONOMY)THEN
         DHWStartTemp := DhwEcoStartTemp;
         DHWStopTemp := DhwEcoStopTemp;
-    ELSIF(DhwMode = DHWMode#COMFORT)THEN
+    ELSIF(DhwMode = DHWMode#COMFORT) OR (SG_Status = SGStatus#LOW_PRICE_MODE) THEN
         DHWStartTemp := DhwComfStartTemp;
         DHWStopTemp := DhwComfStopTemp;
     ELSE
