@@ -45,6 +45,8 @@ PROGRAM OutdoorUnitMng
         OU_CompOn := OU_Unit.CompOn;
         OU_CondTemp := OU_Unit.CondTemp;
         OU_EvapTemp :=  OU_Unit.EvapTemp;
+        OU_CondInTemp := OU_Unit.CondInTemp;
+        OU_CondOutTemp := OU_Unit.CondOutTemp;
         
         {REGION DHW SWITCH MANAGEMENT}
         

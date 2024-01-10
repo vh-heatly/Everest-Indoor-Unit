@@ -40,4 +40,9 @@ PROGRAM AlarmsMng
     
     {ENDREGION}
     
+    {REGION LOGIC ALARMS}
+    Alarms.Table.Al_FreezeProAct.Info.Trigger := CS_FreezeProtAct;
+    {ENDREGION}
+    
+    
 END_PROGRAM

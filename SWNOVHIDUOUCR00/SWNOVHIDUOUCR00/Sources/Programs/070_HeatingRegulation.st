@@ -59,7 +59,9 @@ PROGRAM HeatingRegulation
                     R := OutDoorTempFilter > HeatModeTemp OR SG_HeatBlock OR UnitOff
                     );
             OpModeAllowHeat := SR_AutoMode_Heating.Q1;
-
+            CS_FreezeProtReset := SR_AutoMode_Heating.Q1;
+        ELSIF CS_FreezeProtAct THEN // Freeze protection active override logic for OpModeAllowHeat
+            OpModeAllowHeat := TRUE;
         ELSE
             OpModeAllowHeat := FALSE;
         END_IF;
@@ -79,10 +81,10 @@ PROGRAM HeatingRegulation
         END_IF;
     
         //Determine total setpoint offset
-        SetP_Offset := SetP_ExtAdj + SG_Offset + Offset_EBHP;
+        SetP_Offset := SetP_ExtAdj + SG_Offset + Offset_EBHP + HeatCurve_Offset;
         
         //Calculate current supply temperature setpoint
-        SupplyTempCalc := LIMIT(0, ((HeatCurve_K[Sel_HeatCurve_SetP]*OutDoorTemp) + HeatCurve_M[Sel_HeatCurve_SetP]) + SetP_Offset, 80);
+        SupplyTempCalc := LIMIT(TO_REAL(SupplyTempHeatMin), ((HeatCurve_K[Sel_HeatCurve_SetP]*OutDoorTemp) + HeatCurve_M[Sel_HeatCurve_SetP]) + SetP_Offset, TO_REAL(SupplyTempHeatMax));
     
 
     {ENDREGION}                 
@@ -114,7 +116,7 @@ PROGRAM HeatingRegulation
     //Pass filtered request to outdoor unit
     HeatReg_Filt(
         In    := PID_HeatReg.Req_PID_Incr,
-        Tau   := 5,
+        Tau   := 50,
         En_FB := PID_HeatReg.En_PID_Incr,
         Out   => PID_HeatReq
     );

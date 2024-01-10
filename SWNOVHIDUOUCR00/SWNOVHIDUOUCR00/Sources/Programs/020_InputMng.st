@@ -94,19 +94,19 @@ TYPE
     END_UNION;
     
     AinInfoStruct: STRUCT
-        (**DHW bottom temperature*)
+        (**BT5 DHW bottom temperature*)
         DHWBottomTemp    :   ErrConfig;
-        (**DHW middle temperature*)
+        (**BT4 DHW middle temperature*)
         DHWMiddleTemp    :   ErrConfig;
-        (**DHW top temperature*)
+        (**BT3 DHW top temperature*)
         DHWTopTemp       :   ErrConfig;
-        (**DHW supply temperature*)
+        (**BT7 DHW supply temperature*)
         DHWSupplyTemp    :   ErrConfig;
-        (**Outdoor temperature*)
+        (**BT1 Outdoor temperature*)
         OutDoorTemp    :   ErrConfig;
-        (**Climate system supply temperature*)
+        (**BT6 Climate system supply temperature*)
         ClimSupplyTemp    :   ErrConfig;
-        (**System pressure*)
+        (**BP1 System pressure*)
         SysPress    :   ErrConfig;
     END_STRUCT;
 
@@ -116,19 +116,19 @@ TYPE
     END_UNION;
 
     AinCfgStruct: STRUCT
-        (**DHW bottom temperature*)
+        (**BT5 DHW bottom temperature*)
         DHWBottomTemp     :  AinConfig;
-        (**DHW middle temperature*)
+        (**BT4 DHW middle temperature*)
         DHWMiddleTemp    :   AinConfig;
-        (**DHW top temperature*)
+        (**BT3 DHW top temperature*)
         DHWTopTemp       :   AinConfig;
-        (**DHW supply temperature*)
+        (**BT7 DHW supply temperature*)
         DHWSupplyTemp    :   AinConfig;
-        (**Outdoor temperature*)
+        (**BT1 Outdoor temperature*)
         OutDoorTemp    :   AinConfig;
-        (**Climate system supply temperature*)
+        (**BT7 Climate system supply temperature*)
         ClimSupplyTemp    :   AinConfig;
-        (**System pressure*)
+        (**BP1 System pressure*)
         SysPress    :   AinConfig;
     END_STRUCT;
 
@@ -141,37 +141,37 @@ TYPE
         {ATTRIBUTE UOM CELSIUS}
         {METADATA MAX_VAL 999.9}
         {METADATA MIN_VAL -99.9}
-        (**DHW bottom temperature*)
+        (**BT5 DHW bottom temperature*)
         DHWBottomTemp       :   REAL;
         {ATTRIBUTE UOM CELSIUS}
         {METADATA MAX_VAL 999.9}
         {METADATA MIN_VAL -99.9}
-        (**DHW middle temperature*)
+        (**BT4 DHW middle temperature*)
         DHWMiddleTemp      :   REAL;
         {ATTRIBUTE UOM CELSIUS}
         {METADATA MAX_VAL 999.9}
         {METADATA MIN_VAL -99.9}
-        (**DHW top temperature*)
+        (**BT3 DHW top temperature*)
         DHWTopTemp      :   REAL;
         {ATTRIBUTE UOM CELSIUS}
         {METADATA MAX_VAL 999.9}
         {METADATA MIN_VAL -99.9}
-        (**DHW supply temperature*)
+        (**BT7 DHW supply temperature*)
         DHWSupplyTemp      :   REAL;
         {ATTRIBUTE UOM CELSIUS}
         {METADATA MAX_VAL 999.9}
         {METADATA MIN_VAL -99.9}
-        (**Outdoor temperature*)
+        (**BT1 Outdoor temperature*)
         OutDoorTemp      :   REAL;
         {ATTRIBUTE UOM CELSIUS}
         {METADATA MAX_VAL 999.9}
         {METADATA MIN_VAL -99.9}
-        (**Climate system supply temperature*)
+        (**BT6 Climate system supply temperature*)
         ClimSupplyTemp    :   REAL;
         {ATTRIBUTE UOM BAR}
         {METADATA MAX_VAL 999.9}
         {METADATA MIN_VAL -99.9}
-        (**System pressure*)
+        (**BP1 System pressure*)
         SysPress    :   REAL;
     END_STRUCT;
 
@@ -182,25 +182,25 @@ TYPE
 
     AinOffSetStruct: STRUCT
         {ATTRIBUTE UOM DELTACELSIUS}
-        (**DHW bottom temperature*)
+        (**BT5 DHW bottom temperature*)
         DHWBottomTemp      :   REAL;
         {ATTRIBUTE UOM DELTACELSIUS}
-        (**DHW middle temperature*)
+        (**BT4 DHW middle temperature*)
         DHWMiddleTemp      :   REAL;
         {ATTRIBUTE UOM DELTACELSIUS}
-        (**DHW top temperature*)
+        (**BT3 DHW top temperature*)
         DHWTopTemp         :   REAL;
         {ATTRIBUTE UOM DELTACELSIUS}
-        (**DHW supply temperature*)
+        (**BT7 DHW supply temperature*)
         DHWSupplyTemp      :   REAL;
         {ATTRIBUTE UOM DELTACELSIUS}
-        (**Outdoor temperature*)
+        (**BT1 Outdoor temperature*)
         OutDoorTemp        :   REAL;
         {ATTRIBUTE UOM DELTACELSIUS}
-        (**Climate system supply temperature*)
+        (**BT6 Climate system supply temperature*)
         ClimSupplyTemp     :   REAL;
         {ATTRIBUTE UOM BAR}
-        (**System pressure*)
+        (**BP1 System pressure*)
         SysPress           :   REAL;
     END_STRUCT;
     
@@ -234,7 +234,7 @@ VAR_GLOBAL PERSISTENT
             (**Climate system supply temperature*)
             ClimSupplyTemp      := (Ch := 2,  ModeType := MODE_TYPE_AIN#LIB_IO_PROBE_NTC),
             (**System pressure*)
-            SysPress            := (Ch := 7,  ModeType := MODE_TYPE_AIN#LIB_IO_PROBE_0_5V)
+            SysPress            := (Ch := 10,  ModeType := MODE_TYPE_AIN#LIB_IO_PROBE_4_20MA)
         ));
 
     Ain_Min     : AinData := (Fct := (
@@ -242,7 +242,8 @@ VAR_GLOBAL PERSISTENT
     ));
 
     Ain_Max     : AinData := (Fct := (
-        SysPress := 20
+        SysPress := 6
+    
     ));
 
     Ain_Offset  : AinOffset :=();

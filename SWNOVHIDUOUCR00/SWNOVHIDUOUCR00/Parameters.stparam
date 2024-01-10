@@ -46,12 +46,6 @@
       Acronym="W43"
       Attributes="None" />
     <Parameter
-      InitValue="FALSE"
-      Name="En_Buzzer"
-      Persistence="Persistent"
-      Acronym="Y98"
-      Attributes="Configurable Cloneable" />
-    <Parameter
       Name="ResAlrmByBMS"
       Acronym="q01"
       Attributes="AlarmMasterReset" />
@@ -868,7 +862,8 @@
     <Parameter
       InitValue="1"
       Name="DhwMode"
-      Attributes="None" />
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
     <Parameter
       InitValue="49"
       Name="DhwEcoStopTemp"
@@ -1169,201 +1164,6 @@
       Name="DHWNeed"
       Attributes="None" />
     <Parameter
-      InitValue="20"
-      Name="DHWCurve_SetP[0]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="21"
-      Name="DHWCurve_SetP[1]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="22"
-      Name="DHWCurve_SetP[2]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="23"
-      Name="DHWCurve_SetP[3]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="24"
-      Name="DHWCurve_SetP[4]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="25"
-      Name="DHWCurve_SetP[5]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="26"
-      Name="DHWCurve_SetP[6]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="27"
-      Name="DHWCurve_SetP[7]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="28"
-      Name="DHWCurve_SetP[8]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="29"
-      Name="DHWCurve_SetP[9]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="30"
-      Name="DHWCurve_SetP[10]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="31"
-      Name="DHWCurve_SetP[11]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="32"
-      Name="DHWCurve_SetP[12]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="33"
-      Name="DHWCurve_SetP[13]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="34"
-      Name="DHWCurve_SetP[14]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="35"
-      Name="DHWCurve_SetP[15]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="36"
-      Name="DHWCurve_SetP[16]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="37"
-      Name="DHWCurve_SetP[17]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="38"
-      Name="DHWCurve_SetP[18]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="20"
-      Name="DHWCurve_OutDoorTemp[0]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="18"
-      Name="DHWCurve_OutDoorTemp[1]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="16"
-      Name="DHWCurve_OutDoorTemp[2]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="14"
-      Name="DHWCurve_OutDoorTemp[3]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="12"
-      Name="DHWCurve_OutDoorTemp[4]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="10"
-      Name="DHWCurve_OutDoorTemp[5]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="8"
-      Name="DHWCurve_OutDoorTemp[6]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="6"
-      Name="DHWCurve_OutDoorTemp[7]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="4"
-      Name="DHWCurve_OutDoorTemp[8]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="2"
-      Name="DHWCurve_OutDoorTemp[9]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="0"
-      Name="DHWCurve_OutDoorTemp[10]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-2"
-      Name="DHWCurve_OutDoorTemp[11]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-4"
-      Name="DHWCurve_OutDoorTemp[12]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-6"
-      Name="DHWCurve_OutDoorTemp[13]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-8"
-      Name="DHWCurve_OutDoorTemp[14]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-10"
-      Name="DHWCurve_OutDoorTemp[15]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-12"
-      Name="DHWCurve_OutDoorTemp[16]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-14"
-      Name="DHWCurve_OutDoorTemp[17]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-16"
-      Name="DHWCurve_OutDoorTemp[18]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-18"
-      Name="DHWCurve_OutDoorTemp[19]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
       InitValue="50"
       Name="DhwBT3StrtNor"
       Persistence="Persistent"
@@ -1586,156 +1386,6 @@
     <Parameter
       Name="HeatingBlock"
       Attributes="None" />
-    <Parameter
-      InitValue="-0.1"
-      Name="DHWCurve_K[0]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-0.2"
-      Name="DHWCurve_K[1]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-0.3"
-      Name="DHWCurve_K[2]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-0.4"
-      Name="DHWCurve_K[3]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-0.5"
-      Name="DHWCurve_K[4]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-0.6"
-      Name="DHWCurve_K[5]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-0.7"
-      Name="DHWCurve_K[6]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-0.8"
-      Name="DHWCurve_K[7]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-0.9"
-      Name="DHWCurve_K[8]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-1"
-      Name="DHWCurve_K[9]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-1.1"
-      Name="DHWCurve_K[10]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-1.2"
-      Name="DHWCurve_K[11]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-1.3"
-      Name="DHWCurve_K[12]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-1.4"
-      Name="DHWCurve_K[13]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="-1.5"
-      Name="DHWCurve_K[14]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="23"
-      Name="DHWCurve_M[0]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="25"
-      Name="DHWCurve_M[1]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="27"
-      Name="DHWCurve_M[2]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="29"
-      Name="DHWCurve_M[3]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="31"
-      Name="DHWCurve_M[4]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="33"
-      Name="DHWCurve_M[5]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="35"
-      Name="DHWCurve_M[6]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="37"
-      Name="DHWCurve_M[7]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="39"
-      Name="DHWCurve_M[8]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="41"
-      Name="DHWCurve_M[9]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="43"
-      Name="DHWCurve_M[10]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="45"
-      Name="DHWCurve_M[11]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="47"
-      Name="DHWCurve_M[12]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="49"
-      Name="DHWCurve_M[13]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="51"
-      Name="DHWCurve_M[14]"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
     <Parameter
       Name="CoolingBlock"
       Attributes="None" />
@@ -2037,5 +1687,81 @@
       Name="ExtHotWatrTime"
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="En_ExtHotWatr"
+      Attributes="None" />
+    <Parameter
+      InitValue="75"
+      Name="MaxTankTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="MBM_Line.Info.DetectionRange"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.Info.LastPollingLoopTime"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.Info.LineType"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="MBM_Line.Info.PollingDelay"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.Info.PollingLoopsNumber"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="MBM_Line.Info.Retry"
+      Attributes="None" />
+    <Parameter
+      InitValue="8"
+      Name="MBM_Line.SerialSettings.Bits"
+      Attributes="None" />
+    <Parameter
+      InitValue="3"
+      Name="MBM_Line.SerialSettings.Channel"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.SerialSettings.HWMode"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.SerialSettings.MaskEvent"
+      Attributes="None" />
+    <Parameter
+      InitValue="2"
+      Name="MBM_Line.SerialSettings.Mode"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.SerialSettings.NotUseInterFrameDelay"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="MBM_Line.SerialSettings.Parity"
+      Attributes="None" />
+    <Parameter
+      InitValue="19200"
+      Name="MBM_Line.SerialSettings.Speed"
+      Attributes="None" />
+    <Parameter
+      InitValue="2"
+      Name="MBM_Line.SerialSettings.Stops"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.TcpIpSettings.client"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.TcpIpSettings.EventMask"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.TcpIpSettings.mode"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.TcpIpSettings.port"
+      Attributes="None" />
+    <Parameter
+      Name="MBM_Line.TcpIpSettings.proto"
+      Attributes="None" />
   </Parameters>
 </ParametersConfiguration>

@@ -221,8 +221,8 @@ PROGRAM DHWRegulation
     END_IF;
             
     //DHWPumpEstimate :=0;
-    DhwPumpMin1 := Limit(0, DHWPumpEstimate - 20, 100);   //Calculated pumpflow vs pump pwm 0-100% y= 7.69 x -84.5 
-    DhwPumpMax1 := Limit(0, DHWPumpEstimate + 20, 100);
+    DhwPumpMin1 := Limit(0, DHWPumpEstimate - 40, 100);   //Calculated pumpflow vs pump pwm 0-100% y= 7.69 x -84.5 
+    DhwPumpMax1 := Limit(0, DHWPumpEstimate + 10, 100);
     
     (*Temperature regulation PID*)
     DHWTempRegPID(

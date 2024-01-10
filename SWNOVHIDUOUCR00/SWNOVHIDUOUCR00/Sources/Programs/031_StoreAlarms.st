@@ -35,6 +35,8 @@ TYPE
         Al_SysPress    :   Alarm_Req             :=  (StrCode := 'A08', Info := (Code := 008, Category := CAT_AL_SRS_UNIT, Reset := AlarmResetType#Auto));
         (**Outdoor unit offline*)
         Al_OUOffline   : Alarm_Req               :=  (StrCode := 'A09', Info := (Code := 009, Category := CAT_AL_SRS_UNIT, Reset := AlarmResetType#Auto));
+        (**FreezeProtectionActive*)
+        Al_FreezeProAct   : Alarm_Req            :=  (StrCode := 'A10', Info := (Code := 010, Category := CAT_AL_SRS_UNIT, Reset := AlarmResetType#Auto));
     END_STRUCT;
 END_TYPE
 
@@ -43,7 +45,7 @@ VAR_GLOBAL CONSTANT
         (**Number of alarm saved inside ALARM table. 
          *NOTE: update every time an alarm is addedd!
         *)
-        noAlrms : UINT := 27;
+        noAlrms : UINT := 28;
     {ENDREGION}
 
     {REGION ALARM LOG CONFIGURATION}

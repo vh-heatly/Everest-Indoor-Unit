@@ -88,6 +88,12 @@ VAR_GLOBAL
 	{LOCATION CoolReq}
 	(**Cooling mode needed*)
 	CoolReq : BOOL;
+	{LOCATION CS_FreezeProtAct}
+	(**Freeze protect function active*)
+	CS_FreezeProtAct : BOOL;
+	{LOCATION CS_FreezeProtReset}
+	(**Reset the freeze protection function*)
+	CS_FreezeProtReset : BOOL;
 	{LOCATION DayIn}
 	(**New day value*)
 	{ATTRIBUTE UOM DAY}
@@ -181,6 +187,14 @@ VAR_GLOBAL
 	{LOCATION Flow_Present}
 	(**BF2 flow present*)
 	Flow_Present : BOOL;
+	{LOCATION GoToState}
+	(**Intended stage unit wants to transition to*)
+	GoToState : USINT;
+	{LOCATION HeatCurve_Offset}
+	(**HeatCurve offset to paralell move heatcurve*)
+	{METADATA MIN_VAL -5}
+	{METADATA MAX_VAL 5}
+	HeatCurve_Offset : REAL := 0;
 	{LOCATION HeatingBlock}
 	(**Block heating mode*)
 	HeatingBlock : BOOL;
@@ -268,6 +282,14 @@ VAR_GLOBAL
 	(**Compressor temperature*)
 	{ATTRIBUTE UOM CELSIUS}
 	OU_CompTemp : REAL;
+	{LOCATION OU_CondInTemp}
+	(**Condensor in temperature*)
+	{ATTRIBUTE UOM CELSIUS}
+	OU_CondInTemp : REAL;
+	{LOCATION OU_CondOutTemp}
+	(**Condensor Out temperatur*)
+	{ATTRIBUTE UOM CELSIUS}
+	OU_CondOutTemp : REAL;
 	{LOCATION OU_CondTemp}
 	(**Condensing temperature*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -328,9 +350,6 @@ VAR_GLOBAL
 	(**OutDoorTemp from selected source*)
 	{ATTRIBUTE UOM CELSIUS}
 	OutDoorTemp : REAL;
-	{LOCATION OutDoorTemp5Min}
-	{ATTRIBUTE UOM CELSIUS}
-	OutDoorTemp5Min : REAL;
 	{LOCATION OutDoorTempFilter}
 	(**Filtered outside temperature*)
 	OutDoorTempFilter : REAL;
@@ -384,9 +403,9 @@ VAR_GLOBAL
 	(**New second value*)
 	{ATTRIBUTE UOM SECOND}
 	SecondIn : USINT(0..59) := 0;
-	{LOCATION SetClockByDisp}
+	{LOCATION SetClock}
 	(**Sets controller internal clock by display*)
-	SetClockByDisp : BOOL;
+	SetClock : BOOL;
 	{LOCATION SetP_ExtAdj}
 	(**External setpoint adjustment*)
 	SetP_ExtAdj : REAL;
@@ -559,18 +578,6 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 48}
 	DHWCompBlockTime : UINT;
-	{LOCATION DHWCurve_K}
-	(**DHW curve K values*)
-	DHWCurve_K : ARRAY[0..14] OF REAL := [-0.1,-0.2,-0.3,-0.4,-0.5,-0.6,-0.7,-0.8,-0.9,-1,-1.1,-1.2,-1.3,-1.4,-1.5];
-	{LOCATION DHWCurve_M}
-	(**DHW curve M values*)
-	DHWCurve_M : ARRAY[0..14] OF REAL := [23,25,27,29,31,33,35,37,39,41,43,45,47,49,51];
-	{LOCATION DHWCurve_OutDoorTemp}
-	(**DHW cuvrve outside temperatures*)
-	DHWCurve_OutDoorTemp : ARRAY[0..19] OF REAL := [20,18,16,14,12,10,8,6,4,2,0,-2,-4,-6,-8,-10,-12,-14,-16,-18];
-	{LOCATION DHWCurve_SetP}
-	(**DHW curve setpoints*)
-	DHWCurve_SetP : ARRAY[0..18] OF REAL := [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38];
 	{LOCATION DhwEcoStartTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
@@ -834,6 +841,8 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION HeatModeTemp}
 	(**Heating mode block temperature*)
 	{ATTRIBUTE UOM CELSIUS}
+	{METADATA MIN_VAL -10}
+	{METADATA MAX_VAL CoolModeTemp}
 	HeatModeTemp : REAL := 10;
 	{LOCATION HeatModeTempHyst}
 	(**Heaeting mode block hysteresis*)
@@ -994,6 +1003,22 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION SPV_Port}
 	(**Supervisor serial port*)
 	SPV_Port : Serial_Channel_Server := 1;
+	{LOCATION SupplyTempHeat2Max}
+	(**Maximum supply temp to heating 2*)
+	{ATTRIBUTE UOM CELSIUS}
+	SupplyTempHeat2Max : UINT;
+	{LOCATION SupplyTempHeat2Min}
+	(**Minimum supply temp to heating 2*)
+	{ATTRIBUTE UOM CELSIUS}
+	SupplyTempHeat2Min : UINT;
+	{LOCATION SupplyTempHeatMax}
+	(**Maximum supply temp to heating*)
+	{ATTRIBUTE UOM CELSIUS}
+	SupplyTempHeatMax : UINT;
+	{LOCATION SupplyTempHeatMin}
+	(**Minimum supply temp to heating*)
+	{ATTRIBUTE UOM CELSIUS}
+	SupplyTempHeatMin : UINT;
 	{LOCATION SystemCfg}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 255}

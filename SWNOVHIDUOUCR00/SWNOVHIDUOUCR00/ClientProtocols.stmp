@@ -380,12 +380,17 @@
       Guid="ac76a321af564dd0891cc5a18930aca4">
       <MasterSettings
         COMPort="FBUS1"
-        Zone="0" />
+        Baudrate="115200"
+        Zone="0"
+        DetectionRange="30"
+        Retry="10" />
       <Devices>
         <Device
           Path="OU_Unit"
           Template="e65ab6af-3190-42fd-918a-0ce7a279840f">
-          <Settings />
+          <Settings
+            Timeout="3000"
+            DetectionTimeout="5000" />
         </Device>
       </Devices>
     </Configuration>

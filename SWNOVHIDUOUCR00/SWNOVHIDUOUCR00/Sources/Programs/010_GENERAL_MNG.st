@@ -73,8 +73,8 @@ PROGRAM Main
     {ENDREGION}    
             
     {REGION SET CLOCK TIME BY USER INTERFACE}
-    IF SetClockByDisp THEN
-        SetClockByDisp := FALSE;
+    IF SetClock THEN
+        SetClock := FALSE;
         //Necessary and in this order
         SetTimeZone(TimeZonePOSIX[TimezoneIdx]);            
         SetLocalTime(CONCAT_DT(

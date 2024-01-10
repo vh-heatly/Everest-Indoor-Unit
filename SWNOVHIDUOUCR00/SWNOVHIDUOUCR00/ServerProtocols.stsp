@@ -55,12 +55,6 @@
           Size="1" />
         <ModbusVariable
           DataType="BOOL"
-          Name="En_Buzzer"
-          Index="5"
-          Kind="CoilStatus"
-          Size="1" />
-        <ModbusVariable
-          DataType="BOOL"
           Name="ShuntVlv_On"
           Index="6"
           Kind="CoilStatus"
@@ -87,12 +81,6 @@
           DataType="BOOL"
           Name="En_SPV_OnOff"
           Index="11"
-          Kind="CoilStatus"
-          Size="1" />
-        <ModbusVariable
-          DataType="BOOL"
-          Name="SetClockByDisp"
-          Index="13"
           Kind="CoilStatus"
           Size="1" />
         <ModbusVariable
@@ -581,6 +569,34 @@
           DataType="REAL"
           Name="SetP_ExtAdj"
           Index="29"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="SupplyTempHeatMin"
+          UoM="CELSIUS"
+          Index="30"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="SupplyTempHeatMax"
+          UoM="CELSIUS"
+          Index="31"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="SupplyTempHeat2Min"
+          UoM="CELSIUS"
+          Index="32"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="SupplyTempHeat2Max"
+          UoM="CELSIUS"
+          Index="33"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
@@ -1132,12 +1148,6 @@
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
-          DataType="Serial_Channel_Client"
-          Name="MBM_Line_Port"
-          Index="124"
-          Kind="HoldingRegister"
-          Size="1" />
-        <ModbusVariable
           DataType="Serial_Speed(0..8)"
           Name="SPV_Baud"
           Index="125"
@@ -1387,13 +1397,6 @@
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="OutDoorTemp5Min"
-          UoM="CELSIUS"
-          Index="38"
-          Kind="InputRegister"
-          Size="1" />
-        <ModbusVariable
-          DataType="REAL"
           Name="OU_Unit.CondTemp"
           Index="39"
           Kind="InputRegister"
@@ -1539,6 +1542,92 @@
           Name="GoToState"
           Index="61"
           Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="HeatCurve_Offset"
+          Index="34"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="SetClock"
+          Index="13"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="CoolingBlock"
+          Index="4"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="Flow_Present"
+          Index="5"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="HeatingBlock"
+          Index="10"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="HeatingNoOU"
+          Index="12"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="HeatModeTemp"
+          UoM="CELSIUS"
+          Index="134"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="HeatModeTempHyst"
+          UoM="CELSIUS"
+          Index="136"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="INT"
+          Name="HeatRegDGain"
+          Index="35"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="INT"
+          Name="HeatRegIGain"
+          Index="43"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="HeatRegPGain"
+          Index="138"
+          Kind="HoldingRegister"
+          Size="2" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="ImmHeatBlock"
+          Index="14"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="ManMode"
+          Index="57"
+          Kind="CoilStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
+          Name="NoOutdoorUnit"
+          Index="58"
+          Kind="CoilStatus"
           Size="1" />
       </Variables>
       <IOTConfiguration />

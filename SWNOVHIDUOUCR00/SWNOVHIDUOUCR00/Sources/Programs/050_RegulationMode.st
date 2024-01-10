@@ -5,20 +5,8 @@ USING Libs.PID_Incr;
 USING Libs.Timer;
 
 VAR_GLOBAL
-        GoToState               : USINT;
-        (**DHW transition timer*)
-        TON_DHWTimer            : TON_s;
-        (**Comp minimum running time in heat or cool mode*)    
-        TON_MinRunTime          : TON_s;
-        MinRunTime              : BOOL;
         (**DHW switch due to timer*)
         DHWFrcSwitch            : BOOL;
-        (**DHW switch complete*)
-        DHWFrcSwitchDone        : BOOL;
-        (**Disable regular state transition during DHW switch*)
-        Dis_OpStateSwitch       : BOOL;
-        (**RS latch Comp minimum running time in heat or cool mode*)        
-        RS_ChangeOfMode         : RS;
 END_VAR
 
 
@@ -38,7 +26,17 @@ PROGRAM RegulationMode
         OutDoorTempFilterTmp    : REAL;
         (**Outside temperature Sensor sample timer*)
         TON_OutDoorTempSnsr     : TON_S;
-        (**Intended stage unit wants to transition to*)
+          (**DHW transition timer*)
+        TON_DHWTimer            : TON_s;
+        (**Comp minimum running time in heat or cool mode*)    
+        TON_MinRunTime          : TON_s;
+        MinRunTime              : BOOL;
+        (**DHW switch complete*)
+        DHWFrcSwitchDone        : BOOL;
+        (**Disable regular state transition during DHW switch*)
+        Dis_OpStateSwitch       : BOOL;
+        (**RS latch Comp minimum running time in heat or cool mode*)        
+        RS_ChangeOfMode         : RS;
         (**SG status byte*)
         SG_Status_Byte          : BYTE;
         (**Energy balance timer*)
@@ -264,7 +262,7 @@ PROGRAM RegulationMode
     
     
     {REGION AUTO MODE}
-    Dis_AutoMode := ManMode_Cool OR ManMode_Heat OR ImmHeatOnly;
+    Dis_AutoMode := ManMode_Cool OR ManMode_Heat;// OR ImmHeatOnly;
     
     IF(UnitOn)THEN
         IF(En_AutoMode  AND NOT(Dis_AutoMode)) OR DHWFrcSwitch THEN           //AND NOT(Dis_OpStateSwitch)           

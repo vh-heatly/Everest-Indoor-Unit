@@ -43,7 +43,9 @@ PROGRAM ImmersionRegulation
                 
         OpModeAllowImm := SR_OpMode_Immheat.Q1 OR SG_Status = SGStatus#OVERCAPACITY_MODE;
     ELSIF (ImmHeatOnly) THEN
-            OpModeAllowImm := TRUE;
+        OpModeAllowImm := TRUE;
+    ELSIF (CompBlock AND CS_FreezeProtAct) THEN
+        OpModeAllowImm := TRUE;
     ELSE
         OpModeAllowImm := FALSE;
     END_IF;
