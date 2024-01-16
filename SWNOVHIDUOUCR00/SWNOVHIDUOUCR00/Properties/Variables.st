@@ -237,6 +237,12 @@ VAR_GLOBAL
 	{LOCATION ManMode}
 	(**Manual unit On-Off*)
 	ManMode : BOOL := FALSE;
+	{LOCATION ManMode_Cool}
+	(**Manually enable cooling mode*)
+	ManMode_Cool : BOOL := FALSE;
+	{LOCATION ManMode_Heat}
+	(**Manually enable heating mode*)
+	ManMode_Heat : BOOL := FALSE;
 	{LOCATION MemTime}
 	(**Save current system time*)
 	{ATTRIBUTE UOM MILLISECOND}
@@ -275,6 +281,10 @@ VAR_GLOBAL
 	{LOCATION OU_CompHeat}
 	(**Activate compressor heating due to low ECT*)
 	OU_CompHeat : BOOL;
+	{LOCATION OU_CompMaxRps}
+	(**Compressor maximum speed*)
+	{ATTRIBUTE UOM RPS}
+	OU_CompMaxRps : REAL;
 	{LOCATION OU_CompOn}
 	(**Compressor running on outdoor unit*)
 	OU_CompOn : BOOL;
@@ -349,6 +359,8 @@ VAR_GLOBAL
 	{LOCATION OutDoorTemp}
 	(**OutDoorTemp from selected source*)
 	{ATTRIBUTE UOM CELSIUS}
+	{METADATA MIN_VAL -99,9}
+	{METADATA MAX_VAL 99,9}
 	OutDoorTemp : REAL;
 	{LOCATION OutDoorTempFilter}
 	(**Filtered outside temperature*)
@@ -430,9 +442,6 @@ VAR_GLOBAL
 	{LOCATION ShuntVlv_On}
 	(**Shuntvalve active*)
 	ShuntVlv_On : BOOL;
-	{LOCATION ShuntVlv_Req}
-	(**Shuntvalve active*)
-	ShuntVlv_Req : REAL;
 	{LOCATION SPV_Addr_SavedRAM}
 	SPV_Addr_SavedRAM : USINT(1..247) := 1;
 	{LOCATION SPV_Baud_SavedRAM}
@@ -516,6 +525,12 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 60}
 	CompRunTimerMin : UINT := 5;
+	{LOCATION CompSpdMax}
+	(**Compressor max speed*)
+	{ATTRIBUTE UOM RPS}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 120}
+	CompSpdMax : REAL;
 	{LOCATION CoolModeTemp}
 	(**Cooling mode block temperature*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -566,12 +581,12 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwComfStartTemp : REAL := 45;
+	DhwComfStartTemp : REAL := 55;
 	{LOCATION DhwComfStopTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwComfStopTemp : REAL := 45;
+	DhwComfStopTemp : REAL := 55;
 	{LOCATION DHWCompBlockTime}
 	(**Off delay time for blocking DHW mode for compressor*)
 	{ATTRIBUTE UOM HOUR}
@@ -582,12 +597,12 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwEcoStartTemp : REAL := 40;
+	DhwEcoStartTemp : REAL := 45;
 	{LOCATION DhwEcoStopTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwEcoStopTemp : REAL := 40;
+	DhwEcoStopTemp : REAL := 45;
 	{LOCATION DhwFlowSwitchOnDel}
 	(**Circulation pump on delay*)
 	{ATTRIBUTE UOM SECOND}
@@ -603,12 +618,12 @@ VAR_GLOBAL PERSISTENT
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwNormStartTemp : REAL := 45;
+	DhwNormStartTemp : REAL := 50;
 	{LOCATION DhwNormStopTemp}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 10}
 	{METADATA MAX_VAL 65}
-	DhwNormStopTemp : REAL := 45;
+	DhwNormStopTemp : REAL := 50;
 	{LOCATION DhwPumpDGain}
 	(**Circulation pump PID - Derivative time*)
 	{METADATA MIN_VAL 0}
@@ -751,8 +766,8 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION EBShunt}
 	(**Shunt valve energy balance level*)
 	EBShunt : REAL := -700;
-	{LOCATION EBtepImm}
-	EBtepImm : REAL := -700;
+	{LOCATION EBStepImm}
+	EBStepImm : REAL := -700;
 	{LOCATION ECT_Cool_Offset}
 	(**ECT value for outdoor unit while cooling*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -886,12 +901,6 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION LanguageID}
 	(**Language identifier*)
 	LanguageID : UINT := 1;
-	{LOCATION ManMode_Cool}
-	(**Manually enable cooling mode*)
-	ManMode_Cool : BOOL := FALSE;
-	{LOCATION ManMode_Heat}
-	(**Manually enable heating mode*)
-	ManMode_Heat : BOOL := FALSE;
 	{LOCATION MaxErasure}
 	(**Number of retentive writes to the window size to prevent intensive memory use*)
 	MaxErasure : UDINT := 200;
@@ -955,9 +964,6 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION SGActive}
 	(**Enable inputs for smart grid*)
 	SGActive : BOOL;
-	{LOCATION ShuntPGain}
-	(**Shunt valve p-gain*)
-	ShuntPGain : REAL := 10;
 	{LOCATION ShuntVlvBlock}
 	(**Block sunt valve regulation*)
 	ShuntVlvBlock : BOOL := FALSE;
@@ -1036,6 +1042,18 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION UoMZoneHMI}
 	(**Unit of measure*)
 	UoMZoneHMI : UOM_ZONE := 1;
+	{LOCATION WaterPressHigh}
+	(**Error limit for high water pressure*)
+	{ATTRIBUTE UOM BAR}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 6}
+	WaterPressHigh : REAL := 3;
+	{LOCATION WaterPressLow}
+	(**Error limit for low water pressure*)
+	{ATTRIBUTE UOM BAR}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL WaterPressHigh}
+	WaterPressLow : REAL := 0.5;
 	{LOCATION DEFAULT}
 END_VAR
 VAR_GLOBAL RETAIN

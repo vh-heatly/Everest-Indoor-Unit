@@ -25,12 +25,6 @@
       Acronym="Y17"
       Attributes="None" />
     <Parameter
-      InitValue="1"
-      Name="FB2_Conf"
-      Persistence="Persistent"
-      Acronym="Y16"
-      Attributes="Configurable Cloneable" />
-    <Parameter
       Name="LogAlrmRes"
       Acronym="Y09"
       Attributes="LogAlarmReset" />
@@ -165,18 +159,6 @@
       Name="SPV_Port"
       Persistence="Persistent"
       Acronym="Y00"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="1"
-      Name="SPV_Addr"
-      Persistence="Persistent"
-      Acronym="Y01"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="7"
-      Name="SPV_Baud"
-      Persistence="Persistent"
-      Acronym="Y02"
       Attributes="Configurable Cloneable" />
     <Parameter
       InitValue="1"
@@ -636,16 +618,8 @@
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
     <Parameter
-      Name="ShuntVlv_Req"
-      Attributes="None" />
-    <Parameter
       Name="ShuntVlv_On"
       Attributes="None" />
-    <Parameter
-      InitValue="10"
-      Name="ShuntPGain"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
     <Parameter
       Name="ShuntManMode"
       Attributes="None" />
@@ -1053,18 +1027,13 @@
       Name="Din_Data.Fct.SG2"
       Attributes="None" />
     <Parameter
-      Name="PID_HeatReq"
-      Attributes="None" />
-    <Parameter
       InitValue="FALSE"
       Name="ManMode_Heat"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
+      Attributes="Cloneable" />
     <Parameter
       InitValue="FALSE"
       Name="ManMode_Cool"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
+      Attributes="Cloneable" />
     <Parameter
       Name="Alarms.Table.Al_ClimSupplyTemp.Info.Active"
       Attributes="System" />
@@ -1097,9 +1066,6 @@
       Attributes="None" />
     <Parameter
       Name="DhwCircPumpReq"
-      Attributes="None" />
-    <Parameter
-      Name="PID_DHWReq"
       Attributes="None" />
     <Parameter
       InitValue="300"
@@ -1366,11 +1332,6 @@
     <Parameter
       InitValue="50"
       Name="EBHPStepOut"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="700"
-      Name="EBtepImm"
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
     <Parameter
@@ -1762,6 +1723,533 @@
       Attributes="None" />
     <Parameter
       Name="MBM_Line.TcpIpSettings.proto"
+      Attributes="None" />
+    <Parameter
+      Name="SupplyTempHeat2Max"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="SupplyTempHeat2Min"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="SupplyTempHeatMax"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="SupplyTempHeatMin"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="DHWPumpReg"
+      Attributes="None" />
+    <Parameter
+      Name="OU_CondInTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_CondOutTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Comp_CstDec"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Comp_ManMode"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CompBeltHeat_On"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CompMinOffT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CompMinOnT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CondInTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CondOutTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CondTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CurrDSH"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.DayIn"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_BMS_Offline"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_CompFault"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_DisStartDP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_DscgP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_DscgTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_EEV"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_Envelope"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_HiDscgP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_HiDscgTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_Inv"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_LiqT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_LowSuctP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_Offline_Inv"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_PowerFailure"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_RetainMem"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_StartFailure"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_SuctP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_SuctTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_WkrHrsComp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Alarm_WrkHrsSrc"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.AlrmReset"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.AlrmStatus"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.BLDC_lrmResetType"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.CapTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_ManPositSteps"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_En_Man"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_Dfr_Ti"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_Dfr_Td"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dout_TrayHeat"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.DfrBlock"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_StartThrshRes"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_StartThrsh"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_SmartStartT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_RevVlvDeltaP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_PostDripT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_MinT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_MaxT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_IntervalT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_FrcCompSpeedMax"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_EndThrsh"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_DT_BeforeChgOver"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_DT_AfterChgOver"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Dfr_CompMinOnTime"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_PosSteps"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EvapTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.HourIn"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.HP_Status"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="OU_Unit.Info.CommandDelay"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.CommandsCount"
+      Attributes="None" />
+    <Parameter
+      InitValue="200"
+      Name="OU_Unit.Info.DetectionTimeOut"
+      Attributes="None" />
+    <Parameter
+      InitValue="4"
+      Name="OU_Unit.Info.DeviceError"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.Enabled"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.ErrorsCount"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.forceMultipleCoilWrite"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.forceMultipleRegisterWrite"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="OU_Unit.Info.Ident"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.isOnline"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.LastErrorInfo.ErrorCode"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.LastErrorInfo.FunctionCode"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.LastErrorInfo.RegistersCount"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.LastErrorInfo.StartingRegister"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.NetworkAddress"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.PollsCount"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.ReadChangesCount"
+      Attributes="None" />
+    <Parameter
+      InitValue="200"
+      Name="OU_Unit.Info.TimeOut"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Info.Zone"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.MinuteIn"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.MonthIn"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.PWRP_AlrmResetType"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SecondsIn"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SetClock"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SkipFreqBand1"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SkipFreqBand2"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SkipFreqBand3"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SkipFreqF1"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SkipFreqF2"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SkipFreqF3"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Src_En_Man"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Src_Man"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SSH_LimNeg"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SSH_LimPos"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SSH_SP_Max"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SSH_SP_Min"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SSH_Ti_Fast"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SSH_Ti_Slow"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.TrayHeat_OffDelay"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.TrayHeat_On"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Unit_CoolHeat"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.YearIn"
+      Attributes="None" />
+    <Parameter
+      Name="OutDoorTemp"
+      Attributes="None" />
+    <Parameter
+      InitValue="3600"
+      Name="OutDoorTemp_FiltDelay"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Pwrp_AbnDCBusTime"
+      Attributes="None" />
+    <Parameter
+      Name="RetainMemWrites"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="SecondIn"
+      Attributes="None" />
+    <Parameter
+      Name="SetClock"
+      Attributes="None" />
+    <Parameter
+      Name="SGActive"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="FALSE"
+      Name="ShuntManClose"
+      Attributes="None" />
+    <Parameter
+      InitValue="FALSE"
+      Name="ShuntManOpen"
+      Attributes="None" />
+    <Parameter
+      Name="SPV_Online"
+      Attributes="None" />
+    <Parameter
+      Name="SystemCfg_AllowCool"
+      Attributes="None" />
+    <Parameter
+      Name="SystemCfg_AllowDHW"
+      Attributes="None" />
+    <Parameter
+      Name="SystemCfg_AllowHeat"
+      Attributes="None" />
+    <Parameter
+      Name="SystemCfg_AllowImm"
+      Attributes="None" />
+    <Parameter
+      Name="SystemCfg_NoCfgSel"
+      Attributes="None" />
+    <Parameter
+      Name="MaxTankTempOk"
+      Attributes="None" />
+    <Parameter
+      Name="ImmersionHeatAllow"
+      Attributes="None" />
+    <Parameter
+      Name="GoToState"
+      Attributes="None" />
+    <Parameter
+      InitValue="1"
+      Name="FB2_Conf"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="55"
+      Name="DhwRefTopN"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="52"
+      Name="DhwRefMiddleN"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="48"
+      Name="DhwRefBottomN"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      InitValue="0"
+      Name="Day_Week"
+      Attributes="None" />
+    <Parameter
+      Name="CurrSysT"
+      Attributes="None" />
+    <Parameter
+      Name="BmsDfrStart"
+      Attributes="None" />
+    <Parameter
+      Name="BmsDfrStop"
+      Attributes="None" />
+    <Parameter
+      Name="BootVersion"
+      Attributes="None" />
+    <Parameter
+      Name="AppDateTime"
+      Attributes="None" />
+    <Parameter
+      Name="AlrmRes"
+      Attributes="None" />
+    <Parameter
+      InitValue="-700"
+      Name="EBStepImm"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="CompBlock"
+      Attributes="None" />
+    <Parameter
+      Name="OS_Version"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.DeltaP_Circ1"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.DfrStatus_Circ1"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_AlrmCode_Circ1"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEV_PID_DynTi"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.EEVStatus_Circ1"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.LiqdTemp"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_HR_00_ResetCommand"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_HR_01_ResetCmdFeedback"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_02_AlarmStatus1"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_03_AlarmStatus2"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_04_CntdwnRstAlrms"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_35_PhaseUCurr"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_36_PhaseVCurr"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_37_PhaseWCurr"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_38_DCbusV"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_39_DCbusA"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_40_DCbusPwr"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_41_PwrSupplyV"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_42_BoardT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_43_OutStageModT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_44_InStageModT"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_45_VCheck"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_46_AuxADC"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_47_MotPWMSwtF"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_48_CosPhi"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_49"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.uSafe_IR_50_DinMaskStatus"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SSH_SP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.SrcCirc1_SetP"
       Attributes="None" />
   </Parameters>
 </ParametersConfiguration>

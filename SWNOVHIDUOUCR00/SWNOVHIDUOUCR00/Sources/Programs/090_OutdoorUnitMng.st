@@ -47,6 +47,8 @@ PROGRAM OutdoorUnitMng
         OU_EvapTemp :=  OU_Unit.EvapTemp;
         OU_CondInTemp := OU_Unit.CondInTemp;
         OU_CondOutTemp := OU_Unit.CondOutTemp;
+        OU_CompMaxRps := Min(OU_Unit.MaxRPS, CompSpdMax);
+        
         
         {REGION DHW SWITCH MANAGEMENT}
         
@@ -73,7 +75,7 @@ PROGRAM OutdoorUnitMng
                 OU_OnOff := OU_Unit.CompOn;
                 
                 IF(DHWBoost)THEN // Boost compressor speed during end of DHW
-                    OU_Req := MIN(DHW_InitRPS + 30.0, OU_Unit.MaxRPS);
+                    OU_Req := MIN(DHW_InitRPS + 30.0, OU_CompMaxRps);
                 ELSE
                     OU_Req := DHW_InitRPS;
                 END_IF;
@@ -81,13 +83,13 @@ PROGRAM OutdoorUnitMng
                 OU_OnOff := TRUE;
                 
                 IF(DHWBoost)THEN // Boost compressor speed during end of DHW
-                    OU_Req := ScalerLimited(50.0+30.0, 0.0, 100.0, 0.0, OU_Unit.MaxRPS);
+                    OU_Req := ScalerLimited(50.0+30.0, 0.0, 100.0, 0.0, OU_CompMaxRps);
                 ELSE
-                    OU_Req := ScalerLimited(50.0, 0.0, 100.0, 0.0, OU_Unit.MaxRPS);
+                    OU_Req := ScalerLimited(50.0, 0.0, 100.0, 0.0, OU_CompMaxRps);
                 END_IF;
             END_IF;
         ELSIF(OpState = OpStage_Status#HEATING AND SR_Energybalance.Q1)THEN //Heating request
-            OU_Req := ScalerLimited(PID_HeatReq, 0.0, 100.0, OU_Unit.MinRPS, OU_Unit.MaxRPS);
+            OU_Req := ScalerLimited(PID_HeatReq, 0.0, 100.0, OU_Unit.MinRPS, OU_CompMaxRps);
             OU_OnOff := TRUE;
         ELSE 
             OU_Req := 0; 

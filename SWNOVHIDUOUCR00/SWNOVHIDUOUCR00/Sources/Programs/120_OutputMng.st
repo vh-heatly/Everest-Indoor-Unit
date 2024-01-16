@@ -16,7 +16,7 @@ VAR_GLOBAL CONSTANT
     MAX_DO_NO   : USINT := 7;
     (* It's not the number of channels available! *)
     (** Max number of possible Analog Outputs *)
-    MAX_AO_NO   : USINT := 3;
+    MAX_AO_NO   : USINT := 2;
 END_VAR
 
 TYPE 
@@ -31,8 +31,6 @@ TYPE
             CircPump1    :   ErrConfig;   
             (**Circulation pump 2*)
             CircPump2    :   ErrConfig;
-            (**Shunt valve analog*)
-            ShuntVlvAout :   ErrConfig;
         END_STRUCT;
     
         AoutCfgUnion: UNION
@@ -45,8 +43,6 @@ TYPE
             CircPump1    :   AoutConfig;   
             (**Circulation pump 2*)
             CircPump2    :   AoutConfig;
-            (**Shunt valve analog*)
-            ShuntVlvAout    :   AoutConfig;
         END_STRUCT;
         
         AoutData: UNION
@@ -61,9 +57,6 @@ TYPE
             {ATTRIBUTE UOM PERCENT}
             (**Circulation pump 2*)
             CircPump2    :   REAL;
-            {ATTRIBUTE UOM PERCENT}
-            (**Shunt valve analog*)
-            ShuntVlvAout    :   REAL;
         END_STRUCT;
     {ENDREGION}
     
@@ -159,13 +152,12 @@ VAR_GLOBAL PERSISTENT
         (**Circulation pump 1*)
         CircPump1      := (Ch := 1,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM100HZ0_10_SR),  
         (**Circulation pump 2*)
-        CircPump2      := (Ch := 4,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM_SYNC_MAIN_FREQ),
-        (**Shunt valve analog*)
-        ShuntVlvAout   := (Ch := 0,  ModeType := MODE_TYPE_AOUT#LIB_IO_OUT_0_10V)
+        CircPump2      := (Ch := 4,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM_SYNC_MAIN_FREQ)
+
     ));
     
-    Aout_Min : AoutData :=(Fct := (CircPump1 :=0, CircPump2 := 0, ShuntVlvAout := 0));
-    Aout_Max : AoutData :=(Fct := (CircPump1 :=100, CircPump2 := 100, ShuntVlvAout := 100));
+    Aout_Min : AoutData :=(Fct := (CircPump1 :=0, CircPump2 := 0));
+    Aout_Max : AoutData :=(Fct := (CircPump1 :=100, CircPump2 := 100));
 END_VAR
 
 PROGRAM OutputMng
@@ -176,7 +168,6 @@ PROGRAM OutputMng
     {REGION Analog Output Enable}
         Aout_Cfg.Fct.CircPump1.Enable := TRUE;
         Aout_Cfg.Fct.CircPump2.Enable := TRUE;
-        Aout_Cfg.Fct.ShuntVlvAout.Enable := TRUE;
     {ENDREGION}
 
     (*Enabling Digital outputs*)
@@ -193,7 +184,6 @@ PROGRAM OutputMng
 	{REGION Analog Output value}
     Aout_Data.Fct.CircPump1 := Circ1Act_Req;
     Aout_Data.Fct.CircPump2 := Circ2Act_Req;
-    Aout_Data.Fct.ShuntVlvAout := ShuntVlv_Req;
 	{ENDREGION}
 	
 	{REGION Digital Output Value}
