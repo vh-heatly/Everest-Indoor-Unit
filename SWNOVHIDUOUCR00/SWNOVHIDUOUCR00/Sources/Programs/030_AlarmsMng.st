@@ -28,7 +28,7 @@ PROGRAM AlarmsMng
     Alarms.Table.Al_ClimSupplyTemp.Info.Trigger := Ain_Info.Fct.ClimSupplyTemp.Trigger;
     Alarms.Table.Al_OutDoorTemp.Info.Trigger := Ain_Info.Fct.OutDoorTemp.Trigger;
     Alarms.Table.Al_SysPress.Info.Trigger := Ain_Info.Fct.SysPress.Trigger;
-    Alarms.Table.Al_OUOffline.Info.Trigger := (NOT (OU_Unit.Info.isOnline)) AND NOT(NoOutdoorUnit);
+    Alarms.Table.Al_OUOffline.Info.Trigger := OU_ComError;
     {ENDREGION}
 	
     {REGION OUTDOOR UNIT ALARMS}

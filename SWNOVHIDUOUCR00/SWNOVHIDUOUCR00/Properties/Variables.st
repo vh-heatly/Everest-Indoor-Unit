@@ -48,12 +48,6 @@ VAR_GLOBAL
 	{LOCATION AppTimeZone}
 	(**New time zone from apps*)
 	AppTimeZone : STRING;
-	{LOCATION BmsDfrStart}
-	(**Start defrost from supervisor*)
-	BmsDfrStart : BOOL;
-	{LOCATION BmsDfrStop}
-	(**Stop defrost from supervisor*)
-	BmsDfrStop : BOOL;
 	{LOCATION BmsOnOff}
 	(**Unit on/off from supervisor*)
 	BmsOnOff : BOOL;
@@ -70,9 +64,6 @@ VAR_GLOBAL
 	(**GP1 - Request*)
 	{ATTRIBUTE UOM PERCENT}
 	CircPmp_Req : REAL;
-	{LOCATION CompBlock}
-	(**Block compressor*)
-	CompBlock : BOOL;
 	{LOCATION CompSpdMan}
 	(**OU - Manual request*)
 	{METADATA MIN_VAL 0}
@@ -144,10 +135,6 @@ VAR_GLOBAL
 	(**DHW stop temperature*)
 	{ATTRIBUTE UOM CELSIUS}
 	DHWStopTemp : REAL;
-	{LOCATION DhwTimerIncComp}
-	(**DHW charging period*)
-	{ATTRIBUTE UOM SECOND}
-	DhwTimerIncComp : UINT;
 	{LOCATION Din_Data}
 	Din_Data : DinData;
 	{LOCATION Din_Info}
@@ -163,9 +150,6 @@ VAR_GLOBAL
 	(**ECT value for outdoor unit*)
 	{ATTRIBUTE UOM CELSIUS}
 	ECT : REAL;
-	{LOCATION En_DhwPumpManMode}
-	(**Enable DHW pump manual mode*)
-	En_DhwPumpManMode : BOOL;
 	{LOCATION En_ExtHotWatr}
 	(**Enable extra hotwater function*)
 	En_ExtHotWatr : BOOL;
@@ -184,9 +168,6 @@ VAR_GLOBAL
 	{LOCATION FirstCycleDone}
 	(**First cycle*)
 	FirstCycleDone : BOOL;
-	{LOCATION Flow_Present}
-	(**BF2 flow present*)
-	Flow_Present : BOOL;
 	{LOCATION GoToState}
 	(**Intended stage unit wants to transition to*)
 	GoToState : USINT;
@@ -278,6 +259,9 @@ VAR_GLOBAL
 	{LOCATION OS_Version}
 	(**OS version*)
 	OS_Version : UINT;
+	{LOCATION OU_ComError}
+	(**Communication error with outdoor unit*)
+	OU_ComError : BOOL;
 	{LOCATION OU_CompHeat}
 	(**Activate compressor heating due to low ECT*)
 	OU_CompHeat : BOOL;
@@ -331,6 +315,9 @@ VAR_GLOBAL
 	(**Evaporator temperature*)
 	{ATTRIBUTE UOM CELSIUS}
 	OU_EvapTemp : REAL;
+	{LOCATION OU_HP_Status}
+	(**Heat pump status*)
+	OU_HP_Status : USINT;
 	{LOCATION OU_Online}
 	(**Outdoor unit online*)
 	OU_Online : BOOL;
@@ -356,6 +343,11 @@ VAR_GLOBAL
 	{LOCATION OU_Unit}
 	(**Outdoor unit device*)
 	OU_Unit : OutdoorUnit;
+	{LOCATION OU_WaterFlow}
+	{ATTRIBUTE UOM LITER_PER_MINUTE}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 1500}
+	OU_WaterFlow : REAL;
 	{LOCATION OutDoorTemp}
 	(**OutDoorTemp from selected source*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -380,15 +372,18 @@ VAR_GLOBAL
 	PID_HeatReq : REAL;
 	{LOCATION ProfileList}
 	ProfileList : ARRAY[1..32] OF PROFILE_INFO;
-	{LOCATION PumpReq_FlowPresent}
-	(**GP2 enable - flow present*)
-	PumpReq_FlowPresent : BOOL;
 	{LOCATION PumpSpdGP1Man}
 	(**GP1 - Manual request*)
 	{ATTRIBUTE UOM PERCENT}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 100}
-	PumpSpdGP1Man : REAL := 0;
+	PumpSpdGP1Man : USINT;
+	{LOCATION PumpSpdGP2Man}
+	(**If PumpSpdGP2Man ≠ 0 manual mode is activated*)
+	{ATTRIBUTE UOM PERCENT}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 100}
+	PumpSpdGP2Man : USINT := 0;
 	{LOCATION Pwrp_AbnDCBusTime}
 	(**Circuit 1 Power+ DC bus high ripple total time*)
 	{ATTRIBUTE UOM MINUTE}
@@ -442,6 +437,10 @@ VAR_GLOBAL
 	{LOCATION ShuntVlv_On}
 	(**Shuntvalve active*)
 	ShuntVlv_On : BOOL;
+	{LOCATION ShutOffMan}
+	(**On/Off for shut off valve QN2. 
+	 *ShutOffMan 1 = Power on Shut off valve QN2*)
+	ShutOffMan : BOOL := FALSE;
 	{LOCATION SPV_Addr_SavedRAM}
 	SPV_Addr_SavedRAM : USINT(1..247) := 1;
 	{LOCATION SPV_Baud_SavedRAM}
@@ -457,6 +456,11 @@ VAR_GLOBAL
 	{LOCATION SupplyTempCalc}
 	(**Heat regulation setpoint*)
 	SupplyTempCalc : REAL;
+	{LOCATION SWValveManA}
+	(**Switching valve shall be possible to regulate manually. 
+	 *When SWValveManA is active the valve shall be set to it’s active target. In this case the valve shall be towards position B(House) when not active and towards A(DHW) when active. 
+	 *When Active towards DHW the valve relay shall be On.*)
+	SWValveManA : BOOL := FALSE;
 	{LOCATION SwVersion}
 	(**Software version*)
 	SwVersion : UINT;
@@ -500,9 +504,10 @@ VAR_GLOBAL
 	{LOCATION UnitStatus}
 	(**Unit status*)
 	UnitStatus : UNIT_STATUS;
-	{LOCATION WaterFlowD1}
-	(**WaterFlow freq*)
-	WaterFlowD1 : REAL;
+	{LOCATION WaterFlow_DHW}
+	(**WaterFlow for DHW*)
+	{ATTRIBUTE UOM LITER_PER_MINUTE}
+	WaterFlow_DHW : REAL;
 	{LOCATION Wrg_Circ1}
 	(**Warning - Circ.1 light alarm*)
 	Wrg_Circ1 : BOOL;
@@ -519,6 +524,9 @@ VAR_GLOBAL
 	{LOCATION DEFAULT}
 END_VAR
 VAR_GLOBAL PERSISTENT
+	{LOCATION CompBlock}
+	(**Block compressor*)
+	CompBlock : BOOL;
 	{LOCATION CompRunTimerMin}
 	(**Compressor min running time when changing mode*)
 	{ATTRIBUTE UOM MINUTE}
@@ -541,6 +549,18 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MIN_VAL 1}
 	{METADATA MAX_VAL 10}
 	CoolModeTempHyst : REAL := 2;
+	{LOCATION DhwBoostPerc}
+	(**Value to boost the compressor speed during DHW *)
+	{ATTRIBUTE UOM PERCENT}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 100}
+	DhwBoostPerc : REAL := 70;
+	{LOCATION DhwBoostPercExtHotWatr}
+	(**Value to boost compressor speed during DHW if ExtHotWater enabled*)
+	{ATTRIBUTE UOM PERCENT}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 100}
+	DhwBoostPercExtHotWatr : REAL := 50;
 	{LOCATION DhwBT3StopCom}
 	{ATTRIBUTE UOM CELSIUS}
 	{METADATA MIN_VAL 0}
@@ -734,6 +754,10 @@ VAR_GLOBAL PERSISTENT
 	(**DHW start fill percentage*)
 	{ATTRIBUTE UOM PERCENT}
 	DHWStrtProc : USINT := 55;
+	{LOCATION DhwTimerIncComp}
+	(**DHW charging period*)
+	{ATTRIBUTE UOM SECOND}
+	DhwTimerIncComp : UINT;
 	{LOCATION DhwTimerStop}
 	(**DHW max charging period*)
 	{ATTRIBUTE UOM SECOND}
@@ -816,7 +840,7 @@ VAR_GLOBAL PERSISTENT
 	ExtHotWatrStopTemp : REAL := 65;
 	{LOCATION ExtHotWatrTime}
 	(**The extra hot water will be enabled for this time*)
-	{ATTRIBUTE UOM MINUTE}
+	{ATTRIBUTE UOM HOUR}
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 24}
 	ExtHotWatrTime : UINT := 3;
@@ -826,33 +850,9 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION FB2_Conf}
 	(**Client - Parity and stop bits*)
 	FB2_Conf : Serial_ParityStopBits(0..5) := 1;
-	{LOCATION FixOffThrsh}
-	(**BLDC request threshold to stop on/off compressor*)
-	{ATTRIBUTE UOM PERCENT}
-	{METADATA MIN_VAL 0}
-	{METADATA MAX_VAL 100}
-	FixOffThrsh : REAL := 25;
-	{LOCATION FixOnThrsh}
-	(**BLDC request threshold to start on/off compressor*)
-	{ATTRIBUTE UOM PERCENT}
-	{METADATA MIN_VAL 0}
-	{METADATA MAX_VAL 100}
-	FixOnThrsh : REAL := 75;
-	{LOCATION FrcEEVDuringDfr}
-	(**Forced EEV position during defrost*)
-	FrcEEVDuringDfr : BOOL := FALSE;
-	{LOCATION HeatCurve_K}
-	(**Heatcurve K values*)
-	HeatCurve_K : ARRAY[0..14] OF REAL := [-0.1,-0.2,-0.3,-0.4,-0.5,-0.6,-0.7,-0.8,-0.9,-1,-1.1,-1.2,-1.3,-1.4,-1.5];
-	{LOCATION HeatCurve_M}
-	(**Heatcurve M values*)
-	HeatCurve_M : ARRAY[0..14] OF REAL := [23,25,27,29,31,33,35,37,39,41,43,45,47,49,51];
 	{LOCATION HeatCurve_OutDoorTemp}
 	(**Heating cuvrve outside temperatures*)
 	HeatCurve_OutDoorTemp : ARRAY[0..19] OF REAL := [20,18,16,14,12,10,8,6,4,2,0,-2,-4,-6,-8,-10,-12,-14,-16,-18];
-	{LOCATION HeatingNoOU}
-	(**???*)
-	HeatingNoOU : BOOL := FALSE;
 	{LOCATION HeatModeTemp}
 	(**Heating mode block temperature*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -960,7 +960,10 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MAX_VAL 100}
 	PumpspdHeatAuto : REAL := 50;
 	{LOCATION Sel_HeatCurve_SetP}
-	Sel_HeatCurve_SetP : ULINT := 5;
+	(**Heatcurve*)
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 10}
+	Sel_HeatCurve_SetP : UINT := 5;
 	{LOCATION SGActive}
 	(**Enable inputs for smart grid*)
 	SGActive : BOOL;
@@ -985,9 +988,6 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION ShuntVlvTimeFactor}
 	(**Shunt valve time factor*)
 	ShuntVlvTimeFactor : UINT := 180;
-	{LOCATION SignalTyp}
-	(**Control type*)
-	SignalTyp : SIGNAL_TYPE;
 	{LOCATION SPV_Addr}
 	(**Supervisor serial address*)
 	SPV_Addr : USINT(1..247) := 1;
@@ -1030,15 +1030,20 @@ VAR_GLOBAL PERSISTENT
 	{METADATA MAX_VAL 255}
 	SystemCfg : USINT := 1;
 	{LOCATION TempSG1}
-	{ATTRIBUTE UOM CELSIUS}
+	(**Offset for SmartGrid low price mode*)
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 10}
 	TempSG1 : REAL := 2;
 	{LOCATION TempSG2}
-	{ATTRIBUTE UOM CELSIUS}
+	(**Offset for SmartGrid over capacity mode*)
 	{METADATA MIN_VAL 0}
 	{METADATA MAX_VAL 10}
 	TempSG2 : REAL := 4;
+	{LOCATION TempSG3}
+	(**Offset for SmartGrid blocking mode*)
+	{METADATA MIN_VAL -10}
+	{METADATA MAX_VAL 0}
+	TempSG3 : REAL := -4;
 	{LOCATION UoMZoneHMI}
 	(**Unit of measure*)
 	UoMZoneHMI : UOM_ZONE := 1;
@@ -1063,5 +1068,14 @@ VAR_GLOBAL RETAIN
 	{LOCATION KeybOnOff}
 	(**Unit on/off from keyboard*)
 	KeybOnOff : BOOL := TRUE;
+	{LOCATION DEFAULT}
+END_VAR
+VAR_GLOBAL CONSTANT
+	{LOCATION HeatCurve_K}
+	(**Heatcurve K values*)
+	HeatCurve_K : ARRAY[0..14] OF REAL := [-0.1,-0.2,-0.3,-0.4,-0.5,-0.6,-0.7,-0.8,-0.9,-1,-1.1,-1.2,-1.3,-1.4,-1.5];
+	{LOCATION HeatCurve_M}
+	(**Heatcurve M values*)
+	HeatCurve_M : ARRAY[0..14] OF REAL := [23,25,27,29,31,33,35,37,39,41,43,45,47,49,51];
 	{LOCATION DEFAULT}
 END_VAR

@@ -14,12 +14,11 @@ VAR_GLOBAL
     DHWPumpReg : REAL;
     (**DHW charging period timer*)
     TON_DHWChrg       : TON_s;
-        (**Extra hotwater timer*)
-        TOF_ExtHotWatr     : TOF_s;  
-        (**Extra hotwater hold logic*)
-        RS_ExtHotWatr       : RS;
-        R_Edge_tmp          : system.timer.R_Edge;
-    
+    (**Extra hotwater timer*)
+    TOF_ExtHotWatr     : TOF_s;  
+    (**Extra hotwater pulse*)
+    R_Edge_tmp          : system.timer.R_Edge;
+   
 END_VAR
 
 PROGRAM DHWRegulation
@@ -77,13 +76,14 @@ PROGRAM DHWRegulation
         IN := R_Edge_tmp.Out,
         PT := ExtHotWatrTime * 60
     );
-    (*RS latch to enable disable extra hotwater**)
-    RS_ExtHotWatr(
-        S  := R_Edge_tmp.Out AND NOT RS_ExtHotWatr.Q1,
-        R1 := NOT TOF_ExtHotWatr.Q OR R_Edge_tmp.Out AND RS_ExtHotWatr.Q1 
-    );
+    (**Disable ExtHotWatr when timer is done*)
+    IF ExtHotWatrEnbl AND NOT TOF_ExtHotWatr.Q THEN
+        ExtHotWatrEnbl := FALSE;
+    END_IF;
+   
+
     (*The extra hotwter enabled from input signal with timer or from SmartGrid [1:1]**)
-    En_ExtHotWatr := RS_ExtHotWatr.Q1 OR SG_Status = SGStatus#OVERCAPACITY_MODE;
+    En_ExtHotWatr := ExtHotWatrEnbl OR SG_Status = SGStatus#OVERCAPACITY_MODE;
     
     {ENDREGION}
     
@@ -119,8 +119,8 @@ PROGRAM DHWRegulation
         
     //Determine need of DHW
     SR_DHWNeed(                                                                                          (**DHW START CONDITIONS*)
-        S := ((Ain_Data.Fct.DHWBottomTemp < DHWStartTemp                                                //Low bottom temp.
-                    OR (Ain_Data.Fct.DHWBottomTemp<ExtHotWatrStopTemp-ExtHotWatrDiff AND En_ExtHotWatr)) //Low bottom temp.(Extra hot water)
+        S := ((Ain_Data.Fct.DHWMiddleTemp < DHWStartTemp                                                //Low middle temp.
+                    OR (Ain_Data.Fct.DHWMiddleTemp<ExtHotWatrStopTemp-ExtHotWatrDiff AND En_ExtHotWatr)) //Low middle temp.(Extra hot water)
                     AND AllowDHW)                                                                        //DHW is allowed
                                                                          
                     OR ((TON_CircPump1.Q AND Ain_Data.Fct.DHWTopTemp < 45.0)                              //Pump active and low top temp.
@@ -128,7 +128,7 @@ PROGRAM DHWRegulation
                     //OR DHWProc < DHWStrtProc                                                           (**DHW STOP CONDITIONS*)
         R1  := (Ain_Data.Fct.DHWBottomTemp >= DHWStopTemp AND NOT(En_ExtHotWatr)                          //Bottom temp. reached
                     OR (Ain_Data.Fct.DHWBottomTemp>=ExtHotWatrStopTemp AND En_ExtHotWatr)                //Bottom temp. reached(Extra hot water)
-                    OR NOT(AllowDHW OR SG_DHWBlock)                                                      //DHW blocked
+                    OR NOT(AllowDHW) OR SG_DHWBlock                                                      //DHW blocked
                     OR UnitOff)                                                          
                     //OR DHWProc >= DHWStrtProc
     );
@@ -139,7 +139,7 @@ PROGRAM DHWRegulation
     
     //Circulation pump enable from flow
     TON_CircPump1(
-        IN := WaterFlowD1 > 1.5 AND Uniton, 
+        IN := WaterFlow_DHW > 1.5 AND Uniton, 
         PT := TO_UINT(DhwFlowSwitchOnDel)
     );
     
@@ -148,46 +148,18 @@ PROGRAM DHWRegulation
     
     {REGION CHARGE MANAGEMENT}
         //DHW charging timer
-        TON_DHWChrg(
-            IN := DHWNeed AND OpState = OpStage_Status#DHW,
-            PT := DhwTimerStop
-        );
+//        TON_DHWChrg(
+//            IN := DHWNeed AND OpState = OpStage_Status#DHW,
+//            PT := DhwTimerStop*60
+//        );
         
+   
         //Boost compressor towards end of DHW charge
-        DHWBoost := (DhwTimerStop - TON_DHWChrg.ET < DhwTimerIncComp) 
-                    OR (DhwTimerStop - TON_DHWChrg.ET < DhwTimerIncComp/2 AND En_ExtHotWatr);
-        
-        /*    
-        //Calculate current setpoint
-        DHWReg_SetP := LIMIT(0, ((DHWCurve_K[Sel_HeatCurve_SetP]*OutDoorTempFilter) + DHWCurve_M[Sel_HeatCurve_SetP]), 80);
-     
-        //DHW charge request
-        DHWChrgRegPID(
-            RegVar_PID_Incr       := Ain_Data.Fct.DHWMiddleTemp,
-            SetP_PID_Incr         := DHWReg_SetP,
-            DeadBand_PID_Incr     := 0.0,
-            Kp_PID_Incr           := DHWregPGain,
-            Ti_PID_Incr           := TO_UINT(DHWRegIGain),
-            Td_PID_Incr           := TO_UINT(DHWRegDGain),
-            LowLim_PID_Incr       := 0.0,
-            HighLim_PID_Incr      := 100.0,
-            Period_PID_Incr       := 100,
-            CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Heat,
-            RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
-            ManModeVal_PID_Incr   := 0.0,
-            En_PrePos_PID_Incr    := FALSE,
-            En_ManMode_PID_Incr   := FALSE,
-            En_PID_Incr           := DHWNeed
-        );
-        
-        //Charge request filter
-        DHWReg_Filt(
-            In    := DHWChrgRegPID.Req_PID_Incr,
-            Tau   := 5,
-            En_FB := DHWChrgRegPID.En_PID_Incr,
-            Out   => PID_DHWReq
-        );
-        */
+        IF En_ExtHotWatr THEN
+            DHWBoost := (To_Real(TON_DHWTimer.ET) > To_Real(DhwTimerStop) * 60 * DhwBoostPercExtHotWatr * 0.01);
+        ELSE
+            DHWBoost := (TO_REAL(TON_DHWTimer.ET) > To_REAL(DhwTimerStop) * 60 * DhwBoostPerc * 0.01);
+        END_IF;
     {ENDREGION}
     
     {REGION PUMP REGULATION}
@@ -213,11 +185,11 @@ PROGRAM DHWRegulation
     //Calculate pump regulation setpoint
     DhwPumpSetP := ScalerLimited(Ain_Data.Fct.DHWTopTemp, ActPmpStrtTemp, ActPmpStopTemp, ActPmpStrtSetP, ActPmpStopSetP);
     IF  Ain_Data.Fct.DHWTopTemp - DhwPumpSetP <= 7.5 THEN
-        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlowD1 * 1.257) - 0.85) -84.5) ,100);                         //low Delta T formula BF2 vs GP2 flow y = 1.257 x - 0.85
+        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlow_DHW * 1.257) - 0.85) -84.5) ,100);                         //low Delta T formula BF2 vs GP2 flow y = 1.257 x - 0.85
     ELSIF Ain_Data.Fct.DHWTopTemp - DhwPumpSetP > 7.5 AND Ain_Data.Fct.DHWTopTemp - DhwPumpSetP <=15 THEN
-        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlowD1 * 0.8621) - 0.2994)- 84.5) ,100);                      //Medium Delta T formula BF2 vs GP2 flow y = 0.8621 x - 0.2994
+        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlow_DHW * 0.8621) - 0.2994)- 84.5) ,100);                      //Medium Delta T formula BF2 vs GP2 flow y = 0.8621 x - 0.2994
     ELSE        
-        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlowD1 * 0.696) - 0.1418) - 84.5 ),100);                      //High Delta T formula BF2 vs GP2 flow y = 0.696 x - 0.1418
+        DHWPumpEstimate := Limit(0,(7.69 * ((WaterFlow_DHW * 0.696) - 0.1418) - 84.5 ),100);                      //High Delta T formula BF2 vs GP2 flow y = 0.696 x - 0.1418
     END_IF;
             
     //DHWPumpEstimate :=0;
@@ -232,14 +204,14 @@ PROGRAM DHWRegulation
         Kp_PID_Incr           := TO_REAL(DhwPumpPGain),
         Ti_PID_Incr           := TO_UINT(DhwPumpIGain),
         Td_PID_Incr           := TO_UINT(DhwPumpDGain),
-        LowLim_PID_Incr       := DhwPumpMin1,//TO_REAL(DhwPumpMin),
-        HighLim_PID_Incr      := DhwPumpMax1,//TO_REAL(DhwPumpMax),
+        LowLim_PID_Incr       := TO_REAL(DhwPumpMin),//DhwPumpMin1,//
+        HighLim_PID_Incr      := TO_REAL(DhwPumpMax),//DhwPumpMax1,//
         Period_PID_Incr       := 100,
         CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Heat,
         RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
-        ManModeVal_PID_Incr   := 0.0,
+        ManModeVal_PID_Incr   := TO_REAL(PumpSpdGP2Man),
         En_PrePos_PID_Incr    := FALSE,
-        En_ManMode_PID_Incr   := FALSE,
+        En_ManMode_PID_Incr   := PumpSpdGP2Man > 0,
         En_PID_Incr           := TON_CircPump1.Q
     );
     
@@ -252,17 +224,16 @@ PROGRAM DHWRegulation
     
     IF UnitOff OR NOT TON_CircPump1.Q  THEN // OLD: OR (DHWTempRegPID.Req_PID_Incr = 0)
         //Unit off or PID reg 0 then pump shall be set to off
-        DhwCircPumpReq :=95;
+        DhwCircPumpReq :=97;
     ELSIF (DHWTempRegPID.Req_PID_Incr = 0) AND TON_CircPump1.Q THEN
         IF TON_GP1_LowSpd.Q THEN
             DhwCircPumpReq := 85;
         ELSE
-            DhwCircPumpReq := 95;
+            DhwCircPumpReq := 97;
         END_IF;
     ELSE
         //Pump regulation
-//        DhwCircPumpReq := DHWTempRegPID.Req_PID_Incr;
-        DhwCircPumpReq := Scaler(DHWTempRegPID.Req_PID_Incr, 0, 100, 85, 10); //1-100 input is reversed and pump PWM input is scaled to fit the correct PWM curve.
+        DhwCircPumpReq := Scaler(DHWTempRegPID.Req_PID_Incr, 0, 100, 84, 10); //0-100 input is reversed and pump PWM input is scaled to fit the correct PWM curve.
     END_IF;
     
     Circ2Act_Req := DhwCircPumpReq;

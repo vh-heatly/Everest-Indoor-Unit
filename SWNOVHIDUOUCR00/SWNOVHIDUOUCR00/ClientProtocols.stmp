@@ -82,7 +82,7 @@
           Size="1" />
         <ModbusVariable
           DataType="BOOL"
-          Name="Comp_ManMode"
+          Name="Comp_En_Man"
           Index="45"
           Hysteresis="0"
           RWMode="ReadOnlineWriteChange"
@@ -114,7 +114,7 @@
           Size="1" />
         <ModbusVariable
           DataType="BOOL"
-          Name="DefrostStatus"
+          Name="DefrostRun"
           Index="4"
           Hysteresis="0"
           RWMode="ReadPollNoWrite"
@@ -131,7 +131,7 @@
         <ModbusVariable
           DataType="BOOL"
           Name="CompOn"
-          Index="59"
+          Index="1"
           Hysteresis="0"
           RWMode="ReadPollNoWrite"
           Kind="InputStatus"
@@ -570,6 +570,14 @@
           Size="1" />
         <ModbusVariable
           DataType="REAL"
+          Name="Comp_MaxSpdLim"
+          Index="254"
+          Hysteresis="0"
+          RWMode="NoReadWriteChange"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
           Name="SSH_SP_Min"
           Index="260"
           Hysteresis="0"
@@ -741,7 +749,7 @@
           Name="SwVersion"
           Index="7"
           Hysteresis="0"
-          RWMode="ReadPollNoWrite"
+          RWMode="ReadOnlineNoWrite"
           Kind="InputRegister"
           Size="1" />
         <ModbusVariable
@@ -750,6 +758,22 @@
           Index="8"
           Hysteresis="0"
           RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="BootVersion"
+          Index="9"
+          Hysteresis="0"
+          RWMode="ReadOnlineNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="OS_Version"
+          Index="10"
+          Hysteresis="0"
+          RWMode="ReadOnlineNoWrite"
           Kind="InputRegister"
           Size="1" />
         <ModbusVariable
@@ -2134,22 +2158,6 @@
           Index="809"
           Hysteresis="0"
           RWMode="ReadPollNoWrite"
-          Kind="InputRegister"
-          Size="1" />
-        <ModbusVariable
-          DataType="UINT"
-          Name="BootVersion"
-          Index="9"
-          Hysteresis="0"
-          RWMode="ReadOnlineNoWrite"
-          Kind="InputRegister"
-          Size="1" />
-        <ModbusVariable
-          DataType="UINT"
-          Name="OS_Version"
-          Index="10"
-          Hysteresis="0"
-          RWMode="ReadOnlineNoWrite"
           Kind="InputRegister"
           Size="1" />
       </Variables>

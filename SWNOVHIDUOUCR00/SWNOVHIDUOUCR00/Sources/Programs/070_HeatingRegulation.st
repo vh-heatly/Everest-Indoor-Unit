@@ -2,6 +2,7 @@
 USING System.Math;
 USING Libs.Math;
 USING Libs.PID_Incr;
+//USING Libs.PID_ADV;
 USING Libs.Timer;
 USING Libs.ExpFilt;
 
@@ -11,6 +12,8 @@ PROGRAM HeatingRegulation
         SR_AutoMode_Heating  : SR;
         (**Heating PID regulator*)
         PID_HeatReg          : PID_Incr;
+//        (**Heating PID regulator*)
+//        PID_HeatReg          : PID_Adv;
         (**Setpoint total offset*)
         SetP_Offset          : REAL;
         (**Heating blocked from smart grid*)
@@ -49,8 +52,7 @@ PROGRAM HeatingRegulation
     
     {REGION AUTOMODE}
         //Block heating/immersion heating from smart grid
-        SG_HeatBlock := SG_Status = SGStatus#BLOCKING_MODE
-                        OR NOT(SystemCfg_AllowHeat);
+        SG_HeatBlock := NOT(SystemCfg_AllowHeat);
     
         IF(En_AutoMode AND UnitOn)THEN
             SR_AutoMode_Heating(
@@ -58,10 +60,8 @@ PROGRAM HeatingRegulation
                     AND NOT(SG_HeatBlock) AND UnitON AND NOT(HeatingBlock),
                     R := OutDoorTempFilter > HeatModeTemp OR SG_HeatBlock OR UnitOff
                     );
-            OpModeAllowHeat := SR_AutoMode_Heating.Q1;
+            OpModeAllowHeat := SR_AutoMode_Heating.Q1 OR CS_FreezeProtAct;
             CS_FreezeProtReset := SR_AutoMode_Heating.Q1;
-        ELSIF CS_FreezeProtAct THEN // Freeze protection active override logic for OpModeAllowHeat
-            OpModeAllowHeat := TRUE;
         ELSE
             OpModeAllowHeat := FALSE;
         END_IF;
@@ -76,6 +76,8 @@ PROGRAM HeatingRegulation
             SG_Offset := TempSG1;
         ELSIF(SG_Status = SGStatus#OVERCAPACITY_MODE)THEN
             SG_Offset := TempSG2;
+        ELSIF (SG_Status = SGStatus#BLOCKING_MODE)THEN
+            SG_Offset := TempSG3;
         ELSE
             SG_Offset := 0;
         END_IF;
@@ -94,7 +96,9 @@ PROGRAM HeatingRegulation
     
     HeatReg_Temp := Ain_Data.Fct.ClimSupplyTemp;    
     
-    PID_HeatReg(
+ 
+    
+    PID_HeatReg(        
         RegVar_PID_Incr       := HeatReg_Temp,
         SetP_PID_Incr         := SupplyTempCalc,
         DeadBand_PID_Incr     := 0.0,
@@ -106,11 +110,30 @@ PROGRAM HeatingRegulation
         Period_PID_Incr       := 100,
         CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Heat,
         RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
-        ManModeVal_PID_Incr   := 0.0,
+        ManModeVal_PID_Incr   := ScalerLimited(OU_Unit.CurrSpd_RPS, OU_Unit.MinRPS, OU_CompMaxRps,  0.0, 100.0 ),
         En_PrePos_PID_Incr    := FALSE,
-        En_ManMode_PID_Incr   := FALSE,
-        En_PID_Incr           := OpModeAllowHeat
+        En_ManMode_PID_Incr   := NOT(HeatReq),
+        En_PID_Incr           := OpModeAllowHeat AND NOT ImmHeatOnly
     );
+ 
+//    PID_HeatReg(
+//        RegVar_PID_Incr       := HeatReg_Temp,
+//        SetP_PID_Incr         := SupplyTempCalc,
+//        DeadBand_PID_Incr     := 0.0,
+//        Kp_PID_Incr           := TO_REAL(HeatRegPGain),
+//        Ti_PID_Incr           := TO_UINT(HeatRegIGain),
+//        Td_PID_Incr           := TO_UINT(HeatRegDGain),
+//        LowLim_PID_Incr       := 0.0,
+//        HighLim_PID_Incr      := 100.0,
+//        Period_PID_Incr       := 100,
+//        CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Heat,
+//        RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
+//        ManModeVal_PID_Incr   := 0.0,
+//        En_PrePos_PID_Incr    := TRUE,
+//        En_ManMode_PID_Incr   := FALSE,
+//        En_PID_Incr           := HeatReq//OpModeAllowHeat
+//    );    
+    
     
     
     //Pass filtered request to outdoor unit

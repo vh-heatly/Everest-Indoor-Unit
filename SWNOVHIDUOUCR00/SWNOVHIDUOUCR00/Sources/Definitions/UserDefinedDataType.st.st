@@ -249,12 +249,6 @@ TYPE
         Desc    : STRING;
     END_STRUCT;
     
-    SIGNAL_TYPE : (
-        (**Request by BMS*)
-        BMS,
-        (**Request by PID*)
-        PID
-    );
     
     (**EEV driver type*)
     EVD_TYPE :(

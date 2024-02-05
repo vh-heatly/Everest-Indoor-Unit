@@ -26,7 +26,8 @@ PROGRAM OutdoorUnitMng
         );
     {ENDREGION}
     
-    OU_Unit.Info.Enabled := NOT(NoOutdoorUnit);   
+    OU_Unit.Info.Enabled := NOT(NoOutdoorUnit);  
+    OU_ComError := (NOT (OU_Unit.Info.isOnline)) AND NOT(NoOutdoorUnit);            //Communication error with outdoor unit
     
     IF(OU_Unit.Info.Enabled)THEN
         
@@ -47,7 +48,9 @@ PROGRAM OutdoorUnitMng
         OU_EvapTemp :=  OU_Unit.EvapTemp;
         OU_CondInTemp := OU_Unit.CondInTemp;
         OU_CondOutTemp := OU_Unit.CondOutTemp;
-        OU_CompMaxRps := Min(OU_Unit.MaxRPS, CompSpdMax);
+        OU_WaterFlow := OU_Unit.WaterFlow;
+        OU_HP_Status := OU_Unit.HP_Status;
+        OU_CompMaxRps := Min(OU_Unit.MaxRPS, CompSpdMax);  //If there is a speed limitation to the compressor
         
         
         {REGION DHW SWITCH MANAGEMENT}
@@ -98,10 +101,25 @@ PROGRAM OutdoorUnitMng
         {ENDREGION}
                
         //Write OU values
-        OU_Unit.EEV_CompHeat := OU_CompHeat;
-        OU_Unit.CompReq := OU_Req;
-        OU_Unit.AlrmReset := AlrmRes;
-        OU_Unit.OnOff := OU_OnOff;
+        OU_Unit.EEV_CompHeat    := OU_CompHeat;
+        OU_Unit.CompReq         := OU_Req;
+        OU_Unit.AlrmReset       := AlrmRes;
+        OU_Unit.OnOff           := OU_OnOff;
+        OU_Unit.Comp_MaxSpdLim  := CompSpdMax;
+    
+       
+        
+        //Write new time
+        OU_Unit.SetClock        := SetClock;
+        OU_Unit.YearIn          := YearIn;
+        OU_Unit.MonthIn         := MonthIn;
+        OU_Unit.DayIn           := DayIn;
+        OU_Unit.HourIn          := HourIn;
+        OU_Unit.MinuteIn        := MinuteIn;
+        OU_Unit.SecondsIn       := SecondIn;
+        
+
+    
     END_IF;
         
 END_PROGRAM

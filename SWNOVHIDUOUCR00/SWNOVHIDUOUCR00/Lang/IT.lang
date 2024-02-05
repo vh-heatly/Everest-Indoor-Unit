@@ -37,12 +37,6 @@
         <Item Key="Baud_375000" Value="Baud rate 375000" />
       </Items>
     </Section>
-    <Section Name="SIGNAL_TYPE" Category="Enums" EmbedTranslation="false">
-      <Items>
-        <Item Key="BMS" Value="Request by BMS" />
-        <Item Key="PID" Value="Request by PID" />
-      </Items>
-    </Section>
     <Section Name="SPV_OFFLINE_MNG" Category="Enums" EmbedTranslation="false">
       <Items>
         <Item Key="None" Value="No visualization" />

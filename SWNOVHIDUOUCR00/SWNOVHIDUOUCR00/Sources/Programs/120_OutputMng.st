@@ -150,9 +150,9 @@ VAR_GLOBAL PERSISTENT
 
     Aout_Cfg        : AoutCfgUnion := (Fct := (
         (**Circulation pump 1*)
-        CircPump1      := (Ch := 1,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM100HZ0_10_SR),  
+        CircPump1      := (Ch := 3,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM_2_KHZ),  
         (**Circulation pump 2*)
-        CircPump2      := (Ch := 4,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM_SYNC_MAIN_FREQ)
+        CircPump2      := (Ch := 4,  ModeType := MODE_TYPE_AOUT#LIB_IO_PWM_2_KHZ)
 
     ));
     
@@ -192,8 +192,8 @@ PROGRAM OutputMng
     Dout_Data.Fct.ImmheatStep1 := ActImmStep_Out.0;
     Dout_Data.Fct.ImmheatStep2 := ActImmStep_Out.1;
     Dout_Data.Fct.ShuntVlvOffDout := ShuntVlv_Off;
-    Dout_Data.Fct.RevVlv       := DHWReq;
-    Dout_Data.Fct.ShutOffVlv   := CoolReq;
+    Dout_Data.Fct.RevVlv       := DHWReq OR SWValveManA;
+    Dout_Data.Fct.ShutOffVlv   := CoolReq OR ShutOffMan;
 	{ENDREGION}
     FOR i := 1 TO UPPER_BOUND(Aout_Data.Arr, 1) DO
         Aout_Data.Arr[i] := ScalerLimited(Aout_Data.Arr[i], 0.0, 100.0, Aout_Min.Arr[i], Aout_Max.Arr[i]);

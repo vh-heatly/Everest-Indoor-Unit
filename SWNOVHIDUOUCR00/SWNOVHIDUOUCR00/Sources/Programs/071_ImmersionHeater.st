@@ -68,7 +68,7 @@ PROGRAM ImmersionRegulation
         SR_AutoMode_Immheat( 
                 s1 :=   (EBHP < (EBHPCompStrt + EBStepImm)) AND OpmodeAllowImm                                            // EB triggers immersion heater
                         
-                        OR (OU_EnvZone > 1),                                                                            // Out of ennvelope triggers immersion heater
+                        OR (OU_EnvZone > 1 AND (OU_HP_Status = 2 OR OU_HP_Status = 3 OR OU_HP_Status = 4)),                                                                            // Out of ennvelope triggers immersion heater
                 R := NOT SR_EB_StepOut.Q1 AND OU_EnvZone = 1 OR UnitOff OR NOT OpModeAllowImm
                 );
         ImmersionHeatAllow := SR_AutoMode_Immheat.Q1 OR SG_Status = SGStatus#OVERCAPACITY_MODE OR ImmHeatOnly;    
@@ -105,7 +105,7 @@ PROGRAM ImmersionRegulation
                 ImmheatStepDone := TRUE;
                 ActImmStep := ActImmStep + 1;
             //Only step out when any immersion heating steps are active
-            ELSIF(TON_ImmHeatStep.Q AND Ain_Data.Fct.DHWBottomTemp > ImmheatStepOutTemp AND ActImmStep >= 1)THEN
+            ELSIF(TON_ImmHeatStep.Q AND Ain_Data.Fct.DHWMiddleTemp > ImmheatStepOutTemp AND ActImmStep >= 1)THEN
                 ImmheatStepDone := TRUE;
                 ActImmStep := ActImmStep - 1;
             END_IF;

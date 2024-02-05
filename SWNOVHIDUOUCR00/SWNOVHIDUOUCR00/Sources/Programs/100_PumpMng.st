@@ -6,7 +6,7 @@ USING Libs.Timer;
 USING Libs.ExpFilt;
 
 VAR_GLOBAL
-    (** Actual PWM request heat medium pump*)
+    (**Actual PWM request heat medium pump*)
      Circ1Act_Req : REAL;
 END_VAR
 
@@ -14,7 +14,7 @@ PROGRAM PumpMng
 
         
     IF(PumpSpdGP1Man > 0)THEN    //Manual mode
-        CircPmp_Req := PumpSpdGP1Man;
+        CircPmp_Req := TO_REAL(PumpSpdGP1Man);
     ELSIF(UnitOn) THEN    //Fixed pump speed for GP1 depending on current operating mode
         IF(OpState = OpStage_Status#DEFROST)THEN
             CircPmp_Req := PumpSpdDefrost;

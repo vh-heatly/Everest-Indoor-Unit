@@ -169,8 +169,8 @@ TYPE
         (**BT6 Climate system supply temperature*)
         ClimSupplyTemp    :   REAL;
         {ATTRIBUTE UOM BAR}
-        {METADATA MAX_VAL 999.9}
-        {METADATA MIN_VAL -99.9}
+        {METADATA MAX_VAL 7.0}
+        {METADATA MIN_VAL -1.0}
         (**BP1 System pressure*)
         SysPress    :   REAL;
     END_STRUCT;
@@ -213,7 +213,7 @@ VAR_GLOBAL PERSISTENT
             (**StartStop*)
             RemOnOff        := (Ch := 0, ModeType := MODE_TYPE_DIN#LIB_IO_DIN),
             (**Flow switch*)
-            FlowSw          := (Ch := 2, ModeType := MODE_TYPE_DIN#LIB_IO_DIN),
+            FlowSw          := (Ch := 0, ModeType := MODE_TYPE_DIN#LIB_IO_DIN),
             (**SG input 1*)
             SG1          := (Ch := 4, ModeType := MODE_TYPE_DIN#LIB_IO_DIN),
             (**SG input 2*)
@@ -302,6 +302,6 @@ PROGRAM InputMng
     );
     
     HandleSpecialID(2, LIB_IO_PROBE_U_FREQ, 5, uID2);
-    WaterFlowD1 := (TO_REAL(uID2.ui) * 0.0106);    // 530 pulses per litre
+    WaterFlow_DHW := (TO_REAL(uID2.ui) * 0.0106);    // 530 pulses per litre
     
 END_PROGRAM

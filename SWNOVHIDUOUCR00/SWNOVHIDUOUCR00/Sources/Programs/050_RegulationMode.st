@@ -7,6 +7,8 @@ USING Libs.Timer;
 VAR_GLOBAL
         (**DHW switch due to timer*)
         DHWFrcSwitch            : BOOL;
+          (**DHW transition timer*)
+        TON_DHWTimer            : TON_s;
 END_VAR
 
 
@@ -26,8 +28,6 @@ PROGRAM RegulationMode
         OutDoorTempFilterTmp    : REAL;
         (**Outside temperature Sensor sample timer*)
         TON_OutDoorTempSnsr     : TON_S;
-          (**DHW transition timer*)
-        TON_DHWTimer            : TON_s;
         (**Comp minimum running time in heat or cool mode*)    
         TON_MinRunTime          : TON_s;
         MinRunTime              : BOOL;
@@ -182,7 +182,7 @@ PROGRAM RegulationMode
     
         TON_DHWTimer(
             IN := Dis_OpStateSwitch AND DHWFrcSwitchDone,
-            PT := DhwTimerStop
+            PT := DhwTimerStop*60
         );
         DHWFrcSwitch := TON_DHWTimer.Q;
         DHWFrcSwitchDone  := FALSE;
@@ -218,7 +218,7 @@ PROGRAM RegulationMode
     {ENDREGION}
     
     {REGION DEFROST}  
-    IF OU_Unit.DefrostStatus THEN
+    IF OU_Unit.DefrostRun THEN
         GoToState := OpStage_Status#DEFROST;
     END_IF;    
     {ENDREGION}
@@ -299,7 +299,7 @@ PROGRAM RegulationMode
                     ImmHeatReq := FALSE;
                     DHWReq := FALSE;
                     
-                    IF OU_Unit.DefrostStatus THEN 
+                    IF OU_Unit.DefrostRun THEN 
                         GoToState := OpStage_Status#DEFROST;
                     ELSIF(NOT(OpModeAllowHeat)) THEN // Return to decision phase
                         GoToState := OpStage_Status#DECISION_PHASE;
@@ -324,7 +324,7 @@ PROGRAM RegulationMode
                     CoolReq := FALSE;
                     ImmHeatReq := FALSE;
                     DHWReq := TRUE;
-                    IF OU_Unit.DefrostStatus THEN 
+                    IF OU_Unit.DefrostRun THEN 
                         GoToState := OpStage_Status#DEFROST;
                      
                     ELSIF(NOT(DHWNeed))THEN // IF statements reflects priority of the modes
@@ -341,7 +341,7 @@ PROGRAM RegulationMode
                     CoolReq := FALSE;
                     ImmHeatReq := FALSE;
                     DHWReq := FALSE;
-                    IF NOT OU_Unit.DefrostStatus THEN  // Leave defrost mode
+                    IF NOT OU_Unit.DefrostRun THEN  // Leave defrost mode
                         GoToState := OpStage_Status#DECISION_PHASE;
                     END_IF;
                     
@@ -379,7 +379,7 @@ PROGRAM RegulationMode
             PT := 1
         );
         IF(TON_Energybalance.Q)THEN
-            EBHP := LIMIT(EBHPMin, ((EBHP - (SupplyTempCalc - HeatReg_Temp) / 60)), EBHPMax);
+            EBHP := LIMIT(EBHPMin, ((EBHP - (SupplyTempCalc - Offset_EBHP - HeatReg_Temp) / 60)), EBHPMax);
         END_IF;
         
         Offset_EBHP := LIMIT(0, -0.01 * EBHP, 4);

@@ -72,14 +72,6 @@
       Acronym="L44-C"
       Attributes="Configurable Cloneable" />
     <Parameter
-      Description="Error in the number of retain memory writings"
-      Name="Alarms.Table.Al_RetainMemNo.Info.Active"
-      Acronym="A01"
-      Attributes="None" />
-    <Parameter
-      Name="Alarms.Table.Al_RetainMemNo.Info.Code"
-      Attributes="System" />
-    <Parameter
       Description="Unit remote On/Off"
       Name="Din_Data.Fct.RemOnOff"
       ReadOnly="true"
@@ -277,36 +269,6 @@
       Name="Dout_Info.Fct.GlbAl.Error"
       ReadOnly="true"
       Acronym="L44-err"
-      Attributes="None" />
-    <Parameter
-      InitValue="0"
-      Name="CurrLocTime.Hour"
-      ReadOnly="true"
-      Acronym="W52"
-      Attributes="None" />
-    <Parameter
-      InitValue="1"
-      Name="CurrLocTime.Day"
-      ReadOnly="true"
-      Acronym="W49"
-      Attributes="None" />
-    <Parameter
-      InitValue="0"
-      Name="CurrLocTime.Minute"
-      ReadOnly="true"
-      Acronym="W53"
-      Attributes="None" />
-    <Parameter
-      InitValue="1"
-      Name="CurrLocTime.Month"
-      ReadOnly="true"
-      Acronym="W50"
-      Attributes="None" />
-    <Parameter
-      InitValue="2021"
-      Name="CurrLocTime.Year"
-      ReadOnly="true"
-      Acronym="W51"
       Attributes="None" />
     <Parameter
       Name="Access_Sys"
@@ -567,38 +529,6 @@
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
     <Parameter
-      Description="Bottom temperature probe alarm"
-      Name="Alarms.Table.Al_DHWBottomTemp.Info.Active"
-      Acronym="A02"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_DHWBottomTemp.Info.Code"
-      Attributes="System" />
-    <Parameter
-      Description="Middle temperature probe alarm"
-      Name="Alarms.Table.Al_DHWMiddleTemp.Info.Active"
-      Acronym="A03"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_DHWMiddleTemp.Info.Code"
-      Attributes="System" />
-    <Parameter
-      Description="Top temperature probe alarm"
-      Name="Alarms.Table.Al_DHWTopTemp.Info.Active"
-      Acronym="A04"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_DHWTopTemp.Info.Code"
-      Attributes="System" />
-    <Parameter
-      Description="Supply temperature probe alarm"
-      Name="Alarms.Table.Al_DHWSupplyTemp.Info.Active"
-      Acronym="A05"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_DHWSupplyTemp.Info.Code"
-      Attributes="System" />
-    <Parameter
       InitValue="30"
       Name="DhwRefMiddle"
       Persistence="Persistent"
@@ -611,10 +541,6 @@
     <Parameter
       InitValue="40"
       Name="DhwRefTop"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      Name="SignalTyp"
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
     <Parameter
@@ -762,30 +688,8 @@
       Name="HeatReg_Temp"
       Attributes="None" />
     <Parameter
-      Name="HeatingNoOU"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
       Name="GblAlarm"
       Attributes="None" />
-    <Parameter
-      InitValue="FALSE"
-      Name="FrcEEVDuringDfr"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      Name="Flow_Present"
-      Attributes="None" />
-    <Parameter
-      InitValue="75"
-      Name="FixOnThrsh"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
-    <Parameter
-      InitValue="25"
-      Name="FixOffThrsh"
-      Persistence="Persistent"
-      Attributes="Configurable Cloneable" />
     <Parameter
       InitValue="TRUE"
       Name="En_SPV_OnOff"
@@ -796,9 +700,6 @@
       Attributes="None" />
     <Parameter
       Name="En_OU"
-      Attributes="None" />
-    <Parameter
-      Name="En_DhwPumpManMode"
       Attributes="None" />
     <Parameter
       Name="En_AutoMode"
@@ -1035,27 +936,6 @@
       Name="ManMode_Cool"
       Attributes="Cloneable" />
     <Parameter
-      Name="Alarms.Table.Al_ClimSupplyTemp.Info.Active"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_ClimSupplyTemp.Info.Code"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_OUOffline.Info.Active"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_OUOffline.Info.Code"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_OutDoorTemp.Info.Active"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_OutDoorTemp.Info.Code"
-      Attributes="System" />
-    <Parameter
-      Name="Alarms.Table.Al_SysPress.Info.Active"
-      Attributes="System" />
-    <Parameter
       Name="OU_CurrSpd"
       Attributes="None" />
     <Parameter
@@ -1063,9 +943,6 @@
       Attributes="None" />
     <Parameter
       Name="OU_SHSetP"
-      Attributes="None" />
-    <Parameter
-      Name="DhwCircPumpReq"
       Attributes="None" />
     <Parameter
       InitValue="300"
@@ -1214,9 +1091,6 @@
       Name="OU_Unit.DscgP"
       Attributes="None" />
     <Parameter
-      Name="OU_Unit.DefrostStatus"
-      Attributes="None" />
-    <Parameter
       Name="OU_Unit.CurrSpd_RPS"
       Attributes="None" />
     <Parameter
@@ -1241,9 +1115,6 @@
       Attributes="Configurable Cloneable" />
     <Parameter
       Name="RevVlv_On"
-      Attributes="None" />
-    <Parameter
-      Name="PumpReq_FlowPresent"
       Attributes="None" />
     <Parameter
       InitValue="10"
@@ -1613,9 +1484,6 @@
       Name="Circ1Act_Req"
       Attributes="None" />
     <Parameter
-      Name="WaterFlowD1"
-      Attributes="None" />
-    <Parameter
       Name="OU_CurrDSH"
       Attributes="None" />
     <Parameter
@@ -1751,9 +1619,6 @@
       Attributes="None" />
     <Parameter
       Name="OU_Unit.Comp_CstDec"
-      Attributes="None" />
-    <Parameter
-      Name="OU_Unit.Comp_ManMode"
       Attributes="None" />
     <Parameter
       Name="OU_Unit.CompBeltHeat_On"
@@ -2060,9 +1925,6 @@
       Persistence="Persistent"
       Attributes="Configurable Cloneable" />
     <Parameter
-      Name="Pwrp_AbnDCBusTime"
-      Attributes="None" />
-    <Parameter
       Name="RetainMemWrites"
       Attributes="None" />
     <Parameter
@@ -2139,16 +2001,7 @@
       Name="CurrSysT"
       Attributes="None" />
     <Parameter
-      Name="BmsDfrStart"
-      Attributes="None" />
-    <Parameter
-      Name="BmsDfrStop"
-      Attributes="None" />
-    <Parameter
       Name="BootVersion"
-      Attributes="None" />
-    <Parameter
-      Name="AppDateTime"
       Attributes="None" />
     <Parameter
       Name="AlrmRes"
@@ -2160,7 +2013,8 @@
       Attributes="Configurable Cloneable" />
     <Parameter
       Name="CompBlock"
-      Attributes="None" />
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
     <Parameter
       Name="OS_Version"
       Attributes="None" />
@@ -2250,6 +2104,192 @@
       Attributes="None" />
     <Parameter
       Name="OU_Unit.SrcCirc1_SetP"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.DefrostRun"
+      Attributes="None" />
+    <Parameter
+      InitValue="-4"
+      Name="TempSG3"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Max.Fct.ClimSupplyTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Max.Fct.DHWBottomTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Max.Fct.DHWMiddleTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Max.Fct.DHWSupplyTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Max.Fct.DHWTopTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Max.Fct.OutDoorTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Max.Fct.SysPress"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Min.Fct.ClimSupplyTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Min.Fct.DHWBottomTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Min.Fct.DHWMiddleTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Min.Fct.DHWSupplyTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Min.Fct.DHWTopTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Min.Fct.OutDoorTemp"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="Ain_Min.Fct.SysPress"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="LocTime.Day"
+      Attributes="None" />
+    <Parameter
+      Name="LocTime.Hour"
+      Attributes="None" />
+    <Parameter
+      Name="LocTime.Millisecond"
+      Attributes="None" />
+    <Parameter
+      Name="LocTime.Minute"
+      Attributes="None" />
+    <Parameter
+      Name="LocTime.Month"
+      Attributes="None" />
+    <Parameter
+      Name="LocTime.Second"
+      Attributes="None" />
+    <Parameter
+      Name="LocTime.Year"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[1]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[2]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[3]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[4]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[5]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[6]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[7]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[8]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[9]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[10]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[11]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[12]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[13]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[14]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[15]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[16]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[17]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[18]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[19]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[20]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[21]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[22]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[23]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[24]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[25]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[26]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[27]"
+      Attributes="None" />
+    <Parameter
+      Name="Active_Alrm[28]"
+      Attributes="None" />
+    <Parameter
+      Name="CompSpdMax"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
+    <Parameter
+      Name="OU_Unit.Comp_En_Man"
+      Attributes="None" />
+    <Parameter
+      Name="OU_Unit.Comp_MaxSpdLim"
+      Attributes="None" />
+    <Parameter
+      InitValue="0"
+      Name="PumpSpdGP2Man"
+      Attributes="None" />
+    <Parameter
+      Name="WaterFlow_DHW"
       Attributes="None" />
   </Parameters>
 </ParametersConfiguration>
