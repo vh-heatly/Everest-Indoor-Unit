@@ -253,6 +253,17 @@ PROGRAM RegulationMode
                 OpState := GoToState;
                 OU_CompHeat := FALSE;
             END_IF;
+        ELSIF NOT(OU_CompOn)THEN
+            IF GoToState = OpStage_Status#HEATING THEN
+                OpState := GoToState;       // EB calculation start and stop compressor
+            ELSIF GoToState = OpStage_Status#COOLING THEN
+                OpState := GoToState;
+            ELSIF (GoToState <> OpState AND OU_CompTemp < ECT) THEN
+                OU_CompHeat := FALSE;
+                // Send new ECT to OU -> Starts compressor heater
+            ELSE 
+                OpState := GoToState;
+            END_IF;
         ELSE
             OpState := GoToState;
         END_IF;
