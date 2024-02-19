@@ -114,6 +114,14 @@
           Size="1" />
         <ModbusVariable
           DataType="BOOL"
+          Name="CompOn"
+          Index="1"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputStatus"
+          Size="1" />
+        <ModbusVariable
+          DataType="BOOL"
           Name="DefrostRun"
           Index="4"
           Hysteresis="0"
@@ -124,14 +132,6 @@
           DataType="BOOL"
           Name="Unit_CoolHeat"
           Index="12"
-          Hysteresis="0"
-          RWMode="ReadPollNoWrite"
-          Kind="InputStatus"
-          Size="1" />
-        <ModbusVariable
-          DataType="BOOL"
-          Name="CompOn"
-          Index="1"
           Hysteresis="0"
           RWMode="ReadPollNoWrite"
           Kind="InputStatus"
@@ -1052,6 +1052,14 @@
           DataType="REAL"
           Name="CompTemp"
           Index="51"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="REAL"
+          Name="Src_FanSpdFdbk"
+          Index="52"
           Hysteresis="0"
           RWMode="ReadPollNoWrite"
           Kind="InputRegister"

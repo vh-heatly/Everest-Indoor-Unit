@@ -192,7 +192,7 @@ PROGRAM OutputMng
     Dout_Data.Fct.ImmheatStep1 := ActImmStep_Out.0;
     Dout_Data.Fct.ImmheatStep2 := ActImmStep_Out.1;
     Dout_Data.Fct.ShuntVlvOffDout := ShuntVlv_Off;
-    Dout_Data.Fct.RevVlv       := DHWReq OR SWValveManA;
+    Dout_Data.Fct.RevVlv       := (DHWReq AND OU_CompOn) OR SWValveManA;
     Dout_Data.Fct.ShutOffVlv   := CoolReq OR ShutOffMan;
 	{ENDREGION}
     FOR i := 1 TO UPPER_BOUND(Aout_Data.Arr, 1) DO

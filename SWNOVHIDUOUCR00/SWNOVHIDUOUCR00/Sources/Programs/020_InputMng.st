@@ -29,6 +29,8 @@ VAR_GLOBAL
     MAX_AOUT_CH : USINT;
     (**Device parameteres (Number of I/O, type o Core...) *)
     HwDesc_1    : HardwareDescription;
+    
+    SystemPressure : REAL;
 END_VAR
 
 TYPE
@@ -304,4 +306,8 @@ PROGRAM InputMng
     HandleSpecialID(2, LIB_IO_PROBE_U_FREQ, 5, uID2);
     WaterFlow_DHW := (TO_REAL(uID2.ui) * 0.0106);    // 530 pulses per litre
     
+    SystemPressure := To_Real(U[10].ud);
+    SystemPressure := To_Real(U[10].ui);
+    SystemPressure := To_Real(U[10].b);
+    SystemPressure := To_Real(U[10].r);
 END_PROGRAM

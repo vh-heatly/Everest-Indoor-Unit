@@ -36,6 +36,10 @@ PROGRAM HeatingRegulation
         SR_ShuntClose        : SR;
         (**SR shunt open*)
         SR_ShuntOpen        : SR;
+        (**PID Heat Manual Value*)
+        ManModeVal : REAL;
+        (**Freeze time after DHW charge timer*)
+        TOF_RPSBlock       : TOF_s;
     END_VAR
     
     IF RestoreDefault THEN
@@ -93,10 +97,22 @@ PROGRAM HeatingRegulation
    
     
     {REGION OU HEATING PID REGULATOR}
+    //Timer to go back and freeze regulator/compressor rps after DHW charge -> test the timer and adjust
+    TOF_RPSBlock(
+                IN := OpState = OpStage_Status#DHW,
+                PT := 120
+            );
     
     HeatReg_Temp := Ain_Data.Fct.ClimSupplyTemp;    
-    
- 
+    IF OU_CompOn THEN
+        IF OU_HP_Status = 2 OR DHW_InitRPS = 0 THEN
+            ManModeVal := ScalerLimited(OU_Unit.CurrSpd_RPS, OU_Unit.MinRPS, OU_CompMaxRps, 0.0, 100.0); 
+        ELSE
+            ManModeVal := ScalerLimited(DHW_InitRPS, OU_Unit.MinRPS, OU_CompMaxRps, 0.0, 100.0);    
+        END_IF;
+    ELSE
+        ManModeVal := 50.0;
+    END_IF;
     
     PID_HeatReg(        
         RegVar_PID_Incr       := HeatReg_Temp,
@@ -110,31 +126,13 @@ PROGRAM HeatingRegulation
         Period_PID_Incr       := 100,
         CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Heat,
         RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
-        ManModeVal_PID_Incr   := ScalerLimited(OU_Unit.CurrSpd_RPS, OU_Unit.MinRPS, OU_CompMaxRps,  0.0, 100.0 ),
+        ManModeVal_PID_Incr   := ManModeVal,
         En_PrePos_PID_Incr    := FALSE,
-        En_ManMode_PID_Incr   := NOT(HeatReq),
-        En_PID_Incr           := OpModeAllowHeat AND NOT ImmHeatOnly
+        En_ManMode_PID_Incr   := NOT OU_CompOn OR OU_HP_Status = 2 OR TOF_RPSBlock.Q,
+        En_PID_Incr           := OpState = OpStage_Status#HEATING AND SR_Energybalance.Q1
     );
  
-//    PID_HeatReg(
-//        RegVar_PID_Incr       := HeatReg_Temp,
-//        SetP_PID_Incr         := SupplyTempCalc,
-//        DeadBand_PID_Incr     := 0.0,
-//        Kp_PID_Incr           := TO_REAL(HeatRegPGain),
-//        Ti_PID_Incr           := TO_UINT(HeatRegIGain),
-//        Td_PID_Incr           := TO_UINT(HeatRegDGain),
-//        LowLim_PID_Incr       := 0.0,
-//        HighLim_PID_Incr      := 100.0,
-//        Period_PID_Incr       := 100,
-//        CoolHeatMode_PID_Incr := ENUM_COOL_HEAT#Heat,
-//        RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
-//        ManModeVal_PID_Incr   := 0.0,
-//        En_PrePos_PID_Incr    := TRUE,
-//        En_ManMode_PID_Incr   := FALSE,
-//        En_PID_Incr           := HeatReq//OpModeAllowHeat
-//    );    
-    
-    
+
     
     //Pass filtered request to outdoor unit
     HeatReg_Filt(

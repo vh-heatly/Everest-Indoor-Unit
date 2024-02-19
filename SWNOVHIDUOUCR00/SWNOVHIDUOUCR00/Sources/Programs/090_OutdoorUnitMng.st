@@ -3,14 +3,18 @@ USING System.Math;
 USING Libs.Math;
 USING Libs.Timer;
 
-PROGRAM OutdoorUnitMng
-    VAR
-        (**Allow/block OU from energybalance*)
-        SR_Energybalance        : SR;
-        (**Start/stop outdoor unit*)
-        OU_OnOff                : BOOL;
+    VAR_GLOBAL
         (**Compressor speed when starting DHW*)
         DHW_InitRPS             : REAL;
+        (**Allow/block OU from energybalance*)
+        SR_Energybalance        : SR;
+    
+    END_VAR
+    
+PROGRAM OutdoorUnitMng
+    VAR
+        (**Start/stop outdoor unit*)
+        OU_OnOff                : BOOL;
         (**First DHW cycle*)
         DHW_FirstCycle          : BOOL;
     END_VAR
@@ -75,7 +79,7 @@ PROGRAM OutdoorUnitMng
             OU_OnOff := FALSE;
         ELSIF(OpState = OpStage_Status#DHW)THEN //DHW charge request
             IF(OU_Unit.CompOn AND DHW_InitRPS > 50.0)THEN //Keep compressor at steady speed if running at 50+ rps
-                OU_OnOff := OU_Unit.CompOn;
+                OU_OnOff := TRUE;
                 
                 IF(DHWBoost)THEN // Boost compressor speed during end of DHW
                     OU_Req := MIN(DHW_InitRPS + 30.0, OU_CompMaxRps);
@@ -86,9 +90,9 @@ PROGRAM OutdoorUnitMng
                 OU_OnOff := TRUE;
                 
                 IF(DHWBoost)THEN // Boost compressor speed during end of DHW
-                    OU_Req := ScalerLimited(50.0+30.0, 0.0, 100.0, 0.0, OU_CompMaxRps);
+                    OU_Req := MIN(50.0 + 30.0, OU_CompMaxRps);
                 ELSE
-                    OU_Req := ScalerLimited(50.0, 0.0, 100.0, 0.0, OU_CompMaxRps);
+                    OU_Req := MIN(50.0 , OU_CompMaxRps);
                 END_IF;
             END_IF;
         ELSIF(OpState = OpStage_Status#HEATING AND SR_Energybalance.Q1)THEN //Heating request
@@ -96,7 +100,7 @@ PROGRAM OutdoorUnitMng
             OU_OnOff := TRUE;
         ELSE 
             OU_Req := 0; 
-            OU_OnOff := FALSE;
+            OU_OnOff := TRUE;
         END_IF;
         {ENDREGION}
                

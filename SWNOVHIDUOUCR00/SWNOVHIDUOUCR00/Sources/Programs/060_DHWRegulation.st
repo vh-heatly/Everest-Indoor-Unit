@@ -119,16 +119,16 @@ PROGRAM DHWRegulation
         
     //Determine need of DHW
     SR_DHWNeed(                                                                                          (**DHW START CONDITIONS*)
-        S := ((Ain_Data.Fct.DHWMiddleTemp < DHWStartTemp                                                //Low middle temp.
-                    OR (Ain_Data.Fct.DHWMiddleTemp<ExtHotWatrStopTemp-ExtHotWatrDiff AND En_ExtHotWatr)) //Low middle temp.(Extra hot water)
-                    AND AllowDHW)                                                                        //DHW is allowed
+        S := ((Ain_Data.Fct.DHWMiddleTemp < DHWStartTemp                                                   //Low middle temp.
+                    OR (Ain_Data.Fct.DHWMiddleTemp<ExtHotWatrStopTemp-ExtHotWatrDiff AND En_ExtHotWatr))   //Low middle temp.(Extra hot water)
+                    AND AllowDHW AND NOT TON_CircPump1.Q)                                                  //DHW is allowed
                                                                          
-                    OR ((TON_CircPump1.Q AND Ain_Data.Fct.DHWTopTemp < 45.0)                              //Pump active and low top temp.
+                    OR ((TON_CircPump1.Q AND Ain_Data.Fct.DHWTopTemp < 45.0)                               //Pump active and low top temp.
                     AND UnitOn AND AllowDHW), 
                     //OR DHWProc < DHWStrtProc                                                           (**DHW STOP CONDITIONS*)
-        R1  := (Ain_Data.Fct.DHWBottomTemp >= DHWStopTemp AND NOT(En_ExtHotWatr)                          //Bottom temp. reached
-                    OR (Ain_Data.Fct.DHWBottomTemp>=ExtHotWatrStopTemp AND En_ExtHotWatr)                //Bottom temp. reached(Extra hot water)
-                    OR NOT(AllowDHW) OR SG_DHWBlock                                                      //DHW blocked
+        R1  := (Ain_Data.Fct.DHWBottomTemp >= DHWStopTemp AND NOT(En_ExtHotWatr)                           //Bottom temp. reached
+                    OR (Ain_Data.Fct.DHWBottomTemp>=ExtHotWatrStopTemp AND En_ExtHotWatr)                  //Bottom temp. reached(Extra hot water)
+                    OR NOT(AllowDHW) OR SG_DHWBlock                                                        //DHW blocked
                     OR UnitOff)                                                          
                     //OR DHWProc >= DHWStrtProc
     );
