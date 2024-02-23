@@ -99,7 +99,7 @@ PROGRAM HeatingRegulation
     {REGION OU HEATING PID REGULATOR}
     //Timer to go back and freeze regulator/compressor rps after DHW charge -> test the timer and adjust
     TOF_RPSBlock(
-                IN := OpState = OpStage_Status#DHW,
+                IN := OpState = OpStage_Status#DHW OR OpState = OpStage_Status#DEFROST,
                 PT := 120
             );
     

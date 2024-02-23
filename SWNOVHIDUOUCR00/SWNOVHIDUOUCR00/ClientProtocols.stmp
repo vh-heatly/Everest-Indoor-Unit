@@ -645,7 +645,7 @@
           Name="YearIn"
           Index="900"
           Hysteresis="0"
-          RWMode="NoReadWriteChange"
+          RWMode="ReadOnlineWriteChange"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
@@ -653,7 +653,7 @@
           Name="MonthIn"
           Index="901"
           Hysteresis="0"
-          RWMode="NoReadWriteChange"
+          RWMode="ReadOnlineWriteChange"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
@@ -661,7 +661,7 @@
           Name="DayIn"
           Index="902"
           Hysteresis="0"
-          RWMode="NoReadWriteChange"
+          RWMode="ReadOnlineWriteChange"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
@@ -669,7 +669,7 @@
           Name="HourIn"
           Index="903"
           Hysteresis="0"
-          RWMode="NoReadWriteChange"
+          RWMode="ReadOnlineWriteChange"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
@@ -677,7 +677,7 @@
           Name="MinuteIn"
           Index="904"
           Hysteresis="0"
-          RWMode="NoReadWriteChange"
+          RWMode="ReadOnlineWriteChange"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
@@ -685,7 +685,7 @@
           Name="SecondsIn"
           Index="905"
           Hysteresis="0"
-          RWMode="NoReadWriteChange"
+          RWMode="ReadOnlineWriteChange"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
@@ -822,6 +822,14 @@
           Index="22"
           Hysteresis="0"
           RWMode="ReadOnlineNoWrite"
+          Kind="InputRegister"
+          Size="1" />
+        <ModbusVariable
+          DataType="UINT"
+          Name="Comp_Status"
+          Index="368"
+          Hysteresis="0"
+          RWMode="ReadPollNoWrite"
           Kind="InputRegister"
           Size="1" />
         <ModbusVariable

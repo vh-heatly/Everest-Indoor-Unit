@@ -988,6 +988,27 @@ VAR_GLOBAL PERSISTENT
 	{LOCATION ShuntVlvTimeFactor}
 	(**Shunt valve time factor*)
 	ShuntVlvTimeFactor : UINT := 180;
+	{LOCATION SkipFreqBand1}
+	(**Skip frequency band 1*)
+	{ATTRIBUTE UOM RPS}
+	SkipFreqBand1 : REAL := 0;
+	{LOCATION SkipFreqBand2}
+	(**Skip frequency band 2*)
+	{ATTRIBUTE UOM RPS}
+	SkipFreqBand2 : REAL := 0;
+	{LOCATION SkipFreqBand3}
+	(**Skip frequency band 3*)
+	{ATTRIBUTE UOM RPS}
+	SkipFreqBand3 : REAL := 0;
+	{LOCATION SkipFreqF1}
+	{ATTRIBUTE UOM RPS}
+	SkipFreqF1 : REAL := 0;
+	{LOCATION SkipFreqF2}
+	{ATTRIBUTE UOM RPS}
+	SkipFreqF2 : REAL := 0;
+	{LOCATION SkipFreqF3}
+	{ATTRIBUTE UOM RPS}
+	SkipFreqF3 : REAL := 0;
 	{LOCATION SPV_Addr}
 	(**Supervisor serial address*)
 	SPV_Addr : USINT(1..247) := 1;

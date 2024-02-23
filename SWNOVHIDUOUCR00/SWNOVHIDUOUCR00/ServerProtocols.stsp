@@ -1239,37 +1239,43 @@
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="OU_Unit.SkipFreqBand1"
+          Name="SkipFreqBand1"
+          UoM="RPS"
           Index="1003"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="OU_Unit.SkipFreqBand2"
+          Name="SkipFreqBand2"
+          UoM="RPS"
           Index="1004"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="OU_Unit.SkipFreqBand3"
+          Name="SkipFreqBand3"
+          UoM="RPS"
           Index="1005"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="OU_Unit.SkipFreqF1"
+          Name="SkipFreqF1"
+          UoM="RPS"
           Index="1006"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="OU_Unit.SkipFreqF2"
+          Name="SkipFreqF2"
+          UoM="RPS"
           Index="1007"
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
           DataType="REAL"
-          Name="OU_Unit.SkipFreqF3"
+          Name="SkipFreqF3"
+          UoM="RPS"
           Index="1008"
           Kind="HoldingRegister"
           Size="1" />

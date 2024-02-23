@@ -110,6 +110,14 @@ PROGRAM OutdoorUnitMng
         OU_Unit.AlrmReset       := AlrmRes;
         OU_Unit.OnOff           := OU_OnOff;
         OU_Unit.Comp_MaxSpdLim  := CompSpdMax;
+        
+        OU_Unit.SkipFreqBand1   := SkipFreqBand1 * 2;
+        OU_Unit.SkipFreqBand2   := SkipFreqBand2 * 2;
+        OU_Unit.SkipFreqBand3   := SkipFreqBand3 * 2;
+        OU_Unit.SkipFreqF1      := SkipFreqF1 * 2;
+        OU_Unit.SkipFreqF2      := SkipFreqF2 * 2;
+        OU_Unit.SkipFreqF3      := SkipFreqF3 * 2;
+            
     
        
         
