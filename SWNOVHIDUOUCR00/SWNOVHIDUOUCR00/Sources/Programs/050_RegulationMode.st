@@ -389,8 +389,20 @@ PROGRAM RegulationMode
             IN := NOT(TON_Energybalance.Q),
             PT := 1
         );
-        IF(TON_Energybalance.Q)THEN
-            EBHP := LIMIT(EBHPMin, ((EBHP - (SupplyTempCalc - Offset_EBHP - HeatReg_Temp) / 60)), EBHPMax);
+        IF TON_Energybalance.Q THEN                                         //AND NOT (OpState = OpStage_Status#DHW))THEN
+            IF NOT (OpState = (OpStage_Status#DHW)) THEN
+                EBHP := LIMIT(EBHPMin, ((EBHP - (SupplyTempCalc - Offset_EBHP - HeatReg_Temp) / 60)), EBHPMax);
+            ELSIF SupplyTempCalc > FixedEBCount THEN
+                IF EBHP_Init > EBHPCompStrt AND NOT OU_Unit.CompOn THEN
+                    EBHP := LIMIT((EBHPCompStrt -1), ((EBHP - (SupplyTempCalc - Offset_EBHP - FixedEBCount) / 60)), EBHPMax);             //FixedEBCount during DHW
+                ELSE
+                    EBHP := LIMIT((EBStepImm + EBHPCompStrt + EBHPStepOut), ((EBHP - (SupplyTempCalc - Offset_EBHP - FixedEBCount) / 60)), EBHPMax);
+                END_IF;
+            ELSE
+                EBHP := EBHP;
+            END_IF;
+        ELSE
+            EBHP := EBHP;
         END_IF;
         
         Offset_EBHP := LIMIT(0, -0.01 * EBHP, 4);

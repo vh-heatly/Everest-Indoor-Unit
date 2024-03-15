@@ -40,6 +40,8 @@ PROGRAM HeatingRegulation
         ManModeVal : REAL;
         (**Freeze time after DHW charge timer*)
         TOF_RPSBlock       : TOF_s;
+        (**Setpoint calculation for Shunt control*)
+        ShuntTempCalc       : REAL;
     END_VAR
     
     IF RestoreDefault THEN
@@ -105,7 +107,7 @@ PROGRAM HeatingRegulation
     
     HeatReg_Temp := Ain_Data.Fct.ClimSupplyTemp;    
     IF OU_CompOn THEN
-        IF OU_HP_Status = 2 OR DHW_InitRPS = 0 THEN
+        IF OU_HP_Status = 2 OR OU_HP_Status = 8 OR DHW_InitRPS = 0 THEN
             ManModeVal := ScalerLimited(OU_Unit.CurrSpd_RPS, OU_Unit.MinRPS, OU_CompMaxRps, 0.0, 100.0); 
         ELSE
             ManModeVal := ScalerLimited(DHW_InitRPS, OU_Unit.MinRPS, OU_CompMaxRps, 0.0, 100.0);    
@@ -128,7 +130,7 @@ PROGRAM HeatingRegulation
         RevMode_PID_Incr      := ENUM_REV_MODE#Direct,
         ManModeVal_PID_Incr   := ManModeVal,
         En_PrePos_PID_Incr    := FALSE,
-        En_ManMode_PID_Incr   := NOT OU_CompOn OR OU_HP_Status = 2 OR TOF_RPSBlock.Q,
+        En_ManMode_PID_Incr   := NOT OU_CompOn OR OU_HP_Status = 2 OR OU_HP_Status = 8 OR TOF_RPSBlock.Q,
         En_PID_Incr           := OpState = OpStage_Status#HEATING AND SR_Energybalance.Q1
     );
  
@@ -148,17 +150,18 @@ PROGRAM HeatingRegulation
         
     {REGION SHUNT VALVE}
         //Shunt valve management
+        ShuntTempCalc := Sel(ImmHeatOnly, (SupplyTempCalc - 4),SupplyTempCalc);   
     
         IF(ShuntManMode)THEN
             ShuntVlv_Off := ShuntManClose AND NOT(ShuntManOpen);
             ShuntVlv_On := ShuntManOpen AND NOT(ShuntManClose);
-        ELSIF OpModeAllowHeat AND (((Ain_Data.Fct.DHWMiddleTemp+2) > Ain_Data.Fct.ClimSupplyTemp) AND ImmersionHeatAllow) 
-            OR (OpModeAllowHeat AND ImmHeatOnly) AND NOT(ShuntVlvBlock) THEN
+        ELSIF (OpModeAllowHeat AND ((Ain_Data.Fct.DHWMiddleTemp+2) > Ain_Data.Fct.ClimSupplyTemp AND ImmersionHeatAllow AND HeatReq))
+            OR (OpModeAllowHeat AND ImmHeatOnly) AND NOT(ShuntVlvBlock) THEN  //AND (((Ain_Data.Fct.DHWMiddleTemp+2) > Ain_Data.Fct.ClimSupplyTemp)
             
             //Invert factor calculation if supply temp is higher than setpoint
-            ShuntVlvFactor_PT := SEL((SupplyTempCalc - Ain_Data.Fct.ClimSupplyTemp) < 0,
-                                    TO_UINT((SupplyTempCalc - Ain_Data.Fct.ClimSupplyTemp) * ShuntVlvPFactor),
-                                    TO_UINT((Ain_Data.Fct.ClimSupplyTemp - SupplyTempCalc) * ShuntVlvPFactor));
+            ShuntVlvFactor_PT := SEL((ShuntTempCalc - Ain_Data.Fct.ClimSupplyTemp) < 0,
+                                    TO_UINT((ShuntTempCalc - Ain_Data.Fct.ClimSupplyTemp) * ShuntVlvPFactor),
+                                    TO_UINT((Ain_Data.Fct.ClimSupplyTemp - ShuntTempCalc) * ShuntVlvPFactor));
             
             //Calculate Shunt timer each ShuntTimeFactor minute while unit on
             TON_ShuntTimerDone(
@@ -174,25 +177,25 @@ PROGRAM HeatingRegulation
             
             //Shunt closing management
             SR_ShuntClose(
-                        S1 := (SupplyTempCalc < Ain_Data.Fct.ClimSupplyTemp AND TOF_ShuntFactor.Q) AND ImmersionHeatAllow,
+                        S1 := (ShuntTempCalc < Ain_Data.Fct.ClimSupplyTemp AND TOF_ShuntFactor.Q) AND ImmersionHeatAllow,
                         R := NOT(TOF_ShuntFactor.Q) OR SR_ShuntOpen.Q1
                 );
             ShuntVlv_Off := SR_ShuntClose.Q1;
             
             //Shunt opening management
             SR_ShuntOpen(
-                        S1 := (SupplyTempCalc > Ain_Data.Fct.ClimSupplyTemp AND TOF_ShuntFactor.Q) AND ImmersionHeatAllow,
+                        S1 := (ShuntTempCalc > Ain_Data.Fct.ClimSupplyTemp AND TOF_ShuntFactor.Q) AND ImmersionHeatAllow,
                         R := NOT(TOF_ShuntFactor.Q) OR SR_ShuntClose.Q1
                 );
             
             ShuntVlv_On := SR_ShuntOpen.Q1;
             
-        ELSIF(ShuntVlvBlock OR NOT ImmersionHeatAllow OR NOT OpModeAllowHeat)THEN //Block shunt valve
+        ELSIF(ShuntVlvBlock OR NOT ImmersionHeatAllow OR NOT OpModeAllowHeat) OR (Ain_Data.Fct.DHWMiddleTemp+2) <= Ain_Data.Fct.ClimSupplyTemp OR NOT HeatReq THEN //Block shunt valve
             ShuntVlv_On := FALSE;
             
             //After blocking shunt valve, force closing for X seconds
             TON_ShuntBlock(
-                IN := ShuntVlvBlock,
+                IN := (ShuntVlvBlock OR NOT ImmersionHeatAllow OR NOT OpModeAllowHeat) OR (Ain_Data.Fct.DHWMiddleTemp+2) <= Ain_Data.Fct.ClimSupplyTemp OR NOT HeatReq,
                 PT := ShuntVlvBlock_Time
             );
             

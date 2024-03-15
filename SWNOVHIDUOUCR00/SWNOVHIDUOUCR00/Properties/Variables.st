@@ -146,6 +146,8 @@ VAR_GLOBAL
 	{LOCATION EBHP}
 	(**Current energy balance*)
 	EBHP : REAL;
+	{LOCATION EBHP_Init}
+	EBHP_Init : REAL := 0;
 	{LOCATION ECT}
 	(**ECT value for outdoor unit*)
 	{ATTRIBUTE UOM CELSIUS}
@@ -168,6 +170,11 @@ VAR_GLOBAL
 	{LOCATION FirstCycleDone}
 	(**First cycle*)
 	FirstCycleDone : BOOL;
+	{LOCATION FixedEBCount}
+	(**FixedEBCount shall replace input for EB calculation “actual supply temp BT6” *)
+	{METADATA MIN_VAL -1000}
+	{METADATA MAX_VAL 1000}
+	FixedEBCount : REAL := 0;
 	{LOCATION GoToState}
 	(**Intended stage unit wants to transition to*)
 	GoToState : USINT;
@@ -444,7 +451,7 @@ VAR_GLOBAL
 	{LOCATION SPV_Addr_SavedRAM}
 	SPV_Addr_SavedRAM : USINT(1..247) := 1;
 	{LOCATION SPV_Baud_SavedRAM}
-	SPV_Baud_SavedRAM : Serial_Speed;
+	SPV_Baud_SavedRAM : Serial_Speed := 7;
 	{LOCATION SPV_ChangeSet}
 	(**Supervisor apply settings*)
 	SPV_ChangeSet : BOOL := TRUE;
@@ -846,7 +853,7 @@ VAR_GLOBAL PERSISTENT
 	ExtHotWatrTime : UINT := 3;
 	{LOCATION FB2_Baud}
 	(**Client - Baudrate*)
-	FB2_Baud : Serial_Speed(0..8) := 4;
+	FB2_Baud : Serial_Speed(0..8) := 7;
 	{LOCATION FB2_Conf}
 	(**Client - Parity and stop bits*)
 	FB2_Conf : Serial_ParityStopBits(0..5) := 1;

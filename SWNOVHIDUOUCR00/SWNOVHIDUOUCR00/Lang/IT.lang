@@ -1828,5 +1828,564 @@
         <Item Key="MsdMode" Value=" Mass Storage Device (MSD) mode: allows to transfer files to and from a USB pen drive. " />
       </Items>
     </Section>
+    <Section Name="System_Net_BACnet_BACnetCalendarEntryDataType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="CalendarEntryDate" Value="CalendarEntryDate" />
+        <Item Key="CalendarEntryDateRange" Value="CalendarEntryDateRange" />
+        <Item Key="CalendarEntryWeekNDay" Value="CalendarEntryWeekNDay" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetDayOfMonth" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="LastDay" Value="LastDay" />
+        <Item Key="OddDays" Value="OddDays" />
+        <Item Key="EvenDays" Value="EvenDays" />
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetDayOfWeek" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Monday" Value="Monday" />
+        <Item Key="Tuesday" Value="Tuesday" />
+        <Item Key="Wednesday" Value="Wednesday" />
+        <Item Key="Thurday" Value="Thurday" />
+        <Item Key="Friday" Value="Friday" />
+        <Item Key="Saturday" Value="Saturday" />
+        <Item Key="Sunday" Value="Sunday" />
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetDevicePollingStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Online" Value=" Device online (At least one polling loop completed) " />
+        <Item Key="Offline" Value=" Device offline (Timeout error) " />
+        <Item Key="InvalidPacketReceived" Value=" Received an invalid packet (CRC error) " />
+        <Item Key="ErrorResponseReceived" Value=" Received an error response (Received an error) " />
+        <Item Key="NotPolledYet" Value="Device not polled yet (No polling loop completed yet) " />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetDeviceStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Operational" Value="Operational" />
+        <Item Key="OperationalReadOnly" Value="OperationalReadOnly" />
+        <Item Key="DownloadRequired" Value="DownloadRequired" />
+        <Item Key="DownloadInProgress" Value="DownloadInProgress" />
+        <Item Key="NonOperational" Value="NonOperational" />
+        <Item Key="BackupInProgress" Value="BackupInProgress" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetEngineeringUnits" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="SQ_METERS" Value="SQ_METERS" />
+        <Item Key="SQ_FEET" Value="SQ_FEET" />
+        <Item Key="MILLIAMPERES" Value="MILLIAMPERES" />
+        <Item Key="AMPERES" Value="AMPERES" />
+        <Item Key="OHMS" Value="OHMS" />
+        <Item Key="VOLTS" Value="VOLTS" />
+        <Item Key="KILOVOLTS" Value="KILOVOLTS" />
+        <Item Key="MEGAVOLTS" Value="MEGAVOLTS" />
+        <Item Key="VOLT_AMPERES" Value="VOLT_AMPERES" />
+        <Item Key="KILOVOLT_AMPERES" Value="KILOVOLT_AMPERES" />
+        <Item Key="MEGAVOLT_AMPERES" Value="MEGAVOLT_AMPERES" />
+        <Item Key="VOLT_AMPERES_REACTIVE" Value="VOLT_AMPERES_REACTIVE" />
+        <Item Key="KILOVOLT_AMPERES_REACTIVE" Value="KILOVOLT_AMPERES_REACTIVE" />
+        <Item Key="MEGAVOLT_AMPERES_REACTIVE" Value="MEGAVOLT_AMPERES_REACTIVE" />
+        <Item Key="DEGREES_PHASE" Value="DEGREES_PHASE" />
+        <Item Key="POWER_FACTOR" Value="POWER_FACTOR" />
+        <Item Key="JOULES" Value="JOULES" />
+        <Item Key="KILOJOULES" Value="KILOJOULES" />
+        <Item Key="WATT_HOURS" Value="WATT_HOURS" />
+        <Item Key="KILOWATT_HOURS" Value="KILOWATT_HOURS" />
+        <Item Key="BTUS" Value="BTUS" />
+        <Item Key="THERMS" Value="THERMS" />
+        <Item Key="TON_HOURS" Value="TON_HOURS" />
+        <Item Key="JOULES_PER_KG_DRY_AIR" Value="JOULES_PER_KG_DRY_AIR" />
+        <Item Key="BTUS_PER_LB_DRY_AIR" Value="BTUS_PER_LB_DRY_AIR" />
+        <Item Key="CYCLES_PER_HOUR" Value="CYCLES_PER_HOUR" />
+        <Item Key="CYCLES_PER_MINUTE" Value="CYCLES_PER_MINUTE" />
+        <Item Key="HERTZ" Value="HERTZ" />
+        <Item Key="GRAMS_OF_WATER_PER_KG" Value="GRAMS_OF_WATER_PER_KG" />
+        <Item Key="RELATIVE_HUMIDITY" Value="RELATIVE_HUMIDITY" />
+        <Item Key="MILLIMETERS" Value="MILLIMETERS" />
+        <Item Key="METERS" Value="METERS" />
+        <Item Key="INCHES" Value="INCHES" />
+        <Item Key="FEET" Value="FEET" />
+        <Item Key="WATTS_PER_SQ_FOOT" Value="WATTS_PER_SQ_FOOT" />
+        <Item Key="WATTS_PER_SQ_METER" Value="WATTS_PER_SQ_METER" />
+        <Item Key="LUMENS" Value="LUMENS" />
+        <Item Key="LUXES" Value="LUXES" />
+        <Item Key="FOOT_CANDLES" Value="FOOT_CANDLES" />
+        <Item Key="KILOGRAMS" Value="KILOGRAMS" />
+        <Item Key="POUNDS_MASS" Value="POUNDS_MASS" />
+        <Item Key="TONS" Value="TONS" />
+        <Item Key="KGS_PER_SECOND" Value="KGS_PER_SECOND" />
+        <Item Key="KGS_PER_MINUTE" Value="KGS_PER_MINUTE" />
+        <Item Key="KGS_PER_HOUR" Value="KGS_PER_HOUR" />
+        <Item Key="LBS_MASS_PER_MINUTE" Value="LBS_MASS_PER_MINUTE" />
+        <Item Key="LBS_MASS_PER_HOUR" Value="LBS_MASS_PER_HOUR" />
+        <Item Key="WATTS" Value="WATTS" />
+        <Item Key="KILOWATTS" Value="KILOWATTS" />
+        <Item Key="MEGAWATTS" Value="MEGAWATTS" />
+        <Item Key="BTUS_PER_HOUR" Value="BTUS_PER_HOUR" />
+        <Item Key="HORSEPOWER" Value="HORSEPOWER" />
+        <Item Key="TONS_REFRIGERATION" Value="TONS_REFRIGERATION" />
+        <Item Key="PASCALS" Value="PASCALS" />
+        <Item Key="KILOPASCALS" Value="KILOPASCALS" />
+        <Item Key="BARS" Value="BARS" />
+        <Item Key="LBS_FORCE_PER_SQ_INCH" Value="LBS_FORCE_PER_SQ_INCH" />
+        <Item Key="CENTIMETERS_OF_WATER" Value="CENTIMETERS_OF_WATER" />
+        <Item Key="INCHES_OF_WATER" Value="INCHES_OF_WATER" />
+        <Item Key="MILLIMETERS_OF_MERCURY" Value="MILLIMETERS_OF_MERCURY" />
+        <Item Key="CENTIMETERS_OF_MERCURY" Value="CENTIMETERS_OF_MERCURY" />
+        <Item Key="INCHES_OF_MERCURY" Value="INCHES_OF_MERCURY" />
+        <Item Key="DEGREES_C" Value="DEGREES_C" />
+        <Item Key="DEGREES_K" Value="DEGREES_K" />
+        <Item Key="DEGREES_F" Value="DEGREES_F" />
+        <Item Key="DEGREE_DAYS_C" Value="DEGREE_DAYS_C" />
+        <Item Key="DEGREE_DAYS_F" Value="DEGREE_DAYS_F" />
+        <Item Key="YEARS" Value="YEARS" />
+        <Item Key="MONTHS" Value="MONTHS" />
+        <Item Key="WEEKS" Value="WEEKS" />
+        <Item Key="DAYS" Value="DAYS" />
+        <Item Key="HOURS" Value="HOURS" />
+        <Item Key="MINUTES" Value="MINUTES" />
+        <Item Key="SECONDS" Value="SECONDS" />
+        <Item Key="METERS_PER_SECOND" Value="METERS_PER_SECOND" />
+        <Item Key="KILOMETERS_PER_HOUR" Value="KILOMETERS_PER_HOUR" />
+        <Item Key="FEET_PER_SECOND" Value="FEET_PER_SECOND" />
+        <Item Key="FEET_PER_MINUTE" Value="FEET_PER_MINUTE" />
+        <Item Key="MILES_PER_HOUR" Value="MILES_PER_HOUR" />
+        <Item Key="CUBIC_FEET" Value="CUBIC_FEET" />
+        <Item Key="CUBIC_METERS" Value="CUBIC_METERS" />
+        <Item Key="IMPERIAL_GALLONS" Value="IMPERIAL_GALLONS" />
+        <Item Key="LITERS" Value="LITERS" />
+        <Item Key="US_GALLONS" Value="US_GALLONS" />
+        <Item Key="CUBIC_FEET_PER_MINUTE" Value="CUBIC_FEET_PER_MINUTE" />
+        <Item Key="CUBIC_METERS_PER_SECOND" Value="CUBIC_METERS_PER_SECOND" />
+        <Item Key="IMP_GALLONS_PER_MINUTE" Value="IMP_GALLONS_PER_MINUTE" />
+        <Item Key="LITERS_PER_SECOND" Value="LITERS_PER_SECOND" />
+        <Item Key="LITERS_PER_MINUTE" Value="LITERS_PER_MINUTE" />
+        <Item Key="US_GALLONS_PER_MINUTE" Value="US_GALLONS_PER_MINUTE" />
+        <Item Key="DEGREES_ANGULAR" Value="DEGREES_ANGULAR" />
+        <Item Key="DEGREES_C_PER_HOUR" Value="DEGREES_C_PER_HOUR" />
+        <Item Key="DEGREES_C_PER_MINUTE" Value="DEGREES_C_PER_MINUTE" />
+        <Item Key="DEGREES_F_PER_HOUR" Value="DEGREES_F_PER_HOUR" />
+        <Item Key="DEGREES_F_PER_MINUTE" Value="DEGREES_F_PER_MINUTE" />
+        <Item Key="NO_UNITS" Value="NO_UNITS" />
+        <Item Key="PARTS_PER_MILLION" Value="PARTS_PER_MILLION" />
+        <Item Key="PARTS_PER_BILLION" Value="PARTS_PER_BILLION" />
+        <Item Key="PERCENT" Value="PERCENT" />
+        <Item Key="PERCENT_PER_SECOND" Value="PERCENT_PER_SECOND" />
+        <Item Key="PER_MINUTE" Value="PER_MINUTE" />
+        <Item Key="PER_SECOND" Value="PER_SECOND" />
+        <Item Key="PSI_PER_DEGREE_F" Value="PSI_PER_DEGREE_F" />
+        <Item Key="RADIANS" Value="RADIANS" />
+        <Item Key="REVOLUTIONS_PER_MIN" Value="REVOLUTIONS_PER_MIN" />
+        <Item Key="CURRENCY1" Value="CURRENCY1" />
+        <Item Key="CURRENCY2" Value="CURRENCY2" />
+        <Item Key="CURRENCY3" Value="CURRENCY3" />
+        <Item Key="CURRENCY4" Value="CURRENCY4" />
+        <Item Key="CURRENCY5" Value="CURRENCY5" />
+        <Item Key="CURRENCY6" Value="CURRENCY6" />
+        <Item Key="CURRENCY7" Value="CURRENCY7" />
+        <Item Key="CURRENCY8" Value="CURRENCY8" />
+        <Item Key="CURRENCY9" Value="CURRENCY9" />
+        <Item Key="CURRENCY10" Value="CURRENCY10" />
+        <Item Key="SQ_INCHES" Value="SQ_INCHES" />
+        <Item Key="SQ_CENTIMETERS" Value="SQ_CENTIMETERS" />
+        <Item Key="BTUS_PER_POUND" Value="BTUS_PER_POUND" />
+        <Item Key="CENTIMETERS" Value="CENTIMETERS" />
+        <Item Key="LBS_MASS_PER_SECOND" Value="LBS_MASS_PER_SECOND" />
+        <Item Key="DELTA_DEGREES_FAHRENHEIT" Value="DELTA_DEGREES_FAHRENHEIT" />
+        <Item Key="DELTA_DEGREES_KELVIN" Value="DELTA_DEGREES_KELVIN" />
+        <Item Key="KILOHMS" Value="KILOHMS" />
+        <Item Key="MEGOHMS" Value="MEGOHMS" />
+        <Item Key="MILLIVOLTS" Value="MILLIVOLTS" />
+        <Item Key="KILOJOULES_PER_KG" Value="KILOJOULES_PER_KG" />
+        <Item Key="MEGAJOULES" Value="MEGAJOULES" />
+        <Item Key="JOULES_PER_DEGREE_K" Value="JOULES_PER_DEGREE_K" />
+        <Item Key="JOULES_PER_KG_DEGREE_K" Value="JOULES_PER_KG_DEGREE_K" />
+        <Item Key="KILOHERTZ" Value="KILOHERTZ" />
+        <Item Key="MEGAHERTZ" Value="MEGAHERTZ" />
+        <Item Key="PER_HOUR" Value="PER_HOUR" />
+        <Item Key="MILLIWATTS" Value="MILLIWATTS" />
+        <Item Key="HECTOPASCALS" Value="HECTOPASCALS" />
+        <Item Key="MILLIBARS" Value="MILLIBARS" />
+        <Item Key="CUBIC_METERS_PER_HOUR" Value="CUBIC_METERS_PER_HOUR" />
+        <Item Key="LITERS_PER_HOUR" Value="LITERS_PER_HOUR" />
+        <Item Key="KWATT_HOURS_PER_SQ_METER" Value="KWATT_HOURS_PER_SQ_METER" />
+        <Item Key="KWATT_HOURS_PER_SQ_FOOT" Value="KWATT_HOURS_PER_SQ_FOOT" />
+        <Item Key="MEGAJOULES_PER_SQ_METER" Value="MEGAJOULES_PER_SQ_METER" />
+        <Item Key="MEGAJOULES_PER_SQ_FOOT" Value="MEGAJOULES_PER_SQ_FOOT" />
+        <Item Key="WATTS_PER_SQ_M_DEGREE_K" Value="WATTS_PER_SQ_M_DEGREE_K" />
+        <Item Key="CUBIC_FEET_PER_SECOND" Value="CUBIC_FEET_PER_SECOND" />
+        <Item Key="PERCENT_OBSCUR_PER_FOOT" Value="PERCENT_OBSCUR_PER_FOOT" />
+        <Item Key="PERCENT_OBSCUR_PER_METER" Value="PERCENT_OBSCUR_PER_METER" />
+        <Item Key="MILLIOHMS" Value="MILLIOHMS" />
+        <Item Key="MEGAWATT_HOURS" Value="MEGAWATT_HOURS" />
+        <Item Key="KILO_BTUS" Value="KILO_BTUS" />
+        <Item Key="MEGA_BTUS" Value="MEGA_BTUS" />
+        <Item Key="KILOJOULES_PER_KG_DRY_AIR" Value="KILOJOULES_PER_KG_DRY_AIR" />
+        <Item Key="MEGAJOULES_PER_KG_DRY_AIR" Value="MEGAJOULES_PER_KG_DRY_AIR" />
+        <Item Key="KILOJOULES_PER_DEGREE_K" Value="KILOJOULES_PER_DEGREE_K" />
+        <Item Key="MEGAJOULES_PER_DEGREE_K" Value="MEGAJOULES_PER_DEGREE_K" />
+        <Item Key="NEWTON" Value="NEWTON" />
+        <Item Key="GS_PER_SECOND" Value="GS_PER_SECOND" />
+        <Item Key="GS_PER_MINUTE" Value="GS_PER_MINUTE" />
+        <Item Key="TONS_PER_HOUR" Value="TONS_PER_HOUR" />
+        <Item Key="KILO_BTUS_PER_HOUR" Value="KILO_BTUS_PER_HOUR" />
+        <Item Key="HUNDREDTHS_SECONDS" Value="HUNDREDTHS_SECONDS" />
+        <Item Key="MILLISECONDS" Value="MILLISECONDS" />
+        <Item Key="NEWTON_METERS" Value="NEWTON_METERS" />
+        <Item Key="MILLIMETERS_PER_SECOND" Value="MILLIMETERS_PER_SECOND" />
+        <Item Key="MILLIMETERS_PER_MINUTE" Value="MILLIMETERS_PER_MINUTE" />
+        <Item Key="METERS_PER_MINUTE" Value="METERS_PER_MINUTE" />
+        <Item Key="METERS_PER_HOUR" Value="METERS_PER_HOUR" />
+        <Item Key="CUBIC_METERS_PER_MINUTE" Value="CUBIC_METERS_PER_MINUTE" />
+        <Item Key="M_PER_SECOND_PER_SECOND" Value="M_PER_SECOND_PER_SECOND" />
+        <Item Key="AMPERES_PER_METER" Value="AMPERES_PER_METER" />
+        <Item Key="AMPERES_PER_SQUARE_METER" Value="AMPERES_PER_SQUARE_METER" />
+        <Item Key="AMPERE_SQUARE_METERS" Value="AMPERE_SQUARE_METERS" />
+        <Item Key="FARADS" Value="FARADS" />
+        <Item Key="HENRYS" Value="HENRYS" />
+        <Item Key="OHM_METERS" Value="OHM_METERS" />
+        <Item Key="SIEMENS" Value="SIEMENS" />
+        <Item Key="SIEMENS_PER_METER" Value="SIEMENS_PER_METER" />
+        <Item Key="TESLAS" Value="TESLAS" />
+        <Item Key="VOLTS_PER_DEGREE_KELVIN" Value="VOLTS_PER_DEGREE_KELVIN" />
+        <Item Key="VOLTS_PER_METER" Value="VOLTS_PER_METER" />
+        <Item Key="WEBERS" Value="WEBERS" />
+        <Item Key="CANDELAS" Value="CANDELAS" />
+        <Item Key="CANDELAS_PER_SQUARE_METER" Value="CANDELAS_PER_SQUARE_METER" />
+        <Item Key="DEGREES_K_PER_HOUR" Value="DEGREES_K_PER_HOUR" />
+        <Item Key="DEGREES_K_PER_MINUTE" Value="DEGREES_K_PER_MINUTE" />
+        <Item Key="JOULE_SECONDS" Value="JOULE_SECONDS" />
+        <Item Key="RADIANS_PER_SECOND" Value="RADIANS_PER_SECOND" />
+        <Item Key="SQUARE_METERS_PER_NEWTON" Value="SQUARE_METERS_PER_NEWTON" />
+        <Item Key="KG_PER_CUBIC_METER" Value="KG_PER_CUBIC_METER" />
+        <Item Key="NEWTON_SECONDS" Value="NEWTON_SECONDS" />
+        <Item Key="NEWTONS_PER_METER" Value="NEWTONS_PER_METER" />
+        <Item Key="WATTS_PER_M_PER_DEGREE_K" Value="WATTS_PER_M_PER_DEGREE_K" />
+        <Item Key="MICRO_SIEMENS" Value="MICRO_SIEMENS" />
+        <Item Key="CUBIC_FEET_PER_HOUR" Value="CUBIC_FEET_PER_HOUR" />
+        <Item Key="US_GALLONS_PER_HOUR" Value="US_GALLONS_PER_HOUR" />
+        <Item Key="KILOMETERS" Value="KILOMETERS" />
+        <Item Key="MICROMETERS" Value="MICROMETERS" />
+        <Item Key="GRAMS" Value="GRAMS" />
+        <Item Key="MILLIGRAMS" Value="MILLIGRAMS" />
+        <Item Key="MILLILITERS" Value="MILLILITERS" />
+        <Item Key="MILLILITERS_PER_SECOND" Value="MILLILITERS_PER_SECOND" />
+        <Item Key="DECIBELS" Value="DECIBELS" />
+        <Item Key="DECIBELS_MILLIVOLT" Value="DECIBELS_MILLIVOLT" />
+        <Item Key="DECIBELS_VOLT" Value="DECIBELS_VOLT" />
+        <Item Key="MILLISIEMENS" Value="MILLISIEMENS" />
+        <Item Key="WATT_HOURS_REACTIVE" Value="WATT_HOURS_REACTIVE" />
+        <Item Key="KILOWATT_HOURS_REACTIVE" Value="KILOWATT_HOURS_REACTIVE" />
+        <Item Key="MEGAWATT_HOURS_REACTIVE" Value="MEGAWATT_HOURS_REACTIVE" />
+        <Item Key="MILLIMETERS_OF_WATER" Value="MILLIMETERS_OF_WATER" />
+        <Item Key="PER_MILLE" Value="PER_MILLE" />
+        <Item Key="GRAMS_PER_GRAM" Value="GRAMS_PER_GRAM" />
+        <Item Key="KILOGRAMS_PER_KILOGRAM" Value="KILOGRAMS_PER_KILOGRAM" />
+        <Item Key="GRAMS_PER_KILOGRAM" Value="GRAMS_PER_KILOGRAM" />
+        <Item Key="MILLIGRAMS_PER_GRAM" Value="MILLIGRAMS_PER_GRAM" />
+        <Item Key="MILLIGRAMS_PER_KILOGRAM" Value="MILLIGRAMS_PER_KILOGRAM" />
+        <Item Key="GRAMS_PER_MILLILITER" Value="GRAMS_PER_MILLILITER" />
+        <Item Key="GRAMS_PER_LITER" Value="GRAMS_PER_LITER" />
+        <Item Key="MILLIGRAMS_PER_LITER" Value="MILLIGRAMS_PER_LITER" />
+        <Item Key="MICROGRAMS_PER_LITER" Value="MICROGRAMS_PER_LITER" />
+        <Item Key="GRAMS_PER_CUBIC_METER" Value="GRAMS_PER_CUBIC_METER" />
+        <Item Key="MILLIGRAMS_PER_CUBIC_METER" Value="MILLIGRAMS_PER_CUBIC_METER" />
+        <Item Key="MICROGRAMS_PER_CUBIC_METER" Value="MICROGRAMS_PER_CUBIC_METER" />
+        <Item Key="NANOGRAMS_PER_CUBIC_METER" Value="NANOGRAMS_PER_CUBIC_METER" />
+        <Item Key="GRAMS_PER_CUBIC_CENTIMETER" Value="GRAMS_PER_CUBIC_CENTIMETER" />
+        <Item Key="BECQUERELS" Value="BECQUERELS" />
+        <Item Key="KILOBECQUERELS" Value="KILOBECQUERELS" />
+        <Item Key="MEGABECQUERELS" Value="MEGABECQUERELS" />
+        <Item Key="GRAY" Value="GRAY" />
+        <Item Key="MILLIGRAY" Value="MILLIGRAY" />
+        <Item Key="MICROGRAY" Value="MICROGRAY" />
+        <Item Key="SIEVERTS" Value="SIEVERTS" />
+        <Item Key="MILLISIEVERTS" Value="MILLISIEVERTS" />
+        <Item Key="MICROSIEVERTS" Value="MICROSIEVERTS" />
+        <Item Key="MICROSIEVERTS_PER_HOUR" Value="MICROSIEVERTS_PER_HOUR" />
+        <Item Key="DECIBELS_A" Value="DECIBELS_A" />
+        <Item Key="NEPHELOMETRIC_TURBIDITY_UNIT" Value="NEPHELOMETRIC_TURBIDITY_UNIT" />
+        <Item Key="PH" Value="PH" />
+        <Item Key="GRAMS_PER_SQUARE_METER" Value="GRAMS_PER_SQUARE_METER" />
+        <Item Key="MINUTES_PER_DEGREE_KELVIN" Value="MINUTES_PER_DEGREE_KELVIN" />
+        <Item Key="OHM_METER_SQ_PER_METER" Value="OHM_METER_SQ_PER_METER" />
+        <Item Key="AMPERE_SECONDS" Value="AMPERE_SECONDS" />
+        <Item Key="VOLT_AMPERE_HOURS" Value="VOLT_AMPERE_HOURS" />
+        <Item Key="KILOVOLT_AMPERE_HOURS" Value="KILOVOLT_AMPERE_HOURS" />
+        <Item Key="MEGAVOLT_AMPERE_HOURS" Value="MEGAVOLT_AMPERE_HOURS" />
+        <Item Key="VOLT_AMPERE_HOURS_REACTIVE" Value="VOLT_AMPERE_HOURS_REACTIVE" />
+        <Item Key="KILOVOLT_AMPERE_HOURS_REACTIVE" Value="KILOVOLT_AMPERE_HOURS_REACTIVE" />
+        <Item Key="MEGAVOLT_AMPERE_HOURS_REACTIVE" Value="MEGAVOLT_AMPERE_HOURS_REACTIVE" />
+        <Item Key="VOLT_SQUARE_HOURS" Value="VOLT_SQUARE_HOURS" />
+        <Item Key="AMPERE_SQUARE_HOURS" Value="AMPERE_SQUARE_HOURS" />
+        <Item Key="JOULE_PER_HOURS" Value="JOULE_PER_HOURS" />
+        <Item Key="CUBIC_FEET_PER_DAY" Value="CUBIC_FEET_PER_DAY" />
+        <Item Key="CUBIC_METERS_PER_DAY" Value="CUBIC_METERS_PER_DAY" />
+        <Item Key="WATT_HOURS_PER_CUBIC_METER" Value="WATT_HOURS_PER_CUBIC_METER" />
+        <Item Key="JOULES_PER_CUBIC_METER" Value="JOULES_PER_CUBIC_METER" />
+        <Item Key="MOLE_PERCENT" Value="MOLE_PERCENT" />
+        <Item Key="PASCAL_SECONDS" Value="PASCAL_SECONDS" />
+        <Item Key="MILLION_STD_CUBIC_FEET_PER_MINUTE" Value="MILLION_STD_CUBIC_FEET_PER_MINUTE" />
+        <Item Key="STD_CUBIC_FEET_PER_DAY" Value="STD_CUBIC_FEET_PER_DAY" />
+        <Item Key="MILLION_STD_CUBIC_FEET_PER_DAY" Value="MILLION_STD_CUBIC_FEET_PER_DAY" />
+        <Item Key="THOUSAND_CUBIC_FEET_PER_DAY" Value="THOUSAND_CUBIC_FEET_PER_DAY" />
+        <Item Key="THOUSAND_STD_CUBIC_FEET_PER_DAY" Value="THOUSAND_STD_CUBIC_FEET_PER_DAY" />
+        <Item Key="POUNDS_MASS_PER_DAY" Value="POUNDS_MASS_PER_DAY" />
+        <Item Key="MILLIREMS" Value="MILLIREMS" />
+        <Item Key="MILLIREMS_PER_HOUR" Value="MILLIREMS_PER_HOUR" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetEventState" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Normal" Value="Normal" />
+        <Item Key="Fault" Value="Fault" />
+        <Item Key="Offnormal" Value="Offnormal" />
+        <Item Key="HighLimit" Value="HighLimit" />
+        <Item Key="LowLimit" Value="LowLimit" />
+        <Item Key="LifeSafetyAlarm" Value="LifeSafetyAlarm" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetFileAccessMethod" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="FileRecordAccess" Value="FileRecordAccess" />
+        <Item Key="FileStreamAccess" Value="FileStreamAccess" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetHour" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetHundredths" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetInitStatus" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NotInitialized" Value=" Not initialized status " />
+        <Item Key="Pending" Value=" Pending status " />
+        <Item Key="End" Value=" End status " />
+        <Item Key="Error" Value=" Error status " />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetMinute" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetMode" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="IP" Value=" BACnet IP " />
+        <Item Key="MSTP" Value=" BACnet Main-Secondary/Token Passing " />
+        <Item Key="NO_LINK" Value=" No communication channel " />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetMonth" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="January" Value="January" />
+        <Item Key="February" Value="February" />
+        <Item Key="March" Value="March" />
+        <Item Key="April" Value="April" />
+        <Item Key="May" Value="May" />
+        <Item Key="June" Value="June" />
+        <Item Key="July" Value="July" />
+        <Item Key="August" Value="August" />
+        <Item Key="September" Value="September" />
+        <Item Key="October" Value="October" />
+        <Item Key="November" Value="November" />
+        <Item Key="December" Value="December" />
+        <Item Key="oddMonths" Value="oddMonths" />
+        <Item Key="evenMonths" Value="evenMonths" />
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetNotifyType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Alarm" Value="Alarm" />
+        <Item Key="Event" Value="Event" />
+        <Item Key="AckNotification" Value="AckNotification" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetObjectType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="AnalogInput" Value="AnalogInput" />
+        <Item Key="AnalogOutput" Value="AnalogOutput" />
+        <Item Key="AnalogValue" Value="AnalogValue" />
+        <Item Key="BinaryInput" Value="BinaryInput" />
+        <Item Key="BinaryOutput" Value="BinaryOutput" />
+        <Item Key="BinaryValue" Value="BinaryValue" />
+        <Item Key="Calendar" Value="Calendar" />
+        <Item Key="Command" Value="Command" />
+        <Item Key="DeviceObject" Value="DeviceObject" />
+        <Item Key="EventEnrollment" Value="EventEnrollment" />
+        <Item Key="File" Value="File" />
+        <Item Key="Group" Value="Group" />
+        <Item Key="Loop" Value="Loop" />
+        <Item Key="MultistateInput" Value="MultistateInput" />
+        <Item Key="MultistateOutput" Value="MultistateOutput" />
+        <Item Key="NotificationClass" Value="NotificationClass" />
+        <Item Key="Program" Value="Program" />
+        <Item Key="Schedule" Value="Schedule" />
+        <Item Key="Averaging" Value="Averaging" />
+        <Item Key="MultistateValue" Value="MultistateValue" />
+        <Item Key="Trendlog" Value="Trendlog" />
+        <Item Key="LifeSafetyPoint" Value="LifeSafetyPoint" />
+        <Item Key="LifeSafetyZone" Value="LifeSafetyZone" />
+        <Item Key="Accumulator" Value="Accumulator" />
+        <Item Key="PulseConverter" Value="PulseConverter" />
+        <Item Key="EventLog" Value="EventLog" />
+        <Item Key="GlobalGroup" Value="GlobalGroup" />
+        <Item Key="TrendlogMultiple" Value="TrendlogMultiple" />
+        <Item Key="LoadControl" Value="LoadControl" />
+        <Item Key="StructuredView" Value="StructuredView" />
+        <Item Key="AccessDoor" Value="AccessDoor" />
+        <Item Key="Timer" Value="Timer" />
+        <Item Key="AccessCredential" Value="AccessCredential" />
+        <Item Key="AccessPoint" Value="AccessPoint" />
+        <Item Key="AccessRights" Value="AccessRights" />
+        <Item Key="AccessUser" Value="AccessUser" />
+        <Item Key="AccessZone" Value="AccessZone" />
+        <Item Key="CredDataInput" Value="CredDataInput" />
+        <Item Key="NetworkSecurity" Value="NetworkSecurity" />
+        <Item Key="BitstringValue" Value="BitstringValue" />
+        <Item Key="CharacterString" Value="CharacterString" />
+        <Item Key="DatePatternValue" Value="DatePatternValue" />
+        <Item Key="DateValue" Value="DateValue" />
+        <Item Key="DatetimePatternValue" Value="DatetimePatternValue" />
+        <Item Key="DatetimeValue" Value="DatetimeValue" />
+        <Item Key="IntegerValue" Value="IntegerValue" />
+        <Item Key="LargeAnalogValue" Value="LargeAnalogValue" />
+        <Item Key="OctetstringValue" Value="OctetstringValue" />
+        <Item Key="PositiveIntegerValue" Value="PositiveIntegerValue" />
+        <Item Key="TimePatternValue" Value="TimePatternValue" />
+        <Item Key="TimeValue" Value="TimeValue" />
+        <Item Key="NotificationForwarder" Value="NotificationForwarder" />
+        <Item Key="AlertEnrollment" Value="AlertEnrollment" />
+        <Item Key="Channel" Value="Channel" />
+        <Item Key="LightingOutput" Value="LightingOutput" />
+        <Item Key="BinaryLightingOutput" Value="BinaryLightingOutput" />
+        <Item Key="NetworkPort" Value="NetworkPort" />
+        <Item Key="ElevatorGroup" Value="ElevatorGroup" />
+        <Item Key="Escalator" Value="Escalator" />
+        <Item Key="Lift" Value="Lift" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetPolarity" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Normal" Value="Normal" />
+        <Item Key="Reverse" Value="Reverse" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetPrioArrNumericDataType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="DataTypeNull" Value="DataTypeNull" />
+        <Item Key="DataTypeBoolean" Value="DataTypeBoolean" />
+        <Item Key="DataTypeUnsigned" Value="DataTypeUnsigned" />
+        <Item Key="DataTypeInteger" Value="DataTypeInteger" />
+        <Item Key="DataTypeReal" Value="DataTypeReal" />
+        <Item Key="DataTypeDouble" Value="DataTypeDouble" />
+        <Item Key="DataTypeBitString" Value="DataTypeBitString" />
+        <Item Key="DataTypeEnum" Value="DataTypeEnum" />
+        <Item Key="DataTypeDate" Value="DataTypeDate" />
+        <Item Key="DataTypeTime" Value="DataTypeTime" />
+        <Item Key="DataTypeObjectId" Value="DataTypeObjectId" />
+        <Item Key="DataTypeDateTime" Value="DataTypeDateTime" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetPrioArrStringDataType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="DataTypeNull" Value="DataTypeNull" />
+        <Item Key="DataTypeOctetString" Value="DataTypeOctetString" />
+        <Item Key="DataTypeCharString" Value="DataTypeCharString" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetRecipientDataType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="RecipientDevice" Value="RecipientDevice" />
+        <Item Key="RecipientAddress" Value="RecipientAddress" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetReliability" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="NoFaultDetected" Value="NoFaultDetected" />
+        <Item Key="NoSensor" Value="NoSensor" />
+        <Item Key="OverRange" Value="OverRange" />
+        <Item Key="UnderRange" Value="UnderRange" />
+        <Item Key="OpenLoop" Value="OpenLoop" />
+        <Item Key="ShortedLoop" Value="ShortedLoop" />
+        <Item Key="NoOutput" Value="NoOutput" />
+        <Item Key="UnreliableOther" Value="UnreliableOther" />
+        <Item Key="ProcessError" Value="ProcessError" />
+        <Item Key="MultiStateFault" Value="MultiStateFault" />
+        <Item Key="ConfigurationError" Value="ConfigurationError" />
+        <Item Key="CommunicationFailure" Value="CommunicationFailure" />
+        <Item Key="MemberFault" Value="MemberFault" />
+        <Item Key="MonitoredObjectFault" Value="MonitoredObjectFault" />
+        <Item Key="Tripped" Value="Tripped" />
+        <Item Key="LampFailure" Value="LampFailure" />
+        <Item Key="ActivationFailure" Value="ActivationFailure" />
+        <Item Key="RenewDhcpFailure" Value="RenewDhcpFailure" />
+        <Item Key="RenewFdRegFailure" Value="RenewFdRegFailure" />
+        <Item Key="RestartAutoFailure" Value="RestartAutoFailure" />
+        <Item Key="RestartFailure" Value="RestartFailure" />
+        <Item Key="PropCommandFailure" Value="PropCommandFailure" />
+        <Item Key="FaultsListed" Value="FaultsListed" />
+        <Item Key="LastKnown" Value="LastKnown" />
+        <Item Key="FirstProprietary" Value="FirstProprietary" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetSecond" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetSegmentation" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="SegmentedBoth" Value="SegmentedBoth" />
+        <Item Key="SegmentedTransmit" Value="SegmentedTransmit" />
+        <Item Key="SegmentedReceive" Value="SegmentedReceive" />
+        <Item Key="NoSegmentation" Value="NoSegmentation" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetStatusFlagEnum" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="StatusInAlarm" Value="StatusInAlarm" />
+        <Item Key="StatusFault" Value="StatusFault" />
+        <Item Key="StatusOverridden" Value="StatusOverridden" />
+        <Item Key="StatusOutOfService" Value="StatusOutOfService" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetTimeStampDataType" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Time" Value="Time" />
+        <Item Key="SequenceNumber" Value="SequenceNumber" />
+        <Item Key="DateTime" Value="DateTime" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetWeekNDayWeekOfMonth" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="days1_7" Value="days1_7" />
+        <Item Key="days8_14" Value="days8_14" />
+        <Item Key="days15_21" Value="days15_21" />
+        <Item Key="days22_28" Value="days22_28" />
+        <Item Key="days29_31" Value="days29_31" />
+        <Item Key="last7Days" Value="last7Days" />
+        <Item Key="anyOf7DaysPriorToLast7" Value="anyOf7DaysPriorToLast7" />
+        <Item Key="anyOf7DaysPriorToLast14" Value="anyOf7DaysPriorToLast14" />
+        <Item Key="anyOf7DaysPriorToLast21" Value="anyOf7DaysPriorToLast21" />
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
+    <Section Name="System_Net_BACnet_BACnetYear" Category="Enums" EmbedTranslation="false">
+      <Items>
+        <Item Key="Unspecified" Value="Unspecified" />
+      </Items>
+    </Section>
   </Sections>
 </XmlLanguage>

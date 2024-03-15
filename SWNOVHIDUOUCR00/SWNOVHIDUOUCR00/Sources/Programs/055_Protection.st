@@ -38,6 +38,8 @@ MaxTankTempOk := HysterAdv_MaxTempTank.Out;
 {ENDREGION} 
     
 {REGION FREEZE PROTECTION OUTDOOR UNIT}
+    
+    
     SR_OU_FreezeProt(      
         S1 := (((MIN(Ain_Data.Fct.OutDoorTemp, OU_OutsideTemp)  < 5) AND (Min(OU_CondInTemp,OU_CondOutTemp) < 5) OR OU_ComError)),
         R := (MIN(Ain_Data.Fct.OutDoorTemp, OU_OutsideTemp)  > 7 AND Min(OU_CondInTemp,OU_CondOutTemp) > 20) 

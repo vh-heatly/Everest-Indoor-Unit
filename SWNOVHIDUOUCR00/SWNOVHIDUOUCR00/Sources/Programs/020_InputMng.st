@@ -217,9 +217,9 @@ VAR_GLOBAL PERSISTENT
             (**Flow switch*)
             FlowSw          := (Ch := 0, ModeType := MODE_TYPE_DIN#LIB_IO_DIN),
             (**SG input 1*)
-            SG1          := (Ch := 4, ModeType := MODE_TYPE_DIN#LIB_IO_DIN),
+            SG1          := (Ch := 4, ModeType := MODE_TYPE_DIN#LIB_IO_DIN, logic := TRUE),
             (**SG input 2*)
-            SG2          := (Ch := 5, ModeType := MODE_TYPE_DIN#LIB_IO_DIN)
+            SG2          := (Ch := 5, ModeType := MODE_TYPE_DIN#LIB_IO_DIN, logic := TRUE)
         ));
     
         Ain_Cfg     : AinCfgUnion := (Fct := (

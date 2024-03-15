@@ -26,7 +26,7 @@ PROGRAM OutdoorUnitMng
     {REGION ALLOW START/STOP OF OUTDOOR UNIT}
         SR_Energybalance(
             S1 := EBHP <= EBHPCompStrt AND UnitOn,
-            R := (EBHP >= EBHPStopComp AND OU_Unit.CondInTemp >= SupplyTempCalc + 2) OR UnitOff
+            R := (EBHP >= EBHPStopComp AND OU_Unit.CondInTemp >= SupplyTempCalc + 2) OR UnitOff OR NOT OU_CompOn
         );
     {ENDREGION}
     
@@ -61,10 +61,12 @@ PROGRAM OutdoorUnitMng
         
         //Store current compressor speed when going into DHW
         IF(OpState = OpStage_Status#DHW AND DHW_FirstCycle)THEN
-            DHW_InitRPS := OU_Unit.CurrSpd_RPS;
-            DHW_FirstCycle := FALSE;
+            DHW_InitRPS      := OU_Unit.CurrSpd_RPS;
+            FixedEBCount     := Ain_Data.Fct.ClimSupplyTemp;
+            EBHP_Init        := EBHP;
+            DHW_FirstCycle   := FALSE;
         ELSIF(NOT (OpState = OpStage_Status#DHW))THEN
-            DHW_FirstCycle := TRUE;
+            DHW_FirstCycle   := TRUE;
         END_IF;
         
         {ENDREGION}

@@ -35,7 +35,6 @@ PROGRAM PumpMng
         Circ1Act_Req := 97;
     ELSE
     //Pump regulation
-//    Circ1op_mode = CircPmp_Req;
     Circ1Act_Req := Scaler(CircPmp_Req, 1, 100, 84, 10); //1-100 input is reversed and pump PWM input is scaled to fit the correct PWM curve.
     END_IF;
 

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workspace>
+  <Charts>
+    <Parameters>
+      <Parameter Name="EBHP" />
+      <Parameter Name="OU_CondInTemp" />
+      <Parameter Name="OU_CondOutTemp" />
+      <Parameter Name="OU_CurrDSH" />
+      <Parameter Name="OU_CurrSpd" />
+      <Parameter Name="OU_Unit.CompReq" />
+      <Parameter Name="Ain_Data.Fct.ClimSupplyTemp" />
+      <Parameter Name="SupplyTempCalc" />
+    </Parameters>
+  </Charts>
+</Workspace>
