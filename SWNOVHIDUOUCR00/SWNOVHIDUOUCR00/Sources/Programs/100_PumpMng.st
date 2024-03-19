@@ -16,7 +16,9 @@ PROGRAM PumpMng
     IF(PumpSpdGP1Man > 0)THEN    //Manual mode
         CircPmp_Req := TO_REAL(PumpSpdGP1Man);
     ELSIF(UnitOn) THEN    //Fixed pump speed for GP1 depending on current operating mode
-        IF(OpState = OpStage_Status#DEFROST)THEN
+        IF OU_FreezeProtAct THEN
+            CircPmp_Req := PumpSpdFreezeProt;
+        ELSIF(OpState = OpStage_Status#DEFROST)THEN
             CircPmp_Req := PumpSpdDefrost;
         ELSIF(OpState = OpStage_Status#DHW)THEN
             CircPmp_Req := PumpSpdDhwFix;

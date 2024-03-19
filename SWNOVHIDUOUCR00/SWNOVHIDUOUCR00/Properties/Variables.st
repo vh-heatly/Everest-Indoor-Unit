@@ -322,6 +322,9 @@ VAR_GLOBAL
 	(**Evaporator temperature*)
 	{ATTRIBUTE UOM CELSIUS}
 	OU_EvapTemp : REAL;
+	{LOCATION OU_FreezeProtAct}
+	(**Freeze protection of outdoor unit active*)
+	OU_FreezeProtAct : BOOL;
 	{LOCATION OU_HP_Status}
 	(**Heat pump status*)
 	OU_HP_Status : USINT;
@@ -379,6 +382,12 @@ VAR_GLOBAL
 	PID_HeatReq : REAL;
 	{LOCATION ProfileList}
 	ProfileList : ARRAY[1..32] OF PROFILE_INFO;
+	{LOCATION PumpspdFreezeProt}
+	(**Pump speed for GP1 during freeze protection*)
+	{ATTRIBUTE UOM PERCENT}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 100}
+	PumpspdFreezeProt : REAL;
 	{LOCATION PumpSpdGP1Man}
 	(**GP1 - Manual request*)
 	{ATTRIBUTE UOM PERCENT}
@@ -927,6 +936,12 @@ VAR_GLOBAL PERSISTENT
 	(**Delay between allowing/blocking operation modes*)
 	{ATTRIBUTE UOM MINUTE}
 	OpModeSwitchDelay : UINT := 2;
+	{LOCATION OU_WaterFlowLimit}
+	(**Waterflow limit*)
+	{ATTRIBUTE UOM LITER_PER_MINUTE}
+	{METADATA MIN_VAL 0}
+	{METADATA MAX_VAL 100}
+	OU_WaterFlowLimit : REAL := 10;
 	{LOCATION OutDoorTemp_FiltDelay}
 	{METADATA MIN_VAL 1}
 	{METADATA MAX_VAL 7200}

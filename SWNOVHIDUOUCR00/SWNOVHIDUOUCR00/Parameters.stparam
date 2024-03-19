@@ -951,7 +951,8 @@
       Attributes="Configurable Cloneable" />
     <Parameter
       Name="DhwTimerIncComp"
-      Attributes="None" />
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
     <Parameter
       InitValue="45"
       Name="DhwSetPointStrtNor"
@@ -2291,5 +2292,10 @@
     <Parameter
       Name="WaterFlow_DHW"
       Attributes="None" />
+    <Parameter
+      InitValue="10"
+      Name="OU_WaterFlowLimit"
+      Persistence="Persistent"
+      Attributes="Configurable Cloneable" />
   </Parameters>
 </ParametersConfiguration>

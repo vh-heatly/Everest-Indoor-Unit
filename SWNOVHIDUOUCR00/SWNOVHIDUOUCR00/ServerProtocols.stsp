@@ -1172,6 +1172,13 @@
           Kind="HoldingRegister"
           Size="1" />
         <ModbusVariable
+          DataType="REAL"
+          Name="OU_WaterFlowLimit"
+          UoM="LITER_PER_MINUTE"
+          Index="86"
+          Kind="HoldingRegister"
+          Size="1" />
+        <ModbusVariable
           DataType="USINT(0..99)"
           Name="YearIn"
           UoM="YEAR"

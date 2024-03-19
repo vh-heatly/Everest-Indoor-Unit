@@ -2,14 +2,16 @@
 <Workspace>
   <Charts>
     <Parameters>
+      <Parameter Name="Ain_Data.Fct.ClimSupplyTemp" />
       <Parameter Name="EBHP" />
       <Parameter Name="OU_CondInTemp" />
       <Parameter Name="OU_CondOutTemp" />
       <Parameter Name="OU_CurrDSH" />
       <Parameter Name="OU_CurrSpd" />
       <Parameter Name="OU_Unit.CompReq" />
-      <Parameter Name="Ain_Data.Fct.ClimSupplyTemp" />
       <Parameter Name="SupplyTempCalc" />
+      <Parameter Name="OU_CompTemp" />
+      <Parameter Name="DHWBottomTemp" />
     </Parameters>
   </Charts>
 </Workspace>
